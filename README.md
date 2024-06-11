@@ -74,6 +74,7 @@ Se llegan a utilizar para poder organizar tareas diarias e identificar fallas de
 - Las medida que puedes abordar para una mejor seguridad es,  Contraseñas, Doble autentificacion, uso de VPN, firewalls, IDS, IPS, control de red basado en roles y segmentacion de red(divide la red en diferentes segmentos lo que limita el daño que pueda causar la amenaza).
 5. Gestion de identidades y accesos:
 - Se centra en el acceso y autorizacion para proteger datos  asegurando de que los usuarios sigan las politicas de control y el buen manejo de los activos. Es decir que se limita el acceso a ciertos empleados para evitar que pueda ingresar a datos sencibles. Se compone por 4 componentes principales:
+
 | Compenente | Description                |
 | :-------- | :------------------------- |
 | `Identificacion` | Un usuario verifica quien es usando un nombre de usuario, tarjeta de acceso o datos biometricos (huella, Identificacion facial, ojo) |
