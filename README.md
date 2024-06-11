@@ -42,4 +42,57 @@ Un analista de seguridad debe identificar los activos (materiales y del personal
         Tomar decisiones eticas en ciberseguridad es fundamental para proteger los activos de la empresa y garantizar la confianza de los clientes y empleados. Algunos principios eticos importantes en ciberseguridad. TOMA DE DECISIONES
         ?Principio eticos en ciberseguridad
             *
-           
+
+## Temas y habilidades basicas en ciberseguridad
+- Enfoque de los 8 Dominios de seguridad CISSP
+- Amenaza, riesgos y vulnerabildades.
+- Las 3 capas de la web.
+- Como manejar marcos de seguridad con El Marco de Gestion de Riesgos del Instituto nacional de Estandares y tecnologia. (RMF del NIST)
+### 8 dominios de seguridad reconocidos por el CISSP
+Se llegan a utilizar para poder organizar tareas diarias e identificar fallas de seguridad, tambien define la postura de seguridad, es decir, la capacidad de una organizacion de defender sus activos y datos criticos y reacionar al cambio
+1. Seguridad y Gestion de riesgos:
+- Tiene como objetivo fijar metas y objetivos de seguridad, mitigar riesgos, cumplimiento normativo, continuidad del negocio y regulizacion legal. En palabras mas sencillas este primer dominio se enfoca  
+
+- *`Ver los activos de la empresa del mas valioso al menos`*
+- *`Ver los riesgos a los cuales pueden estar expuestos`*
+- *`mitigar riesgos quiee decir a una forma de idear estrategias para evitar un riesgo o en todo caso disminuirlas en caso que ocurra una amenaza`*
+- *`Cumplir la normativa para proteger informacion sencible y asi evitar multas o sanciones en caso de no hacerlo`*
+- *`Continuidad de una empresa se refiere a la capacidad de la empresa a seguir operando ante un incidente (este dominio analiza los riesgos y planifica como continuar en funcionamiento ante una amenaza minimizando su impacto)`*
+- *`finalmente regulizacion legal que establece normas y reglas que una empresa debe llevar a cabo al manejar informacion sencible`*
+
+
+2. Seguridad de los activos:
+- Se centra principalmente en asegurar los activos fisicos y digitale, tambien se vincula con almacenar, mantener, conservar y detruir datos. La informacion personal o informacion sencible (PII o SPII) debera ser manejado y protegido de forma segura tanto de forma digital como fisica. Saber la existencia de datos puntuales y saber quien tiene acceso a ellos es una forma de mitigar riesgos.
+3. Arquitectura y diseño de seguridad:
+- Optimiza la seguridad de los datos, garantiza que exista herramientas, sistemas y procesos efectivos para asegurar la informacion. Un concepto popularmente utilizado es la `responsabilidad compartida` haciendo que todo el personal actue activamente para reducir el riesgos de un incidente, esto se logra al tener politicas de seguridad que incentiven a reportar un error apenas visto.
+4. Seguridad de las comunicaciones y redes:
+- Protege las redes y comunicaciones inalambricas realizando lo siguiente. 
+- *`Control de acceso a la red`*.- no permite el acceso a personal no autorizado.
+- *`Seguridad inalambrica`*.- de igual forma que anterior protege la red inalambrica impidiendo que personas no autorizadas accedan a ellas.
+- *`Seguridad en las comunicaciones`*.- Protege las comunicaciones de intercepciones y modificaciones no autorizadas lo que garantiza la triada CID (confidencialidad, integridad y disponibilidad).
+- *`Gestion de incidentes de seguridad`*.- La forma en que las organizaciones responden ante un incidente de manera rapida y efectiva. 
+- Las medida que puedes abordar para una mejor seguridad es,  Contraseñas, Doble autentificacion, uso de VPN, firewalls, IDS, IPS, control de red basado en roles y segmentacion de red(divide la red en diferentes segmentos lo que limita el daño que pueda causar la amenaza).
+5. Gestion de identidades y accesos:
+- Se centra en el acceso y autorizacion para proteger datos  asegurando de que los usuarios sigan las politicas de control y el buen manejo de los activos. Es decir que se limita el acceso a ciertos empleados para evitar que pueda ingresar a datos sencibles. Se compone por 4 componentes principales:
+| Compenente | Description                |
+| :-------- | :------------------------- |
+| `Identificacion` | Un usuario verifica quien es usando un nombre de usuario, tarjeta de acceso o datos biometricos (huella, Identificacion facial, ojo) |
+| `Autentificacion` | Verifica la identidad de alguien mediante una contraseña o pin|
+| `Autorizacion` | La autorizacion se da cuando confirma su identidad y tiene acceso a ciertos datos dependiendo de su puesto en la organizacion|
+| `Responsabilidad` |  Monitoreo y registro de acciones que realizan los usuarios para verificar que los sistemas y os datos se utilizan de forma adecuada|
+
+6. Evaluacion y pruebas de seguridad:
+Se centra en realizar lo siguiente, Pruebas de control de seguridad, recopilar y analizar datos y realizar auditorias de seguridad. 
+```
+Prueba de control de seguridad: Se observa forma nuevas y mejores de mitigar amenazas, es decir examina los objetivos y metas de la organizacion como en el primer dominio y evalua si realmente se realiza esos controles para lograr el objetivo 
+```
+```
+recopilar y analizar datos: El analista suele utilizar informes de prueba y evaluaciones de seguridad para mejorar los controles o añadir nuevos como por ejemplo añadir la Doble autentificacion. 
+```
+```
+realizar auditorias de seguridad: Las auditorias pueden ser realizados de forma interna(Empleados) o externo(consultores independientes). Se realizan para hacer un examen de que tan eficientes son los controles de seguridad y para eso se realiza lo siguiente, Evaluzar vulnerabilidades, pentesting, revision y configuracion de politica, analisis de riesgos que identifica y clasifica las amenazas internas o externas. 
+``` 
+7. Operaciones de seguridad: 
+Una vez idetificado la amenaza se realiza una invetigacion y toma medidas preventivas, es decir en caso de un ataque es esecial mitigarlo y evitar que se expanda. Una vez controlada se usara herramientas para recopilar datos digitales y fisicos(Investigacion forence) de esta forma identifican 'cuando, como y por que se proodujo la falla'.
+8. Seguridad en el desarrollo de software:
+Se usa una codificaion segura
