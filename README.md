@@ -128,6 +128,7 @@ Seguridad de redes: Práctica de evitar accesos no autorizados a la infraestruct
 *`Vishing`*: 
 - Tipo de estafa por suplantación de identidad en la que se busca obtener información sensible a través de una llamada telefónica.
 
+
 ## Principios de ciberseguridad
 Un analista de seguridad debe identificar los activos (materiales y del personal) y riesgros que enfrenta una empresa. POSTERIORMENTE:
 - !Se implementa marcos(brindan un enfoque estructurado para implementar un ciclo de vida de seguridad) y controles de seguridad (son salvaguardas diseñadas para reducir riesgos de seguridad específicos) para proteger los activos y mitigar los riesgos. Tiene como OBJETIVO proteger la confidencialidad, integridad y disponibilidad de los activos de la empresa que es la triada CID (Confidencialidad, Integridad y Disponibilidad) o CIA (Confidentiality, Integrity, Availability).
@@ -171,6 +172,66 @@ Un analista de seguridad debe identificar los activos (materiales y del personal
         Tomar decisiones eticas en ciberseguridad es fundamental para proteger los activos de la empresa y garantizar la confianza de los clientes y empleados. Algunos principios eticos importantes en ciberseguridad. TOMA DE DECISIONES
         ?Principio eticos en ciberseguridad
             *
+## Herramientas de ciberseguridad
+### SIEM
+SIEM (Security Information and Event Management) Que es?. Son soluciones que te dan a conocer una vista integral y centralizada de actividades y evento de seguridad de una empresa. Su funcion es la de `Analizar, Recopilar y Correlacionar datos` de varios sistemas y dispositivos en la red para `Detectar, Investigar y responder a incidentes de seguridad`.
+#### Funciones principales
+
+| Funcion | Description                |
+| :-------- |  :------------------------- |
+| `Recopilación de Datos` | Recogen y normalizan datos de seguridad de múltiples fuentes, como firewalls, sistemas de detección de intrusos, servidores, aplicaciones, y dispositivos de red. |
+| `Correlación de Eventos` | Analizan y correlacionan eventos de diferentes fuentes para identificar patrones sospechosos o anómalos que puedan indicar una amenaza o incidente de seguridad. |
+| `Alerta y Notificación` | Generan alertas automáticas cuando se detectan eventos que coinciden con ciertos criterios predefinidos, permitiendo a los equipos de seguridad responder rápidamente.  |
+| `Monitoreo en Tiempo Real` | Proporcionan monitoreo continuo de la red y los sistemas, ofreciendo una visibilidad en tiempo real sobre el estado de seguridad de la organización.  |
+| `Análisis Forense y de Incidentes` | Permiten realizar investigaciones detalladas y análisis forense de eventos de seguridad, facilitando la identificación de la causa raíz y el alcance de los incidentes.  |
+| `Gestión de Logs` | Almacenan y gestionan grandes volúmenes de logs, facilitando su búsqueda y análisis para cumplir con requisitos de cumplimiento y auditoría.  |
+| `Informes y Cumplimiento` | Generan informes y dashboards que ayudan a las organizaciones a cumplir con regulaciones y estándares de seguridad, como GDPR, PCI DSS, HIPAA, entre otros. |
+
+#### Beneficios o razones por que implementarlas
+
+
+| Parameter |  Description                       |
+| :-------- |  :-------------------------------- |
+| `Mejora de la Detección de Amenazas` | Al correlacionar datos de múltiples fuentes, las herramientas SIEM pueden detectar amenazas que podrían pasar desapercibidas en sistemas aislados. |
+| `Respuesta Rápida a Incidentes`      | Las alertas en tiempo real y el análisis rápido permiten a los equipos de seguridad responder y mitigar incidentes de manera más eficiente. |
+| `Cumplimiento Normativo`      | Ayudan a las organizaciones a cumplir con normativas de seguridad y a demostrar el cumplimiento mediante informes detallados. |
+| `Visibilidad Centralizada`      | Proporcionan una vista única y centralizada de la postura de seguridad de toda la organización, facilitando la gestión y el monitoreo. |
+| `Análisis Proactivo`      | Permiten identificar y abordar amenazas potenciales antes de que puedan causar daño significativo. |
+
+#### Herramientas Populares
+
+| Parameter |  Description                       |
+| :-------- |  :-------------------------------- |
+| `Splunk`      | Conocido por sus capacidades de análisis de datos y búsqueda rápida en grandes volúmenes de datos.  |
+| `IBM QRada`      | Proporciona inteligencia de seguridad y análisis de comportamiento para detectar amenazas avanzadas.  |
+| `ArcSight (de Micro Focus)`      | Ofrece soluciones robustas para la gestión de eventos de seguridad y análisis de amenazas.  |
+| `LogRhythm`      | Integra SIEM con monitoreo de redes y análisis forense para una detección y respuesta integral.  |
+| `McAfee Enterprise Security Manager`      | Combina SIEM con soluciones de gestión de amenazas para ofrecer una protección integral.  |
+| `AlienVault (ahora AT&T Cybersecurity)`      |  Conocido por su enfoque en la accesibilidad y facilidad de uso, adecuado para organizaciones pequeñas y medianas. |
+| `Chronicle` | Es una herramienta nativa de la nube, esta herramienta es de google | 
+
+## Playbook o Manual de estrategias
+Es como una guía que describe las acciones a seguir en caso de que se vulnere la seguridad. Cada organización puede tener su propio manual de estrategias, adaptado a sus necesidades y procesos específicos.
+
+Son `Herramientas` que garantiza una respuesta rapida ante un incidente. Los manuales suelen contener:
+- `Pasos a seguir`: Acciones que debe tomar cada miembro del equipo de seguridad.
+- `Roles y responsabilidades`: Roles y responsabilidad de cada uno, de esta manera se aseguran que todos sepan que hacer.
+- `Herramientas y recursos`: Saber elegir la herramienta y recurso necesario ante el incidente, como software de analisis forence, herramientas de comunicacion y contactos con provedores externos.
+- `Flujos de trabajo`: Se refiere a como cada miembro deber tratar el incidente, ya sea phising, malware, ingenieria social o fuga de datos, que acciones toma cada miembro y si son las mejores para cada controlar el incidente.
+Tambien suelen contener Informacion sobre:
+- `Comunicacion`: Como notificar el incidente y a quien hacerlo, gerencia, clientes, autoridades, etc. 
+- `Documentacion`: Como documentar el incidente para fines legales y de analisis.
+- `Aprendizaje`: Aprender del incidente para prevenir un futuro incidente parecido.
+
+## Network protocol analyzers || Analizadores de protocolos de red
+
+## Linux operating system
+Linux es un Sitema Operativo SO de codigo abierto (publicamente abierto), depende de una linea de comandos como la interfaz principal. Los analistas de seguridad suelen utilizar los comandos para examinar registros.
+## Programing languages
+Los analistas de seguridad suele utilizar Phyton y SQL.
+- *`SQL (Structure Query Language)`*: Se utiliza para crear, interactuar y solicitar informacion de una base de datos.
+- *`PHYTON`*: Se suele utilizar para realizar tareas repetitivas y que consumirian mucho tiempo.
+
 
 ## Temas y habilidades basicas en ciberseguridad
 - Enfoque de los 8 Dominios de seguridad CISSP
