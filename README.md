@@ -284,3 +284,13 @@ Se centra en realizar lo siguiente, Pruebas de control de seguridad, recopilar y
 Una vez idetificado la amenaza se realiza una invetigacion y toma medidas preventivas, es decir en caso de un ataque es esecial mitigarlo y evitar que se expanda. Una vez controlada se usara herramientas para recopilar datos digitales y fisicos(Investigacion forence) de esta forma identifican 'cuando, como y por que se proodujo la falla'.
 8. Seguridad en el desarrollo de software:
 Se usa una codificaion segura
+--------------------------edit parte de marcos de sguridad y controles de seguridad----------------------------
+| Tipos de controles | Description                |
+| :-------- | :------------------------- |
+| `Cifrado` |  Protege la confidencialidad de la información sensible. Suele ser la conversion de datos de un formato legible a uno codificado, el proposito es mantener la confidencialidad de datos, como las cuentas bancarias o numero de seguridad social|
+| `autentificacion` | Verifica la identidad de los usuarios. Como ejemplo podria mencionarse a 'Iniciar sesion' donde un usuario registrado previamente ingresa sus credenciales y el sistema verifica que tiene acceso o una cuenta ligada. Tambien existe `Metodos de autentificacion avanzada(MFA)` tomando el ejemplo anterior en este aspecto obliga al usuario a confirma quien dice ser usando, verificacion facial, huella dactilar, enviando un codigo de confirmacion ligado tu cuenta a un correo, etc, Los agentes de amenaza que utilizan o se aprovechan esta verificacion es el `VISHING`(ingenieria social que se aprovecha de los errores humanos), el vishing utiliza datos biometricos a fin de obtener informacion o acceso a una ubicacion sensible.|
+| `Autorizacion` |  Controla el acceso a los recursos. Basicamente verifica si una persona tiene permiso de acceder a un recurso|
+
+- recopilar y analizar datos: El analista suele utilizar informes de prueba y evaluaciones de seguridad para mejorar los controles o añadir nuevos como por ejemplo añadir la Doble autentificacion. 
+- realizar auditorias de seguridad: Las auditorias pueden ser realizados de forma interna(Empleados) o externo(consultores independientes). Se realizan para hacer un examen de que tan eficientes son los controles de seguridad y para eso se realiza lo siguiente, Evaluzar vulnerabilidades, pentesting, revision y configuracion de politica, analisis de riesgos que identifica y clasifica las amenazas internas o externas.
+
