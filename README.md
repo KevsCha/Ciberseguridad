@@ -274,15 +274,12 @@ Se llegan a utilizar para poder organizar tareas diarias e identificar fallas de
 
 6. Evaluacion y pruebas de seguridad:
 Se centra en realizar lo siguiente, Pruebas de control de seguridad, recopilar y analizar datos y realizar auditorias de seguridad. 
-```
-Prueba de control de seguridad: Se observa forma nuevas y mejores de mitigar amenazas, es decir examina los objetivos y metas de la organizacion como en el primer dominio y evalua si realmente se realiza esos controles para lograr el objetivo 
-```
-```
-recopilar y analizar datos: El analista suele utilizar informes de prueba y evaluaciones de seguridad para mejorar los controles o añadir nuevos como por ejemplo añadir la Doble autentificacion. 
-```
-```
-realizar auditorias de seguridad: Las auditorias pueden ser realizados de forma interna(Empleados) o externo(consultores independientes). Se realizan para hacer un examen de que tan eficientes son los controles de seguridad y para eso se realiza lo siguiente, Evaluzar vulnerabilidades, pentesting, revision y configuracion de politica, analisis de riesgos que identifica y clasifica las amenazas internas o externas. 
-``` 
+
+- Prueba de control de seguridad: Se observa forma nuevas y mejores de mitigar amenazas, es decir examina los objetivos y metas de la organizacion como en el primer dominio y evalua si realmente se realiza esos controles para lograr el objetivo.
+- recopilar y analizar datos: El analista suele utilizar informes de prueba y evaluaciones de seguridad para mejorar los controles o añadir nuevos como por ejemplo añadir la Doble autentificacion. 
+- realizar auditorias de seguridad: Las auditorias pueden ser realizados de forma interna(Empleados) o externo(consultores independientes). Se realizan para hacer un examen de que tan eficientes son los controles de seguridad y para eso se realiza lo siguiente, Evaluzar vulnerabilidades, pentesting, revision y configuracion de politica, analisis de riesgos que identifica y clasifica las amenazas internas o externas.
+
+
 7. Operaciones de seguridad: 
 Una vez idetificado la amenaza se realiza una invetigacion y toma medidas preventivas, es decir en caso de un ataque es esecial mitigarlo y evitar que se expanda. Una vez controlada se usara herramientas para recopilar datos digitales y fisicos(Investigacion forence) de esta forma identifican 'cuando, como y por que se proodujo la falla'.
 8. Seguridad en el desarrollo de software:
