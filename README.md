@@ -232,6 +232,68 @@ Los analistas de seguridad suele utilizar Phyton y SQL.
 - *`SQL (Structure Query Language)`*: Se utiliza para crear, interactuar y solicitar informacion de una base de datos.
 - *`PHYTON`*: Se suele utilizar para realizar tareas repetitivas y que consumirian mucho tiempo.
 
+## Gestiona amenazas, riesgos y vulnerabilidades comunes
+Una `amenaza` es un evento o una circunstancia que puede que puede afectar a la empresa de  forma negativa, como ejemplo podriamos mencionar a la ingenieria social que se aprovecha de los errores humanos (phising por ejemplo). 
+#### Tipos de amenaza
+- Amenazas internas: cuando miembros del personal o proveedores abusan de su acceso autorizado para obtener datos que pueden perjudicar a una organización.
+
+- Amenazas persistentes avanzadas (APT): cuando agentes de amenaza mantienen el acceso no autorizado a un sistema durante un periodo prolongado de tiempo.
+##### Los `riesgos` son aquellos que pueden afectar a la triada CID (confidencionalidad, integridad y disponibiliadad) de un activo:
+#### Activo Digital
+- Números de la Seguridad Social (SSN) o números únicos de identificación nacional asignados a personas. 
+- Fechas de nacimiento.
+- Números de cuentas bancarias.
+- Direcciones postales.
+#### Activo Fisico
+- Terminales de pago.
+- Servidores.
+- Computadoras de escritorio.
+- Espacios de oficina.
+#### Estrategias habituales para gestionar el riesgo.
+- `Aceptación`: aceptar un riesgo para evitar interrumpir la continuidad del negocio.
+- `Prevención`: crear un plan para evitar el riesgo por completo.
+- `Transferencia`: transferir el riesgo a un tercero para que lo gestione.
+- `Mitigación`: disminuir el impacto de un riesgo conocido.
+##### El riesgo es la probalidad de que ocurra una amenaza como por ejemplo la falta de protocolos de seguridad las cuales se encargan de cuidar la informacion almacenada haciendo que esta no se pierda en caso de una amenaza haciendo posible su recuperacion. Los riesgos sueles clasificarse en 3 niveles, alto, medio y bajo: 
+- Una amenaza de bajo riesgo es aquella que no daña la reputacion de la empresa y no causa daños economicos.
+- Amenaza de medio riesgo son aquellas que pueden generar un costo financiero, reputacion u operaciones de la organizacion haciendo uso de informacion que no este a la vista del publico .
+- Amenaza de alto riesgo son aquellos activos que son protegidos por normas, leyes, que si llegan a ser revelados pueden dañar de manera significativa a la compañia, por ejemplo filtrar datos personales PII y  SPII
+[Riesgos de cirberseguridad de la NIST](https://www.nist.gov/itl/smallbusinesscyber/cybersecurity-basics/cybersecurity-risks)
+
+[10 riesgos de seguridad mas critico](https://owasp.org/www-project-top-ten/)
+##### La `vulnerabilidad` es aquella que puede ser aprovechada por una  amenaza, es importante señalar que `Para que exista un riesgo debe de existir una vulnerabilidad y amenaza de por medio` como ejemplo, los firewall, contraseñas debiles, las personas tambien pueden ser consideradas una vulnerabiliada ya que como mencionamos antes pueden aprovecharse del error humano (ingenieria social.
+
+Algunas vulnerabilidades podrian ser:
+- `ProxyLogon`: una vulnerabilidad preautenticada que afecta al servidor de Microsoft Exchange. Esto significa que un agente de amenaza puede completar un proceso de autenticación de usuario para implementar código malicioso desde una ubicación remota.
+
+- `ZeroLogon`: una vulnerabilidad en el protocolo de autenticación Netlogon de Microsoft. Un protocolo de autenticación es una forma de verificar la identidad de una persona. Netlogon es un servicio que garantiza la identidad de un usuario antes de permitirle el acceso a la ubicación de un sitio web.
+
+- `Log4Shell`: posibilita a los atacantes ejecutar código Java en la computadora de otra persona o filtrar información confidencial. Para ello, permite a un atacante remoto tomar el control de dispositivos conectados a Internet y ejecutar código malicioso.
+
+- `PetitPotam`: afecta al gestor de redes de área local (LAN) de nueva tecnología de Windows (NTLM). Se trata de una técnica de robo que permite a un atacante basado en LAN iniciar una solicitud de autenticación.
+
+- `Fallos de registro y supervisión de la seguridad`: capacidades de registro y supervisión insuficientes que dan lugar a que quienes perpetran un ataque aprovechen vulnerabilidades sin que la organización lo sepa.
+
+- `Falsificación de solicitudes del lado del servidor`: permite a quienes perpetran un ataque manipular una aplicación del lado del servidor para que acceda a recursos backend y los actualice. También puede permitir que los agentes de amenaza roben datos.
+
+*Ejemplo de malware*
+`Ransomware: Es una amenaza o ataque que encriptan datos de una organizacion para posteriormente pedir un pago por ello.`
+Existen tres impactos de amenzas, vulnerabilidad y riesgos
+1. Financiero.- Al momento que una organizacion sufre un ataque, las consecuencias financieras podrian ser elevadas ya que puede parar la produccion y servicios de la empresa y causar multas si activos de alto riesgos pueden ser vulnerados 
+2. Robo de identidad.- En el momento que una empresa sufre de un ataque corre el riesgo que la informacion sencible que guardaba la empresa haya sido robada, esto produce un riesgo de robo de identidad.
+3. Daño a la reputacion de una organizacion.- Si ven que una organizacion sufre vulnerabilidades los clientes pueden optar por elegir otra empresa a la cual confiarle informacion. 
+En resumen se recomienda a las organizaciones tomar medidas de seguridad adecuadas, hacer uso de protocolos para prevenir el impacto que tiene una amenaza, vulnerabilidad y riesgo.
+##### Existen varios marcos que los analistas de seguridad para poder manejar riesgo, amenazas y vulnerabilidades. Nos centraremos en `RMF (Marco de Gestion de Riesgos)` que lo ofrece el NIST
+### RMF (*curso2 modulo1 cap 3 pendiente*)
+Tener conocimientos solidos en mitigar y manejar los riesgos ayudan a destacar del resto. El RMF consta de 7 pasos.
+1. Preparar, suele ser las actividades necesarias que seran utilizadas para controlar el riesgo antes que ocurra, Monitorear el riesgo e identificar controles que puedan reducirlos 
+2. Categorizar: Sirve para desarrollar procesos y tareas de manejo de riesgos. Los profesionales de seguridad usan esos procesos y desarrollan tareas pensando en cómo la confidencialidad, integridad y disponibilidad de los sistemas e información pueden verse afectadas. Como analista de nivel inicial, deberás entender cómo seguir los procesos establecidos por tu organización para reducir los riesgos contra activos críticos, como la información privada de clientes. 
+3. Seleccionar: Se refiere a elegir, personalizar y capturar la documentación de los controles que protegen a una organización. Un ejemplo de seleccionar sería actualizar un manual de procedimientos o gestionar otra documentación que te permita a ti y al equipo abordar problemas de forma más eficiente
+4. Implementar: Tener buenos planes es esencial para minimizar el impacto de riesgos de seguridad continuos. Por ejemplo, si notas un patrón de empleados/as que constantemente necesitan restablecer sus contraseñas, implementar un cambio en los requisitos de contraseña para resolver este problema.
+5. Evaluar:  Se refiere a determinar si los controles establecidos se implementaron correctamente. La organización siempre quiere operar con la máxima eficiencia posible. Por eso, es esencial tomarse el tiempo para analizar si los protocolos, procedimientos y controles que se implementaron cumplen con las necesidades de la organización. En este paso, los/las analistas identifican posibles debilidades y determinan si las herramientas, procedimientos, controles y protocolos de la organización deben cambiarse para gestionar mejor los riesgos. 
+6. Autorizar: Significa ser responsable de los riesgos de seguridad y privacidad que pueden existir en una organización. Como analista, este paso podría implicar generar informes, desarrollar planes de acción y establecer hitos del proyecto que estén alineados con los objetivos de seguridad de tu organización.
+7. Monitorear: Significa estar al tanto de cómo operan los sistemas. Evaluar y mantener las operaciones técnicas son tareas diarias de los/las analistas. Parte de mantener un nivel bajo de riesgo para una organización es saber cómo los sistemas actuales apoyan objetivos de seguridad de la organización. Si los sistemas no satisfacen los objetivos, pueden necesitarse cambios. Aunque tú no te encargues de establecer los procedimientos, deberás asegurarte de que funcionen como deben a fin de minimizar los riesgos para la organización y sus usuarios/as.
+
 
 ## Temas y habilidades basicas en ciberseguridad
 - Enfoque de los 8 Dominios de seguridad CISSP
