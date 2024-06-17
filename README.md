@@ -346,8 +346,10 @@ Se centra en realizar lo siguiente, Pruebas de control de seguridad, recopilar y
 Una vez idetificado la amenaza se realiza una invetigacion y toma medidas preventivas, es decir en caso de un ataque es esecial mitigarlo y evitar que se expanda. Una vez controlada se usara herramientas para recopilar datos digitales y fisicos(Investigacion forence) de esta forma identifican 'cuando, como y por que se proodujo la falla'.
 8. Seguridad en el desarrollo de software:
 Se usa una codificaion segura
+
 --------------------------edit parte de marcos de sguridad y controles de seguridad----------------------------
-| Tipos de controles | Description                |
+   
+| Tipos de controles | Description      |
 | :-------- | :------------------------- |
 | `Cifrado` |  Protege la confidencialidad de la información sensible. Suele ser la conversion de datos de un formato legible a uno codificado, el proposito es mantener la confidencialidad de datos, como las cuentas bancarias o numero de seguridad social|
 | `autentificacion` | Verifica la identidad de los usuarios. Como ejemplo podria mencionarse a 'Iniciar sesion' donde un usuario registrado previamente ingresa sus credenciales y el sistema verifica que tiene acceso o una cuenta ligada. Tambien existe `Metodos de autentificacion avanzada(MFA)` tomando el ejemplo anterior en este aspecto obliga al usuario a confirma quien dice ser usando, verificacion facial, huella dactilar, enviando un codigo de confirmacion ligado tu cuenta a un correo, etc, Los agentes de amenaza que utilizan o se aprovechan esta verificacion es el `VISHING`(ingenieria social que se aprovecha de los errores humanos), el vishing utiliza datos biometricos a fin de obtener informacion o acceso a una ubicacion sensible.|
@@ -355,4 +357,101 @@ Se usa una codificaion segura
 
 - recopilar y analizar datos: El analista suele utilizar informes de prueba y evaluaciones de seguridad para mejorar los controles o añadir nuevos como por ejemplo añadir la Doble autentificacion. 
 - realizar auditorias de seguridad: Las auditorias pueden ser realizados de forma interna(Empleados) o externo(consultores independientes). Se realizan para hacer un examen de que tan eficientes son los controles de seguridad y para eso se realiza lo siguiente, Evaluzar vulnerabilidades, pentesting, revision y configuracion de politica, analisis de riesgos que identifica y clasifica las amenazas internas o externas.
+
+------------------------------------------------------------------------------------------------------------------
+
+
+## Uso de la triada CID para proteger organizaciones
+
+Es una guía que ayuda a las organizaciones a evaluar los riesgos y establecer sistemas y políticas de seguridad. Esta compuesta por 3 elementos, Confidencialidad, Integridad y Disponibilidad. Estas son usada para diseñar sistemas y politicas a fin de establecer una `postura de seguridad`(capacidad de una organizacion de gestionar la defensa a sus activos)
+
+- Confidencialidad refiere a que solo los/las usuarios/as autorizados/as pueden acceder a activos o datos específicos. Limitar el acceso es una forma de mantener la confidencialidad y la seguridad de los datos privados. 
+
+
+- Integridad implica que los datos son verificables, auténticos y confiables. Es esencial contar con protocolos para verificar la autenticidad de los datos y una manera de hacerlo es mediante la [criptografía](https://www.nist.gov/cryptography#:~:text=Cryptography%20uses%20mathematical%20techniques%20to,that%20drives%20research%20and%20innovation.), que se utiliza para transformar los datos, para que las partes no autorizadas no puedan leerlos ni manipularlos (NIST, 2022). Otro ejemplo de cómo una organización podría implementar la integridad es mediante la activación del cifrado, que es el proceso de convertir los datos de un formato legible a uno codificado
+- Disponibilidad refiere a que los datos son accesibles para aquellas personas autorizadas a usarlos. Cuando un sistema cumple tanto los principios de disponibilidad como los de confidencialidad, los datos pueden ser utilizados cuando sea necesario. En el entorno laboral, esto puede significar que la organización permite al personal que trabaja de forma remota acceder a su red interna para desempeñar sus tareas laborales. Es importante tener en cuenta que el acceso a los datos en la red interna sigue siendo limitado, según el tipo de acceso que los/las empleados/as necesiten para realizar su trabajo.
+
+### 2 marcos de seguridad del Instituto nacional de estandares y tecnologia (NIST)
+
+#### *EL marco de ciberseguridad del NIST (CSF) o cibersecurity Framework*
+
+Este marco de ciberseguridad consta de 5 partes muy importantes `Identificar, proteger, detectar, responder y recuperar` 
+1. `Identificar`: La primera función central es identificar, que está relacionada con la gestión del riesgo de ciberseguridad y su efecto en las personas y activos de una organización. 
+2. `proteger`:  Es la estrategia utilizada para proteger a una organización mediante la implementación de políticas, procedimientos, capacitaciones y herramientas que ayudan a mitigar las amenazas de ciberseguridad. Por ejemplo, como analista de seguridad, tú y tu equipo podrían enfrentrar amenazas y ataques nuevos y desconocidos. Por esta razón, estudiar datos históricos y mejorar las políticas y procedimientos es esencial
+3. `detectar`: Es identificar posibles incidentes de seguridad y mejorar las capacidades de monitoreo para aumentar la velocidad y eficiencia de las detecciones. Por ejemplo, como analista, te pueden pedir que revises la configuración de una herramienta nueva para verificar que identifique riesgos bajos, medios o 
+4. `responder`: Es tomar las medidas adecuadas para contener, neutralizar y analizar los incidentes de seguridad, e implementar mejoras en el proceso de seguridad. Como analista, podrías estar trabando con un equipo para recopilar y organizar datos a fin de documentar un incidente y sugerir mejoras en los procesos para evitar que se repita.
+5. `recuperar`:Es restaurar la operación normal de los sistemas afectados. Por ejemplo, como analista de seguridad de nivel inicial, podrías trabajar con tu equipo para restaurar los sistemas, datos y activos, como archivos financieros o legales afectados por un incidente como una falla de seguridad.
+
+### Principios de seguridad del OWASP (Open web application Security Project)
+- `Minimizar el area de superficie del ataque`: Se refiere a toda vulnerabilidad potencial que un agente de amenaza podría aprovechar, como vectores de ataque, que son vías de acceso que los atacantes utilizan para penetrar las defensas de seguridad. Para minimizar la superficie de ataque y evitar incidentes de este tipo de vectores, los equipos pueden desactivar funciones del software, restringir quién puede acceder a ciertos activos o establecer requisitos de contraseña más complejos.
+- `Principal privilegio Minimo` significa que los usuarios tengan el menor nivel de acceso necesario para realizar sus tareas diarias. La razón principal para limitar el acceso a la información y los recursos de la organización es reducir el daño que podría causar una violación de seguridad
+- `Defensa en profundidad` significa que una organización debe tener varios controles de seguridad que aborden los riesgos y amenazas de distintas maneras. Un ejemplo de control de seguridad es la autenticación de múltiples factores (MFA), que requiere tomar un paso más allá de solo ingresar el nombre de usuario y contraseña para acceder a una aplicación. Otros controles son firewalls, sistemas de detección de intrusiones y configuraciones de permisos que pueden usarse para crear varios puntos de defensa que un agente de amenaza debe pasar para comprometer a una organización
+- `Separación de funciones` puede usarse para evitar que la gente lleve a cabo actividades fraudulentas o ilegales. Este principio dicta que nadie debe recibir tantos privilegios que pueda abusar del sistema.
+- `Simplificar la seguridad` al implementar controles de seguridad, deben evitarse soluciones innecesariamente complejas porque pueden ser difíciles de gestionar.
+- `Corregir correctamente los problemas de seguridad` es importante corregir cualquier vulnerabilidad identificada y efectuar pruebas para asegurar que las reparaciones sean exitosas.
+#### Otras cuatro principios de OWASP
+- `Establecer configuraciones seguras por defecto`
+Este principio indica que el estado de seguridad óptimo de una aplicación también debe ser su estado predeterminado para los/las usuarios/as. O sea, debería requerirse un esfuerzo adicional para hacer que la aplicación sea insegura. 
+- `Fallar de forma segura`
+Fallar de forma segura significa que, cuando un control falla o se detiene, debe hacerlo restableciéndose automáticamente a su opción más segura. Por ejemplo, si un cortafuegos (firewall) falla, simplemente, debería cerrar todas las conexiones y bloquear las nuevas, en lugar de comenzar a aceptar todo.
+- `No confiar en los servicios`
+Muchas organizaciones trabajan con firmas asociadas o proveedoras de servicios. Estas suelen tener políticas de seguridad diferentes a las de la empresa. Por lo tanto, la compañía no debería dar por sentado que los sistemas de estas firmas sean seguros. Por ejemplo, si una aerolínea terceriza a una empresa proveedora el seguimiento de los puntos de recompensa, antes de compartir esa información con sus clientes, debería asegurarse de que los datos obtenidos y el saldo sean precisos.
+- `Evitar la seguridad por oscuridad`
+La seguridad de los sistemas clave no debe depender de mantener los detalles ocultos. Analiza el siguiente ejemplo de OWASP (2016):
+
+La seguridad de una aplicación no debe depender de mantener el código fuente en secreto, sino que su seguridad tiene que basarse en muchos otros factores, como las políticas de contraseñas razonables, la defensa en profundidad, los límites de transacciones comerciales, una sólida arquitectura de red, y los controles de fraude y auditoría.
+
+## Como planificar una auditoria.
+
+Los marcos, controles, principios y cumplimiento normativo, todo funcionamiento es posible gracias a la auditorias de seguridad, existen dos tipos de auditoiras, las interenas y las externas. Centremonos en la internas, ya que son las que mayormente usan los analistas de seguridad de nivel inicial. 
+
+### Auditoria interna
+
+La meta de una auditoría es garantizar que las prácticas de tecnología de la información (TI) de una organización cumplan con los estándares de la industria y de la propia organización. El objetivo es identificar y abordar las áreas que requieren mejoras y desarrollo. Las auditorías proporcionan dirección y claridad al identificar las fallas actuales y desarrollar un plan para corregirlas. 
+
+Las auditorias internas de seguridad suelen ser utiles para mejorar la postura de seguridad de una organizacion y evitar multas por agencias reguladoras que controlan el cumplimiento normativo. Se `identifia el riesgo organizacional, evalua los controles y corrige problemas de cumplimiento` tambien es necesario mencionar algunos de sus componentes comunes como  *`definir el alcance y los objetivos de la auditoría, evaluar el riesgo de los activos de la organización, evaluar los controles, evaluar el cumplimiento y comunicar los resultados a las partes interesadas`*
+
+- `Definir el alcance y los objetivos`: El *ALCANCE* implica evaluar los permisos del usuario, identificar los controles, políticas y procedimientos actuales y tener en cuenta la tecnología utilizada actualmente por la organización.  Los objetivos señalados incluyen implementar funciones centrales de los marcos, como el CSF del NIST, definir políticas y procedimientos para garantizar el cumplimiento normativo, y fortalecer los controles del sistema
+- `Evaluar el riesgo` que se centra en identificar amenazas, riesgos, y vulnerabilidades potenciales. Esto ayuda a las organizaciones a decidir qué medidas de seguridad implementar y monitorear para proteger sus activos. Al igual que definir el alcance y los objetivos, suelen evaluar el riesgo los/las gerentes u otras partes interesadas. Pero se te puede pedir que analices los detalles de la evaluación del riesgo para ver qué tipos de controles y normativa de cumplimiento se necesita tener para mejorar la postura de seguridad organizacional
+
+Antes de continuar con los elementos restantes y despues de haber realizado estas 2 que mencionamos, debes realizarte las siguientes preguntas, ¿Qué se quiere lograr con la auditoría? ¿Qué activos están más en riesgo? ¿Son suficientes los controles actuales para proteger esos activos? Si no lo son, ¿qué controles y normativa de cumplimiento se deben implementar?. Con estas preguntas podras continuar con los siguientes elementos para planificar la auditoira.
+
+- `Evaluar controles` implica revisar los activos de una organización y luego evaluar los posibles riesgos para esos activos a fin de garantizar que los controles internos sean efectivos. Para lograrlo, los/las analistas de nivel inicial podrían clasificar los controles en las siguientes categorías. Controles administrativos, controles técnicos y controles físicos. 
+
+| Parameter |  Description                       |
+| :-------- |  :-------------------------------- |
+| `Controles administrativos` | Son políticas y procedimientos que definen cómo una organización gestiona los datos, como la implementación de las políticas de contraseñas. |
+| `Controles técnicos` |  son soluciones de hardware y software para proteger los activos, como usar sistemas de detección de intrusiones (IDS) y cifrado. |
+| `Controles físicos` | son medidas implementadas para evitar el acceso físico a los activos protegidos, como cámaras de vigilancia y cerraduras |
+
+- `Determinar si la organización sigue o no el cumplimiento normativo necesaria` el cumplimiento normativo se refiere a leyes que la organización debe seguir para proteger los datos privados.
+- `Comunicacion` Tras completar la auditoría interna, deben notificarse los resultados y recomendaciones a las partes interesadas. En general, este tipo de comunicación resume el `alcance y los objetivos de la auditoría. Enumera los riesgos existentes e indica con qué velocidad deben abordarse, identifica el cumplimiento normativo y da recomendaciones para mejorar la postura de seguridad`.
+
+#### Factores que determinan las auditorias 
+- Tipo de industria
+- Tamaño de la organización
+- Vínculos con las regulaciones gubernamentales 
+- Ubicación geográfica de la empresa
+- Decisión comercial de regirse por determinado cumplimiento normativo  
+
+#### Lista de Control de la auditoria
+La auditoria deberia tener:
+
+| Parameter | Description |
+|:---------|:-----------|
+| `Identifica el ámbito de la auditoría` | Enumerar los activos que se evaluarán, por ejemplo, si los cortafuegos (firewalls) están bien configurados, si la información personal de identificación (PII) es segura, si los activos físicos están bloqueados, etc..   |
+| | Especificar de qué manera la auditoría ayudará a la organización a alcanzar sus objetivos. |
+|| Indicar la frecuencia con la que debería realizarse. |
+|| Incluir una evaluación de las políticas, protocolos y procedimientos de la organización para asegurar que funcionen según lo previsto y que el personal los esté poniendo en práctica.  |
+| `Completa una evaluación de riesgos`| Una evaluación de riesgos se utiliza para analizar los riesgos organizacionales identificados, relacionados con el presupuesto, los controles, los procesos internos y los estándares externos (por ejemplo, regulaciones). |
+| `Realiza una auditoría` | Al realizar una auditoría interna, evaluarás la seguridad de los activos identificados que se mencionan en el alcance de la auditoría. |
+| `Crea un plan de mitigación` | Un plan de mitigación es una estrategia implementada para reducir el nivel de riesgo y los costos potenciales, sanciones u otros problemas que puedan perjudicar la postura de seguridad de la organización.  |
+| `Comunica los resultados a las partes interesadas` | El resultado final de este proceso es proporcionar un informe detallado de los hallazgos, las mejoras sugeridas necesarias para reducir el nivel de riesgo de la organización, así como las normas y los estándares de cumplimiento que la empresa debe cumplir.|
+
+#### Recursos para profundizar sobre las auditorias:
+[Guia de procedimiento de seguridad informatica](https://r.search.yahoo.com/_ylt=AwrEbpY_oR5mNlIMxgmr9Qt.;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1713312191/RO=10/RU=https%3a%2f%2fwww.gsa.gov%2fsystem%2ffiles%2fAudit-and-Accountability-%2528AU%2529-%255BCIO-IT-Security-01-08-Rev-7%255D-02-21-2023.pdf/RK=2/RS=o_FzoakaM_4FD3m6eM4LWqdOg5w-)
+
+[Recursos de evaluacion y auditoria](https://www.nist.gov/cyberframework/assessment-auditing-resources)
+
+[Plan de recuperacion de desastres informaticos](https://www.ready.gov/business/emergency-plans/recovery-plan)
 
