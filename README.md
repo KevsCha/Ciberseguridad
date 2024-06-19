@@ -3,23 +3,35 @@
 ### A
 `Activo`: 
 - Elemento percibido como valioso para una organización.
+
 `Agente de amenaza`: 
 - Persona o grupo de personas que representa una amenaza intencional para computadoras, aplicaciones o redes.
+
 `Amenaza`: 
 - Cualquier circunstancia o evento que pueda afectar los activos de manera negativa.
+  
 `Amenaza interna`: 
 - Riesgo a la seguridad producido por una persona que pertenece o perteneció a una empresa o tiene una relación directa o de confianza con ella.
+  
 *`Analizador de protocolos de red (rastreador de paquetes)`*:
 - Herramienta diseñada para capturar y analizar el tráfico de datos dentro de una red.
 Arquitectura de seguridad: Diseño de seguridad compuesto por múltiples herramientas y procesos, que se utiliza para proteger a una organización de los riesgos y amenazas externas.
 Ataque a la cadena de suministro: Ataque que se dirige a sistemas y aplicaciones de empresas desarrolladoras y proveedoras de hardware y/o software para localizar una vulnerabilidad en la que se pueda implementar malware.
+
 Ataque criptográfico: Ataque que afecta las formas seguras de comunicación protegidas por un sistema criptográfico.
+
 Ataque de “agujero de agua” (watering hole): Tipo de ataque en el que un/a agente de amenaza compromete a un sitio web visitado con frecuencia por un grupo específico de usuarios/as.
+
 Ataque de contraseña: Intento de acceder a dispositivos, sistemas, redes o datos protegidos con una contraseña.
+
 Ataque de suplantación de identidad: (Consultar Phishing).
+
 Ataque de suplantación de identidad en redes sociales (Phishing en redes sociales): Tipo de ataque en el que el agente de amenaza contacta a la víctima en alguna red social, con el fin de robar información personal o tomar el control de la cuenta.
+
 Ataque físico: Incidente de seguridad que afecta a los entornos digitales y físicos en donde se implementa.
+
 Autenticación: Proceso de verificar la identidad de una persona.
+
 ### B
 *`Base de datos`*: 
 - Colección organizada de información o datos estructurados.
