@@ -463,6 +463,9 @@ La auditoria deberia tener:
 #### Recursos para profundizar sobre las auditorias:
 [Guia de procedimiento de seguridad informatica](https://r.search.yahoo.com/_ylt=AwrEbpY_oR5mNlIMxgmr9Qt.;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1713312191/RO=10/RU=https%3a%2f%2fwww.gsa.gov%2fsystem%2ffiles%2fAudit-and-Accountability-%2528AU%2529-%255BCIO-IT-Security-01-08-Rev-7%255D-02-21-2023.pdf/RK=2/RS=o_FzoakaM_4FD3m6eM4LWqdOg5w-)
 
+[Recursos de evaluacion y auditoria](https://www.nist.gov/cyberframework/assessment-auditing-resources)
+
+[Plan de recuperacion de desastres informaticos](https://www.ready.gov/business/emergency-plans/recovery-plan)
 
 ## Registros  y herramientas SIEM
 
@@ -491,7 +494,4 @@ Cada herramienta SIEM debe ser configurada para que pueda analizar los registros
 ### Paneles SIEM
 
 
-[Recursos de evaluacion y auditoria](https://www.nist.gov/cyberframework/assessment-auditing-resources)
-
-[Plan de recuperacion de desastres informaticos](https://www.ready.gov/business/emergency-plans/recovery-plan)
 
