@@ -463,6 +463,34 @@ La auditoria deberia tener:
 #### Recursos para profundizar sobre las auditorias:
 [Guia de procedimiento de seguridad informatica](https://r.search.yahoo.com/_ylt=AwrEbpY_oR5mNlIMxgmr9Qt.;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1713312191/RO=10/RU=https%3a%2f%2fwww.gsa.gov%2fsystem%2ffiles%2fAudit-and-Accountability-%2528AU%2529-%255BCIO-IT-Security-01-08-Rev-7%255D-02-21-2023.pdf/RK=2/RS=o_FzoakaM_4FD3m6eM4LWqdOg5w-)
 
+
+## Registros  y herramientas SIEM
+
+**Resgistros  o logs** son archivos o bases de datos donde se almacena informacion de lo que ocurre en el sistema, app, entorno, etc, Estos registros son esenciales para monitorear, analizar y responder a incidentes de seguridad, los analistas suelen recurrir a estos registros para analizar o monitorear lo ocurrido.
+
+Existen tres tipos comunes de registros:
+
+- `Resgistros de firewall`: 
+    
+    Documenta conneciones entrantes y salientes o incluso las que se intentan hacer, esto incluye solicitudes salientes a internet desde la red local (dentro de la red) y solicitudes entrantes a la red local (desde internet)
+- `Resgistros de red`: 
+    
+    Documenta las conexiones de red, es un registros de todos los dispositivos y computadoras que ingresan y salen de la red, incluye la direccion IP, el nombre del dispositivo, la hora de entrada y salida, el tipo de dispositivo, el sistema operativo, el usuario, etc.
+    
+    Tambien registra las conexiones entre dispositivos y servicios en la red, como la   impresora, el servidor, el router, etc.
+- `Registros de servidor`: 
+
+    Es un registro de eventos relacionados con servicios como paginas web, bases de datos, servidores de correo, servidores de archivos, etc. Incluyen solicitude s de inicio de sesion, solicitudes de acceso a archivos, solicitudes de acceso a bases de datos, solicitudes de acceso a paginas web, solicitudes de acceso a correos, nombre de usuario, etc.
+
+Mediante el monitoreo se pueden identificar vulnerabilidades y potenciales fugas de datos, comprender como funciona los registros es fundamental por que las herramientas SIEM se basan en ellos para monitorear y detectar amenazas y ataques.
+
+Con estos conceptos claros, **conocer el manejo de los registros es escencial para poder usar las herramientas SIEM**, que son las que se encargan de monitorear y analizar los registros de una red, servidor o firewall para detectar amenazas y ataques.
+
+Cada herramienta SIEM debe ser configurada para que pueda analizar los registros de la red, servidor o firewall, y para que pueda detectar amenazas y ataques, por lo que es importante conocer como funcionan los registros y como se pueden analizar para detectar amenazas y ataques.
+
+### Paneles SIEM
+
+
 [Recursos de evaluacion y auditoria](https://www.nist.gov/cyberframework/assessment-auditing-resources)
 
 [Plan de recuperacion de desastres informaticos](https://www.ready.gov/business/emergency-plans/recovery-plan)
