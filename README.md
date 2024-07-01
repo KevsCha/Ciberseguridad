@@ -491,7 +491,137 @@ Con estos conceptos claros, **conocer el manejo de los registros es escencial pa
 
 Cada herramienta SIEM debe ser configurada para que pueda analizar los registros de la red, servidor o firewall, y para que pueda detectar amenazas y ataques, por lo que es importante conocer como funcionan los registros y como se pueden analizar para detectar amenazas y ataques.
 
-### Paneles SIEM
+### Usa herramientas SIEM para proteger a las organizaciones
+
+- **Splunk**
+   
+    Splunk ofrece diferentes opciones de herramientas SIEM: Splunk® Enterprise y Splunk® Cloud. Ambas te permiten revisar los datos de una organización en paneles (dashboards). Esto ayuda a las y los profesionales de seguridad a gestionar la infraestructura interna de una organización mediante la recopilación, búsqueda, monitoreo y análisis de datos de registro de múltiples fuentes, y a observar así la totalidad de las operaciones diarias de una organización. 
+
+    Revisa los siguientes paneles de Splunk y sus propósitos:
+
+    `Panel de postura de seguridad`:
+    
+    El panel de postura de seguridad está diseñado para centros de operaciones de seguridad (SOC). Muestra los acontecimientos y tendencias destacados de una organización en cuanto a seguridad, durante las últimas 24 horas, y permite a las/los profesionales determinar si la infraestructura y las políticas de seguridad funcionan según lo diseñado. Las/los analistas de seguridad pueden usar este panel para monitorear e investigar amenazas potenciales en tiempo real, como una actividad de red sospechosa cuyo origen es una dirección IP específica.
+
+    `Panel de resumen ejecutivo`:
+    
+    El panel de resumen ejecutivo analiza y monitorea la salud general de la organización a lo largo del tiempo. Esto ayuda a los equipos de seguridad a mejorar las medidas que reducen el riesgo. Las/los analistas de seguridad podrían usar este panel para proporcionar información de alto nivel a las partes interesadas, como generar un resumen de incidentes y tendencias de seguridad durante un periodo de tiempo determinado.
+
+    `Panel de revisión de incidentes`:
+    
+    El panel de revisión de incidentes permite a las/los analistas identificar patrones sospechosos que pueden ocurrir en caso de un incidente. Además, destaca elementos de alto riesgo que necesitan una revisión inmediata por parte de un/a analista. Este panel puede ser muy útil porque proporciona una cronología visual de los eventos que condujeron a un incidente.
+
+    `Panel de análisis de riesgos`
+    
+    El panel de análisis de riesgos ayuda a las/los analistas a identificar el riesgo para cada objeto de riesgo (por ejemplo, un usuario específico, una computadora o una dirección IP). Muestra cambios en la actividad o el comportamiento en relación con el riesgo, como un/a usuario/a que inicia sesión fuera de las horas de trabajo normales o un tráfico de red inusualmente alto desde una computadora específica. Un/a analista de seguridad podría usar este panel para analizar el impacto potencial de las vulnerabilidades en activos críticos, lo cual ayuda a priorizar sus esfuerzos de mitigación de riesgos.
+- **Chronicle**
+
+    Chronicle es una herramienta SIEM nativa de la nube de Google que retiene, analiza y busca datos de registro para identificar posibles amenazas, riesgos y vulnerabilidades de seguridad. Chronicle te permite recopilar y analizar datos de registro de acuerdo con: 
+
+    * un activo específico
+
+    * un nombre de dominio
+
+    * un usuario
+
+    * una dirección IP
+
+    Chronicle proporciona múltiples paneles que ayudan a las/los analistas a monitorear los registros de una organización, crear filtros y alertas y rastrear nombres de dominio sospechosos. 
+
+    Revisa los siguientes paneles de Chronicle y sus propósitos:
+
+    `Panel de información empresarial (Enterprise Insights)`
+
+    El panel de información empresarial muestra las alertas recientes. Identifica nombres de dominio sospechosos en los registros, conocidos como indicadores de compromiso (IOC), y cada resultado se etiqueta con una puntuación de confianza para indicar la probabilidad de una amenaza. También proporciona un nivel de gravedad, que indica la importancia de cada amenaza para la organización. Un/a analista de seguridad podría usar este panel para monitorear los intentos de inicio de sesión o acceso a datos relacionados con un activo crítico, como una aplicación o sistema, desde ubicaciones o dispositivos inusuales.
+
+    `Panel de transferencia y estado de los datos`
+
+    El panel de transferencia y estado de los datos muestra el número de registros de eventos, fuentes de registro y tasas de éxito de los datos que se procesan en Chronicle. Un/a analista de seguridad podría usar este panel para asegurarse de que los orígenes de los registros estén configurados correctamente y que se reciban sin errores. Esto garantiza que el equipo de seguridad tenga acceso a los datos que se necesitan, al abordar los problemas relacionados con el registro.
+
+    `El panel de coincidencias de IOC`
+    
+    El panel de coincidencias de IOC indica las principales amenazas, riesgos y vulnerabilidades para la organización. Las y los profesionales de seguridad utilizan este panel para observar los nombres de dominio, las direcciones IP y los IOC de los dispositivos a lo largo del tiempo, con el fin de identificar tendencias. Esta información les permite hacer foco en las principales amenazas. Por ejemplo, las/los analistas de seguridad pueden usar este panel para buscar actividad adicional asociada con una alerta, como un inicio de sesión de usuario sospechoso desde una ubicación geográfica inusual.
+
+    `Panel principal`
+    
+    El panel principal muestra un resumen de alto nivel de la información relacionada con la ingestión de datos, las alertas y la actividad de eventos de la organización, a lo largo del tiempo. Las y los profesionales de seguridad pueden usar este panel para acceder a una cronología de eventos de seguridad, como un pico en intentos de inicio de sesión fallidos, para identificar tendencias de amenazas en fuentes de registro, dispositivos, direcciones IP y ubicaciones físicas.
+
+    `Panel de detección de reglas`
+    
+    El panel de detección de reglas proporciona estadísticas de incidentes con el mayor índice de ocurrencias, severidades y detecciones a lo largo del tiempo. Las/los analistas de seguridad pueden usar este panel para acceder a una lista de todas las alertas activadas por una regla de detección específica, como una regla diseñada para alertar cada vez que un/a usuario/a abre un archivo adjunto malicioso conocido, desde un correo electrónico. Las/los analistas luego usan esas estadísticas para ayudar a gestionar incidentes recurrentes y establecer tácticas de mitigación, que permitan reducir el nivel de riesgo de una organización.
+
+    `Panel de descripción general del acceso de usuarios`
+    
+    El panel de descripción general del acceso de usuarios proporciona información acerca del comportamiento de acceso de usuarios/as en toda la organización. Las/los analistas de seguridad pueden usar este panel para acceder a una lista de todos los eventos de inicio de sesión de usuarios para identificar las actividades inusuales, como el inicio de sesión de un mismo usuario desde varias ubicaciones al mismo tiempo. Esta información se usa para ayudar a mitigar las amenazas, los riesgos y las vulnerabilidades de las cuentas de usuario y las aplicaciones de la organización.
+
+#### Herramientas SOAR
+
+Las herramientas SOAR (Security Orchestration, Automation, and Response) son soluciones de software diseñadas para ayudar a las organizaciones a gestionar y responder a incidentes de seguridad de manera más eficiente y eficaz. Estas herramientas combinan capacidades de orquestación, automatización y respuesta en un solo sistema, permitiendo a los equipos de seguridad mejorar su tiempo de respuesta y reducir la carga de trabajo manual.
+
+`Orquestación (Orchestration)`:
+
+- Integración: Las herramientas SOAR se integran con una amplia variedad de sistemas y herramientas de seguridad, como SIEM (Security Information and Event Management), firewalls, antivirus, EDR (Endpoint Detection and Response), sistemas de gestión de vulnerabilidades y más.
+
+- Coordinación: Facilitan la coordinación entre diferentes herramientas y procesos de seguridad, permitiendo que trabajen de manera conjunta y eficiente.
+
+`Automatización (Automation)`:
+
+- Automatización de Tareas: Automatizan tareas repetitivas y manuales, como la recopilación de datos, el análisis de incidentes, la clasificación de alertas y la ejecución de respuestas predefinidas.
+
+- Playbooks Automatizados: Implementan playbooks (libros de jugadas) que definen pasos automatizados para responder a incidentes específicos. Esto incluye el aislamiento de dispositivos comprometidos, el bloqueo de direcciones IP maliciosas y la eliminación de malware.
+
+`Respuesta (Response)`:
+
+- Respuesta Rápida: Permiten una respuesta rápida y coherente a los incidentes de seguridad mediante flujos de trabajo predefinidos y automatizados.
+- Colaboración: Facilitan la colaboración entre los miembros del equipo de seguridad y otras partes interesadas mediante la centralización de información y la comunicación estructurada durante un incidente.
+- Documentación: Registran todas las acciones y decisiones tomadas durante un incidente, lo que ayuda en el análisis posterior y en la mejora continua de los procesos de respuesta.
+
+### Manuales de estrategias para responder a incidentes(Playbook)
+
+Es un conjunto de procedimientos detallados y documentados que guían a los equipos de seguridad en la detección, respuesta y mitigación de incidentes de seguridad. Los playbooks son esenciales para asegurar una respuesta consistente y eficiente a diversas amenazas cibernéticas, suelen variar es decir que dependiendo al tipo de incidente aplicars el procedimiento de un determinado playbook 
+
+Los manuales van acompañados de una estrategia, que describe las expectativas de los miembros del equipo, a quienes se les asigna una tarea. Algunos también enumeran a las personas responsables. Las expectativas descritas van acompañadas de un plan, que indica cómo se debe completar la tarea específica descrita en el manual.
+
+Los manuales de estrategias deben tratarse como documentos vivos, o sea, los miembros del equipo de seguridad los actualizan con frecuencia, para abordar los cambios de la industria y las nuevas amenazas. Generalmente, se administran de forma colaborativa, porque los miembros del equipo de seguridad tienen diferentes niveles de experiencia.
+
+Los manuales de respuesta a incidentes y vulnerabilidades son muy utilizados por las y los profesionales de ciberseguridad de nivel inicial. Se desarrollan en función de los objetivos descritos en el plan de continuidad empresarial. Estos dos manuales contienen una serie de pasos a seguir para responder a un incidente, seguir estos pasos te garantiza que te adhieras a los estandares y protocolos legales, tambien garantiza que se manejen en un plazo determinado.
+
+### Tipos de manuales
+
+Los manuales comunmente suelen cubrir vulnerabilidades e incidentes específicos como ransomware(secuestro de datos), vishing, compromiso de  correo electrónico empresarial (BEC). No son los unicos en su tipo, cada organización tienen sus propias herramientas, metodologias, protocolos y procedimientos de los cuales mucho depende de las leyes en las cuales se rige el pais donde se encuentra la organización, es decir que los incidentes seran mitigados con su respectivo manual dependiendo de donde se origino el incidente y los datos afectados.
+
+Fases del manual de estrategias para responder a un incidente:
+
+- Preparacion: 
+
+    Antes de que se produzcan incidentes, mitiga los impactos potenciales en la organización documentando, estableciendo planes de dotación de personal y educando a los usuarios.
+
+- Deteccion y analisis:
+
+    Detecta y analiza eventos mediante la implementación de procesos definidos y la tecnología adecuada.
+
+- Contencion:
+
+    Previene daños mayores y reduce el impacto inmediato de los incidentes.
+
+- Erradicacion y recuperacion:
+
+    Elimina completamente los artefactos del incidente para que una organización pueda volver a operar con normalidad.
+
+- Actividad posterior al incidente:
+
+    Documenta el incidente, informa a la dirección de la organización y aplica las lecciones aprendidas.
+
+- Coordinacion:
+
+    Notifica los incidentes y comparte información durante todo el proceso de respuesta, de acuerdo con los estándares establecidos.
+
+
+*`Nota: Estos 2 manuales no son los unicos, existen diversos manuales de estrategias y herramientas. Si trabajas como profesional de la ciberseguridad, puedes ver mas en:`*
+
+- [Reino Unido, National Cyber Security Center (NCSC) — manejo de incidentes](https://www.ncsc.gov.uk/section/about-ncsc/incident-management)
+- [Gobierno de Canadá — Manual de prácticas sobre Ransomware](https://www.cyber.gc.ca/en/guidance/ransomware-playbook-itsm00099)
+- [Gobierno de Escocia — Plantillas de manuales de estrategia](https://www.gov.scot/publications/cyber-resilience-incident-management/)
 
 
 
