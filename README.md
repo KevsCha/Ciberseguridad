@@ -694,6 +694,7 @@ Fases del manual de estrategias para responder a un incidente:
 - [Gobierno de Escocia — Plantillas de manuales de estrategia](https://www.gov.scot/publications/cyber-resilience-incident-management/)
 
 
+
 ## Conexion y proteccion de Redes
 
 Se vera lo siguiente:
@@ -742,6 +743,7 @@ Cada equipo tiene una dirección MAC y una dirección IP únicas, las cuales lo 
 Un switch reenvía paquetes entre los dispositivos conectados directamente a él. Mantiene una tabla de direcciones de control de acceso al medio (MAC), que asocia las direcciones MAC de los dispositivos en la red con los números de puerto en el switch, y reenvía los paquetes de datos entrantes en función de la dirección MAC de destino. Los switches forman parte de la capa de enlace de datos en el modelo TCP/IP.
 
 `Enrutadores (routers)`: Los enrutadores (routers) se encuentran entre las redes y el tráfico directo, según la dirección IP de la red de destino. En el modelo TCP/IP, forman parte de la capa de red. La dirección IP de la red de destino se encuentra en el encabezado IP. El router lee la información del encabezado y reenvía el paquete al siguiente router que aparece en la ruta y así sucesivamente hasta que el paquete llega a la red de destino. Los routers también pueden incluir una función de firewall, que permite o bloquea el tráfico entrante de acuerdo a la información que se transmite. Esto evita que el tráfico malicioso ingrese en la red privada.
+
 #### Módems y puntos de acceso inalámbricos
 `Módems`: Los módems suelen interactuar con un proveedor de servicios de Internet (ISP, por sus siglas en inglés). Los ISP proporcionan conectividad a Internet a través de líneas telefónicas o cables coaxiales. Los módems reciben transmisiones de Internet y las traducen en señales digitales que pueden ser entendidas por los dispositivos en la red. Por lo general, los módems se conectan a un router que toma las transmisiones decodificadas y las envía a la red local.
 
@@ -762,5 +764,137 @@ Son mapas topográficos que muestran los dispositivos en la red y cómo se conec
 
 En el modelo cliente-servidor, el cliente solicita información y servicios del servidor, y el servidor realiza esas solicitudes para los clientes. Los dispositivos de red incluyen enrutadores (routers), estaciones de trabajo, servidores, hubs, switches y módems. Las/los analistas de seguridad utilizan los diagramas de red para visualizar la arquitectura de la red.
 
+[Mas info sobre redes](https://cloud.google.com/)
 
+### Comunicacion en la Red
+
+### TCP/IP
+
+TCP es un protocolo de comunicacion que permite establecer la conexion entre 2 dispositivos y transmitir datos. El protocolo incluye instrucciones para organizar datos y enviarlos por la red. También conecta dos dispositivos y garantiza que los paquetes lleguen a su destino
+    
+IP significa protocolo de internet el IP son estándares para enrutar y direccionar paquetes entre dispositivos en una red. La parte IP incluye la dirección IP, que es la dirección de cada red privada.
+
+*`Nota: entro del sistema operativo de un dispositivo de red, un puerto es una ubicación de software que organiza el envío y recepción de datos entre dispositivos. Los puertos dividen el tráfico de red en segmentos según el servicio que darán. Las computadoras que envían y reciben estos segmentos los priorizan y procesan según su número de puerto.`*
+
+#### Cuatro capas del modelo TCP/IP
+
+ <img align="center" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/bbjqsGvUQQ-f2c0qpcamKw_a4e9fe0ca6994989beedbdabee86def1_H9jj1YSsSDKlU8c8qzOgsQ_89f77799b50040b08911a8de1012e2f1_CS_R-210_S33G011-edited.png?expiry=1720051200000&hmac=O4ZzbwDiHh5AkbhPnLUbDsPjEFpXG833dMfzm9Zlm4s"  width="600"/>
+
+- `Capa de acceso a internet`:  a veces llamada capa de enlace de datos, organiza el envío y la recepción de paquetes de datos dentro de una sola red. Esta capa corresponde al hardware físico involucrado en la transmisión de red. Los hubs, módems, cables y cableado se consideran parte de esta capa. El protocolo de resolución de direcciones (ARP, por sus siglas en inglés) forma parte de la capa de acceso a la red. El ARP ayuda a la IP a dirigir paquetes de datos al mapear direcciones IP a direcciones MAC en la misma red física.
+- `Capa de internet`: es responsable de garantizar la entrega al host de destino, que potencialmente puede residir en una red diferente. La capa de Internet determina qué protocolo es el encargado de entregar los paquetes de datos. Estos son algunos de los protocolos que actuan en esta capa.
+        
+    - Protocolo de Internet (IP): Envía los paquetes de datos al destino correcto y se basa en el protocolo de control de transmisión/protocolo de datagramas de usuario (TCP/UDP) para entregarlos al servicio correspondiente. Los paquetes de IP posibilitan la comunicación entre dos redes, ya que se enrutan desde la red de origen hasta la de destino. El IP retransmite cualquier dato que se haya perdido o dañado.
+
+    - Protocolo de mensajes de control de Internet (ICMP): Comparte información de errores y actualizaciones de estado de los paquetes de datos. Resulta útil para detectar y solucionar errores de red y, además, informa sobre paquetes que fueron descartados o desaparecieron durante el tránsito, problemas de conectividad de red y paquetes redirigidos a otros enrutadores.
+- `Capa de transporte`: responsable de entregar datos de manera confiable entre dos sistemas o redes. El protocolo de control de transmisión (TCP) y el de datagramas de usuario (UDP) son los dos protocolos de transporte que se producen en esta capa. 
+
+    - `Protocolo de control de transmisión (TCP)`: El TCP garantiza que los datos se transmitan de forma segura al servicio de destino. Contiene el número de puerto del servicio de destino previsto, que reside en el encabezado TCP de un paquete TCP/IP.
+    - `Protocolo de datagramas de usuario (UDP)`: Las aplicaciones que no están afectadas por la confiabilidad de la transmisión usan el protocolo UDP. Los datos enviados a través de UDP no son objeto de un seguimiento tan exhaustivo como los enviados mediante TCP. Debido a que el UDP no establece conexiones de red, se utiliza principalmente para aplicaciones sensibles al rendimiento que operan en tiempo real, como la transmisión de video.
+- `Capa de aplicacion`: La capa de aplicación en el modelo TCP/IP es similar a las capas de aplicación, presentación y sesión del modelo OSI. Es la responsable de realizar solicitudes de red o de responder a solicitudes. Además, esta capa define a qué servicios y aplicaciones de Internet puede acceder cualquier usuario. Algunos de los protocolos comunes utilizados en esta capa son: 
+    - Protocolo de transferencia de hipertexto (HTTP)
+    - Protocolo simple de transferencia de correo (SMTP)
+    - Secure Shell o shell seguro (SSH)
+    - Protocolo de transferencia de archivos (FTP)
+
+    - Sistema de nombres de dominio (DNS)
+
+*`Nota: La capa de aplicación tiene protocolos que organizan las transferencias de archivos y los servicios de correo electrónico. Para hacerlo, determina cómo los paquetes de datos interactuarán con los dispositivos receptores. La capa de aplicación es la cuarta capa en el modelo TCP/IP. `*
+
+#### Modelo OSI y TCP/IP
+
+<img align="center" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/J1fuQsFwTDaaNfwe_3i3YQ_d8fbca32112f4a50a93dfe492f44c1f1_RbNt47PDRTGJZ6q_QtaNMg_9b9098ac04e84c2d8ad04b220c5456f1_CS_R-210_TCP-vs-OSI.png?expiry=1720051200000&hmac=Xin4Lj00pM-mYSRQ1Iq0NirMeusttS7pumVQ7EZle24"  width="600"/>
+
+
+### Modelo OSI
+
+- `Capa 7: Capa de Aplicación`
+    La capa de aplicación es la más cercana al usuario final y facilita la interacción con la red a través de aplicaciones y servicios. Ejemplos de protocolos en esta capa incluyen HTTP/HTTPS para navegadores web, SMTP para correo electrónico y DNS para la traducción de nombres de dominio a direcciones IP.
+
+- `Capa 6: Capa de Presentación`
+    La capa de presentación se encarga de la traducción, cifrado y compresión de datos para asegurar que los formatos de datos sean interpretables tanto en el sistema de envío como en el de recepción. Un ejemplo de cifrado en esta capa es SSL, utilizado para asegurar las comunicaciones en HTTPS.
+
+- `Capa 5: Capa de Sesión`
+    La capa de sesión establece, gestiona y termina las conexiones entre dispositivos. También maneja la autenticación y la reconexión, además de establecer puntos de control para garantizar que las transferencias de datos puedan reanudarse sin pérdidas si se interrumpen.
+
+- `Capa 4: Capa de Transporte`
+    La capa de transporte es responsable de la entrega fiable y ordenada de datos entre dispositivos. Divide los datos en segmentos y los reensambla en el destino. Protocolos importantes en esta capa incluyen TCP, que asegura una entrega fiable, y UDP, que es menos fiable pero más rápido.
+
+- `Capa 3: Capa de Red`
+    La capa de red se encarga del direccionamiento y enrutamiento de los paquetes de datos a través de diferentes redes. Utiliza direcciones IP para determinar la ruta de los paquetes y asegurarse de que lleguen a su destino final.
+
+- `Capa 2: Capa de Enlace de Datos`
+    La capa de enlace de datos organiza la transmisión de datos dentro de una red local. Utiliza switches y tarjetas de interfaz de red para gestionar el flujo de datos. Protocolos como NCP, HDLC y SDLC operan en esta capa.
+
+- `Capa 1: Capa Física`
+    La capa física incluye el hardware que transmite datos a través de la red, como hubs, módems y cableado. Convierte los paquetes de datos en señales eléctricas, ópticas o de radio para su transmisión a través de medios físicos.
+
+#### Comparación entre el modelo TCP/IP y el modelo OSI
+El modelo TCP/IP es un marco utilizado para visualizar cómo se organizan y transmiten los datos a través de una red. Este modelo ayuda a los/las ingenieros/as y analistas de seguridad de redes a diseñar la red de datos, conceptualizar procesos y comunicar dónde se producen las interrupciones o amenazas de seguridad.
+
+El modelo TCP/IP tiene cuatro capas: de acceso a la red, de Internet, de transporte y de aplicación. Al analizar los eventos de la red, las y los profesionales de seguridad pueden determinar en qué capa o capas se produjo el ataque, basándose en los procesos involucrados en el incidente.
+
+En cambio, el modelo OSI es un concepto estandarizado que describe las siete capas que las computadoras utilizan para comunicarse y enviar datos a través de la red. Las y los profesionales de seguridad y de redes suelen utilizarlo para comunicarse entre sí sobre posibles fuentes de problemas o amenazas de seguridad.
+
+### Comunicacion de Red local y amplia
+
+IP significa protocolo de Internet. Un protocolo de Internet, o dirección IP, es una cadena única de caracteres que identifica la ubicación de un dispositivo en Internet. Cada dispositivo tiene una dirección IP única. Tenemos 2 clases de direccion IP, IPv4 o IPv6.
+
+Las direcciones IPv4 consta de 4 bloques de numeros que pueden ser de 1 a 3 digitos, los bloques estan separados por **`.`**, ejemplo -> `19.117.63.126` (IPv6). En un principio todas las direcciones era IPv4 pero con el paso del tiempo se fueron agotando dando lugar al desarrollo de `IPv6`
+
+Las direcciones IPv6 tienen 32 caracteres y cada bloque esta separado por `:`, ejemplo -> `684D:1111:222:3333:4444:5555:6:77`. Ambas direcciones pueden ser publicas o privadas, tu proveedor de internet es quien te asigna esta direccion IP publica que te conectara a internet esta a su vez se conecta a tu ubicación geografica, los dispositivos conectados a esta red tendran esta misma direccion IP, por otra parte las direcciones IP privadas solo seran visibles para dispositivos que esten conectados a tu misma red local y asi logran comunicarse haciendo uso de una direccion IP privada. La dirección MAC es otra que se usa en comunicaciones de red. Es un identificador alfanumérico único que se asigna a cada dispositivo físico en la red. Al recibir un paquete, el switch lee la dirección MAC del dispositivo destinatario y le asigna un puerto. Anota esta información en una tabla de direcciones MAC. La tabla de direcciones MAC es como una agenda que el switch usa para enviar paquetes a dispositivos.
+
+#### Comunicacion en capa red.
+
+Las funciones en la capa de red organizan la dirección y la entrega de paquetes de datos a través de la red e Internet desde el dispositivo host hasta el de destino. Esto incluye dirigir los paquetes de un enrutador a otro a través de Internet, basándose en la dirección del protocolo de Internet (IP) de la red de destino. La dirección IP de destino se encuentra dentro del encabezado de cada paquete de datos.
+
+Todos los paquetes de datos incluyen una dirección IP; esto se denomina paquete IP o datagrama. Un router utiliza la dirección IP para enrutar paquetes de una red a otra, basándose en la información contenida en el encabezado IP de un paquete de datos. La información del encabezado no comunica solo la dirección del destino. También incluye información, como la dirección IP de origen, el tamaño del paquete y qué protocolo se utilizará para el área de datos del paquete. 
+
+#### Formato de un paquete IPv4
+Un paquete IPv4 se compone de dos secciones, el encabezado y los datos:
+- El tamaño del encabezado IP oscila entre 20 y 60 bytes. Incluye la información de enrutamiento IP que los dispositivos utilizan para dirigir el paquete. El formato de un encabezado de paquete IP está determinado por el protocolo IPv4.
+
+- La longitud de la sección de datos de un paquete IPv4 puede variar mucho, pero el tamaño máximo posible de un paquete IP es 65.536 bytes. Contiene el mensaje que se transfiere a la transmisión, como la información del sitio web o el texto del correo electrónico.
+
+<img align="center" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/VZ4n_9m9RU2yRAmjRbGZsA_4e36b99d71b44e34a5ea6c0282696df1__wlDB6PENhlQfROvduzcfwvIb3bnymuwKYOVx-xzGd6DJvsuGCAMNhdwLK3y7aw6uOvkncRbBbcRBVWC93GVtGWh-6BSUI1OdXo9yQsurEsX6UQvV-Y3f-KJYyj7u5PkieqLTWoiBjHbXYQsA_7MGQ?expiry=1720051200000&hmac=k0KwuDugdV0XEEaBYnsnTCHVKCwJkur9HwkKePr9CBs"  width="600"/>
+
+
+**Hay 13 campos dentro del encabezado de un paquete IPv4:**
+
+- Versión: el primer encabezado de 4 bits indica a los dispositivos receptores qué protocolo está utilizando el paquete. El paquete utilizado en la ilustración anterior es un paquete IPv4.
+
+- Longitud del encabezado IP (HLEN): HLEN es la longitud del encabezado del paquete. Este valor indica dónde termina el encabezado del paquete y comienza el segmento de datos. 
+
+- Tipo de servicio (ToS): los routers priorizan los paquetes a entregar con el fin de mantener la calidad del servicio en la red. El campo ToS proporciona esta información al router.
+
+- Longitud total: este campo comunica la longitud total de todo el paquete IP, incluidos el encabezado y los datos. El tamaño máximo de un paquete IPv4 es de 65.535 bytes.
+
+- Identificación: si el paquete IPv4 es superior a 65 535 bytes, se divide o fragmenta en paquetes IP más pequeños. El campo de identificación proporciona un identificador único para todos los fragmentos del paquete IP original para que puedan volver a ensamblarse cuando lleguen a su destino. 
+
+- Indicadores: este campo proporciona al dispositivo de enrutamiento más información sobre si el paquete original se fragmentó y si hay más fragmentos en tránsito.
+
+- Desplazamiento de fragmentación: el campo de desplazamiento de fragmento indica a los dispositivos de enrutamiento a qué parte del paquete original pertenece el fragmento.
+
+- Período de vida (TTL): evita que los routers reenvíen los paquetes de datos de manera indefinida. Contiene un contador que determina la fuente. El contador disminuye de a uno, a medida que pasa por cada router. Cuando el contador TTL llega a cero, el router descartará el paquete y enviará al emisor un mensaje de tiempo superado ICMP. 
+
+- Protocolo: este campo indica al dispositivo receptor qué protocolo se utilizará para el área de datos del paquete.
+
+- Suma de comprobación del encabezado: este campo contiene una suma de comprobación que se puede usar para detectar si la cabecera IP en tránsito está dañada. Los paquetes dañados se descartan.
+
+- Dirección IP de origen: es la dirección IPv4 del dispositivo emisor.
+
+- Dirección IP de destino: es la dirección IPv4 del dispositivo receptor.
+
+- Opciones: este campo permite aplicar opciones de seguridad al paquete si el valor HLEN es mayor que cinco. Además, comunica estas alternativas a los dispositivos de enrutamiento.
+
+#### Diferencia entre IPv4 e IPv6
+
+Una de las principales diferencias entre IPv4 e IPv6 es la longitud de las direcciones. Las direcciones IPv4 son numéricas, están compuestas por 4 bytes y admiten hasta 4300 millones de direcciones posibles. Un ejemplo sería: 198.51.100.0. En cambio, las direcciones IPv6 son hexadecimales, están compuestas por 16 bytes y permiten hasta 340 undecillones de direcciones (la cifra 340 seguida de 36 ceros). Un ejemplo de una dirección IPv6 sería: 2002:0db8:0000:0000:0000:ff21:0023:1234.
+
+También hay algunas diferencias en el diseño del encabezado de un paquete IPv6. El formato del IPv6 es mucho más simple que el del IPv4. Por ejemplo, el encabezado de IPv4 incluye los campos HLEN, identificación e indicadores, mientras que el IPv6 no lo hace. El encabezado de IPv6 tiene otros campos que no están incluidos en IPv4, como etiqueta de flujo y clase de tráfico. 
+
+<img align="center" src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/NapUQGvxQUuC83hz564pMQ_704cd1c84ca74a179e7bd31ebc8ef0f1_PHKKx5gQ5nm028y2vOcDKK0DHGK3Ub9HcxkPBEG0Ny4TVxZhuuj9yxFP7h1O978xKQrYafaIS8dankq3HgoyKAayZ9eeYUa5Rc57TV2xAJhXf2Bs0YWwJJm7MORKpcX-e9Rgs0uXfj6JUoU6e7dr3Q?expiry=1720051200000&hmac=ZKoPuzTghD7Nc1vvihhKOubbnghOIEMFqdYPp9dNhbk"  width="600"/>
+
+Hay algunas diferencias de seguridad importantes entre IPv4 e IPv6. IPv6 ofrece un enrutamiento más eficiente y elimina las colisiones de direcciones privadas que pueden ocurrir en IPv4 cuando dos dispositivos de la misma red intentan usar la misma dirección. 
+
+*`Nota: Las/los analistas de seguridad pueden utilizar herramientas de captura de paquetes, o PCAP, para inspeccionarlos mientras están en tránsito. Analizar los diferentes campos en un paquete de dirección IP puede servir para descubrir información importante relacionada con la seguridad  del paquete. Algunos ejemplos de información relacionada con la seguridad que se encuentran en los paquetes de direcciones IP son:<strong> desde dónde proviene el paquete, hacia dónde se dirige y qué protocolo está utilizando</strong>. Comprender los datos en un paquete de datos IPv4 te permitirá tomar decisiones críticas respecto a las implicaciones de seguridad de los paquetes que inspecciones.`*
 
