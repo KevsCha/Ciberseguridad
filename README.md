@@ -645,4 +645,73 @@ Fases del manual de estrategias para responder a un incidente:
 - [Gobierno de Escocia — Plantillas de manuales de estrategia](https://www.gov.scot/publications/cyber-resilience-incident-management/)
 
 
+## Conexion y proteccion de Redes
+
+Se vera lo siguiente:
+    
+- La estructura basica de las redes
+- Operaciones de red
+- Ataques comunes a redes
+- Descripcion general de las mejoras de la seguridad y como usarlas
+
+Que son las redes?. Una red es un grupo de dispositivos conectados, por ejemplo podemos mencionar al ordenador de casa, celular y dispositivos inteligentes, en la oficina algo como los equipos, impresoras y servidores.
+
+Dispositivos de una red pueden comunicarse entre si mediante cables o red inalambrica, las redes de casa y oficina pueden comunicarse con otras redes de distintos lugares y sus dispositivos, para que pueda suceder la comunicacion deben encontrarse ambos en una misma red, es decir que utilizan las direcciones IP o MAC, puede suceder en 2 circuntancias,  en una red local o LAN, tambien podrian hacerlo mediante una red de area amplia o WAN.
+
+1. `Red LAN:` son las de areas pequeñas, la escuela, oficina o el hogar. Como ejemplo tenemos a los dispositivos del hogar conectados a la red WI-FI (Conexion LAN -> Conexion a internet).
+2. `Red WAN:` son areas amplias, cubres zonas geograficas enormes, como una ciudad, estado o pais. Una persona de sanfrancisco puede comunicarse y compartir informacion con otra de Dublin a traves de la red WAN.
+
+### Dispositivos que conforman una Red
+
+Hub: Dispositivo que transmite informacion a todos los dispositivos de la red, imagina que es como una torre que le da señal a otras radios.
+
+Switch: Tranfiere datos al destino previsto, suele ser mas seguro por que controla el trafico de datos y mejora el rendimiento de la red.
+
+Router: Un dispositivo  que conecta varias redes, ejemplo, tienes un router y quieres enviar informacion a un dispositivo, lo que sucede es que esa informacion sera enviada de la computadora al router1, el router 1 lee la direccion de destino y reenvia los datos a router deseado(router2), el router2 enviara la informacion al dispositivo movil.
+
+Modem: Este dispositivo se encarga de conectar los router a internet, de esta manera la red LAN tendra acceso a internet, si el ordenador de una red quiere enviar informacion a otra red de una zona geografica lejana a la red LAN el proceso que hara es el siguiente, el ordenador envia datos a router, router envia la informacion al modem y este a internet, el destinatario en este caso el modem2 recibe los datos y se las tranfiere al router, esta a su vez se la envia al dispositivo de destino.
+
+Todas estas herramientas, Hub, Switch, Router, Modem, son dispositivos fisicos y muchas de sus funciones de puede realizar con *herramientas de virtualizacion*. Estas herramientas son software que permiten realizar operaciones de red. 
+
+Las herramientas de virtualización son tecnologías que permiten la creación de entornos virtuales que simulan hardware y sistemas operativos físicos. Estas herramientas permiten ejecutar múltiples sistemas operativos y aplicaciones en una sola máquina física, dividiendo los recursos de hardware entre varias máquinas virtuales (VMs)
+
+### Componentes, dispositivos y diagramas de red
+
+ <img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/Zkj1BVn3RUekQ_barGJmFw_6659a31948c24b3db27bcc67ebb7f0f1_URorDIh9TNiq7e481RWHmQ_85911828bd7c43b38761dd2b520e8df1_CS_R-041_-Edited-S34G001-1--1-.png?expiry=1720051200000&hmac=9aiO5fh4mXQJMgS11f59vwpdxaHJQJ1a1D9vWnNrtrE"  width="600"/>
+
+Cada equipo tiene una dirección MAC y una dirección IP únicas, las cuales lo identifican en la red, y una interfaz de red que envía y recibe paquetes de datos. Estos dispositivos pueden conectarse a la red a través de un cable o una conexión inalámbrica.
+
+`Cortafuegos (firewalls)`: es un dispositivo de seguridad de red que monitorea el tráfico hacia o desde tu red. Además, los cortafuegos pueden restringir el tráfico de red específico, tanto de entrada como de salida, según la configuración de reglas de seguridad que realiza la organización. Los firewalls suelen ubicarse entre la red interna segura y controlada y los recursos de red no confiables fuera de la organización, como Internet.
+
+`Servidores `:  proporcionan un servicio para otros dispositivos en la red. Los dispositivos que se conectan a un servidor se denominan clientes. El siguiente gráfico ilustra este modelo, conocido como modelo cliente-servidor. Aquí, los clientes envían solicitudes al servidor para obtener información y servicios, y el servidor se encarga de cumplir estas solicitudes. Algunos ejemplos comunes incluyen servidores DNS, que realizan búsquedas de nombres de dominio para sitios web, servidores de archivos, que almacenan y recuperan archivos de una base de datos, y servidores de correos corporativos, que organizan el correo de una empresa. 
+
+ <img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/DezYLBxNSzS-3psIHjJavg_ba770051ebe24647b4671b4edeaf27f1_x4Xak4xoKa-xJqxKbWVcmO8bkSyAsfDi3nHUs2revGbXNgCxMyJvN8o4ThXRpphvGxigNmcOfsEBwgZri77naCl1UplHRClYiVMltQjploX10KPTIEDtC5o_TdFa8n8E4OwocpQrSVPBXNgIvwXWIg?expiry=1720051200000&hmac=ISlp9O3mXauUZJ5p_SvYcMHqFjJJt_5A720FGFB5XE4"  width="600"/>
+
+
+`Hubs y switches`: Los hubs y los switches son dispositivos utilizados para dirigir el tráfico en una red local. Un hub es un dispositivo que proporciona un punto de conexión común para todos los dispositivos conectados directamente a él. Además, repite toda la información a todos los puertos. Sin embargo, desde el punto de vista de la seguridad, los hubs son vulnerables a la interceptación de datos. Por esta razón, en las redes modernas se utilizan con menos frecuencia y se prefieren los switches.
+
+Un switch reenvía paquetes entre los dispositivos conectados directamente a él. Mantiene una tabla de direcciones de control de acceso al medio (MAC), que asocia las direcciones MAC de los dispositivos en la red con los números de puerto en el switch, y reenvía los paquetes de datos entrantes en función de la dirección MAC de destino. Los switches forman parte de la capa de enlace de datos en el modelo TCP/IP.
+
+`Enrutadores (routers)`: Los enrutadores (routers) se encuentran entre las redes y el tráfico directo, según la dirección IP de la red de destino. En el modelo TCP/IP, forman parte de la capa de red. La dirección IP de la red de destino se encuentra en el encabezado IP. El router lee la información del encabezado y reenvía el paquete al siguiente router que aparece en la ruta y así sucesivamente hasta que el paquete llega a la red de destino. Los routers también pueden incluir una función de firewall, que permite o bloquea el tráfico entrante de acuerdo a la información que se transmite. Esto evita que el tráfico malicioso ingrese en la red privada.
+#### Módems y puntos de acceso inalámbricos
+`Módems`: Los módems suelen interactuar con un proveedor de servicios de Internet (ISP, por sus siglas en inglés). Los ISP proporcionan conectividad a Internet a través de líneas telefónicas o cables coaxiales. Los módems reciben transmisiones de Internet y las traducen en señales digitales que pueden ser entendidas por los dispositivos en la red. Por lo general, los módems se conectan a un router que toma las transmisiones decodificadas y las envía a la red local.
+
+`Punto de acceso inalámbrico`: Un punto de acceso inalámbrico envía y recibe señales digitales a través de ondas de radio, creando una red inalámbrica. Los dispositivos con adaptadores inalámbricos se conectan al punto de acceso utilizando Wi-Fi. El Wi-Fi se refiere a un conjunto de estándares utilizados por los dispositivos de red para comunicarse de forma inalámbrica. Los puntos de acceso inalámbrico y los dispositivos conectados a ellos utilizan protocolos Wi-Fi para mandar datos a través de ondas de radio a routers y switches, y dirigirlos a lo largo del camino hacia su destino final.
+
+ <img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/2-NRHHNuRk2YIsNr61MYSw_0468898694304d4493d4e01b56f6f4f1_pJ7YsfKz15dNUG9NDZ4CrvYvtWAm5wQA6YNHomMYeaj62P8LDfr8hbTa-c-u6-4WlTWJ4bgcdUBghDS1HMNjYn88VWRdqNRC5fzBvC3WKaKsXPEXcZ5DR1fs_Ff_PEAkTAau8sFixu00IRmbJ4ssGQ?expiry=1720051200000&hmac=ZmLWmfVQmZuC309QBJ0N3xBUqr7jdvq54AF-m_-wSuw"  width="600"/>
+
+
+#### Uso de diagramas de red como analista de seguridad
+
+Los diagramas de red permiten a los/las administradores/as de red y al personal de seguridad imaginar la arquitectura y el diseño de la red privada de su organización.
+
+Son mapas topográficos que muestran los dispositivos en la red y cómo se conectan. Utilizan pequeños gráficos representativos para reproducir cada dispositivo de red y líneas de puntos para mostrar cómo estos se conectan entre sí. Las/los analistas de seguridad utilizan diagramas de red para aprender sobre la arquitectura de red y cómo diseñar redes. 
+
+ <img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/b-MMTpleQ6mc0K7sWbudBA_c389603ff037497e92bb01d322c2c0f1_hmp8jmtxr7vP7rZPFjmSaySwkyqNix3CQuNr2_MceLuUafx80co2bmtcttdsV89uuwHKjR63dij3TvFY2Mg-65mVZ71lj_H4SS2_AMYbKib3uCNv_DnnBbsQTBretd-NfpwzsFHRx1_K-XG_jo2Nkg?expiry=1720051200000&hmac=T3P8ptHSc6L3KTKlDsvsAGaoL-DETkM6S1pqeWIfSEY"  width="600"/>
+
+#### Conclusiones clave
+
+En el modelo cliente-servidor, el cliente solicita información y servicios del servidor, y el servidor realiza esas solicitudes para los clientes. Los dispositivos de red incluyen enrutadores (routers), estaciones de trabajo, servidores, hubs, switches y módems. Las/los analistas de seguridad utilizan los diagramas de red para visualizar la arquitectura de la red.
+
+
 
