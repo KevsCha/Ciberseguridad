@@ -896,5 +896,25 @@ También hay algunas diferencias en el diseño del encabezado de un paquete IPv6
 
 Hay algunas diferencias de seguridad importantes entre IPv4 e IPv6. IPv6 ofrece un enrutamiento más eficiente y elimina las colisiones de direcciones privadas que pueden ocurrir en IPv4 cuando dos dispositivos de la misma red intentan usar la misma dirección. 
 
+
 *`Nota: Las/los analistas de seguridad pueden utilizar herramientas de captura de paquetes, o PCAP, para inspeccionarlos mientras están en tránsito. Analizar los diferentes campos en un paquete de dirección IP puede servir para descubrir información importante relacionada con la seguridad  del paquete. Algunos ejemplos de información relacionada con la seguridad que se encuentran en los paquetes de direcciones IP son:<strong> desde dónde proviene el paquete, hacia dónde se dirige y qué protocolo está utilizando</strong>. Comprender los datos en un paquete de datos IPv4 te permitirá tomar decisiones críticas respecto a las implicaciones de seguridad de los paquetes que inspecciones.`*
 
+
+### Protocolos de Red
+
+Las redes se benefician de tener reglas. Estas reglas se denominan protocolos de red. Estos son un conjunto de reglas usadas por dos o más dispositivos en una red para describir el orden de entrega y la estructura de los datos.
+
+#### TCP
+Imagina que deseas ver un sitio de recetas. Ingresas la dirección del sitio en la barra del navegador. Por ejemplo, (www.recetasricas.org). `Antes de acceder al sitio, tu dispositivo se comunica con un servidor web`. Esa comunicación usa un protocolo llamado protocolo de control de transmisión, o TCP. Este protocolo de comunicación por Internet `permite conectar dos dispositivos y enviar datos entre ellos`. El TCP verifica ambos dispositivos antes de permitir más comunicaciones. Esto suele denominarse protocolo de enlace. `Tras establecer la comunicación con un protocolo de enlace TCP, se realiza una solicitud a la red`. En nuestro ejemplo, solicitamos datos del servidor de Recetas Ricas. Sus servidores responderán la solicitud y enviarán paquetes a tu dispositivo para ver la página web. Los paquetes de datos se mueven por la red entre dispositivos como routers. El protocolo de resolución de direcciones, o ARP, sirve para definir la dirección MAC del siguiente router o dispositivo. Esto garantiza que los datos lleguen a su destino. Tras establecer la comunicación y reconocer el dispositivo de destino, puedes acceder al sitio web Recetas Ricas. El protocolo seguro de transferencia de hipertexto, o HTTPS, es un protocolo de red que brinda un método seguro de comunicación entre servidores de clientes y de sitios. Permite al navegador solicitar una página de forma segura al servidor del sitio web y recibir una página web como respuesta
+
+#### DNS
+
+Protocolo llamado sistema de nombres de dominio, o DNS, un protocolo de red que traduce nombres de dominio de Internet a direcciones IP. El DNS envía el nombre de dominio y la dirección web a un servidor DNS que obtiene la dirección IP del sitio que quieres ver, en este caso, Recetas Ricas. La dirección IP se incluye como dirección de destino de los paquetes que van al servidor web del sitio.
+
+
+
+*`Nota: Solo al visitar un sitio, el dispositivo en tu red usa cuatro protocolos, TCP, ARP, HTTPS y DNS. Estos son solo algunos de los protocolos que se utilizan.`*
+
+- Protocolos Comunes.
+- Redes privadas virtuales, VPN
+- Cortafuegos, zonas de seguridad y servidores proxy
