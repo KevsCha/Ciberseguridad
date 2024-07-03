@@ -66,6 +66,62 @@ Subnetting: Subdivisión de una red en grupos lógicos llamados subredes.
 
 Velocidad de conexión: Rapidez con la que un dispositivo envía y recibe datos, que se mide en bits por segundo.
 
+Términos y definiciones del curso 3, semana 2
+Acceso Wi-Fi protegido (WPA): Protocolo de seguridad para proteger las redes inalámbricas cuando un dispositivo busca conectarse a Internet.
+
+Archivo de libre escritura (World-writable file): Archivo que puede ser alterado por cualquier persona.
+
+Cortafuegos (Firewall): Sistema de seguridad de red que monitorea el tráfico desde o hacia una red con objetivo de filtrar el malicioso.
+
+Cortafuegos basado en la nube: Tipo de cortafuegos alojado en la nube.
+
+Cortafuegos Stateful (gestión con estado): Tipo de cortafuego que realiza un seguimiento de la información que pasa a través de él y filtra proactivamente las amenazas.
+
+Cortafuegos Stateless (gestión sin estado): Tipo de cortafuegos que funciona según reglas predefinidas y no realiza un seguimiento de la información de los paquetes de datos.
+
+Encapsulación: Proceso ejecutado por un servicio VPN que protege datos confidenciales al encapsularlos en otros paquetes de datos.
+
+Filtrado de puertos: Función de cortafuegos que bloquea o habilita determinados números de puertos, con el fin de limitar la comunicación no deseada.
+
+Firewall: (consultar Cortafuegos). 
+
+IEEE 802.11 (Wi-Fi): Conjunto de estándares que definen la comunicación para redes locales inalámbricas.
+
+Protocolo de control de transmisión (TCP): Protocolo de Internet que permite a dos dispositivos establecer una conexión y transmitir datos.
+
+Protocolo de resolución de direcciones (ARP): Protocolo utilizado  para determinar la dirección MAC del siguiente router o dispositivo a atravesar.
+
+Protocolo de transferencia de hipertexto (HTTP): Protocolo de red que se utiliza para la comunicación entre clientes y servidores de sitios web.
+
+Protocolo seguro de transferencia de archivos (SFTP): Protocolo seguro utilizado para transferir archivos de un dispositivo a otro a través de una red.
+
+Protocolo seguro de transferencia de hipertexto (HTTPS): Protocolo de red que proporciona un método seguro de comunicación entre clientes y servidores de sitios web.
+
+Protocolo Secure Shell (SSH): Protocolo de seguridad utilizado para crear un intérprete de comandos con un sistema remoto.
+
+Protocolo simple de administración de red (SNMP): Protocolo de red utilizado para monitorear y administrar los dispositivos en una red.
+
+Protocolos de red: Conjunto de reglas utilizadas por dos o más dispositivos de una red para describir el orden de entrega y la estructura de los datos.
+
+Red privada virtual (VPN): Tecnología de seguridad de red que cambia la dirección IP de una persona para enmascarar su ubicación y establecer una conexión segura en Internet.
+
+Segmentación de red: Técnica de seguridad que divide la red en segmentos.
+
+Servidor proxy: Servidor que recibe las solicitudes de clientes y las reenvía a otros servidores.
+
+Servidor proxy de reenvío: Servidor que regula y restringe el acceso a Internet para permitir la conexión sin comprometer la seguridad de la red interna.
+
+Servidor proxy inverso: Servidor que regula y restringe el acceso de Internet a un servidor interno.
+
+Sistema de nombres de dominio (DNS): Protocolo de red que traduce los nombres de dominio de Internet como direcciones IP.
+
+Tarjeta de interfaz de red (NIC): Dispositivo que se instala en el interior de una computadora para que esta pueda conectarse a Internet.
+
+Zona controlada: Subred que protege la red interna de la externa.
+
+Zona de seguridad: Segmento de la red de una empresa que protege la red interna de Internet.
+
+Zona no controlada: Parte de la red que está fuera de la organización.
 
 
 ----------------------------------------------*glosario ordenado*-----------------------------------------------------------------------------------------
@@ -904,6 +960,10 @@ Hay algunas diferencias de seguridad importantes entre IPv4 e IPv6. IPv6 ofrece 
 
 Las redes se benefician de tener reglas. Estas reglas se denominan protocolos de red. Estos son un conjunto de reglas usadas por dos o más dispositivos en una red para describir el orden de entrega y la estructura de los datos.
 
+- Protocolos Comunes.
+- Redes privadas virtuales, VPN
+- Cortafuegos, zonas de seguridad y servidores proxy
+
 #### TCP
 Imagina que deseas ver un sitio de recetas. Ingresas la dirección del sitio en la barra del navegador. Por ejemplo, (www.recetasricas.org). `Antes de acceder al sitio, tu dispositivo se comunica con un servidor web`. Esa comunicación usa un protocolo llamado protocolo de control de transmisión, o TCP. Este protocolo de comunicación por Internet `permite conectar dos dispositivos y enviar datos entre ellos`. El TCP verifica ambos dispositivos antes de permitir más comunicaciones. Esto suele denominarse protocolo de enlace. `Tras establecer la comunicación con un protocolo de enlace TCP, se realiza una solicitud a la red`. En nuestro ejemplo, solicitamos datos del servidor de Recetas Ricas. Sus servidores responderán la solicitud y enviarán paquetes a tu dispositivo para ver la página web. Los paquetes de datos se mueven por la red entre dispositivos como routers. El protocolo de resolución de direcciones, o ARP, sirve para definir la dirección MAC del siguiente router o dispositivo. Esto garantiza que los datos lleguen a su destino. Tras establecer la comunicación y reconocer el dispositivo de destino, puedes acceder al sitio web Recetas Ricas. El protocolo seguro de transferencia de hipertexto, o HTTPS, es un protocolo de red que brinda un método seguro de comunicación entre servidores de clientes y de sitios. Permite al navegador solicitar una página de forma segura al servidor del sitio web y recibir una página web como respuesta
 
@@ -915,6 +975,200 @@ Protocolo llamado sistema de nombres de dominio, o DNS, un protocolo de red que 
 
 *`Nota: Solo al visitar un sitio, el dispositivo en tu red usa cuatro protocolos, TCP, ARP, HTTPS y DNS. Estos son solo algunos de los protocolos que se utilizan.`*
 
-- Protocolos Comunes.
-- Redes privadas virtuales, VPN
-- Cortafuegos, zonas de seguridad y servidores proxy
+
+### Las tres categorías de protocolos de red
+
+Los protocolos de red se pueden dividir en tres categorías principales: protocolos de comunicación, de gestión y de seguridad.
+
+#### Protocolos de comunicación
+
+Los protocolos de comunicación rigen el intercambio de información en la transmisión de redes. Determinan cómo se transmiten los datos entre los dispositivos y el momento de la comunicación. También incluyen métodos para recuperar datos perdidos durante el trayecto.
+
+- El `protocolo de control de transmisión (TCP)` es un protocolo de comunicación de Internet que permite a dos dispositivos establecer una conexión y transmitir datos. El TCP utiliza un proceso de tres pasos. Primero, el dispositivo envía una solicitud de sincronización (SYN) a un servidor. Luego, el servidor responde con un paquete SYN/ACK para confirmar la recepción de la solicitud del dispositivo. Una vez que el servidor recibe el paquete ACK final desde el dispositivo, se establece una conexión TCP. En el modelo TCP/IP, el TCP se encuentra en la capa de transporte.
+- El `protocolo de datagramas de usuario (UDP)` es un protocolo sin conexión que no establece un enlace entre dispositivos antes de la transmisión. Esto lo hace menos confiable que el TCP, pero también lo hace adecuado para transmisiones que requieren llegar rápidamente a su destino. Un ejemplo de uso de UDP se da en las transmisiones de juegos en línea. En el modelo TCP/IP, el UDP se encuentra en la capa de transporte.
+- El `protocolo de transferencia de hipertexto (HTTP)` es un protocolo de capa de aplicación que proporciona un método de comunicación entre clientes y servidores de sitios web. El HTTP usa el puerto 80 y se considera inseguro. Aunque aún algunos sitios web lo utilizan, en muchos otros está siendo reemplazado por una versión segura, llamada HTTPS. En el modelo TCP/IP, el HTTP se encuentra en la capa de aplicación.
+- El `sistema de nombres de dominio (DNS)` es un protocolo que traduce los nombres de dominio de Internet como direcciones IP. Cuando un equipo del cliente desea acceder a un dominio de sitio web utilizando su navegador de Internet, se envía una consulta a un servidor DNS dedicado. El servidor DNS luego busca la dirección IP que corresponde al dominio del sitio web. El DNS suele usar un protocolo de datagramas de usuario (UDP) en el puerto 53. Sin embargo, si la respuesta del DNS a una solicitud es grande, se pasará al protocolo TCP. En el modelo TCP/IP, el DNS se encuentra en la capa de aplicación.
+
+La siguiente categoría es la de los protocolos de gestión. Estos se utilizan para monitorear y administrar la actividad en una red. Incluyen protocolos para notificar errores y optimizar el rendimiento en la red.
+
+#### Protocolos de gestión
+
+La siguiente categoría es la de los protocolos de gestión. Estos se utilizan para monitorear y administrar la actividad en una red. Incluyen protocolos para notificar errores y optimizar el rendimiento en la red.
+
+- El `protocolo simple de administración de red (SNMP)` es un protocolo de red utilizado para monitorear y gestionar los dispositivos en una red. El SNMP puede restablecer una contraseña en un dispositivo de red o cambiar su configuración básica. También puede enviar solicitudes a los dispositivos de red para obtener un informe sobre cuánto ancho de banda de la red está siendo utilizado. En el modelo TCP/IP, el SNMP se encuentra en la capa de aplicación.
+
+- El `protocolo de mensajes de control de Internet (ICMP)` es un protocolo de Internet utilizado por los dispositivos para informarse mutuamente sobre errores de transmisión de datos en la red. El ICMP es utilizado por un dispositivo receptor para enviar un informe al dispositivo emisor sobre la transmisión de datos. Suele usarse como una forma rápida de solucionar problemas de conectividad y el tiempo de respuesta (o latencia) de la red mediante la emisión del comando “ping” en un sistema operativo Linux. En el modelo TCP/IP, el ICMP se encuentra en la capa de Internet.
+
+#### Protocolos de seguridad
+
+Los protocolos de seguridad garantizan que los datos se envíen y reciban de forma segura a través de una red. Estos utilizan algoritmos de cifrado para proteger los datos durante su transmisión. A continuación, se presentan algunos de los protocolos de seguridad más comunes.
+
+- El  `protocolo seguro de transferencia de hipertexto (HTTPS)` es un protocolo de red que proporciona un método de comunicación seguro entre clientes y servidores de sitios web. El HTTPS es una versión segura del HTTP que utiliza cifrado de capa de conexión segura/seguridad en la capa de transporte (SSL/TLS) en todas las transmisiones para que los/as agentes de amenaza no puedan leer la información. El HTTPS utiliza el puerto 443. En el modelo TCP/IP, el HTTPS se encuentra en la capa de aplicación.
+
+- El `protocolo seguro de transferencia de archivos (SFTP)` es un protocolo seguro utilizado para transferir archivos de un dispositivo a otro a través de una red. El SFTP utiliza el protocolo Secure Shell (SSH), en general, a través del puerto TCP 22. El SSH utiliza un estándar de cifrado avanzado (Advanced Encryption Standard, AES) y otros tipos de encriptación para asegurar que destinatarios no deseados no puedan interceptar las transmisiones. En el modelo TCP/IP, el SFTP se encuentra en la capa de aplicación. El SFTP suele utilizarse con almacenamiento en la nube. Cada vez que un/a usuario/a carga o descarga un archivo desde el almacenamiento en la nube, el documento se transfiere utilizando el protocolo SFTP.
+
+### Protocolos de red adicionales
+
+ Algunos protocolos tienen números de puerto asignados por la Internet Assigned Numbers Authority  (IANA, por sus siglas en inglés). Estos números de puerto se incluyen en la descripción de cada protocolo, si están asignados. 
+
+#### Traducción de direcciones de red
+
+1. Direcciones IP Privadas y Públicas:
+
+- Direcciones IP Privadas: Estas son las direcciones utilizadas dentro de una red local (por ejemplo, los dispositivos en tu casa o oficina). Estas direcciones no son accesibles directamente desde Internet.
+- Direcciones IP Públicas: Estas son las direcciones utilizadas en la Internet pública. Cada dispositivo que necesita comunicarse con Internet debe tener una dirección IP pública.
+2. Problema de Comunicación:
+
+- Los dispositivos con direcciones IP privadas no pueden comunicarse directamente con Internet porque las respuestas no sabrían a qué dirección privada regresar. Para resolver esto, necesitan una dirección IP pública.
+
+3. Solución con NAT:
+
+- En lugar de asignar una dirección IP pública a cada dispositivo en la red local (lo cual no es práctico y es costoso), el enrutador reemplaza la dirección IP privada del dispositivo de origen con su propia dirección IP pública cuando envía datos a Internet.
+- Cuando las respuestas regresan desde Internet, el enrutador realiza la operación inversa: reemplaza la dirección IP pública con la dirección IP privada del dispositivo original que envió la solicitud.
+
+4. Funcionamiento de NAT:
+
+- NAT (Network Address Translation): Es el proceso mediante el cual el enrutador gestiona esta traducción de direcciones. Esto permite que múltiples dispositivos en la red local compartan una sola dirección IP pública.
+- El enrutador o cortafuegos debe estar configurado para manejar NAT.
+5. Capas del Modelo TCP/IP:
+
+- Capa de Internet (Capa 2 en el modelo TCP/IP): NAT se asocia con la capa de Internet porque implica el uso y la modificación de direcciones IP, que es la función principal de esta capa.
+- Capa de Transporte (Capa 3 en el modelo TCP/IP): NAT también puede influir en la capa de transporte, especialmente si maneja aspectos de la conexión y los puertos (por ejemplo, cuando se utiliza NAT con TCP o UDP).
+
+
+La Traducción de Direcciones de Red (NAT) es un método o tecnología que se utiliza para modificar las direcciones IP en los paquetes de datos mientras transitan por un enrutador o firewall. Este proceso permite que múltiples dispositivos en una red local compartan una sola dirección IP pública cuando se comunican con Internet. Aquí hay una descripción más detallada:
+
+#### ¿Qué es NAT?
+NAT (Network Address Translation) es una técnica utilizada en redes informáticas para mapear varias direcciones IP privadas a una o más direcciones IP públicas. Es un método que se implementa en dispositivos de red como enrutadores y firewalls.
+
+1. Enrutador o Firewall:
+- Responsabilidad: Un enrutador o firewall configurado para NAT se encarga de traducir las direcciones IP privadas de los dispositivos en una red local a una dirección IP pública. 
+
+- Proceso: Cuando un dispositivo en la red local envía un paquete de datos a Internet, el enrutador reemplaza la dirección IP privada del dispositivo de origen con su propia dirección IP pública.
+- Regreso de Datos: Cuando la respuesta llega desde Internet, el enrutador traduce la dirección IP pública de vuelta a la dirección IP privada del dispositivo original.
+2. Tabla NAT:
+
+- El enrutador mantiene una tabla de traducción que asocia las direcciones IP privadas con puertos específicos a la dirección IP pública y los puertos asignados temporalmente. Esta tabla permite que el enrutador sepa a qué dispositivo reenviar las respuestas.
+#### Tipos de NAT
+1. NAT Estático:
+
+- Asigna una dirección IP pública específica a una dirección IP privada específica. Es una correspondencia uno a uno.
+2. NAT Dinámico:
+
+- Asigna una dirección IP pública de un grupo de direcciones IP disponibles a una dirección IP privada.
+3. PAT (Traducción de Direcciones de Puerto) o NAT Sobrecargado:
+
+- Permite que muchas direcciones IP privadas utilicen una única dirección IP pública utilizando diferentes números de puerto. Es el tipo más común de NAT.
+
+### Protocolo de configuración dinámica de host
+El protocolo de configuración dinámica de host (DHCP) pertenece a la familia de los protocolos de gestión de redes. El DHCP es un protocolo de capa de aplicación utilizado en una red para configurar dispositivos. Asigna una dirección IP única y proporciona las direcciones del servidor DNS adecuado y la puerta de enlace predeterminada para cada dispositivo. Los servidores DHCP operan en el puerto UDP 67, mientras que los clientes DHCP operan en el puerto UDP 68.
+
+#### Protocolo de resolución de direcciones
+Para este momento, ya debes saber bastante acerca de las direcciones IP y las de control de acceso al medio (MAC). Has aprendido que cada dispositivo tiene una dirección IP que lo identifica en la red y una dirección MAC que es única para esa interfaz de red. La dirección IP de un dispositivo puede cambiar con el tiempo, pero su dirección MAC permanece. El protocolo de resolución de direcciones (ARP) es un protocolo de la capa de Internet en el modelo TCP/IP que se utiliza para traducir las direcciones IP que se encuentran en los paquetes de datos, en la dirección MAC del dispositivo de hardware. 
+
+Cada dispositivo en la red ejecuta el ARP y realiza un seguimiento de las direcciones IP y MAC coincidentes en un caché ARP. El ARP no tiene un número de puerto específico.
+
+#### Telnet 
+Telnet es un protocolo de capa de aplicación que permite que un dispositivo se comunique con otro equipo o servidor. Telnet envía toda la información en texto claro. Si bien utiliza indicadores de línea de comando para controlar otro dispositivo similar al protocolo Secure Shell  (SSH), no es tan seguro como el SSH. Telnet se puede usar para conectarse a dispositivos locales o remotos y utiliza el puerto TCP 23. 
+
+#### Protocolo Secure Shell (SSH)
+El protocolo Secure Shell (SSH) se utiliza para crear una conexión segura con un sistema remoto. Este protocolo de capa de aplicación proporciona una alternativa para la autenticación segura y la comunicación cifrada. El SSH opera sobre el puerto TCP 22 y es un reemplazo para protocolos menos seguros, como Telnet.
+
+#### Protocolo de oficina postal
+El protocolo de oficina postal (POP, por Post Office Protocol) es un protocolo de capa de aplicación (capa 4 en el modelo TCP/IP) que se utiliza para gestionar y recuperar correos electrónicos de un servidor de correo. Muchas organizaciones tienen un servidor de correo dedicado que maneja el correo entrante y saliente para los/as usuarios/as en la red. Los dispositivos de usuario envían solicitudes al servidor y descargan mensajes de correo electrónico de forma local. Si alguna vez has actualizado tu aplicación de correo electrónico y has visto nuevos correos electrónicos aparecer en tu bandeja de entrada, estás experimentando el POP y el protocolo de acceso a mensajes de Internet (IMAP). La autenticación de texto no encriptada utiliza el puerto TCP/UDP 110, mientras que los correos electrónicos cifrados utilizan capa de conexión segura/seguridad en la capa de transporte (SSL/TLS) sobre el puerto TCP/UDP 995. Al usar el POP, el correo debe terminar de descargarse en un dispositivo local antes de poder leerse. Además, no permite que un/a usuario/a sincronice los correos electrónicos. 
+
+#### Protocolo de acceso a mensajes de Internet (IMAP)
+El protocolo de acceso a mensajes de Internet (IMAP) se utiliza para correos electrónicos entrantes. Descarga sus encabezados, pero no el contenido, que permanece en el servidor, posibilitando a los/as usuarios/as acceder a su correo electrónico desde diferentes dispositivos. El IMAP utiliza el puerto TCP 143 para correos electrónicos no encriptados y el puerto TCP 993 con el protocolo TLS. El uso del IMAP permite a las personas leer parcialmente los correos electrónicos antes de que se terminen de descargar y sincronizarlos. Sin embargo, el IMAP es más lento que el POP3.
+
+#### Protocolo para transferencia simple de correo (SMTP)
+El protocolo para transferencia simple de correo (SMTP) se utiliza para transmitir y enrutar correos electrónicos desde el remitente hasta la dirección del/de la destinatario/a. El SMTP funciona con el software Message Transfer Agent (MTA), que consulta los servidores de sistema de nombres de dominio (DNS) para obtener las direcciones IP correspondientes a las direcciones de correo electrónico, asegurando que estos lleguen al destino previsto. El SMTP usa el puerto TCP/UDP 25 para correos electrónicos no cifrados y el puerto TCP/UDP 587 utiliza TLS para los cifrados. Con cierta frecuencia, el puerto TCP 25 se usa para el spam de alto volumen. El SMTP ayuda a filtrar el spam regulando la cantidad de correos electrónicos que una fuente puede enviar al mismo tiempo.
+
+#### Protocolos y números de puerto
+Recuerda que los números de puerto son utilizados por los dispositivos de red para determinar qué se debe hacer con la información contenida en cada paquete de datos una vez que lleguen a su destino. Los cortafuegos (firewalls) pueden filtrar el tráfico no deseado, basándose en los números de puerto. Por ejemplo, una empresa puede configurar un cortafuegos para permitir solo el acceso al puerto TCP 995 (POP3) a través de direcciones IP que pertenecen a la organización.
+
+Como analista de seguridad, necesitarás conocer muchos de los protocolos y los números de puerto mencionados en este curso. Es posible que te pregunten por estos durante una entrevista laboral para evaluar tus conocimientos técnicos, así que es una buena idea memorizarlos. También aprenderás sobre nuevos protocolos mientras te desempeñas en una posición de seguridad.
+
+``` tabla de protocolos
+Protocolos comunes
+```
+
+| Protocolo | Puerto                |
+| :-------- | :-------------------- |
+| `DHCP` | Puerto UDP 67 (servidores) && Puerto UDP 68 (clientes) |
+| `ARP` | Ninguno |
+| `Telnet` | Puerto TCP 23 |
+| `SSH` | Puerto TCP 22 |
+| `POP3` | Puerto TCP/UDP 110 (sin cifrar) && Puerto TCP/UDP 995 (cifrado, SSL/TSL) |
+| `IMAP` | Puerto TCP 143 (sin cifrar) && Puerto TCP 993 (cifrado, SSL/TSL) |
+| `SMTP` | Puerto TCP/UDP 25 (admite cifrado TSL) && Puerto TCP/UDP 587 (cifrado, TSL) |
+
+### Distintos Firewall
+
+Un cortafuegos es un dispositivo de seguridad que monitorea el tráfico de red. Autoriza o bloquea el tráfico según un conjunto de reglas de seguridad. Filtra puertos para bloquear o permitir ciertos números de puerto y limitar la comunicación indeseada. La política de seguridad define la configuración de cortafuegos. 
+
+Existen firewall de hardware y software:
+
+Hardware: El cortafuegos de hardware es la defensa más básica contra amenazas. Este inspecciona cada paquete de datos antes de autorizar su entrada a la red.
+
+Software: El cortafuegos de software hace lo mismo, pero no es un dispositivo físico. Es un programa de software instalado en una computadora o un servidor. Si el cortafuegos de software está instalado en una computadora, analizará el tráfico que esta recibe. Si está instalado en un servidor, protegerá todos los dispositivos conectados a este.
+
+Los cortafuegos pueden ser stateful o stateless. Estos términos indican cómo funciona el cortafuegos:
+
+- Stateful: es un cortafuegos que hace un seguimiento de la información que pasa a través de él y filtra proactivamente las amenazas. Un cortafuegos stateful busca características y comportamientos sospechosos del tráfico y evita que entre a la red.
+- Stateless: funciona según reglas predeterminadas y no hace un seguimiento de los paquetes. El cortafuegos stateless solo actúa según las reglas preconfiguradas por el administrador. 
+
+Estas reglas indican al dispositivo qué aceptar y qué rechazar. Un cortafuegos stateless no almacena información analizada ni descubre tendencias sospechosas como el cortafuegos stateful. Por esto, los cortafuegos stateless son menos seguros que los stateful. Un cortafuegos de última generación, o NGFW, ofrece más seguridad que un cortafuegos stateful. No solo realiza una inspección stateful del tráfico entrante y saliente, también realiza funciones más profundas como la inspección profunda de paquetes y protección contra intrusiones.
+
+### Redes virtuales (VPN
+
+Redes privadas virtuales, o VPN, agregan seguridad a tu red. Al conectarte a Internet, el proveedor recibe solicitudes de tu red y las envía al servidor destinatario. Pero estas incluyen información privada. Si se intercepta el tráfico, alguien podría descubrir tu ubicación física y datos personales. Puede ser información confidencial, como datos bancarios. Una red privada virtual es un servicio de seguridad que cambia tu dirección IP pública y oculta tu ubicación virtual para proteger tus datos al usar una red pública como Internet. Las VPN también cifran tus datos al transferirlos para protegerlos. Un servicio de VPN encapsula tus datos en tránsito. 
+
+#### Encapsulamiento
+
+El encapsulado de la VPN protege los datos, envolviéndolos en otros paquetes de datos. Se sabe que la dirección MAC e IP del dispositivo de destino está en el encabezado y el pie de un paquete de datos. Esto es una amenaza de seguridad porque muestra tu IP y ubicación virtual. Podrías cifrar un paquete de datos para que no se descifre su información, pero los routers no podrían leer la dirección IP y MAC del destino. Así no podrías conectarte al sitio o servicio que deseas. El encapsulado resuelve este problema a la vez que protege tu privacidad. La VPN cifra tus paquetes de datos y los encapsula en otros paquetes de datos que leen los routers.
+
+*`Nota: La VPN también usa un túnel cifrado entre tu dispositivo y el servidor VPN. El cifrado no puede hackearse sin una clave criptográfica, por lo que nadie puede acceder a tus datos. Los servicios de VPN son simples y ofrecen una gran protección en Internet.`*
+
+### Zonas de seguridad
+
+Es un segmento de una red que protege la red interna de Internet. Forma parte de una técnica de seguridad llamada `segmentación de red`, que divide la red en segmentos. Cada uno tiene sus propios permisos de acceso y reglas de seguridad. La zona de seguridad controla quién accede a los segmentos de red. Actúa como una barrera para las redes internas, protege la privacidad en los grupos corporativos y evita que los problemas se extiendan a toda la red.
+
+*`Un ejemplo de segmentación de red es un hotel con Wi-Fi público gratuito. La red de invitados no segura se mantiene separada de otra red cifrada que usa el personal del hotel.`*
+
+Además, la red de una organización puede dividirse en subredes para proteger la privacidad de cada departamento.
+
+*`Por ejemplo, en una universidad, puede haber una subred de profesores y una de alumnos. Si la subred de estudiantes se contamina, los administradores de red la aíslan y protegen al resto de la red.`*
+
+La red de una organización se clasifica en dos tipos de zonas de seguridad:
+- Primero, está la zona no controlada,la internet. 
+- Segundo, zona controlada, una subred que protege la red interna de la zona no controlada.
+
+#### Zona controlada
+
+En la capa externa está la zona desmilitarizada, o DMZ, que contiene servicios públicos que acceden a Internet. Incluye servidores web, servidores proxy que alojan sitios públicos y servidores DNS que dan direcciones IP a usuarios de Internet. También, servidores de correo y archivos para comunicación externa. La DMZ actúa como un perímetro de red para la red interna. La red interna tiene servidores privados y datos que la empresa necesita proteger. En la red interna, hay otra zona llamada zona restringida. Esta protege la información confidencial que solo pueden ver empleados autorizados.
+
+#### Subnetting
+
+es la subdivisión de una red en grupos lógicos llamados subredes, lo que funciona como una red dentro de otra red. Este proceso divide el rango de direcciones de red en subredes más pequeñas dentro de la red principal. Estas subredes se forman según las direcciones IP y máscara de red de los dispositivos. Al utilizar el subnetting, se genera una red de dispositivos que funcionan como su propia red.  También puede ser utilizado para crear zonas de seguridad. Cuando los dispositivos en la misma subred se comunican entre sí, el switch de la red cambia las transmisiones para que permanezcan en la misma subred, mejorando la velocidad y la eficiencia de las comunicaciones.
+
+<img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/RLc5W-tQRC6fEbzZyhrkAw_9f655ae40095448eb7592b1d55e313f1_fNlysu5ioqvaNoHfD8ylY_JvpGQz4FOPxfyZ6jEDdn0ctqKK-Vskmef5XnQO81HS3ePmoCEX0pZbuUjBxQO4mLuQ_3M6WzYna7-5ZOX29WsRrJMNSpNdaEM6KZQ-gzmB8K-CtrQhSi6NC64Y3HqcOQ?expiry=1720137600000&hmac=rcCu1arZBX6DWIGs2J_NqPwUqCPg6fe41TuMwWYkM44" width="600px"/>
+
+#### Notación del enrutamiento entre dominios sin clase (CIDR) para el subnetting
+
+El CIDR permite a las y los profesionales de la ciberseguridad segmentar redes clasificadas en clases en fragmentos más pequeños. Las direcciones IP en formato CIDR son similares a las direcciones IPv4, pero incluyen una barra diagonal ("/") seguida de un número al final de la dirección, conocido como el prefijo de red IP. Por ejemplo, una dirección IPv4 normal utiliza el formato 198.51.100.0, mientras que una dirección IP CIDR incluiría el prefijo de red IP al final de la dirección, 198.51.100.0/24. Esta dirección CIDR abarca todas las direcciones IP entre 198.51.100.0 y 198.51.100.255. 
+[Recurso para calcular](https://www.ipaddressguide.com/cidr)
+
+#### Beneficios de seguridad del subnetting
+El subnetting permite a las y los profesionales y analistas crear una red dentro de su propia red sin solicitar otra dirección IP de red al proveedor de servicios de Internet. Este proceso utiliza el ancho de banda de la red de manera más eficiente y mejora el rendimiento. El subnetting es un componente para crear subredes aisladas a través del aislamiento físico, la configuración de enrutamiento y los cortafuegos (firewalls).
+
+### Servidores proxy
+
+El servidor proxy es un servidor dedicado que está entre Internet y el resto de la red. Cuando llega una solicitud de conexión a la red desde Internet, el servidor proxy determinará si la solicitud de conexión es segura. El servidor proxy es una dirección IP pública distinta de la red privada. Esto oculta la dirección IP de la red privada de agentes de amenaza y agrega una capa de seguridad.
+
+*`Veamos un ejemplo. Cuando un cliente recibe una respuesta HTTPS, verá una dirección IP distorsionada o ninguna dirección IP, en lugar de la dirección IP real del servidor web. Un servidor proxy también bloquea sitios inseguros que los usuarios no pueden ver en la red de una empresa.`*
+
+Hay diferentes tipos de servidores proxy que dan soporte para la seguridad de la red.
+
+- El `servidor proxy directo` regula y restringe el acceso a Internet. Se oculta la dirección IP del usuario y se aprueban todas las solicitudes salientes. En una empresa, un servidor proxy directo recibe tráfico de un empleado, lo aprueba y lo reenvía al destino en Internet. 
+- Un `servidor proxy inverso` regula y restringe el acceso a Internet a un servidor interno. Se recibe tráfico de partes externas, se aprueba y se reenvía a los servidores internos. Esto protege los servidores web internos con datos confidenciales y evita que se expongan sus direcciones IP a terceros. 
+- Un `servidor proxy de correo electrónico` es otra herramienta valiosa. Filtra el correo spam verificando si la dirección del remitente ha sido falsificada. Esto reduce el riesgo de ataques de phishing que se hacen pasar por personas conocidas
