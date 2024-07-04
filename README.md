@@ -1202,3 +1202,57 @@ Un ataque de denegación de servicio distribuido, o DDoS, es un ataque DoS que u
 *`No importa qué parte de la red se sobrecargue, si se sobrecarga cualquier cosa, el atacante gana`*
 
 #### Ataque DoS que ataca el ancho de banda
+
+Veamos tres ataques DoS de red comunes:
+
+- `Ataque de inundación sincronizada`: Es un ataque DoS que simula la conexión TCP e inunda el servidor con paquetes SYN. Analicemos esta definición profundizando en el handshake para crear una conexión TCP entre un dispositivo y un servidor. En el primer paso del enlace, el dispositivo envía una solicitud SYN, de sincronización, al servidor. El servidor responde con un paquete SYN/ACK para acusar recibo de la solicitud y abre un puerto para el paso final del enlace. Cuando el servidor recibe el paquete ACK final del dispositivo, se crea una conexión TCP. Los agentes maliciosos se aprovechan del protocolo inundando un servidor con solicitudes SYN para la primera parte del enlace. Pero si la cantidad de solicitudes SYN supera la de puertos en el servidor, el servidor se sobrecarga y deja de funcionar.
+
+- `Un ataque de inundación ICMP` ICMP es el protocolo de mensajes de control de Internet. El ICMP es un protocolo de red que usan los dispositivos para comunicarse entre sí errores de transmisión de datos en la red. Piensen en el ICMP como un pedido de actualización de estado de un dispositivo. El dispositivo devuelve mensajes de error si hay algún problema de red. Es como si la solicitud ICMP consultara al dispositivo para comprobar que todo esté bien. Un ataque de inundación ICMP es un ataque DoS de un atacante que envía repetidamente paquetes ICMP a un servidor de red. Esto obliga al servidor a enviar un paquete ICMP. Eventualmente, esto agota el ancho de banda para el tráfico entrante y saliente, y el servidor falla.
+- `Ataques que sobrecargan un servidor`: Un ejemplo que veremos es el ping de la muerte. Un ataque de ping de la muerte es un ataque DoS que ocurre cuando un hacker hace ping a un sistema enviando un paquete ICMP grande, superior a 64 kilobytes, el tamaño máximo de un paquete ICMP correcto. Hacer ping a un servidor de red vulnerable con un paquete ICMP grande sobrecarga el sistema y hace que falle.
+
+#### Analizador de protocolo de Red 
+
+sniffer de paquetes (rastreador de paquetes) o analizador de paquetes, es una herramienta diseñada para capturar y analizar el tráfico de datos dentro de una red. Suele usarse como herramienta de investigación para monitorear redes e identificar actividades sospechosas. Existe una gran variedad de analizadores de protocolos de red. Algunos de los más comunes son:
+
+- Analizador de tráfico NetFlow de SolarWinds
+- ManageEngine OpManager
+- Azure Network Watcher
+- Wireshark
+- tcpdump
+
+#### TCPDUMP 
+
+Un analizador de protocolos de red que utiliza la línea de comandos. Es popular, ligero (o sea, utiliza poca memoria y tiene un bajo uso de CPU) y usa la biblioteca de código abierto libpcap. tcpdump se basa en texto, lo que significa que todos los comandos se ejecutan en el terminal. También se puede instalar en otros sistemas operativos basados en Unix, como macOS®. Está preinstalado en muchas distribuciones de Linux.
+
+tcpdump proporciona un breve análisis de paquetes, convierte información clave sobre el tráfico de red en formatos fácilmente legibles para las personas e imprime información sobre cada paquete directamente en el terminal. tcpdump también muestra la dirección IP de origen, las direcciones IP de destino y los números de puerto que se utilizan en las comunicaciones.
+
+tcpdump imprime la salida del comando como los paquetes detectados en la línea de comandos y, opcionalmente, en un archivo de registro, después de ejecutar un comando. La salida de una captura de paquetes contiene mucha información importante sobre el tráfico de red.  
+
+<img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/5UhuUesHRIii-BEYqLKx1A_b6337619422d49aeb595aa4d471a3ef1_nr7nu07EZ-oxMxCmiyNrGbILpQwUR2vU-jGh0UgCZjwh1Qh6RKm5VdcWufI0hLeL4RGy4YMlDd5z495Ito6CZ1bx5G6pJ2WTweFgAxFyP08hKNmGnlmLrTr8QwzF-aakOmr0FQWDDly752juQcChjA?expiry=1720224000000&hmac=b22JBLtxddJ3dMUnGkd6QlEBouS_c0GX2im40cJqUwE" width="600px"/>
+
+Parte de la información que se recibe de una captura de paquetes es: 
+
+- Marca de tiempo: la salida comienza con la marca de tiempo, en el formato de horas, minutos, segundos y fracciones de segundo. 
+
+- IP de origen: el origen del paquete es proporcionado por su dirección IP de origen.
+
+- Puerto de origen: el número de puerto de donde se originó el paquete.
+
+- IP de destino: la dirección IP de destino es el lugar al que se transmite el paquete.
+
+- Puerto de destino: el número de puerto del lugar al que se transmite el paquete.
+
+*`Nota: De forma predeterminada, tcpdump intentará convertir direcciones de host a nombres de host. También reemplazará los números de puerto con los servicios comúnmente asociados que usan estos puertos.`*
+
+#### Usos comunes
+tcpdump y otros analizadores de protocolos de red se utilizan habitualmente para capturar y visualizar comunicaciones de red y para recopilar estadísticas sobre la red, por ejemplo, para solucionar problemas de rendimiento. También se pueden usar para:
+
+- Establecer una línea de base para los patrones de tráfico de red y las métricas de utilización de la red.
+
+- Detectar e identificar tráfico malicioso.
+
+- Crear alertas personalizadas para enviar las notificaciones adecuadas cuando surgen problemas de red o amenazas a la seguridad.
+
+- Localizar mensajería instantánea (IM), tráfico o puntos de acceso inalámbricos no autorizados.
+
+Sin embargo, las/los atacantes también pueden utilizar maliciosamente los analizadores de protocolos de red para obtener información sobre una red específica. Por ejemplo, podrían capturar paquetes de datos que contengan información sensible, como nombres de usuario y contraseñas de cuentas. Como analista de ciberseguridad, es importante comprender la finalidad y los usos de los analizadores de protocolos de red.    
