@@ -1172,3 +1172,33 @@ Hay diferentes tipos de servidores proxy que dan soporte para la seguridad de la
 - El `servidor proxy directo` regula y restringe el acceso a Internet. Se oculta la dirección IP del usuario y se aprueban todas las solicitudes salientes. En una empresa, un servidor proxy directo recibe tráfico de un empleado, lo aprueba y lo reenvía al destino en Internet. 
 - Un `servidor proxy inverso` regula y restringe el acceso a Internet a un servidor interno. Se recibe tráfico de partes externas, se aprueba y se reenvía a los servidores internos. Esto protege los servidores web internos con datos confidenciales y evita que se expongan sus direcciones IP a terceros. 
 - Un `servidor proxy de correo electrónico` es otra herramienta valiosa. Filtra el correo spam verificando si la dirección del remitente ha sido falsificada. Esto reduce el riesgo de ataques de phishing que se hacen pasar por personas conocidas
+## Ataques comunes y como comprometen tu sistema
+
+Vremos lo suiguiente,  ataques de interceptación de red y los ataques de puerta trasera, así como los posibles impactos que pueden tener en una organización.
+
+- `Ataques de interceptación de red`: En los ataques de interceptación de red, se obstaculiza el tráfico de red y se roba información valiosa, o se interfiere de algún modo en la transmisión.
+
+    Los agentes de amenaza pueden usar herramientas de hardware o software para capturar e inspeccionar los datos en tránsito. Es lo que se conoce como rastreo de paquetes (packet sniffing). Además de ver información a la que no tienen derecho, los agentes de amenaza también pueden interceptar el tráfico de red y alterarlo. Estos ataques pueden causar daños a la red de una organización al insertar modificaciones de código malicioso, alterar el mensaje o bien, interrumpiendo las operaciones de la red. Por ejemplo, un/a atacante puede interceptar una transferencia bancaria y cambiar la cuenta que recibe los fondos por otra que esté bajo su control.
+- `Ataques de puerta trasera`: Un ataque de puerta trasera es otro tipo de ataque que deberás conocer como analista de seguridad. Una organización puede contar con muchas medidas de seguridad, como cámaras, escáneres biométricos y códigos de acceso, para evitar que los/las empleados/as entren y salgan sin ser vistos. Sin embargo, un/a empleado/a podría burlar las medidas de seguridad si encuentra una puerta trasera al edificio que no esté tan vigilada, lo que le permitiría escabullirse por allí. 
+
+    En ciberseguridad, las puertas traseras son puntos débiles dejados intencionalmente por programadores/as o administradores/as de sistemas y redes, que eluden los mecanismos normales de control de acceso. Las puertas traseras están pensadas para ayudar a los/las programadores/as a solucionar problemas o realizar tareas administrativas. Sin embargo, las/los atacantes también pueden instalarlas tras haber puesto en riesgo a una organización, para asegurarse el acceso permanente.
+
+    Una vez que la/el hacker ha ingresado a una red insegura a través de una puerta trasera, puede causar daños graves: instalar software malicioso, realizar un ataque de denegación de servicio (DoS), robar información privada o cambiar otras configuraciones de seguridad que dejen al sistema vulnerable a otros ataques. Un ataque DoS es un ataque que tiene como objetivo una red o un servidor y lo inunda con tráfico de red.
+    
+### Posibles repercusiones en una organización
+
+Los ataques a la red pueden tener un impacto negativo significativo en una organización. Examinemos algunas consecuencias potenciales.
+
+- `Financieras`:  cuando un sistema queda fuera de línea a causa de un ataque DoS, o si las operaciones comerciales se detienen o ralentizan por alguna otra táctica, una empresa no puede realizar las tareas que generan ingresos. Dependiendo del tamaño de la organización, la interrupción de las operaciones puede costar millones de dólares. Además, si un agente de amenaza consigue acceder a la información personal de las/los clientes, la empresa podría tener que afrontar importantes gastos en litigios y acuerdos, si las personas damnificadas recurren a la justicia.
+- `Reputación`: los ataques también pueden tener un impacto negativo en la reputación de una organización. Si se hace público que una empresa ha experimentado un ataque cibernético, el público puede preocuparse por las prácticas de seguridad de la organización. Pueden dejar de confiarle su información personal y elegir a un competidor para satisfacer sus necesidades.
+- `Seguridad pública`: un ataque a una red gubernamental puede afectar potencialmente a la seguridad y el bienestar de los/las ciudadanos/as de un país. En los últimos años, las agencias de defensa de todo el mundo están invirtiendo mucho en combatir las tácticas de guerra cibernética. Si un agente de amenaza consiguiera acceder a una red eléctrica, un sistema público de agua o incluso un sistema de comunicaciones militar, el público podría sufrir daños físicos, como consecuencia de un ataque de intrusión en la red.
+
+### Ataques de denegación de servicio (DoS)
+
+Un ataque de denegación de servicio ataca una red o servidor y lo inunda con tráfico de red. Un ataque de denegación de servicio, o ataque DoS, interrumpe o altera las operaciones al sobrecargar la red de una empresa. Su objetivo es enviar tanta información a un dispositivo de red que este falle o no pueda responder a usuarios legítimos. Esto impide llevar a cabo las operaciones comerciales normales, lo que cuesta tiempo y dinero. Un fallo en la red también crea vulnerabilidad para otras amenazas y ataques. 
+
+Un ataque de denegación de servicio distribuido, o DDoS, es un ataque DoS que usa varios dispositivos o servidores en diferentes lugares para inundar la red víctima con tráfico no deseado. Al usar muchos dispositivos, es más probable que el tráfico enviado sobrecargue el servidor de destino.
+
+*`No importa qué parte de la red se sobrecargue, si se sobrecarga cualquier cosa, el atacante gana`*
+
+#### Ataque DoS que ataca el ancho de banda
