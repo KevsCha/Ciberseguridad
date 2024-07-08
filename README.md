@@ -1256,3 +1256,73 @@ tcpdump y otros analizadores de protocolos de red se utilizan habitualmente para
 - Localizar mensajería instantánea (IM), tráfico o puntos de acceso inalámbricos no autorizados.
 
 Sin embargo, las/los atacantes también pueden utilizar maliciosamente los analizadores de protocolos de red para obtener información sobre una red específica. Por ejemplo, podrían capturar paquetes de datos que contengan información sensible, como nombres de usuario y contraseñas de cuentas. Como analista de ciberseguridad, es importante comprender la finalidad y los usos de los analizadores de protocolos de red.    
+
+
+### Tacticas de ataque y defensa de redes
+
+#### Rastreo de paquetes
+
+La informacion y paquetes de datos viajan por la red. La cabecera del paquete tiene las direcciones IP del remitente y destinatario. Su cuerpo puede contener información valiosa como nombres, fechas de nacimiento, mensajes personales, datos bancarios y números de tarjetas. El rastreo de paquetes es la práctica de usar herramientas de software para observar datos mientras se mueve por una red. Los agentes de amenaza también lo usan para ver datos que no han sido enviados a ellos.
+
+Es crucial aprender cómo los agentes de amenaza usan el rastreo de paquetes para causar daños, a fin de protegerte contra ellos. Los atacantes pueden ingresar en una conexión autorizada entre dos dispositivos. Usan le rastreo de paquetes para espiar cada paquete de datos que aparezca en su dispositivo. El objetivo es encontrar información valiosa en los paquetes de la cual se puedan aprovechar. Los atacantes usan software o dispositivos de hardware para ver los paquetes. Los atacantes acceden a un paquete de red con un rastreador y cambian los datos. Pueden cambiar los datos del cuerpo del paquete, como una cuenta bancaria. El rastreo de paquetes puede ser pasivo o activo.
+
+- `Rastreo pasivo`: los paquetes de datos se leen cuando están en tránsito Como todo el tráfico de una red es visible para cualquier host en el hub, los atacantes pueden ver los datos entrantes y salientes del dispositivo víctima. Por ejemplo, `podemos comparar un ataque de rastreo pasivo con un cartero que lee maliciosamente el correo de alguien`. El cartero, o rastreador de paquetes, tiene el derecho de entregar el correo, pero no de leer la información contenida.
+
+- `Rastreo activo`:  los paquetes de datos se manipulan cuando están en tránsito. Esto puede consistir en inyectar protocolos de Internet para redirigir los paquetes a otro puerto o cambiar la información que el paquete contiene. `Ejemplo es como un vecino que le dice al cartero que él se encargará de entregar el correo y lo lee o cambia la carta antes de meterla en tu buzón`. Se observa un comportamiento malicioso.
+
+#### Protegerse de un rastreo malicioso
+
+Hacer uso de de VPN que cifra y protege los datos al viajar por la red. Al usar una VPN, los hackers pueden interferir con tu tráfico, pero no decodificarlo para leerlo y ver tu información privada. Otra capa de protección contra estos ataques es que tus sitios incluyan HTTPS al principio de la dirección del dominio. Antes vimos cómo HTTPS usa SSL/TLS para cifrar los datos y evitar espionaje en las transmisiones de red. Una última protección contra el rastreo malicioso de paquetes es evitar conexiones Wi-Fi sin protección. Suele haber Wi-Fi sin protección en lugares públicos como cafeterías, restaurantes o aeropuertos. Estas redes no usan cifrado. Así que cualquiera en la red puede acceder a todos los datos que viajan desde y hacia tu dispositivo. Una precaución que puedes tomar es evitar redes Wi-Fi públicas gratis, salvo que cuentes con una VPN en tu dispositivo.
+
+#### Suplantacion de IP
+
+Este ataque se hace cuando un atacante cambia la IP de origen de un paquete para suplantar un sistema autorizado y acceder a una red. En este ataque, el hacker finge ser otra persona para comunicarse por la red con la computadora víctima saltando reglas de firewall que evitan el tráfico exterior. Algunos ataques de suplantación de IP comunes son ataques en ruta, ataques de repetición y ataques pitufo
+
+- `Ataques en ruta`: El atacante se pone en medio de una conexión autorizada e intercepta o altera los datos en tránsito. Los atacantes en ruta acceden a la red y se ponen entre dos dispositivos, como un navegador web y un servidor web. Luego, rastrean los datos del paquete para ver las direcciones IP y MAC de los dos dispositivos que se están comunicando. Tras tener esta información, fingen ser uno de estos dispositivos.
+- `Ataques de repetición`: Es un ataque de red que se lleva a cabo cuando un agente de amenaza intercepta un paquete en tránsito y lo retrasa o lo repite en otro momento. Un paquete retrasado causa problemas de conexión entre computadoras víctimas, o bien un agente de amenaza puede tomar una transmisión de red enviada por un usuario autorizado y repetirla más tarde para hacerse pasar por este
+- `Ataques pitufo`: Un ataque pitufo combina un ataque DDoS con uno de suplantación de IP. El atacante detecta una dirección IP autorizada y la inunda con paquetes. Esto sobrecarga la computadora víctima y puede derribar un servidor o toda la red.
+
+Es necesario implementar cifrado para que los atacantes no puedan leer los datos en tus transferencias de red. Pueden configurarse firewalls como protección contra la suplantación de IP. La suplantación de IP hace que el atacante parezca un usuario autorizado al cambiar la dirección del remitente del paquete para coincidir con la de la red destino. `Si un firewall recibe un paquete de Internet cuya dirección IP del remitente es la misma que la red privada`, el firewall deniega la transmisión, debido a que todos los dispositivos con esa dirección IP ya deben estar en la red local. Asegúrate de configurar bien tus firewalls creando una regla para rechazar todo el tráfico entrante que tenga la misma dirección IP que la red local.
+
+### General de tacticas de interceptacion
+
+El rastreo de paquetes es la práctica de capturar e inspeccionar paquetes de datos a través de una red. En una red privada, estos paquetes se dirigen al dispositivo de destino correspondiente de la red. 
+
+#### Tarjeta de interfaz de red (NIC)
+
+es un componente hardware que conecta el dispositivo a una red. La NIC lee la transmisión de datos y, si contiene la dirección MAC del dispositivo, acepta el paquete y lo envía al dispositivo para que procese la información según el protocolo. Esto ocurre en todas las operaciones de red estándar. Sin embargo, una NIC se puede configurar en modo promiscuo, lo que significa que acepta todo el tráfico de la red, incluso los paquetes que no están dirigidos al dispositivo de la NIC.
+
+Los agentes de amenaza pueden usar software como Wireshark para capturar los datos de una red privada y almacenarlos para usarlos después. Luego, pueden utilizar para beneficio propio la información personal obtenida. Alternativamente, podrían usar las direcciones IP y MAC de los/las usuarios/as autorizados/as de la red privada para realizar una suplantación de IP.
+
+
+### Análisis detallado de la suplantación de IP 
+
+Tras detectar paquetes en la red, un agente de amenaza puede reemplazar las direcciones IP y MAC de dispositivos autorizados para realizar un ataque de suplantación de IP. Los cortafuegos (firewalls) pueden evitar los ataques de suplantación de IP si se los configura para que rechacen paquetes IP no autorizados y tráfico sospechoso. A continuación, examinarás algunos ataques comunes de suplantación de IP que es importante que conozcas como analista de seguridad.
+
+- `Ataque en ruta`: Un ataque en ruta se produce cuando un/a hacker intercepta la comunicación entre dos dispositivos o servidores que tienen una relación de confianza. La transmisión entre estos dos dispositivos de red de confianza podría contener información valiosa, como nombres de usuario y contraseñas que el agente de amenaza puede recopilar. Un ataque en ruta a veces se denomina ataque de intromisión, porque la/el hacker se esconde entre las comunicaciones de dos partes de confianza.
+
+También puede ocurrir que la transmisión interceptada contenga una búsqueda en el sistema DNS. Recordarás de un video anterior que un servidor DNS traduce los nombres de dominio del sitio web en direcciones IP. Si un agente de amenaza intercepta una transmisión que contiene una búsqueda DNS, podría falsificar la respuesta DNS del servidor y redirigir un nombre de dominio a una dirección IP diferente, tal vez una que contenga código malicioso u otras amenazas. La forma más efectiva de protegerse contra un ataque en ruta es cifrar los datos en tránsito.
+- `Ataque pitufo`: Un ataque pitufo sucede cuando un atacante detecta la dirección IP de un usuario autorizado y la abruma con paquetes. Una vez que el paquete falsificado llega a la dirección de difusión, se envía a todos los dispositivos y servidores de la red. 
+
+En un ataque pitufo, la suplantación de IP se combina con otra técnica de denegación de servicio (DoS) para inundar la red con tráfico no deseado. Por ejemplo, el paquete falsificado podría incluir un ping del protocolo de mensajes de control de Internet (ICMP). Como aprendiste antes, ICMP se utiliza para solucionar problemas de una red. Pero si se transmiten demasiados mensajes ICMP, las respuestas de eco ICMP abruman a los servidores de la red y estos se apagan. Esto crea una denegación de servicio que puede detener las operaciones de una organización.
+
+Una forma importante de protegerse contra un ataque pitufo es usar un cortafuegos avanzado que pueda monitorear cualquier tráfico inusual en la red. La mayoría de los cortafuegos de nueva generación (NGFW) incluyen funciones que detectan anomalías en la red para garantizar que se detecten transmisiones de gran tamaño antes de que tengan la oportunidad de derribar la red. 
+- `Ataque DoS`: Como aprendiste, una vez que el agente de amenazas ha detectado el tráfico de red, puede hacerse pasar por un usuario autorizado. Un ataque de denegación de servicio es una clase de ataques en los que el atacante impide que el sistema comprometido realice una actividad legítima o responda al tráfico legítimo. Sin embargo, a diferencia de la suplantación de IP, el atacante no recibirá una respuesta del host objetivo. Todo lo relacionado con el paquete de datos está autorizado, incluida la dirección IP en el encabezado del paquete. En los ataques de suplantación de IP, el agente de amenazas utiliza paquetes IP que contienen direcciones falsas. Las/los atacantes siguen enviando paquetes que contienen direcciones IP falsas hasta que el servidor de red se bloquea.
+
+*`Consejo profesional: Recuerda el principio de defensa en profundidad. No existe una estrategia perfecta para detener cada tipo de ataque. Puedes estratificar tu defensa mediante el uso de múltiples estrategias. En este caso, utilizar el cifrado estándar de la industria reforzará tu seguridad, además de que te permitirá defenderte de los ataques DoS en más de un nivel.`*
+
+#### Desglose
+
+- `Ataque de denegación de servicio (DoS)` -> Ataque dirigido a una red o servidor para inundarlo con tráfico de red para inhabilitar los sistemas y servicios informáticos de forma temporal.
+- `Ataque de denegación de servicio distribuido (DDoS)` -> Tipo de ataque de denegación de servicio que `utiliza varios dispositivos o servidores en diferentes ubicaciones` para inundar la red objetivo con tráfico no deseado
+- `Ataque de inundación sincronizada` -> Tipo de ataque DoS que simula una conexión TCP/IP e inunda un servidor con paquetes SYN.
+
+    - SYN (Synchronize): El cliente envía un paquete SYN al servidor para iniciar la conexión. Este paquete incluye un número de secuencia inicial (ISN) que se utilizará para rastrear la comunicación.
+        - Cliente a Servidor: SYN
+    - SYN-ACK (Synchronize-Acknowledge): El servidor responde con un paquete SYN-ACK, que reconoce (ACK) el paquete SYN del cliente y envía su propio número de secuencia inicial.
+        - Servidor a Cliente: SYN-ACK
+    - ACK (Acknowledge): El cliente envía un paquete ACK final para reconocer el número de secuencia del servidor. En este punto, la conexión está establecida y los datos pueden comenzar a transferirse.
+        - Cliente a Servidor: ACK
+- `Rastreo de paquetes` -> Práctica consistente en capturar e inspeccionar paquetes de datos a través de una red
+- `Ataque de suplantación de IP` ->  Ataque a la red realizado cuando un atacante cambia la IP de origen de un paquete de datos para hacerse pasar por un sistema autorizado y obtener acceso a una red
+- `Ataque en ruta` -> Ataque en el que un actor malicioso se coloca en medio de una conexión autorizada e intercepta o altera los datos en tránsito
