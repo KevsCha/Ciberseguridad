@@ -1449,3 +1449,87 @@ Las áreas de prueba pueden ser computadoras físicas independientes que no est�
 
     las organizaciones utilizan políticas de contraseña para estandarizar buenas prácticas. Estas pueden incluir pautas sobre el nivel de complejidad que debe tener una contraseña, la frecuencia con la que los/las usuarios/as deben actualizarlas y el límite de intentos de inicio de sesión por parte de un/a usuario/a antes de que se suspenda su cuenta.
 
+## Reforzamiento de la Red
+
+El reforzamiento de red refuerza la seguridad de la red, lo cual incluye el filtrado de puertos, los privilegios de acceso a la red y el cifrado por redes. Algunas tareas de reforzamiento de red se realizan de forma regular. Otras se realizan una sola vez y se actualizan según sea necesario.
+
+#### Tareas regulares
+
+- Mantenimiento de reglas del firewall
+- Análisis de registro de red
+- Actualizaciones de parches 
+- Respaldos del servidor
+
+El análisis de registro de red consiste en examinar los registros de la red para identificar eventos de interés. El equipo usa una herramienta de análisis de registros o una herramienta de gestión de eventos e información de seguridad, también conocida como SIEM, para analizar los registros de la red. Una herramienta SIEM es una aplicación que recopila y analiza datos de registro para monitorear actividades críticas en una organización. Recopila datos de seguridad de la red y los presenta en un solo panel. La interfaz del panel a veces se llama panel único. 
+
+Una SIEM ayuda a los analistas a inspeccionar, analizar y reaccionar ante eventos de seguridad en la red según su prioridad. Los informes SIEM dan una lista de vulnerabilidades nuevas o en curso y las enumeran en una escala de prioridad de alta a baja. Las vulnerabilidades de alta prioridad tienen menos tiempo para ser mitigadas. 
+
+#### Tareas de una sola vez
+
+- Filtrado de puertos en firewalls
+- Privilegios de acceso a la red el cifrado de comunicación
+
+El filtrado de puertos. Este puede formarse en la red. Es una función del firewall que bloquea o permite ciertos números de puerto para limitar la comunicación no deseada. Un principio básico es que los únicos puertos necesarios son los permitidos. Los puertos que no se usen en las operaciones normales de la red deben rechazarse. Esto protege contra vulnerabilidades de puerto.
+
+Las redes deben configurarse con los protocolos inalámbricos más recientes, y los antiguos deben desactivarse. Los analistas de seguridad también usan segmentación de red para crear subredes aisladas para los distintos departamentos de la organización.
+La segmentación de red también se puede usarse para separar zonas de seguridad. Una zona restringida en una red con información clasificada o confidencial debe separarse del resto de la red. 
+
+Toda la comunicación en redes debe cifrarse con los estándares más recientes. Los estándares de cifrado son reglas o métodos para ocultar datos salientes y descubrir y descifrar datos entrantes. Los datos de zonas restringidas deben tener estándares de codificación muy altos que dificulten el acceso a ellos. 
+
+### Aplicaciones de la seguridad
+
+Reforzamiento y monitoreo de la red. Cada dispositivo, herramienta o estrategia de ciberseguridad implementada por las/los analistas aumenta la protección o refuerza la red hasta alcanzar un nivel de seguridad que resulte satisfactorio. Este enfoque de agregar capas de seguridad a una red se conoce como defensa en profundidad.
+
+#### 4 dispositivos para proteger una red
+
+- `Cortafuegos (firewall)`: 
+
+    La mayoría de los firewalls son similares en sus funciones básicas. Todos permiten el tráfico o lo bloquean en función de un conjunto de reglas. A medida que los paquetes de datos entran en una red, se inspecciona el encabezado del paquete para permitir o denegar su acceso en función de su número de puerto. Los NGFW también pueden inspeccionar cargas útiles de paquetes. Cada sistema debe tener su propio firewall, independientemente del de la red.
+
+- `Sistemas de detección de intrusiones`: 
+
+    Un sistema de detección de intrusiones (IDS) es una aplicación que monitorea la actividad del sistema y alerta sobre posibles intrusiones. Un IDS alerta a los/las administradores/as en función de la firma del tráfico malicioso.
+
+    El IDS está configurado para detectar ataques conocidos. Los sistemas IDS suelen detectar paquetes de datos a medida que se mueven por la red, y los analizan en busca de las características de ataques conocidos. Algunos sistemas IDS revisan no solo las firmas de ataques conocidos, sino también las anomalías que podrían ser el signo de actividad maliciosa. Cuando el IDS descubre una anomalía, envía una alerta al/ a la administrador/a de la red que luego investigará más a fondo.
+
+    La limitación de los sistemas IDS reside en que solo pueden escanear en busca de ataques conocidos o anomalías obvias. Es posible que no se detecten ataques nuevos y sofisticados. La otra limitación es que el IDS en realidad no detiene el tráfico entrante si detecta algo mal. Depende del/de la administrador/a de la red detectar la actividad maliciosa antes de que haga algo perjudicial. 
+
+    Cuando se combina con un firewall, un IDS agrega otra capa de defensa. El IDS se coloca detrás del firewall y antes de ingresar a la LAN, lo que permite que el IDS analice los flujos de datos después de que el tráfico de red desautorizado por el firewall se haya filtrado. Esto se hace para reducir el ruido en las alertas IDS, también conocidas como falsos positivos.
+- `Sistemas de prevención de intrusiones`:
+
+    Un sistema de prevención de intrusiones (IPS) es una aplicación que monitorea la actividad del sistema en busca de actividad intrusiva y toma medidas para detenerla. Ofrece aún más protección que un IDS porque detiene activamente las anomalías cuando se detectan, a diferencia del IDS que simplemente las informa a un/a administrador/a de red.
+
+    Un IPS busca firmas de ataques conocidos y anomalías de datos a las/los analistas de seguridad y bloquea un remitente específico o deja caer paquetes de red que parecen sospechosos. 
+
+    El IPS (como un IDS) se encuentra detrás del firewall en la arquitectura de red. Esto ofrece un alto nivel de seguridad porque los flujos de datos peligrosos se interrumpen incluso antes de que lleguen a partes sensibles de la red. Sin embargo, una limitación potencial es que se trata de un dispositivo inline (interpuesto en el flujo de datos), lo cual significa que el flujo de datos pasa a través de sus interfaces de red: si falla, la conexión entre la red privada e Internet deja de funcionar. Otra limitación del IPS es que se generen falsos positivos, que pueden llevar a la caída de tráfico legítimo.
+- `Herramientas de gestión de incidentes y eventos de seguridad`:
+
+    Un sistema de gestión de eventos e información de seguridad (SIEM) es una herramienta que recopila y analiza datos de registro para monitorear actividades críticas en una organización. Las herramientas SIEM funcionan en tiempo real para informar las actividades sospechosas, a través de un panel de control centralizado. Las herramientas SIEM también analizan los datos de registro de red procedentes de IDS, IPS, cortafuegos, VPN, proxies y registros de DNS. Las herramientas SIEM son una forma de agregar datos de eventos de seguridad a fin de que todo aparezca en un solo lugar para que las/los analistas de seguridad lo analicen. Esto se conoce como panel único.
+
+    A continuación, puedes analizar un ejemplo de un panel de la herramienta SIEM de Google Cloud, Chronicle. Chronicle es una herramienta nativa de la nube diseñada para conservar, analizar y buscar datos.
+
+
+<img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/p0MmmPTxQMGW6k7C1rXY4Q_e678ba8831b34cf680bbce316da826f1_HcRuFJH87WD1OgS5a93Kkg5Zwtw5c1mRxqvJTG6RtM4vSdHTjCOQx1YiJabf9ex0iCac24RqLPgzJfrx63tPNib6C6OFDjPVl85bsKT83C9FA1Fm2A82ZFKsDisfoCO0UMBqrtVyfYvXo4zfrC2bkaBW55AYptoLl5Qltn46YI6sq9IVYHSxgOTDNzMKZ_XujGvmQRETrg?expiry=1720569600000&hmac=AaCmIiRoaM63YiMaLse-cNmH5RRrskPekM9_4mgDPd4" width="600px">
+
+
+
+- **Splunk** es otra herramienta SIEM común que ofrece diferentes opciones de herramientas SIEM: Splunk Enterprise y Splunk Cloud. Ambas opciones incluyen paneles detallados que ayudan a los profesionales de seguridad a revisar y analizar los datos de una organización. También hay otras herramientas SIEM similares disponibles, y es importante que las y los profesionales de seguridad las investiguen para determinar cuál es la más beneficiosa para la organización.
+
+    Una herramienta SIEM no reemplaza la experiencia de los analistas de seguridad ni las actividades de reforzamiento de redes y sistemas cubiertas en este curso, sino que se utilizan en combinación con otros métodos de seguridad. Las/los analistas de seguridad suelen trabajar en un Centro de Operaciones de Seguridad (SOC) donde pueden monitorear la actividad en toda la red. Luego utilizan su experiencia y conocimientos para determinar cómo responder a la información en el panel y decidir cuándo los eventos cumplen con los criterios para ser notificados a supervisión.
+#
+
+Cada herramienta mencionada es una capa adicional de defensa que puede reforzar gradualmente una red, comenzando con el nivel mínimo de seguridad (proporcionado solo por un firewall), hasta el más alto (proporcionado por la combinación de un firewall, un dispositivo de prevención y detección de intrusiones y el monitoreo de eventos de seguridad).
+
+<img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/E_vLkIaNSUOUT6h9iCjrlg_2dda20ccc97c45cc952a8c723a7579f1_4ENRXSswQSOsOrKt9KyG6A_06fe04a8d10846ba811fe89a969642f1_CS_R-055_Firewall-IDS-and-IPS-1-.png?expiry=1720569600000&hmac=XPquRX9f4m_yZxLecblcjxJFwXlu7rYFrcX0pvGS_Ws" width="600px">
+
+
+# 
+#### Conclusio 
+
+| Dispositivos/Herramientas | Ventajas | Desventajas |
+| :-------- | :------- | :------------------------- |
+| `Cortafuegos (Firewall)` | Los firewalls permiten o bloquean el tráfico en función de un conjunto de reglas. | Un firewall solo puede filtrar paquetes basándose en la información proporcionada en su encabezado.  |
+| `Sistema de detección de intrusiones (SDI)` | Un IDS detecta y alerta a los/las administradores/as sobre posibles intrusiones, ataques y otro tráfico malicioso. | Un IDS solo puede escanear en busca de ataques conocidos o anomalías obvias; es posible que no se detecten ataques nuevos y sofisticados. Tampoco detiene el tráfico entrante. |
+| `Sistema de prevención de intrusiones (IPS)` | Un IPS monitorea la actividad del sistema en busca de intrusiones y anomalías y toma medidas para detenerlas. | Un IPS es un dispositivo inline. Si falla, la conexión entre la red privada e Internet se interrumpe. Puede detectar falsos positivos y bloquear el tráfico legítimo. |
+| `Sistema de prevención de intrusiones (IPS)` | Una herramienta SIEM recopila y analiza datos de registro de múltiples máquinas de red. Agrega eventos de seguridad para su monitoreo en un panel de control central. | Una herramienta SIEM solo informa sobre posibles problemas de seguridad. No toma ninguna acción para detener o prevenir eventos sospechosos. |
+
