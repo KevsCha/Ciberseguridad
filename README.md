@@ -1358,3 +1358,94 @@ Una forma importante de protegerse contra un ataque pitufo es usar un cortafuego
 - `Rastreo de paquetes` -> Práctica consistente en capturar e inspeccionar paquetes de datos a través de una red
 - `Ataque de suplantación de IP` ->  Ataque a la red realizado cuando un atacante cambia la IP de origen de un paquete de datos para hacerse pasar por un sistema autorizado y obtener acceso a una red
 - `Ataque en ruta` -> Ataque en el que un actor malicioso se coloca en medio de una conexión autorizada e intercepta o altera los datos en tránsito
+
+
+
+## Reforzamiento de la seguridad
+
+El reforzamiento de seguridad es el proceso de reforzar un sistema para reducir su vulnerabilidad y superficie de ataque. A las `vulnerabilidades potenciales` que un atacante puede aprovechar se las denomina "superficie de ataque" de un sistema. 
+
+`Ejemplo: La superficie de ataque son las puertas y ventanas que el ladrón puede utilizar para acceder a la casa. Al igual que poner cerraduras en puertas y ventanas` 
+
+El reforzamiento de seguridad minimiza la superficie de ataque o vulnerabilidades potenciales y protege la red lo máximo posible. Para el reforzamiento de seguridad, los analistas realizan procedimientos de mantenimiento de forma regular para que los sistemas y dispositivos de una red funcionen de forma segura y óptima. La seguridad se refuerza en cualquier dispositivo o sistema que pueda verse comprometido, como hardware, sistemas operativos, aplicaciones, redes informáticas y bases de datos. También se refuerza la seguridad física. Por ejemplo, al proteger un lugar con cámaras y guardias de seguridad. Algunos procedimientos de reforzamiento comunes son las actualizaciones de software, o parches, y cambios en la configuración de dispositivos o aplicaciones. Las actualizaciones y cambios aumentan la seguridad y corrigen las vulnerabilidades de una red. 
+
+- `Ejemplo: cambio de configuración es requerir contraseñas más largas, o hacer que se cambien con más frecuencia. Esto dificulta al atacante el acceso a datos de inicio de sesión.`
+- `Ejemplo: de configuración es actualizar los estándares de cifrado de datos en una base de datos. Mantener el cifrado actualizado dificulta el acceso de los atacantes a los datos.`
+- `Ejemplo: de reforzamiento son eliminar o desactivar aplicaciones y servicios sin usar, deshabilitar puertos no utilizados y reducir permisos de acceso por dispositivos y red. Minimizar la cantidad de aplicaciones, dispositivos, puertos y permisos de acceso mejora el monitoreo de red y dispositivos, y reduce la superficie de ataque, lo cual es una de las mejores maneras de mantener segura una organización`
+
+- `Ejemplo: estrategia importante de reforzamiento es realizar pruebas de penetración con regularidad. Una prueba de penetración, también conocida como "pen test", es un ataque simulado que identifica vulnerabilidades en un sistema, red, sitio web, aplicación y proceso. Los hallazgos de esta prueba se documentan en un informe. Según el fallo, el equipo de seguridad determina el tipo de vulnerabilidad que debe corregirse. Las empresas pueden revisar las vulnerabilidades y pensar en un plan para corregirlas`
+
+
+### Reforzamiento de SO
+
+Reforzamiento del sistema operativo, o SO, el SO es la interfaz entre el hardware de la computadora y el usuario. El SO es lo primero en cargarse al encender la computadora, y actúa como intermediario entre las aplicaciones de software y el hardware de la computadora. Es importante proteger el SO de cada sistema, porque un SO inseguro puede comprometer toda una red. Hay muchos tipos de SO, y todos ellos tienen prácticas de reforzamiento de la seguridad similares. 
+
+Hay tareas de reforzamiento realizadas en intervalos regulares, como las actualizaciones, los respaldos y el hecho de tener una lista actualizada de dispositivos y de usuarios autorizados. Otras tareas se llevan a cabo una sola vez como parte de las medidas de seguridad preliminares. Un ejemplo podría ser configurar un dispositivo para que este se adapte a un cifrado. Comencemos con tareas de reforzamiento de SO que se realizan de forma regular, como la instalación de parches también conocida como "actualizaciones de parches". Una actualización de parche es una actualización de software y SO que aborda vulnerabilidades de seguridad en un programa o producto.  Con actualizaciones de parches, el SO debe actualizarse a su última versión. A veces, se lanzan parches para corregir una vulnerabilidad en el software. Apenas los proveedores publican un parche y una corrección de vulnerabilidad, los actores de amenaza saben exactamente dónde está la vulnerabilidad en los SO desactualizados. Por eso es importante ejecutar actualizaciones de parche inmediatamente después de su lanzamiento. El SO actualizado debe agregarse a la línea base de configuración, también llamada imagen de línea base. Una línea de base de configuración es un conjunto documentado de especificaciones en un sistema que se usa como base para futuras compilaciones, versiones y actualizaciones.
+
+*`Ejemplo, una línea base puede tener una regla de firewall con una lista de puertos autorizados y no autorizados. Si el equipo sospecha que hay actividad inusual afectando al SO, pueden comparar la configuración actual con la línea base y así asegurarse de que nada se haya cambiado.`*
+
+Otra tarea de reforzamiento realizada regularmente es la eliminación de hardware y software. Esto garantiza la correcta eliminación y limpieza de hardware antiguo. También es bueno eliminar software sin usar, ya que que algunos lenguajes de programación populares tienen vulnerabilidades conocidas. Eliminar software sin usar suprime vulnerabilidades innecesarias conectadas con los programas que el software usa.
+
+La última tarea de reforzamiento de SO de la que hablaremos es la implementación de una política de contraseña segura. La política de contraseña segura requiere que las contraseñas sigan una serie de reglas específicas. ede requerirse también la autenticación de múltiples factores, o MFA. La MFA es una medida de seguridad que requiere verificar la identidad de dos o más formas para acceder a un sistema o red. Las formas de identificación incluyen algo que conoces, como una contraseña, algo que tienes, como un documento de identidad o algo único de ti, como tu huella digital.
+
+Se obserava un gran numero de maneras de refozar el SO, las podemos categorizar en: 
+
+- Tareas de Reforzamiento Realizadas Regularmente: 
+    - Actualizaciones y Parches:
+        - Instalación de parches de seguridad.
+        - Actualización del SO a su última versión.
+        - Incorporación del SO actualizado a la línea base de configuración.
+    - Respaldo:
+        - Realización regular de copias de seguridad para garantizar la recuperación en caso de fallo o compromiso del sistema.
+    - Lista de Dispositivos y Usuarios Autorizados:
+        - Mantenimiento de una lista actualizada de dispositivos y usuarios autorizados para acceder al sistema.
+    - Eliminación de Hardware y Software:
+        - Eliminación y limpieza de hardware antiguo.
+        - Eliminación de software no utilizado para suprimir vulnerabilidades innecesarias.
+- Tareas de Reforzamiento Realizadas Una Sola Vez:
+    - Configuración Inicial del Dispositivo:
+        - Adaptación de dispositivos para usar cifrado.
+    - Política de Contraseña Segura:
+        - Implementación de una política que requiere contraseñas seguras.
+        - Posible implementación de autenticación de múltiples factores (MFA) para verificar la identidad en dos o más formas (contraseña, identificación, huella digital).
+
+#### Ataque de fuerza bruta
+Un ataque de fuerza bruta es un proceso de prueba y error para descubrir información privada. Algunos de los tipos de ataques de fuerza bruta que los agentes de amenaza usan para desvelar contraseñas son: 
+
+- *Ataques de fuerza bruta simples. Cuando las/los atacantes intentan descubrir las credenciales de inicio de sesión de un/a usuario/a, se considera un ataque de fuerza bruta simple. Pueden hacerlo ingresando cualquier combinación de nombres de usuario y contraseñas hasta que encuentren la que funcione.*
+- *Ataques de diccionario. La técnica utilizada es similar. Las/los atacantes utilizan una lista de contraseñas de uso común y credenciales robadas de ataques anteriores, para acceder a un sistema. Estos se llaman ataques “de diccionario” porque las/los atacantes originalmente usaban una lista de palabras del diccionario para dar las contraseñas correctas, antes de que las reglas de contraseñas complejas se convirtieran en una práctica de seguridad común. *
+
+#### Evaluación de vulnerabilidades
+
+Antes de que ocurra un ataque de fuerza bruta u otro incidente de ciberseguridad, las empresas pueden ejecutar una serie de pruebas en su red o aplicaciones web para evaluar vulnerabilidades. Las/los analistas pueden usar máquinas virtuales y entornos controlados (sandboxes) para probar archivos sospechosos, verificar vulnerabilidades antes de que ocurra un evento o simular un incidente de ciberseguridad.
+
+1. **Máquinas virtuales (VM)**
+
+Las máquinas virtuales (VM) son versiones en software de computadoras físicas. Las máquinas virtuales proporcionan una capa adicional de seguridad porque se pueden usar para ejecutar código en un entorno aislado, evitando que el código malicioso afecte al resto de la computadora o sistema. Las máquinas virtuales también se pueden eliminar y reemplazar por una imagen prístina después de probar el software malicioso. 
+
+Las máquinas virtuales son útiles cuando se investigan máquinas potencialmente infectadas o se ejecuta malware en un entorno restringido. El uso de una máquina virtual puede evitar daños en tu sistema en caso de que sus herramientas se utilicen incorrectamente. Las máquinas virtuales también te dan la capacidad de restablecer a un estado anterior. Sin embargo, aún existe un pequeño riesgo de que un programa malicioso pueda escapar de la virtualización y acceder a la máquina host. 
+
+Con máquinas virtuales, puedes probar y explorar aplicaciones fácilmente, y es fácil cambiar entre diferentes máquinas virtuales desde tu computadora. Esto también puede ayudar a agilizar muchas tareas de seguridad.
+
+2. **Entornos controlados (Sandboxes)**
+
+Un área de prueba o “sandbox” es un tipo de entorno que te permite ejecutar software o programas fuera de tu red. Se usan comúnmente para probar parches, identificar y abordar errores o detectar vulnerabilidades de ciberseguridad. Estas áreas de prueba también se pueden utilizar para evaluar software sospechoso o archivos que contienen código malicioso y simular escenarios de ataque. 
+
+Las áreas de prueba pueden ser computadoras físicas independientes que no están conectadas a una red; sin embargo, como entornos para un área de prueba, suele ser más rentable usar software o máquinas virtuales basadas en la nube. Ten en cuenta que quienes crean malware, por lo general, saben cómo escribir código, para detectar si el código malicioso se ejecuta en una máquina virtual o en un entorno de área de prueba. Las/los atacantes pueden programar su código malicioso para que se comporte como un software inofensivo cuando se ejecuta dentro de este tipo de entornos de prueba.
+
+### Medidas de prevención
+
+- `Salting y hashing:`
+    
+    El hashing convierte la información en un valor único que luego se puede usar para determinar su integridad. Es una función unidireccional, lo que significa que es imposible descifrar y obtener el texto original. Salting agrega caracteres aleatorios a las contraseñas hash. Esto aumenta la longitud y la complejidad de los valores hash, haciéndolos más seguros.
+
+- `Autenticación de múltiples factores (MFA) y autenticación de dos factores (2FA):`
+    
+    MFA es una medida de seguridad que requiere que un usuario verifique su identidad de dos o más maneras para acceder a un sistema o red. Esta verificación se realiza al utilizar una combinación de factores de autenticación: un nombre de usuario y contraseña, huellas dactilares, reconocimiento facial o una contraseña única (OTP) enviada a un número de teléfono o correo electrónico. 2FA es similar a MFA, pero utiliza solo dos formas de verificación.
+- `CAPTCHA y reCAPTCHA:`
+
+    CAPTCHA significa Prueba de Turing Pública y Automatizada para Diferenciar entre Máquinas y Humanos. Pide a los/las usuarios/as que completen una prueba simple que demuestre que son personas. Esto ayuda a evitar que el software intente forzar una contraseña. reCAPTCHA es un servicio gratuito de CAPTCHA de Google que ayuda a proteger los sitios web de bots y software malicioso.
+- `Políticas de contraseña:`
+
+    las organizaciones utilizan políticas de contraseña para estandarizar buenas prácticas. Estas pueden incluir pautas sobre el nivel de complejidad que debe tener una contraseña, la frecuencia con la que los/las usuarios/as deben actualizarlas y el límite de intentos de inicio de sesión por parte de un/a usuario/a antes de que se suspenda su cuenta.
+
