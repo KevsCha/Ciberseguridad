@@ -1668,3 +1668,41 @@ Muestra un proceso que va del/la usuario/a a la aplicación, a los sistemas oper
 - `Hardware`: El hardware es donde se realiza todo el procesamiento para completar las tareas iniciadas por el/la usuario/a. Por ejemplo, cuando una persona quiere calcular un número, la unidad central de procesamiento (CPU) realiza el cálculo. Otro ejemplo, cuando un/a usuario/a desea guardar un archivo, otro componente del hardware, el disco duro, se encarga de hacerlo.
 
 Después de que el hardware realiza el trabajo, envía el resultado a través del sistema operativo a la aplicación para mostrárselo al/la usuario/a.
+
+### El funcionamiento del sistema operativo  detrás de escena
+
+Considera una vez más cuánto se asemeja una computadora a un automóvil. Hay procesos que alguien no observa directamente cuando maneja un vehículo, pero sí siente cómo avanza cuando pisa el acelerador. Lo mismo sucede con una computadora. Aunque no lo experimentas directamente, se lleva a cabo un trabajo importante dentro de un equipo, que involucra al sistema operativo.
+
+Puedes explorarlo a través de otra analogía: el proceso de usar un sistema operativo también se asemeja a hacer un pedido en un restaurante. Cuando sales a comer afuera, haces un pedido y recibes tu comida, pero no ves el paso a paso de cómo se prepara tu plato en la cocina.
+
+Hacer un pedido de comida es similar a usar una aplicación en una computadora. Cuando haces tu pedido, mencionas algún detalle específico como “una sopa pequeña, muy caliente”. Cuando usas una aplicación, también realizas solicitudes específicas como “imprimir tres copias a doble faz de este documento”. 
+
+Puedes comparar la comida que recibes con lo que sucede cuando el hardware envía el resultado. Recibes la comida que pediste. Recibes el documento que querías imprimir. 
+
+Por último, la cocina se asemeja al sistema operativo: aunque no sepas qué ocurre allí, su función es fundamental para interpretar tu solicitud y garantizar que recibas lo que pediste. Del mismo modo, si bien el trabajo del sistema operativo no es directamente visible para ti, es crucial para completar tus tareas con éxito.
+
+#### Un ejemplo: descargar un archivo desde un navegador de Internet
+Anteriormente, viste cómo los sistemas operativos, las aplicaciones y el hardware trabajan de manera conjunta examinando una tarea que implicaba un cálculo. Ahora, puedes ampliar esta comprensión explorando cómo el sistema operativo completa otra tarea: descarga un archivo desde un navegador de Internet: 
+
+Primero, el/la usuario/a decide que quiere descargar un archivo que encontró en línea, por lo que hace clic en un botón de descarga cerca del archivo en la aplicación del navegador web.
+
+Luego, el navegador web comunica dicha acción al sistema operativo.
+
+El sistema operativo envía la solicitud para descargar el archivo al hardware adecuado para su procesamiento.
+
+El hardware comienza a descargarlo y el sistema operativo envía esta información a la aplicación del navegador. Luego, este informa al/la usuario/a cuando el archivo ha sido descargado.
+
+un usuario enciende la computadora esta manda una señal a la BIOS o UEFI, esta a su vez acitva el cargador de arranque y se inicia el SO
+
+### GUI (interfaz grafica de usuario) frente a la CLI (interfaz de linea de comando -> shell)
+
+Una interfaz gráfica de usuario (GUI) utiliza íconos en la pantalla para gestionar las distintas tareas de la computadora. Una interfaz de línea de comandos (CLI), en cambio, es una interfaz de usuario basada en texto que utiliza comandos para interactuar con la computadora.
+
+#### Pantalla 
+Una diferencia importante entre estas dos interfaces es cómo se presentan en la pantalla. Una interfaz gráfica de usuario tiene gráficos e íconos, como los íconos en tu escritorio o la barra de tareas para iniciar programas. Al contrario, una CLI solo tiene texto. Se asemeja a las líneas de código.
+
+<img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/YYXeVwXBTIu-X7AezxdkmA_74abb7ac03aa4be393240c9386dd7af1_89r_YD4Bff3MNJKIlSA-mFBuEL4df0jHO2_21DyoPzKDsdSPJVh27tleVbLw-GiclzfEcYjcA8ZD22FLjd7Dp150FzicVctzhzFeClN3bqKLWhlgojPaYJIlY9q1ySxmS3ngKCaFJRw2uKExTNSI0w?expiry=1720915200000&hmac=Nfqy-fhZjxOzn2Awspf1EZZSPFyhRKXLaMvTV5vgCzA" width="600px">
+
+#### Función
+
+Estas dos interfaces también difieren en su funcionamiento. Una GUI es una interfaz que solo te permite realizar una solicitud a la vez. Sin embargo, una CLI te permite realizar múltiples solicitudes al mismo tiempo. 
