@@ -1588,5 +1588,83 @@ Un principio de seguridad en la nube comúnmente aceptado es el modelo de respon
 
 El modelo de responsabilidad compartida garantiza que tanto el CSP como los/las usuarios/as estén de acuerdo acerca de dónde comienza y dónde termina su responsabilidad respecto de la seguridad. Es importante tener esto en claro porque, si las organizaciones asumen que el CSP está encargándose de una instancia de seguridad por la que ellos no se han hecho responsables, puede ser un problema. Un ejemplo de esto tiene que ver con las aplicaciones y configuraciones en la nube. El CSP asume la responsabilidad de proteger la nube, pero la organización debe encargarse de garantizar que los servicios se configuren correctamente de acuerdo con los requisitos de seguridad de su organización. 
 
+## Herramientas del oficio: Linux y SQL
 
+### Los sistemas operativos más comunes
 
+- `Windows y macOS`
+
+    Windows y macOS son sistemas operativos comunes. El sistema operativo Windows se introdujo en 1985, y macOS en 1984. Ambos sistemas se utilizan en computadoras de uso hogareño, tanto de escritorio como portátiles, así como en equipos corporativos 
+
+    Windows es un sistema operativo de código cerrado, lo que significa que el código fuente no se comparte libremente con el público; macOS, en cambio, es parcialmente de código abierto. Algunos elementos son de código abierto, como el kernel de macOS, y otros son de código cerrado. 
+
+- `Linux`
+
+    La primera versión de Linux se presentó en 1991 y posteriormente se realizaron otros lanzamientos importantes, a principios de aquella década. Linux es un sistema operativo completamente de código abierto, lo que significa que cualquier persona puede acceder al sistema y a su código fuente. Por su naturaleza de código abierto, permite la colaboración entre los/as desarrolladores/as de su comunidad.
+
+    Linux es particularmente importante para la industria de la seguridad. Existen algunas distribuciones que están diseñadas específicamente para la seguridad. Más adelante en este curso, aprenderás sobre Linux y su importancia para la industria de la seguridad.
+- `ChromeOS`
+
+    ChromeOS, que se utiliza con frecuencia en el campo de la educación, se lanzó en 2011. Este sistema operativo es parcialmente de código abierto y se deriva de Chromium OS, completamente de código abierto. .
+
+- `Android e iOS`
+
+    Android e iOS son sistemas operativos móviles. A diferencia de los otros sistemas operativos mencionados, estos se utilizan por lo general en dispositivos móviles, como teléfonos, tabletas y relojes. Android, que es de código abierto, se presentó para uso público en 2008, mientras que iOS, parcialmente de código abierto, lo hizo un año antes. 
+
+### Sistemas operativos y vulnerabilidades
+Las cuestiones de seguridad son inevitables en todos los sistemas operativos. Una parte crucial para protegerlos es mantenerlos actualizados, incluyendo todos sus componentes.
+
+#### Sistemas operativos heredados
+
+Un sistema operativo heredado es un sistema operativo obsoleto, pero que todavía se sigue utilizando. Algunas organizaciones continúan utilizando sistemas operativos heredados debido a que el software del que dependen no es compatible con sistemas operativos más nuevos. Esto puede ser más común en industrias que utilizan una gran cantidad de equipos que requieren software integrado, es decir, software que se coloca dentro de los componentes del equipo.
+
+Los sistemas operativos heredados pueden ser vulnerables a problemas de seguridad porque ya no reciben soporte ni actualizaciones. Esto significa que los sistemas operativos heredados pueden ser vulnerables a nuevas amenazas. 
+
+#### Otras vulnerabilidades
+
+Incluso cuando los sistemas operativos se mantienen actualizados, pueden volverse vulnerables a los ataques. A continuación se presentan varios recursos que incluyen información sobre los sistemas operativos y sus vulnerabilidades.
+
+- [Microsoft Security Response Center (MSRC)](https://msrc.microsoft.com/update-guide/vulnerability): un listado de vulnerabilidades conocidas que afectan a los productos y servicios de Microsoft.
+
+- [Actualizaciones de seguridad de Apple](https://support.apple.com/en-us/HT201222) : un listado de actualizaciones de seguridad e información para los sistemas operativos de Apple®, incluidos macOS e iOS, y otros productos.
+
+- [Informe de vulnerabilidades y exposiciones comunes (CVE) para Ubuntu](https://ubuntu.com/security/cves): un listado de vulnerabilidades conocidas que afectan a Ubuntu, que es una distribución específica de Linux.
+
+- [Boletín de seguridad de Google Cloud](https://cloud.google.com/support/bulletins?hl=es-419): una lista de vulnerabilidades conocidas que afectan a los productos y servicios de Google Cloud.
+
+### SO en funcionamiento
+
+El SO ayuda a otros programas a funcionar eficientemente. Para lograrlo, se encarga de controlar el hardware de la computadora para que tú no tengas que hacerlo.  Al presionar el botón de encendido, están interactuando con el hardware. Esto arranca la computadora y el sistema operativo. Arrancar la computadora implica activar un microchip especial llamado BIOS. En muchas computadoras fabricadas después de 2007, el chip cambió a UEFI. Tanto el BIOS como UEFI contienen instrucciones de arranque que activan un programa especial llamado cargador de arranque. Este inicia el sistema operativo. Y así se enciende la computadora. A menudo el software antivirus no revisa el BIOS, y puede ser vulnerable al malware.
+
+Tras ver cómo arrancar el sistema operativo, veamos cómo ocurre la comunicación con el sistema para realizar una tarea. El proceso empieza contigo, el usuario. Para llevar a cabo las tareas, usas aplicaciones en la computadora. Una aplicación es un programa que realiza una tarea específica. Al hacerlo, la aplicación envía tu solicitud al sistema operativo. A partir de ahí, este interpreta la solicitud y la envía al componente apropieado del hardware de la computadora.
+
+El hardware también devuelve información al sistema operativo. Y, a su vez, esto se envía nuevamente a la aplicación. Veamos de forma sencilla cómo funciona esto cuando quieres usar la calculadora en tu computadora. Usas el mouse para hacer clic en la aplicación de la calculadora. Al ingresar el número que quieres calcular, la aplicación se comunica con el SO. El SO envía el cálculo a un componente del hardware, la unidad central de procesamiento, o CPU. Cuando el hardware determina el número final, envía la respuesta al SO. Luego, se muestra en la aplicación de la calculadora. Comprender este proceso sirve al investigar eventos de seguridad. 
+
+### Solicitudes al sistema operativo
+
+#### Arranque de la computadora
+
+Cuando arrancas o enciendes tu computadora, se activa un microchip BIOS o UEFI. El sistema básico de entrada/salida (BIOS) es un microchip que contiene instrucciones de carga para la computadora y que es común en los sistemas más antiguos. La interfaz de firmware extensible unificada (UEFI) es un microchip que contiene instrucciones de carga para la computadora y reemplaza al BIOS en los sistemas más modernos.
+
+Tanto los chips BIOS como los UEFI realizan la misma función en el arranque de una computadora. El BIOS era el chip estándar hasta 2007, cuando el uso de los chips UEFI se incrementó. Ahora, la mayoría de las computadoras nuevas incluyen un chip UEFI, que proporciona funcionalidades de seguridad mejoradas.
+
+Los microchips BIOS o UEFI contienen una variedad de instrucciones de carga para la computadora. Por ejemplo, una de estas consiste en verificar el estado del hardware de la computadora.
+
+La última instrucción del BIOS o UEFI activa el cargador de arranque. El cargador de arranque es un programa de software que inicia el sistema operativo. Una vez que el sistema operativo termina de arrancar, la computadora está lista para su uso.  
+
+#### Completar una tarea
+
+Como se mencionó con anterioridad, los sistemas operativos nos ayudan a utilizar las computadoras de manera más eficiente. Cuando un equipo pasa por el proceso de arranque, para completar una tarea en una computadora se debe realizar otro proceso que contiene cuatro partes.  
+
+<img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/aOZsLS6RT5iSNG7t9XfqOQ_58eae2456d9c4449b47b57be16a294f1_1k4Nluj-7zEYmwW3JyFOrV9pzpl68L_n-DluCm_1SqfYdEIps9OmhIbo3Z4jOFWMo_X-ACJ4VtLtcGPEgBGPl5J_kZPlqZthlX4P-GWJoGd38o26b5Fs12QsD_fIPDFHY7018MmK5j5iRBKX3NjAzA?expiry=1720915200000&hmac=DdIp8CmysRmZoi4j6flnJaOd5284-lPmQiPAdcfEwtc" width="600px">
+
+Muestra un proceso que va del/la usuario/a a la aplicación, a los sistemas operativos y por último, al hardware.
+
+- `Usuario/a`: En la primera parte está el/la usuario/a, que inicia el proceso para hacer algo con la computadora. Como tú ahora mismo, que iniciaste el proceso de acceder a esta lectura.
+
+- `Aplicación`: La aplicación es el programa de software con el que los/as usuarios/as interactúan para completar una tarea. Por ejemplo, si deseas hacer un cálculo, utilizarás la aplicación de la calculadora. Si deseas escribir un informe, en cambio, usarás una aplicación de procesamiento de textos. Esta es la segunda parte del proceso.
+- `Sistema operativo`: El sistema operativo recibe la solicitud del/la usuario/a desde la aplicación. Su tarea es interpretar la solicitud y dirigir el flujo. Para completar la tarea, el sistema operativo la envía a los componentes del hardware. 
+
+- `Hardware`: El hardware es donde se realiza todo el procesamiento para completar las tareas iniciadas por el/la usuario/a. Por ejemplo, cuando una persona quiere calcular un número, la unidad central de procesamiento (CPU) realiza el cálculo. Otro ejemplo, cuando un/a usuario/a desea guardar un archivo, otro componente del hardware, el disco duro, se encarga de hacerlo.
+
+Después de que el hardware realiza el trabajo, envía el resultado a través del sistema operativo a la aplicación para mostrárselo al/la usuario/a.
