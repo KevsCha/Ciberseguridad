@@ -1706,3 +1706,113 @@ Una diferencia importante entre estas dos interfaces es cómo se presentan en la
 #### Función
 
 Estas dos interfaces también difieren en su funcionamiento. Una GUI es una interfaz que solo te permite realizar una solicitud a la vez. Sin embargo, una CLI te permite realizar múltiples solicitudes al mismo tiempo. 
+## Todo sobre linux
+
+- `Architecture of Linux`
+- `Differents distributions of linux`
+- `The Shell `
+
+Linux es un SO de código abierto. Se creó en dos partes. A principios de los 90, dos personas trabajaban por separado en proyectos para mejorar la ingeniería informática. La primera persona fue Linus Torvalds. En aquel entonces, ya se usaba el SO Unix. Quería mejorarlo y hacerlo de código abierto y accesible para todos. Su acción revolucionaria fue presentar el kernel de Linux. Por la misma época, Richard Stallman trabajaba en GNU. GNU también era un SO basado en Unix. Stallman tenía el objetivo de Torvalds, crear software libre y abierto para todos. Tras años de trabajo en GNU, el elemento que le faltaba era un kernel. Las innovaciones de Torvalds y Stallman crearon lo que se denomina Linux. 
+
+### Arquitectura de Linux 
+
+Componentes que juntos conforman Linux:
+
+- Usuario: El usuario es quien interactúa con la computadora. En Linux, tú eres el primer elemento de la arquitectura del SO. Tú inicias las tareas o comandos que el SO ejecutará. Linux es un sistema multiusuario. Es decir que más de un usuario puede usar los recursos a la vez.
+
+- Apps:  Una app es un programa de tareas, como un procesador de textos o una calculadora. Quizá notes que “app” y “programa” se usan indistintamente. Por ejemplo, una app de Linux popular que veremos después es Nano. Nano es un editor de texto. En esta sencilla app tomas notas en la pantalla. Las apps de Linux suelen distribuirse mediante gestores de paquetes. 
+
+    Un gestor de paquetes es una herramienta que ayuda a los/las usuarios/as a instalar, gestionar y desinstalar paquetes o aplicaciones. Vale aclarar que un paquete es un componente de software que puede combinarse con otros paquetes para formar una aplicación.
+
+- Shell: Es importante porque permite comunicarte con el sistema. Este interpreta la línea de comandos. Procesa comandos y produce los resultados. Te puede sonar familiar. Antes vimos los dos tipos de interfaz de usuario: la GUI y CLI. El shell es como una CLI.
+
+    El shell es el intérprete de línea de comandos. Todo lo que se introduce en el shell se basa en texto. El shell permite a los/las usuarios/as enviar órdenes al kernel y recibir respuestas de él. Puedes pensar en el shell como un intérprete entre tú y tu computadora. Este traduce los comandos que ingreses para que la máquina pueda ejecutar las funciones que deseas.
+
+- Estándar de jerarquía del sistema de archivos(Filesystem hirarchy Standard):  Es el componente del SO Linux que organiza los datos. El FHS es como un archivador de datos. El FHS es la forma de almacenar datos en un sistema. Organiza los datos para encontrarlos cuando el sistema accede a ellos. 
+
+    Un directorio es un archivo que organiza la ubicación de otros archivos. A veces, los directorios se llaman “carpetas” y pueden contener archivos u otros directorios. El FHS define cómo se organizan los directorios, el contenido de estos y otros elementos de almacenamiento, para que el sistema operativo sepa dónde encontrar datos específicos. 
+
+- Kernel y hardware: Es un componente de Linux que gestiona procesos y memoria.
+
+    El kernel se comunica con el hardware y ejecuta comandos enviados por el shell. Usa conductores para posibilitar que las apps ejecuten tareas. Con el kernel de Linux, el sistema asigna recursos de forma más eficiente y funciona más rápidamente
+
+    Se refiere a los componentes físicos de la computadora. Puedes comparar esto con apps descargables en un sistema. El hardware se refiere a la CPU, mouse, teclado, etc. 
+### Dispositivos perifericos 
+
+Los dispositivos periféricos son componentes de hardware conectados y controlados por el sistema informático. No son componentes esenciales para el funcionamiento del sistema informático, y se pueden agregar o quitar libremente. Algunos ejemplos de dispositivos periféricos son los monitores, las impresoras, el teclado y el mouse.
+
+#### Hardware interno
+
+El hardware interno involucra los componentes necesarios para que funcione la computadora, como una placa de circuito principal, también denominada placa base, y todos los elementos conectados a ella. El hardware interno incluye: 
+
+- `Unidad central de procesamiento (CPU)`: procesador principal de una computadora y que se utiliza para realizar tareas informáticas generales. La CPU ejecuta las instrucciones proporcionadas por los programas, permitiendo que estos se ejecuten. 
+
+- `Memoria de acceso aleatorio (RAM)`:  que es un componente de hardware utilizado para la memoria a corto plazo. Es donde se almacenan temporalmente los datos mientras se realizan tareas en la computadora. Por ejemplo, si estás escribiendo un informe, los datos necesarios para que esto ocurra se almacenan en la memoria RAM. Cuando terminas de escribir el informe y cierras el programa, estos datos se eliminan de la memoria RAM. No se puede acceder a la información de la memoria RAM una vez que se ha apagado la computadora. La CPU toma los datos de la memoria RAM para ejecutar los programas. 
+
+- `Disco duro`: es un componente de hardware utilizado para la memoria a largo plazo. Es donde se almacenan los programas y archivos para que la computadora pueda acceder a ellos posteriormente. Se puede acceder a la información en el disco duro incluso después de apagar y volver a encender la computadora. Una computadora puede tener varios discos duros.
+
+#### Explora
+
+`Usuario` -> El usuario decide crear un nuevo archivo.
+`Aplicación` -> El usuario abre la aplicación para comunicarse con el shell.
+`Shell` -> El usuario introduce comandos en el shell para indicar que desea crear un nuevo archivo.
+`Estándar de jerarquía del sistema de archivos (FHS)` -> El shell crea el nuevo archivo en el FHS.
+`Kernel` -> El contenido y la ubicación del nuevo archivo se pasan al kernel.
+`Hardware` -> El kernel le indica al hardware cómo y dónde guardar este nuevo archivo.
+
+## Distribuciones de Linux
+
+Linux es un SO muy personalizable. A diferencia de otros SO, hay varias versiones que puedes usar. Las versiones de Linux se llaman distribuciones. Algunos las llaman “distros” o “sabores”. Debes conocer la distribución que usas para saber qué herramientas y apps hay. Por ejemplo, Debian y Ubuntu son distribuciones con herramientas distintas. Usemos una analogía para describir las distribuciones.
+
+El SO es como un vehículo. Primero empezamos con el motor, o sea el kernel. Al igual que el motor hace que el vehículo funcione, el kernel es el componente más importante de Linux. Como el kernel es de código abierto, cualquiera puede modificarlo y crear una nueva distribución. Es como si un fabricante de vehículos modifica un motor y crea varios vehículos: camiones, autos, furgonetas, descapotables, autobuses, aviones, etc. Estos vehículos son como las distintas distribuciones de Linux. Un autobús se usa para transportar a mucha gente; un camión, para transportar mercancía a largas distancias; un avión, para transportar pasajeros o mercancías por aire. Así como cada vehículo cumple un objetivo, las distribuciones se usan por distintos motivos. Además, los vehículos tienen componentes que los distinguen uno del otro. Los aviones tienen paneles con botones y perillas. Los autos tienen cuatro llantas, los camiones más. Las distribuciones contienen distintos programas preinstalados, interfaces de usuario y mucho más.
+
+### Kali Linux
+
+KALI LINUX™ es una marca de Offensive Security, derivado de Debian. Esta distribución de código abierto se creó para el pentesting y análisis forense digital. KALI LINUX™ tiene herramientas preinstaladas. Ten en cuenta que KALI LINUX™ debe usarse en una máquina virtual. Así se evitan daños en el sistema si sus herramientas se usan mal. Otra ventaja es que con la máquina virtual puedes revertir a un estado anterior. Con el tiempo, algunos profesionales se especializan en pentesting.
+
+**Penetration test** un ataque simulado para identificar vulnerabilidades en sistemas, red, sitios, apps y procesos. KALI LINUX™ tiene herramientas que sirven para el pentesting.
+
+#### Penetration test tools in KALI LINUX
+
+- `Metasploit`: sirve para buscar y explotar vulnerabilidades en equipos.
+- `Burp site`: se buscan debilidades en apps web.
+- `Jhon the Ripper` :sirve para adivinar contraseñas.
+
+**Digital Forensics ** el análisis forense digital consiste en recopilar y analizar datos para determinar qué ocurrió tras un ataque. Por ejemplo, podrías investigar datos relacionados con la actividad de red. 
+
+#### Digital forensics tools in KALI LINUX 
+
+- `TcpDump`: analiza paquetes de línea de comandos. Se usa para capturar el tráfico de red.
+- `Wireshark`: es otra herramienta usada comúnmente en la seguridad. Tiene una GUI que puede usarse para analizar tráfico de red en vivo y capturado.
+- `Autopsy `: es una herramienta forense para analizar discos duros y smartphones.
+
+Estas son algunas herramientas incluidas en KALI LINUX™. La distribución ofrece muchas herramientas de pentesting y análisis forense digital. 
+
+### Más distribuciones de Linux
+
+#### Kali Linux ™
+
+Kali Linux ™ es una distribución de Linux de código abierto que se utiliza ampliamente en la industria de la seguridad. Se basa en Debian y se caracteriza por incluir de forma preinstalada muchas herramientas útiles para pruebas de penetración y análisis forense digital. Las pruebas de penetración consisten en ataques simulados que ayudan a identificar vulnerabilidades en sistemas, redes, sitios web, aplicaciones y procesos. Por otro lado, el análisis forense digital es una práctica que implica recopilar y analizar datos para determinar qué sucedió después de un ataque. Estas actividades son claves en el ámbito de la seguridad. 
+
+Sin embargo, Kali Linux ™ no es la única distribución de Linux utilizada  en ciberseguridad. 
+#### Ubuntu
+
+Ubuntu es una distribución de código abierto y fácil de usar que goza de amplia popularidad en el ámbito de la seguridad y en otros sectores. Ofrece tanto una interfaz de línea de comandos (CLI) como una interfaz gráfica de usuario (GUI). Al ser un derivado de Debian, Ubuntu incluye de forma predeterminada aplicaciones comunes. Además, los/las usuarios/as pueden descargar un gran cantidad de aplicaciones adicionales a través de un gestor de paquetes, incluyendo herramientas especializadas en seguridad. Debido a su extenso uso, Ubuntu cuenta con una gran cantidad de recursos comunitarios para brindar apoyo a los/las usuarios/as.
+
+Ubuntu también se utiliza ampliamente en el ámbito de la computación en la nube. Por lo tanto, a medida que las organizaciones migran hacia servidores en la nube, el trabajo en ciberseguridad puede involucrar con mayor frecuencia derivados de Ubuntu.
+####  Parrot
+
+Parrot es una distribución de código abierto ampliamente utilizada en el ámbito de la seguridad. Al igual que Kali Linux ™, Parrot viene con herramientas preinstaladas relacionadas con pruebas de penetración y análisis forense digital. Asimismo, como Kali Linux ™ y Ubuntu, está basada en Debian.
+
+Una característica destacada de Parrot es su enfoque en brindar una experiencia de uso amigable. Esto se logra mediante una interfaz gráfica de usuario (GUI) intuitiva que facilita la navegación. Además, también ofrece una interfaz de línea de comandos (CLI).
+
+#### Red Hat®
+
+Red Hat® es una distribución de Linux basada en suscripción y diseñada para su uso en empresas. A diferencia de las distribuciones mencionadas anteriormente, Red Hat no es gratuita. Debido a que está diseñada y respalda para uso corporativo, también cuenta con un equipo de soporte dedicado, al que las empresas clientes pueden consultar ante incidentes.
+
+#### CentOS
+
+CentOS es una distribución de código abierto que está estrechamente relacionada con Red Hat. Utiliza el código fuente publicado por Red Hat para proporcionar una plataforma similar. Sin embargo, no ofrece el mismo soporte corporativo y se basa en el respaldo y la colaboración de la comunidad de usuarios/as para obtener apoyo.
+
+### Recurso para Labs de linux
+
