@@ -1814,5 +1814,4 @@ Red Hat® es una distribución de Linux basada en suscripción y diseñada para 
 
 CentOS es una distribución de código abierto que está estrechamente relacionada con Red Hat. Utiliza el código fuente publicado por Red Hat para proporcionar una plataforma similar. Sin embargo, no ofrece el mismo soporte corporativo y se basa en el respaldo y la colaboración de la comunidad de usuarios/as para obtener apoyo.
 
-### Recurso para Labs de linux
 
