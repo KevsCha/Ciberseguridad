@@ -1814,4 +1814,19 @@ Red Hat® es una distribución de Linux basada en suscripción y diseñada para 
 
 CentOS es una distribución de código abierto que está estrechamente relacionada con Red Hat. Utiliza el código fuente publicado por Red Hat para proporcionar una plataforma similar. Sin embargo, no ofrece el mismo soporte corporativo y se basa en el respaldo y la colaboración de la comunidad de usuarios/as para obtener apoyo.
 
+## Shell
 
+El shell ofrece la línea de comandos para que interactúes con el SO. Para decirle al SO qué hacer, ingresas comandos en esta interfaz. Un comando le indica a la computadora que haga algo. El shell se comunica con el kernel para ejecutar comandos. Antes vimos cómo el SO permite que el usuario se comunique con la computadora. El shell es la parte del SO que logra esto.
+
+Es como un intérprete útil entre tú y el sistema. No hablas el idioma de la computadora, binario, así que no puedes comunicarte de forma directa. El shell te ayuda con eso. El SO no necesita el shell para la mayoría del trabajo, pero es una interfaz entre tú y el sistema. Te permite hacer cálculos, realizar pruebas y ejecutar apps. Sobre todo, te permite combinar estas operaciones y conectar apps entre sí para realizar tareas complejas y automatizadas. 
+
+#### Standard input and error message
+
+- `Standard input`:  La entrada estándar es información que recibe el SO por la línea de comandos. Es como preguntarle a tu amiga algo en una conversación. La información se ingresa al shell mediante el teclado. Si el shell interpreta tu solicitud, le pide al kernel los recursos para ejecutar la tarea. Veamos el comando `echo`, que emite una cadena de texto especificada. Los datos de cadena son una secuencia ordenada de caracteres. En nuestro ejemplo, solo produce la cadena “hello”.
+
+```
+echo hello
+```
+La salida estándar es la información que devuelve el SO por el shell. Así como tu amiga responde a tu pregunta, la salida es la respuesta de una computadora a tu comando.
+
+- `Standard Error`: El sistema da un mensaje de error si no puede responder al comando. Esto puede ocurrir al escribir mal un comando o si el sistema no conoce la respuesta al comando. También puede ocurrir porque no tenemos los permisos para ejecutar un comando. Ingresemos `eco hello` en el shell. Al presionar Intro aparece un mensaje de error. 
