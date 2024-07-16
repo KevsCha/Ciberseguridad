@@ -1881,6 +1881,11 @@ Puedes navegar a subdirectorios específicos utilizando sus rutas de archivo abs
 | `head`      | El comando head muestra solo el comienzo de un archivo; 10 líneas, por defecto. El comando head puede ser útil cuando quieres conocer el contenido básico de un archivo pero no necesitas todo el contenido. Al ingresar head updates.txt, obtienes solo las primeras 10 líneas del archivo updates.txt. |
 | `tail`      | El comando tail hace lo opuesto a head. Este comando puede usarse para mostrar solo el final de un archivo; 10 líneas, por defecto. Al ingresar tail updates.txt, obtienes solo las últimas 10 líneas del archivo updates.txt. |
 | `less`      | El comando less devuelve el contenido de un archivo, una página a la vez. Por ejemplo, al escribir less updates.txt, se cambia la ventana de la terminal para mostrar el contenido de updates.txt una página a la vez. Esto te permite avanzar y retroceder por el contenido, con facilidad.  |
+| `grep`     | Busca texto dentro de un archivo. Por ejemplo, grep "error" updates.txt busca la palabra "error" dentro del archivo updates.txt y muestra todas las líneas que contienen esa palabra. |
+| pipe se parece -> `l`     | Ejecuta un comando dentro de otro comando. Por ejemplo, echo \date imprime la fecha actual. Es decir que el primer comando saldra un resultado y de ese resultado funcionara como entrante para el segundo comando, Ejemplo con `ls` saca una lista de los archivos junto con una pipe le indicamos que esa salida se use para que ejecute con el segundo comando `grep` -> **ls I grep palabra_buscada**  |
+| `Find`  |  |
+| ``      |  |
+| ``      |  |
 | ``      |  |
 | ``      |  |
 | ``      |  |
