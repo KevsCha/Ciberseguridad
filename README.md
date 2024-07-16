@@ -1829,4 +1829,58 @@ echo hello
 ```
 La salida estándar es la información que devuelve el SO por el shell. Así como tu amiga responde a tu pregunta, la salida es la respuesta de una computadora a tu comando.
 
-- `Standard Error`: El sistema da un mensaje de error si no puede responder al comando. Esto puede ocurrir al escribir mal un comando o si el sistema no conoce la respuesta al comando. También puede ocurrir porque no tenemos los permisos para ejecutar un comando. Ingresemos `eco hello` en el shell. Al presionar Intro aparece un mensaje de error. 
+- `Standard Error`: El sistema da un mensaje de error si no puede responder al comando. Esto puede ocurrir al escribir mal un comando o si el sistema no conoce la respuesta al comando. También puede ocurrir porque no tenemos los permisos para ejecutar un comando. Ingresemos `eco hello` en el shell. Al presionar Intro aparece un mensaje de error.
+
+### Estándar de jerarquía del sistema de archivos (FHS)
+
+Es el componente de Linux que organiza los datos. El FHS es importante porque define cómo se organizan los directorios, el contenido de estos y otros tipos de almacenamiento en el sistema operativo.
+
+Este diagrama ilustra la jerarquía de relaciones según el FHS:
+<img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/rAi9tlzSR3qs0cUHJJZSeg_b62b0c3e45aa4fa1a2bd54b34299f7f1_e1sKGqRWO6FsrwPCkNK4aoYQ4oYvMmNbvd-SFkhDfIi9Jtssywu7GRjhaEZZY2QFtXaU1w9NYO5slDoEhazwZ0zZG54qUa9mOGufSBzcTygoMYnp9DeXa6dJuTDxlRv7zPYQ5ldRYngi7fF1GGolzw?expiry=1721260800000&hmac=nSSLtyTNBox7A2r-5WEPKttPVGyT3T0NaeyApo7DS-s" width="600px">
+
+El diagrama de flujo comienza con el directorio raíz en la parte superior y se ramifica hacia abajo en múltiples subdirectorios.
+
+Según el FHS, la ubicación de un archivo puede ser descrita por una ruta de archivo. Una ruta de archivo es la ubicación de un archivo o directorio. En la ruta del archivo, los diversos niveles de la jerarquía están separados por una barra (/).
+
+#### Directorio raíz (o root)
+
+El directorio raíz es el directorio de mayor nivel en Linux, y siempre se representa con una barra (/). Todos los subdirectorios se ramifican desde el directorio raíz y pueden continuar ramificándose a tantos niveles como sea necesario.
+
+Justo debajo del directorio raíz, encontrarás los directorios estándar del FHS. En el diagrama, home, bin y etc son eso mismo. Estos son algunos ejemplos del contenido de los directorios estándar:
+
+- /home: Cada usuario del sistema obtiene su propio directorio de inicio.
+
+- /bin: Este directorio significa “binario” y contiene archivos binarios y otros archivos ejecutables. Los archivos ejecutables contienen una serie de comandos que una computadora debe seguir para ejecutar programas y llevar a cabo otras funciones.
+
+- /etc: Este directorio almacena los archivos de configuración del sistema.
+
+- /tmp: Este directorio almacena varios archivos temporales. Las/los atacantes suelen usar el directorio /tmp porque cualquier persona en el sistema puede modificar datos en estos archivos.
+
+- /mnt: Este directorio significa “montaje” y almacena medios, como unidades USB y discos duros.
+
+#### Subdirectorios específicos del usuario
+
+En home hay subdirectorios para usuarios específicos. En el diagrama, estos usuarios son analyst y analyst2. Cada usuario tiene sus propios subdirectorios personales, como projects, logs o reports.
+
+`Nota: Cuando la ruta conduce a un subdirectorio debajo del directorio de inicio del usuario, este puede representarse con una virgulilla (~). Por ejemplo, /home/analyst/logs también puede representarse como ~/logs.`
+
+Puedes navegar a subdirectorios específicos utilizando sus rutas de archivo absolutas o relativas. La ruta de archivo absoluta es la ruta completa del archivo, que comienza desde la raíz. Por ejemplo, /home/analyst/projects es una ruta de archivo absoluta. La ruta de archivo relativa comienza en el directorio actual del usuario.
+
+`Nota: Las rutas de archivo relativas pueden usar un punto (.) para representar el directorio actual, o dos puntos (..) para representar el directorio superior del directorio actual. Un ejemplo de una ruta de archivo relativa podría ser ../projects.`
+
+#### Directorios estándar del FHS
+
+### Comando Linux | 
+
+| Comandos  | Description                       |
+| :-------- | :-------------------------------- |
+| `pwd`   | Prints the working directory |
+| `ls`    | El comando ls muestra los nombres de los archivos y directorios en el directorio de trabajo actual. En el video, por ejemplo ls devolvió directorios como logs y un archivo llamado updates.txt.  |
+| `cd`      | El comando cd se usa para navegar entre directorios. Cuando necesites cambiar de directorio, debes usar este comando. |
+| `cat`      | El comando cat muestra el contenido de un archivo. Por ejemplo, al ingresar cat updates.txt, se devuelve todo el contenido del archivo updates.txt. |
+| `head`      | El comando head muestra solo el comienzo de un archivo; 10 líneas, por defecto. El comando head puede ser útil cuando quieres conocer el contenido básico de un archivo pero no necesitas todo el contenido. Al ingresar head updates.txt, obtienes solo las primeras 10 líneas del archivo updates.txt. |
+| `tail`      | El comando tail hace lo opuesto a head. Este comando puede usarse para mostrar solo el final de un archivo; 10 líneas, por defecto. Al ingresar tail updates.txt, obtienes solo las últimas 10 líneas del archivo updates.txt. |
+| `less`      | El comando less devuelve el contenido de un archivo, una página a la vez. Por ejemplo, al escribir less updates.txt, se cambia la ventana de la terminal para mostrar el contenido de updates.txt una página a la vez. Esto te permite avanzar y retroceder por el contenido, con facilidad.  |
+| ``      |  |
+| ``      |  |
+| ``      |  |
