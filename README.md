@@ -1884,8 +1884,12 @@ Puedes navegar a subdirectorios específicos utilizando sus rutas de archivo abs
 | `grep`     | Busca texto dentro de un archivo. Por ejemplo, grep "error" updates.txt busca la palabra "error" dentro del archivo updates.txt y muestra todas las líneas que contienen esa palabra. |
 | pipe se parece -> `l`     | Ejecuta un comando dentro de otro comando. Por ejemplo, echo \date imprime la fecha actual. Es decir que el primer comando saldra un resultado y de ese resultado funcionara como entrante para el segundo comando, Ejemplo con `ls` saca una lista de los archivos junto con una pipe le indicamos que esa salida se use para que ejecute con el segundo comando `grep` -> **ls I grep palabra_buscada**  |
 | `Find`  |  |
-| ``      |  |
-| ``      |  |
+| `mv`      |  |
+| `cp`      |  |
+| `echo`      |  |
+| `nano`      |  |
+| `rmdir`      |  |
+| `rm`      |  |
 | ``      |  |
 | ``      |  |
 | ``      |  |
