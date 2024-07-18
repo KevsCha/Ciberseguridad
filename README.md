@@ -1872,27 +1872,27 @@ Puedes navegar a subdirectorios específicos utilizando sus rutas de archivo abs
 
 ### Comando Linux | 
 
-| Comandos  | Description                       |
+
+| Parameter | Description                       |
 | :-------- | :-------------------------------- |
-| `pwd`   | Prints the working directory |
-| `ls`    | El comando ls muestra los nombres de los archivos y directorios en el directorio de trabajo actual. En el video, por ejemplo ls devolvió directorios como logs y un archivo llamado updates.txt.  |
-| `cd`      | El comando cd se usa para navegar entre directorios. Cuando necesites cambiar de directorio, debes usar este comando. |
-| `cat`      | El comando cat muestra el contenido de un archivo. Por ejemplo, al ingresar cat updates.txt, se devuelve todo el contenido del archivo updates.txt. |
-| `head`      | El comando head muestra solo el comienzo de un archivo; 10 líneas, por defecto. El comando head puede ser útil cuando quieres conocer el contenido básico de un archivo pero no necesitas todo el contenido. Al ingresar head updates.txt, obtienes solo las primeras 10 líneas del archivo updates.txt. |
-| `tail`      | El comando tail hace lo opuesto a head. Este comando puede usarse para mostrar solo el final de un archivo; 10 líneas, por defecto. Al ingresar tail updates.txt, obtienes solo las últimas 10 líneas del archivo updates.txt. |
-| `less`      | El comando less devuelve el contenido de un archivo, una página a la vez. Por ejemplo, al escribir less updates.txt, se cambia la ventana de la terminal para mostrar el contenido de updates.txt una página a la vez. Esto te permite avanzar y retroceder por el contenido, con facilidad.  |
-| `grep`     | Busca texto dentro de un archivo. Por ejemplo, grep "error" updates.txt busca la palabra "error" dentro del archivo updates.txt y muestra todas las líneas que contienen esa palabra. |
-| pipe se parece -> `l`     | Ejecuta un comando dentro de otro comando. Por ejemplo, echo \date imprime la fecha actual. Es decir que el primer comando saldra un resultado y de ese resultado funcionara como entrante para el segundo comando, Ejemplo con `ls` saca una lista de los archivos junto con una pipe le indicamos que esa salida se use para que ejecute con el segundo comando `grep` -> **ls I grep palabra_buscada**  |
-| `Find`  |  |
-| `mv`      |  |
-| `cp`      |  |
-| `echo`      |  |
-| `nano`      |  |
-| `rmdir`      |  |
-| `rm`      |  |
-| ``      |  |
-| ``      |  |
-| ``      |  |
+| `pwd`| Prints the working directory. Imprime el directorio de trabajo actual. No tiene argumentos, simplemente se ejecuta como pwd y la salida será la ruta del directorio actual. |
+| `ls` | Muestra los nombres de los archivos y directorios en el directorio de trabajo actual. Puedes usar opciones como -l para obtener una lista detallada o -a para incluir archivos ocultos. Por ejemplo, ls -la muestra todos los archivos y directorios, incluyendo los ocultos, en formato detallado. |
+| `cd` | Cambia el directorio de trabajo actual. Por ejemplo, cd `/home/user` cambiará el directorio actual a `/home/user`. Puedes usar cd .. para subir un nivel en la estructura de directorios o cd sin argumentos para ir al directorio home del usuario. |
+| `cat` |Muestra el contenido de un archivo. Por ejemplo, cat updates.txt mostrará todo el contenido del archivo updates.txt. |
+| `head` |Muestra solo el comienzo de un archivo; 10 líneas por defecto. Puedes especificar un número diferente de líneas con la opción -n. Por ejemplo, head -n 5 updates.txt mostrará las primeras 5 líneas del archivo updates.txt. |
+| `tail` | Muestra solo el final de un archivo; 10 líneas por defecto. Puedes especificar un número diferente de líneas con la opción -n. Por ejemplo, tail -n 5 updates.txt mostrará las últimas 5 líneas del archivo updates.txt. |
+| `less` |Muestra el contenido de un archivo, una página a la vez. Por ejemplo, less updates.txt permite navegar por el contenido de updates.txt con facilidad. Puedes avanzar con la tecla Space y retroceder con la tecla b. |
+| `grep` |	Busca texto dentro de un archivo. Por ejemplo, grep "error" updates.txt busca la palabra "error" dentro del archivo updates.txt y muestra todas las líneas que contienen esa palabra. Puedes usar opciones como -i para una búsqueda sin distinción entre mayúsculas y minúsculas o -r para buscar en directorios de forma recursiva. |
+| `find` |Busca archivos y directorios en una jerarquía de directorios. Por ejemplo, find `/home/user` -name "archivo.txt" buscará un archivo llamado archivo.txt dentro del directorio `/home/user` y sus subdirectorios. Puedes usar diferentes opciones como -type para especificar el tipo de archivo o -exec para ejecutar un comando en cada archivo encontrado.|
+| `mv` | Mueve o renombra archivos y directorios. Por ejemplo, mv archivo.txt `/home/user` moverá archivo.txt al directorio `/home/user`. También puedes usarlo para renombrar archivos, como en mv viejo_nombre.txt nuevo_nombre.txt. |
+| `cp` | Copia archivos y directorios. Por ejemplo, cp archivo.txt `/home/user` copiará archivo.txt al directorio `/home/user`. Puedes usar la opción -r para copiar directorios de forma recursiva, como en cp -r directorio `/home/user`. |
+| `echo` | Muestra un texto en la terminal. Por ejemplo, echo "Hola Mundo" imprimirá "Hola Mundo" en la terminal. Puedes usarlo para mostrar variables de entorno, como en echo $HOME que mostrará el directorio home del usuario actual. |
+| `nano` | Un editor de texto en la terminal. Por ejemplo, nano archivo.txt abrirá archivo.txt en el editor de texto nano para que puedas editarlo. |
+| `rmdir` | Elimina directorios vacíos. Por ejemplo, rmdir directorio_vacio eliminará el directorio llamado directorio_vacio si está vacío. Si el directorio contiene archivos o subdirectorios, el comando fallará. |
+| `rm` | Elimina archivos y directorios. Por ejemplo, rm archivo.txt eliminará archivo.txt. Puedes usar la opción -r para eliminar directorios y su contenido de forma recursiva, como en rm -r directorio. La opción -f fuerza la eliminación sin pedir confirmación. |
+| pipe se parece -> `l` | Ejecuta un comando dentro de otro comando. Por ejemplo, echo \date imprime la fecha actual. Es decir que el primer comando saldra un resultado y de ese resultado funcionara como entrante para el segundo comando, Ejemplo con `ls` saca una lista de los archivos junto con una pipe le indicamos que esa salida se use para que ejecute con el segundo comando `grep` -> **ls I grep palabra_buscada**   |
+| `chmod` | Cambia los permisos de archivos y directorios. Permite modificar los permisos de lectura, escritura y ejecución para el propietario (owner), el grupo (group) y otros (others). |
+
 ### Exploración de los permisos existentes
 Puedes usar el comando ls para investigar quién tiene permisos en archivos y directorios. Antes, aprendiste que ls muestra los nombres de los archivos y directorios en el directorio de trabajo actual.
 
