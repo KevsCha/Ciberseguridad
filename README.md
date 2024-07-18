@@ -1893,3 +1893,46 @@ Puedes navegar a subdirectorios específicos utilizando sus rutas de archivo abs
 | ``      |  |
 | ``      |  |
 | ``      |  |
+### Exploración de los permisos existentes
+Puedes usar el comando ls para investigar quién tiene permisos en archivos y directorios. Antes, aprendiste que ls muestra los nombres de los archivos y directorios en el directorio de trabajo actual.
+
+Existen otras opciones que puedes agregar al comando ls para que sea más específico. Algunas de estas opciones proporcionan detalles sobre los permisos. Estas son algunas que utilizan el comando ls y resultan importantes para las/los analistas de seguridad:
+
+- ls -a: muestra archivos ocultos. Los archivos ocultos comienzan con un punto (.) al principio.
+
+- ls -l: muestra permisos para archivos y directorios. También muestra otra información adicional, incluido el nombre del propietario, el grupo, el tamaño del archivo y la hora en que fueron modificados por última vez.
+
+- ls -la: muestra los permisos de archivo y directorios, incluidos los archivos ocultos. Se trata de una combinación de las otras dos opciones.
+
+#### Cambio de permisos
+El principio de mínimo privilegio es el concepto de otorgar solo el acceso y la autorización mínimos necesarios para ejecutar una tarea o función. En otras palabras, los/las usuarios/as no deben tener privilegios que estén más allá de lo necesario. No seguir el principio del mínimo privilegio puede crear riesgos de seguridad.
+
+El comando chmod puede ayudarte a administrar esta autorización. El comando chmod cambia los permisos en archivos y directorios. 
+
+#### Cómo usar chmod
+
+El comando chmod requiere dos argumentos. El primer argumento indica cómo cambiar los permisos, y el segundo indica el archivo o directorio para el que quieres cambiar los permisos. Por ejemplo, el siguiente comando agregaría todos los permisos a login_sessions.txt:
+
+`chmod u+rwx,g+rwx,o+rwx login_sessions.txt`
+
+Si quisieras quitar todos los permisos, podrías usar
+
+`chmod u-rwx,g-rwx,o-rwx login_sessions.txt`
+
+Otra forma de asignar estos permisos es usar el signo igual (=) en este primer argumento. Al usar = con chmod, se establecen o asignan los permisos exactamente según se especificó. Por ejemplo, el siguiente comando establecería permisos de lectura para login_sessions.txt para usuario, grupo y otros usuarios:
+
+`chmod u=r,g=r,o=r login_sessions.txt`
+
+Este comando sobreescribe permisos existentes. Por ejemplo, si antes el usuario tenía permisos de escritura, estos permisos de escritura se eliminan después de especificar permisos de solo lectura con =.
+
+La siguiente tabla revisa cómo se usa cada carácter dentro del primer argumento de chmod:  
+
+| Parameter | Type     |
+| :-------- | :------- |
+| `u`      | indica que se realizarán cambios en los permisos de usuario |
+| `g`      | indica que se realizarán cambios en los permisos de grupo |
+| `o`      | indica que se realizarán cambios en los permisos de otros usuarios |
+| `+`      | agrega permisos al usuario, grupo u otros usuarios|
+| `-`      | elimina permisos del usuario, grupo u otros usuarios |
+| `=`      | asigna permisos para el usuario, grupo u otros usuarios |
+| `a`      | indica que se realizarán cambios en los permisos de TODOS|
