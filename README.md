@@ -1977,3 +1977,537 @@ Gestión de Usuarios:
 - Implementar sistemas de monitoreo para rastrear actividades de usuarios.
 - Utilizar logs para revisar quién ejecuta comandos con privilegios elevados.
 - Al seguir estas prácticas, se puede mantener un entorno de sistema más seguro y administrado de manera eficiente.
+
+## SQL
+
+#### Conceptos y Temas Tratados con Profundización y Ejemplos
+1. Bases de Datos
+#### Definición
+Una base de datos es una recopilación organizada de datos que permite almacenar, organizar, ver y procesar información de manera eficiente. Son esenciales para manejar grandes cantidades de datos de manera estructurada.
+
+#### Comparación con Hojas de Cálculo
+Hojas de Cálculo: Ideales para datos simples y manejables por un solo usuario o un equipo pequeño. Ejemplos incluyen Google Sheets y Microsoft Excel.
+Bases de Datos: Permiten acceso concurrente de varios usuarios y gestionan grandes cantidades de datos. Ejemplos incluyen MySQL, PostgreSQL, y Oracle.
+
+2. Bases de Datos Relacionales
+#### Estructura
+Se organizan en tablas que están relacionadas entre sí mediante claves.
+
+#### Tablas
+- Campos (Columnas): Representan categorías de datos (ej. employee_id, name, department).
+- Registros (Filas): Representan entradas individuales con datos específicos correspondientes a las columnas.
+Ejemplo de Tabla:
+
+```sql
+    CREATE TABLE employees (
+        employee_id INT PRIMARY KEY,
+        name VARCHAR(50),
+        department VARCHAR(50)
+    );
+```
+3. Columnas y Filas
+#### Columnas
+Representan los campos de información. Cada columna almacena un tipo específico de datos.
+
+#### Filas
+Representan registros individuales en la tabla. Cada fila contiene datos específicos relacionados con las columnas.
+
+Ejemplo:
+
+```sql
+INSERT INTO employees (employee_id, name, department) VALUES (1001, 'John Doe', 'Marketing');
+
+```
+4. Relaciones entre Tablas
+#### Claves (Keys)
+- Clave Primaria (Primary Key): Una columna en la que cada fila tiene una entrada única. No puede tener valores duplicados, nulos ni vacíos.
+
+    Ejemplo 
+```sql
+    CREATE TABLE employees (
+        employee_id INT PRIMARY KEY,
+        name VARCHAR(50),
+        department VARCHAR(50)
+    );
+```
+- Clave Foránea (Foreign Key): Una columna en una tabla que es una clave primaria en otra tabla. Puede tener valores vacíos y duplicados.
+
+    Ejemplo
+```sql
+CREATE TABLE machines (
+    machine_id INT PRIMARY KEY,
+    employee_id INT,
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
+);
+```
+5. Fundamentos de SQL
+#### Lenguaje de Consulta Estructurado (SQL)
+El lenguaje estándar para interactuar con bases de datos relacionales.
+#### Consultas SQL
+Utilizado para realizar operaciones como seleccionar, insertar, actualizar y eliminar datos.
+
+Ejemplos de SQL:
+- DDL (Data Definition Language):
+```sql
+CREATE TABLE departments (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(50)
+);
+```
+- DML (Data Manipulation Language):
+```sql
+SELECT * FROM employees;
+INSERT INTO employees (employee_id, name, department) VALUES (1002, 'Jane Smith', 'Sales');
+UPDATE employees SET department = 'HR' WHERE employee_id = 1002;
+DELETE FROM employees WHERE employee_id = 1002;
+```
+- DCL (Data Control Language):
+```sql
+GRANT SELECT ON employees TO user1;
+REVOKE SELECT ON employees FROM user1;
+```
+- TCL (Transaction Control Language):
+```sql
+BEGIN;
+UPDATE employees SET department = 'HR' WHERE employee_id = 1002;
+COMMIT; 
+```
+### Puntos Importantes
+1. Acceso Concurrente
+
+- Las bases de datos permiten que múltiples usuarios accedan y modifiquen datos al mismo tiempo.
+- Ejemplo: Un sistema de gestión de ventas en línea donde varios vendedores acceden y actualizan datos simultáneamente.
+2. Eficiencia en la Gestión de Datos
+
+- Las bases de datos están diseñadas para manejar grandes cantidades de datos de manera eficiente.
+- Ejemplo: Un sistema de inventario que gestiona millones de registros de productos.
+3. Integridad de los Datos
+
+- Uso de claves primarias y foráneas para mantener la integridad referencial entre tablas.
+- Ejemplo: Relación entre una tabla orders y una tabla customers mediante la columna customer_id.
+4. Seguridad de los Datos
+
+- A través de mecanismos como permisos y roles en SQL para controlar el acceso a los datos.
+- Ejemplo: Otorgar permisos de solo lectura a ciertos usuarios para proteger datos sensibles.
+5. SQL como Herramienta Esencial
+
+- Conocimiento de SQL es crucial para interactuar con bases de datos relacionales.
+- Ejemplo: Utilizar JOIN para combinar datos de múltiples tablas en un informe.
+
+Al comprender estos conceptos y puntos importantes, se puede gestionar y utilizar bases de datos de manera efectiva para soportar decisiones basadas en datos.
+## Consulta de base de datos
+
+1. Bases de Datos
+#### Definición
+Una base de datos es una recopilación organizada de datos que permite almacenar, organizar, ver y procesar información de manera eficiente. Son esenciales para manejar grandes cantidades de datos de manera estructurada.
+
+2. SQL (Lenguaje de Consulta Estructurada)
+#### Definición
+SQL es un lenguaje de programación utilizado para crear bases de datos, interactuar con ellas y solicitar datos. Es la herramienta principal para trabajar con bases de datos relacionales.
+
+#### Consultas
+Una consulta es una solicitud de datos de una tabla o una combinación de tablas en una base de datos. Las consultas permiten recuperar y manipular datos de manera eficiente.
+
+#### Ejemplo de Consulta Básica:
+```sql
+SELECT * FROM employees;
+```
+Esta consulta selecciona todos los registros de la tabla employees.
+
+3. Registros
+#### Definición
+Un registro guarda eventos ocurridos en los sistemas de una organización. Como analista de seguridad, revisar registros es crucial para identificar patrones y detectar posibles problemas.
+
+#### Ejemplo de Registros:
+
+- Detalles sobre los equipos usados en una compañía.
+- Información sobre visitantes del sitio web o aplicación y las tareas que realizan.
+4. Filtrado de Datos
+#### Importancia
+Filtrar datos con SQL permite encontrar información relevante que puede ayudar a tomar decisiones de seguridad y detectar problemas potenciales.
+
+#### Ejemplo de Filtrado:
+```sql
+SELECT * FROM employees WHERE department = 'IT';
+```
+Esta consulta selecciona todos los empleados del departamento de IT.
+
+5. Identificación de Equipos No Configurados Correctamente
+#### Uso
+Como analista de seguridad, es esencial identificar equipos que no están bien configurados para prevenir vulnerabilidades.
+
+#### Ejemplo de Consulta para Identificar Equipos:
+```sql
+SELECT * FROM machines WHERE configuration_status = 'incomplete';
+```
+Esta consulta selecciona todos los equipos cuya configuración es incompleta.
+
+6. Patrones Inusuales en Registros
+#### Importancia
+Detectar patrones inusuales en los registros puede señalar actividad maliciosa o problemas de seguridad.
+#### Ejemplo de Detección de Patrones Inusuales:
+```sql
+SELECT * FROM login_attempts WHERE success = 'false' AND attempt_time > '2024-07-01';
+```
+Esta consulta selecciona todos los intentos de inicio de sesión fallidos desde el 1 de julio de 2024.
+
+7. Análisis de Datos Básicos
+#### Uso
+SQL permite realizar análisis básicos de datos para tomar decisiones informadas sobre la seguridad y el mantenimiento del sistema.
+
+#### Ejemplo de Análisis de Datos:
+```sql
+SELECT COUNT(*) FROM patches WHERE applied = 'false';
+```
+Esta consulta cuenta cuántos parches no se han aplicado.
+### Puntos Importantes
+1. Acceso Eficiente a Datos
+
+- SQL permite acceder y manipular grandes volúmenes de datos de manera rápida y eficiente, lo que es crucial para el análisis de seguridad.
+2. Identificación de Vulnerabilidades
+
+- Utilizando consultas SQL, los analistas pueden identificar equipos desactualizados o mal configurados, ayudando a prevenir ataques.
+3. Detección de Actividades Maliciosas
+
+- SQL facilita la detección de patrones inusuales en registros de seguridad, lo que es esencial para identificar y mitigar amenazas.
+4. Toma de Decisiones Informadas
+
+- Al filtrar y analizar datos con SQL, los analistas pueden tomar decisiones informadas sobre el mantenimiento y la actualización de sistemas.
+5. Optimización del Mantenimiento
+
+- SQL ayuda a determinar los mejores momentos para realizar actualizaciones de sistemas, minimizando el impacto en las operaciones diarias.
+
+Al comprender estos conceptos y puntos importantes, los analistas de seguridad pueden utilizar SQL de manera efectiva para mejorar la seguridad y eficiencia de los sistemas que gestionan.
+
+## Filtrado de SQL versus filtrado de Linux
+
+### Acceso a SQL
+Existen numerosas interfaces para acceder a SQL. Una de ellas es a través de la línea de comandos de Linux. 
+
+Dado que existen muchas versiones de SQL, para acceder desde Linux, debes escribir un comando para la versión de SQL que quieres usar. Por ejemplo, si deseas acceder a SQLite, puedes ingresar el comando sqlite3 en la línea de comandos.
+
+Luego de realizar esto, cualquier comando escrito en la línea de comandos se dirigirá a SQL en lugar de a los comandos de Linux.
+### Diferencias entre el filtrado de Linux y el de SQL 
+1. Estructura
+SQL ofrece mucha más estructura que Linux, que tiene un estilo más libre y menos ordenado.
+
+Por ejemplo, si quieres acceder a un registro de intentos de inicio de sesión de los/las empleados/as, Linux imprimirá los datos como una línea de texto sin esta organización. En cambio, SQL te entregará cada registro separado en columnas, por lo cual te facilitará el análisis de una columna específica.
+
+En términos de estructura, SQL proporciona resultados más fáciles de leer y pueden ajustarse más rápidamente que mediante Linux.
+2. Combinación de tablas
+Algunas decisiones sobre seguridad requieren información de distintas tablas, una posibilidad que solo SQL ofrece. Mientras que con SQL, las/los analistas pueden combinar varias tablas cuando devuelve datos, Linux no tiene esa misma funcionalidad, ya que no permite que los datos se asocien con otra información que tengas en tu computadora. Para un/a analista que tiene que revisar registros de seguridad, esto resulta restrictivo.
+3. Mejores usos
+Como analista de ciberseguridad, es importante que entiendas cuándo puedes usar cada herramienta. Si bien SQL posee una estructura más organizada y te permite combinar tablas, esto no significa que no haya situaciones que te exijan filtrar datos en Linux.
+
+Una gran cantidad de datos utilizados en ciberseguridad se almacenarán en un formato de base de datos que funciona con SQL. Sin embargo, otros registros pueden estar en un formato que no es compatible con este lenguaje. Por ejemplo, si los datos se almacenan en un archivo de texto, no puedes buscarlos con SQL. En esos casos, es útil saber cómo filtrar en Linux. 
+### Conclusion
+Para trabajar con SQL, puedes acceder a la herramienta desde distintas interfaces, como la línea de comandos de Linux. Tanto SQL como Linux te permiten filtrar por datos específicos, pero SQL tiene las ventajas de estructurar los datos y posibilitar la combinación de datos de diferentes tablas.
+
+## Cómo consultar una base de datos
+
+### Consulta SQL básica
+Existen dos palabras clave fundamentales en cualquier consulta SQL: SELECT y FROM. Las usarás cada vez que desees consultar una base de datos SQL. Si las usas en conjunto, ayudarás a SQL a identificar los datos que necesitas de una base de datos y la tabla de la que los extraes. 
+
+Ejemplo -> `SELECT employee_id, device_id FROM employees;`
+
+En lecturas y cuestionarios, este curso utiliza una base de datos de ejemplo denominada base de datos `Chinook`, para ejecutar las consultas. La base de datos `Chinook` incluye datos que se podrían crear en una empresa de medios digitales. Un/a analista de seguridad contratado/a por esta empresa puede necesitar consultar estos datos. Por ejemplo, la base de datos contiene once tablas, incluida una tabla `employees` (empleados/as), una tabla `customers` (clientes) y una tabla `invoices` (facturas). Estas tablas incluyen datos como nombres y direcciones.
+
+A modo de ejemplo, puedes ejecutar esta consulta para obtener datos de la tabla customers (clientes) de la base de datos Chinook:  
+
+```sql
+SELECT customerid, city, country FROM customers;
+```
+
+- `SELECT (seleccionar)`:
+
+La palabra clave SELECT indica las columnas a devolver. Por ejemplo, puedes devolver la columna customerid (ID del cliente) de la base de datos Chinook con
+
+**SELECT customerid**
+
+También puedes seleccionar varias columnas separándolas con una coma. Por ejemplo, si quieres obtener las columnas customerid (ID del cliente) y city (ciudad), debes escribir `SELECT customerid, city`.
+
+Si quieres obtener todas las columnas en una tabla, después de la palabra clave SELECT, puedes escribir un asterisco (*). La primera línea de la consulta será SELECT *.
+ 
+- `FROM (desde)`
+
+La palabra clave SELECT siempre viene con la palabra clave FROM. FROM indica qué tabla consultar. Para usar la palabra clave FROM, debes escribirla después de la palabra clave SELECT, generalmente en una línea nueva, y luego, escribir el nombre de la tabla que estás consultando. Si quieres obtener todas las columnas de la tabla customers (clientes), puedes escribir:
+
+`SELECT * FROM customers;`
+
+Cuando quieras finalizar la consulta, escribe punto y coma (;) al final para indicar a SQL que la consulta está completa.
+### ORDER BY (ordenar por)
+Las tablas de bases de datos suelen ser muy complicadas, y por ello resultan útiles otras palabras clave de SQL. ORDER BY es una palabra clave importante para organizar los datos que extraes de una tabla.
+
+ORDER BY ordena en secuencia los registros devueltos por una consulta con base en una o más columnas especificadas. Este orden puede ser ascendente o descendente.
+#### Orden ascendente
+Para usar la palabra clave ORDER BY, escríbela al final de la consulta y especifica una columna en la que se basará el orden. En este ejemplo, SQL devolverá las columnas customerid (ID del cliente), city (ciudad) y country (país) de la tabla customers (clientes), así como los registros se mostrarán secuencialmente en función de la columna city (ciudad):  
+```sql
+SELECT customerid, city, country FROM customers ORDER BY city;
+```
+La palabra clave `ORDER BY` ordena los registros en función de la columna especificada después de esta palabra clave. Por defecto, como se muestra en este ejemplo, la secuencia estará en orden ascendente. Esto significa que:
+
+- si eliges una columna que contiene datos numéricos, esta organiza los resultados de menor a mayor. Por ejemplo, si organizas en función de customerid (ID del cliente), los números de identificación se ordenan de menor a mayor.
+
+- si la columna contiene caracteres alfabéticos, como en el ejemplo con la columna city (ciudad), esta organiza los registros de la A a la Z. 
+#### Orden descendente
+También puedes usar ORDER BY con la palabra clave DESC para ordenar los datos en sentido descendente. La palabra clave DESC es la abreviatura de “descendente”, e indica a SQL que ordene los números de mayor a menor o, en el caso de caracteres alfabéticos, de la Z a la A. Para hacerlo, después de ORDER BY, escribe la palabra clave DESC. A modo de ejemplo, puedes ejecutar esta consulta para observar cómo se diferencian los resultados cuando aplicas DESC:    
+```sql
+SELECT customerid, city, country FROM customers ORDER BY city DESC;
+```
+#### Ordenar en función de varias columnas
+Adicionalmente, puedes elegir varias columnas en las que basar el orden. Por ejemplo, primero puedes elegir la columna country (país) y luego, la columna city (ciudad). A continuación, SQL ordena los resultados en función de la columna country (país) y, en el caso de que haya filas con el mismo valor de country (país), las organiza en función de la columna city (ciudad). Puedes practicar este ejemplo para averiguar cómo SQL muestra esto:  
+```sql
+SELECT customerid, city, country
+FROM customers
+ORDER BY country, city;
+```
+
+## Filtros basicos en consultas SQL
+1. Filtrado en SQL
+#### Definición
+El filtrado en SQL consiste en seleccionar datos específicos de una base de datos que coinciden con una condición. Esto permite extraer únicamente la información relevante y deseada.
+
+#### Importancia
+Como analista de seguridad, el filtrado es crucial para revisar grandes volúmenes de datos y centrarse en registros específicos, como intentos de inicio de sesión desde un país en particular o actividades inusuales.
+
+#### Ejemplo de Filtrado Básico:
+```sql
+SELECT * FROM log_in_attempts WHERE country = 'USA';
+```
+Esta consulta selecciona todos los intentos de inicio de sesión que se realizaron desde EE.UU.
+
+2. Operadores en SQL
+#### Definición
+Un operador es un símbolo o palabra clave que representa una operación en SQL. Los operadores se utilizan para establecer condiciones en las consultas.
+
+#### Tipos de Operadores
+Igual a (=): Se usa para comparar si dos valores son iguales.
+LIKE: Se usa para buscar un patrón en una columna, especialmente útil cuando no se sabe el valor exacto.
+#### Ejemplo con Operador Igual a:
+```sql
+SELECT * FROM log_in_attempts WHERE country = 'USA';
+```
+Esta consulta selecciona todos los registros donde la columna country es igual a 'USA'.
+
+#### Ejemplo con Operador LIKE:
+```sql
+SELECT * FROM employees WHERE office LIKE 'East%';
+```
+Esta consulta selecciona todas las oficinas que empiezan con 'East', como 'East-120', 'East-290', y 'East-435'.
+
+3. Cláusula WHERE
+#### Definición
+La cláusula WHERE se utiliza en SQL para especificar las condiciones que deben cumplir los registros para ser seleccionados.
+
+#### Uso
+WHERE se coloca después de las palabras clave SELECT y FROM en una consulta SQL para indicar las condiciones del filtro.
+
+#### Ejemplo con Cláusula WHERE:
+```sql
+SELECT * FROM log_in_attempts WHERE country = 'USA';
+```
+Esta consulta selecciona todos los intentos de inicio de sesión donde la columna country es 'USA'.
+
+4. Uso de Comodines
+#### Definición
+El comodín % en SQL se utiliza para representar uno o más caracteres no especificados en una búsqueda de patrón.
+
+#### Importancia
+El uso de comodines permite buscar patrones en los datos cuando no se conoce el valor exacto.
+
+#### Ejemplo de Uso de Comodín:
+```sql
+SELECT * FROM employees WHERE office LIKE 'East%';
+```
+Esta consulta selecciona todas las oficinas cuyos nombres comienzan con 'East'.
+
+5. Operador LIKE
+#### Definición
+LIKE es un operador utilizado en combinación con la cláusula WHERE para buscar un patrón específico en una columna.
+
+#### Uso
+LIKE es similar al operador igual a (=), pero se usa cuando se busca un patrón en lugar de un valor exacto.
+
+#### Ejemplo de Operador LIKE:
+```sql
+SELECT * FROM log_in_attempts WHERE country LIKE 'US%';
+```
+Esta consulta selecciona todos los intentos de inicio de sesión donde la columna country comienza con 'US', incluyendo 'US' y 'USA'.
+
+### Puntos Importantes
+- Precisión en la Selección de Datos
+
+    El filtrado en SQL permite seleccionar datos específicos que cumplen con ciertas condiciones, mejorando la precisión y relevancia de la información extraída.
+- Uso de Operadores
+
+    Los operadores en SQL, como = y LIKE, son esenciales para establecer condiciones y buscar patrones específicos en los datos.
+- Cláusula WHERE
+
+    La cláusula WHERE es fundamental para aplicar condiciones en las consultas y filtrar datos de manera efectiva.
+- Comodines para Búsquedas de Patrones
+
+    El uso de comodines como % permite realizar búsquedas más flexibles y encontrar patrones en los datos.
+- Manejo de Inconsistencias
+
+    El operador LIKE es útil para manejar inconsistencias en los datos, como diferentes formas de representar la misma información (por ejemplo, 'US' y 'USA').
+- Eficiencia en el Análisis de Datos
+
+    SQL permite analizar y filtrar grandes volúmenes de datos rápidamente, lo que es crucial para el trabajo de un analista de seguridad.
+
+## La cláusula WHERE y los operadores básicos
+### Cómo ayuda el filtrado
+Como analista de seguridad, a menudo deberás trabajar con registros muy voluminosos y complicados. Para encontrar la información que necesitas, con frecuencia deberás usar SQL para filtrar los registros.
+
+En el contexto de la ciberseguridad, puedes usar filtros para identificar intentos de inicio de sesión de un usuario específico o todos los intentos de inicio de sesión realizados en el momento en que se produjo un incidente de seguridad. Como ejemplo adicional, puedes filtrar para encontrar dispositivos que están ejecutando una versión específica de una aplicación.
+### `WHERE (dónde)`
+Para crear un filtro en SQL, debes usar la palabra clave WHERE. WHERE indica la condición para un filtro.
+
+Si necesitaras enviar un correo electrónico a empleados/as con el cargo de ‘IT Staff' (personal de TI), podrías usar una consulta como la del ejemplo que se presenta a continuación. Puedes ejecutar este ejemplo para examinar cuáles son los resultados: 
+
+```sql
+SELECT firstname, lastname, title, email
+FROM employees
+WHERE title = 'IT Staff';
+```
+`SALIDA->`
+| FirstName | LastName | Title    | Email                  |
+| :-------- | :-------| :------- |------------------------|
+| Robert    | King     | IT Staff | robert@chinookcorp.com |
+| Laura     | Callahan | IT Staff | laura@chinookcorp.com  |
+
+En lugar de devolver todos los registros en la tabla employees (empleados/as), la cláusula WHERE indica a SQL que devuelva solo aquellos que contienen 'IT Staff' (empleados/as de TI) en la columna title (cargo). Esta usa el operador de signo igual (=) para establecer esta condición.
+### `Filtrado por patrones`
+También puedes filtrar en función de un patrón. Por ejemplo, puedes identificar las entradas que comienzan o terminan con uno o varios caracteres determinados. Filtrar en función de un patrón te exige incorporar dos elementos más en tu cláusula WHERE:
+
+- un comodín 
+- el operador LIKE
+#### `Comodines`
+Un comodín es un carácter especial que se puede sustituir por cualquier otro carácter. Dos de los comodines más útiles son el signo de porcentaje (%) y el guion bajo (_):
+
+- El signo de porcentaje puede sustituir cualquiera de los demás caracteres. 
+
+- El símbolo de guion bajo solo puede sustituir uno de los demás caracteres.
+
+Puedes colocar estos comodines después de una cadena, antes de una cadena o en ambas ubicaciones, dependiendo del patrón según el cual estás filtrando.
+
+La tabla siguiente incluye estos comodines aplicados a la cadena 'a' y ejemplos de los resultados que devolverá cada patrón.  
+
+| Patron    | Resutaldos  que puede devolver |
+| :-------- | :-------------------------------- |
+| `a%`      |apple123, art, a |
+| `a_`      | as, an, a7 |
+| `a__`     | ant, add, a1c |
+| `%a`      | pizza, Z6ra, a |
+| `_a`      | ma, 1a, Ha |
+| `%a%`     | Again, back, a |
+| `_a_`     | Car, ban, ea7 |
+
+#### `LIKE (como)`
+Para aplicar comodines al filtro, debes usar el operador LIKE en lugar de un signo igual (=). LIKE se usa con WHERE para buscar un patrón en una columna. 
+
+Por ejemplo, si quieres enviar un correo electrónico a empleados/as con el cargo 'IT Staff' (personal de TI) o 'IT Manager' (gerente de TI), puedes usar el operador LIKE combinado con el comodín %:   
+```sql
+SELECT lastname, firstname, title, email
+FROM employees
+WHERE title LIKE 'IT%';
+```
+| LastName | FirstName | Title      | Email                   |
+|----------|-----------|------------|-------------------------|
+| Mitchell | Michael   | IT Manager | michael@chinookcorp.com |
+| King     | Robert    | IT Staff   | robert@chinookcorp.com  |
+| Callahan | Laura     | IT Staff   | laura@chinookcorp.com   |
+
+Esta consulta devuelve todos los registros con valores en la columna title (cargo) que comienzan con el patrón de 'IT'. Esto significa que se devuelve tanto 'IT Staff' (personal de TI) como 'IT Manager' (gerente de TI).
+
+Como ejemplo adicional, si quieres buscar en la tabla de facturas a todos/as los/las clientes ubicados en estados con la abreviatura 'NY', 'NV', 'NS' o 'NT', puedes usar el patrón 'N_' en la columna state (estado):  
+
+```sql
+SELECT firstname,lastname, state, country
+FROM customers
+WHERE state LIKE 'N_';
+```
+
+| FirstName | LastName | State | Country |
+|-----------|----------|-------|---------|
+| Michelle  | Brooks   | NY    | USA     |
+| Kathy     | Chase    | NV    | USA     |
+| Martha    | Silk     | NS    | Canada  |
+| Ellie     | Sullivan | NT    | Canada  |
+
+Esto devuelve todos los registros con abreviaturas de estado que siguen este patrón.
+
+*`Nota: Los filtros son importantes para refinar los resultados de tus consultas. WHERE es una palabra clave esencial para agregar un filtro a tu consulta. También puedes filtrar por patrones al combinar el operador LIKE con los comodines de signo de porcentaje (%) y de guion bajo (_).`*
+
+## Operadores para filtrar fechas y números
+
+### Números, fechas y horas en ciberseguridad
+
+Las/los analistas de seguridad trabajan con más que datos de cadena o datos que consisten en una secuencia ordenada de caracteres. 
+
+También suelen trabajar con datos numéricos, o que consisten en números. Algunos ejemplos de datos numéricos que puedes encontrar en tu trabajo como analista de seguridad son:
+
+- el número de intentos de inicio de sesión
+- el recuento de un tipo específico de entrada de registro
+- el volumen de datos que se envían desde una fuente
+- el volumen de datos que se envían a un destino
+
+También encontrarás datos de fecha y hora, o datos que representan una fecha y una hora. Como primer ejemplo, los registros por lo general colocan una marca de tiempo en cada ítem. Otros datos de fecha y hora pueden incluir:
+
+- fechas de inicio de sesión
+- horas de inicio de sesión
+- fechas de implementaciones de parches 
+- la duración de una conexión
+
+### Operadores de comparación
+En SQL, el filtrado de datos numéricos y de fecha y hora suele involucrar operadores. Puedes usar los siguientes operadores en tus filtros, para asegurarte de obtener solo las filas que necesitas:
+
+| operador | uso |
+| :--------| :------- |
+| `<` | menor que |
+| `>` | mayor que |
+| `=` | igual que |
+| `<=` | menor o igual que |
+| `>=` | mayor o igual que |
+| `<>` | no igual que |
+| `!=` | no igual que (alternativo) |
+
+Nota: También puedes usar != como operador alternativo para no igual que.
+
+#### Incorporación de operadores en filtros
+
+Estos operadores de comparación se usan en la cláusula WHERE al final de una consulta. La consulta siguiente usa el operador > para filtrar la columna birthdate (fecha de nacimiento). Puedes ejecutar esta consulta para analizar sus resultados:  
+
+```sql
+SELECT firstname, lastname, birthdate
+FROM employees
+WHERE birthdate > '1970-01-01';
+```
+**Salida**
+
+| FirstName | LastName | BirthDate           |
+|-----------|----------|---------------------|
+| Jane      | Peacock  | 1973-08-29 00:00:00 |
+| Michael   | Mitchell | 1973-07-01 00:00:00 |
+| Robert    | King     | 1970-05-29 00:00:00 |
+
+Esta consulta devuelve el nombre y los apellidos de empleados/as que nacieron después, pero no el '1970-01-01'(o 1º de enero de 1970). Si en lugar de ese operador usaras el operador >=, los resultados también incluirían resultados de la fecha '1970-01-01'.
+
+En otras palabras, el operador > es exclusivo y el operador >= es inclusivo. Un operador exclusivo es el que no incluye el valor de comparación, en cambio un operador inclusivo es el que incluye el valor de comparación.
+
+#### BETWEEN (entre)
+
+Otro operador que también se usa para datos numéricos y de fecha y hora es el operador BETWEEN. BETWEEN filtra por números o fechas dentro de un rango. Por ejemplo, si quieres encontrar los nombres y apellidos de todos/as los/las empleados/as contratados/as entre el 1º de enero de 2002 y el 1º de enero de 2003, puedes usar el operador BETWEEN de la siguiente manera:  
+
+```sql
+SELECT firstname, lastname, hiredate
+FROM employees
+WHERE hiredate BETWEEN '2002-01-01' AND '2003-01-01';
+```
+
+| FirstName | LastName | HireDate            |
+|-----------|----------|---------------------|
+| Andrew    | Adams    | 2002-08-14 00:00:00 |
+| Nancy     | Edwards  | 2002-05-01 00:00:00 |
+| Jane      | Peacock  | 2002-04-01 00:00:00 |
+
+*`Nota: El operador BETWEEN es inclusivo. Esto significa que los registros con una hiredate (fecha de contratación) del 1º de enero de 2002 o del 1º de enero de 2003 se incluyen en los resultados de la consulta anterior.`*
