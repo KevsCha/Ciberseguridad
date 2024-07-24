@@ -2511,3 +2511,97 @@ WHERE hiredate BETWEEN '2002-01-01' AND '2003-01-01';
 | Jane      | Peacock  | 2002-04-01 00:00:00 |
 
 *`Nota: El operador BETWEEN es inclusivo. Esto significa que los registros con una hiredate (fecha de contratación) del 1º de enero de 2002 o del 1º de enero de 2003 se incluyen en los resultados de la consulta anterior.`*
+## Combina tablas SQL
+
+### INNER JOIN (SQL)
+#### Sintaxis de combinación de tablas en SQL:
+
+Cuando hay columnas con el mismo nombre en diferentes tablas, es crucial especificar de qué tabla estamos hablando para evitar ambigüedades. Esto se hace utilizando la sintaxis table.column. Por ejemplo, *`employees.employee_id y machines.employee_id`* especifican que estamos hablando de la columna employee_id de las tablas employees y machines, respectivamente.
+
+#### Claves primarias y foráneas:
+
+- Clave primaria: Un identificador único para cada fila en una tabla. No puede contener valores duplicados ni NULL. Ejemplo: employee_id en la tabla employees.
+- Clave foránea: Una columna o conjunto de columnas en una tabla que se refiere a la clave primaria en otra tabla. Esto crea una relación entre las dos tablas. Ejemplo: employee_id en la tabla machines refiriéndose a employee_id en la tabla employees.
+
+#### INNER JOIN (Combinación Interna):
+
+- Definición: Una combinación interna devuelve solo las filas que tienen coincidencias en ambas tablas según la columna especificada.
+- Funcionamiento: SQL busca filas en ambas tablas donde el valor de la columna especificada es el mismo y devuelve esas filas combinadas.
+- Ejemplo: Si las tablas employees y machines tienen filas con employee_id 1188 y 1189, la combinación interna devolverá las filas correspondientes con esos employee_id.
+
+#### Manejo de valores NULL en combinaciones:
+
+- Significado de NULL: NULL representa un valor faltante o desconocido en SQL.
+- Impacto en INNER JOIN: Las filas con NULL en la columna especificada para la combinación no se incluirán en los resultados de una combinación interna, ya que no pueden coincidir con ninguna fila en la otra tabla.
+
+#### Ejemplo estructura
+```sql
+SELECT column1, column2, column3
+FROM table1
+INNER JOIN table2
+ON table1.column = table2.column;
+```
+
+#### Componentes:
+SELECT: Indica las columnas a mostrar en los resultados.
+FROM: Especifica la tabla de la que se comenzará.
+INNER JOIN: Indica que se realizará una combinación interna con otra tabla.
+ON: Especifica la columna en la que se basará la combinación.
+
+#### ejemplo de consulta
+```sql
+SELECT employees.username, employees.office, machines.operating_system
+FROM employees
+INNER JOIN machines
+ON employees.employee_id = machines.employee_id;
+```
+- Esta consulta selecciona las columnas username y office de la tabla employees y operating_system de la tabla machines, combinando las tablas donde employee_id coincide.
+
+### Combinaciones externas(OUTER JOIN)
+Las combinaciones externas permiten unir tablas sin necesidad de que haya coincidencias entre las columnas especificadas.
+
+#### `LEFT JOIN`
+
+Devuelve todas las filas de la primera tabla (izquierda) y las filas coincidentes de la segunda tabla (derecha). Si no hay coincidencia, se devuelven NULL en las columnas de la segunda tabla.
+
+```sql
+SELECT employees.username, employees.office, machines.operating_system
+FROM employees
+LEFT JOIN machines
+ON employees.employee_id = machines.employee_id;
+```
+- Resultados esperados: Todas las filas de employees y las filas coincidentes de machines. Las filas de employees sin coincidencia tendrán NULL en las columnas de machines.
+
+#### `RIGHT JOIN`
+
+Devuelve todas las filas de la segunda tabla (derecha) y las filas coincidentes de la primera tabla (izquierda). Si no hay coincidencia, se devuelven NULL en las columnas de la primera tabla.
+
+```sql
+SELECT employees.username, employees.office, machines.operating_system
+FROM employees
+RIGHT JOIN machines
+ON employees.employee_id = machines.employee_id;
+```
+- Resultados esperados: Todas las filas de machines y las filas coincidentes de employees. Las filas de machines sin coincidencia tendrán NULL en las columnas de employees.
+#### `FULL OUTER JOIN`
+
+Devuelve todas las filas de ambas tablas. Si no hay coincidencia, se devuelven NULL en las columnas de la tabla que no tiene la fila correspondiente.
+
+```sql
+SELECT employees.username, employees.office, machines.operating_system
+FROM employees
+FULL OUTER JOIN machines
+ON employees.employee_id = machines.employee_id;
+```
+- Resultados esperados: Todas las filas de employees y machines. Las filas sin coincidencia tendrán NULL en las columnas de la tabla opuesta.
+
+
+### Sintaxis de la consulta
+
+```sql
+SELECT column1, column2, column3
+FROM table1
+LEFT JOIN table2
+ON table1.column = table2.column;
+```
+- Cambia LEFT JOIN por RIGHT JOIN o FULL OUTER JOIN según sea necesario.
