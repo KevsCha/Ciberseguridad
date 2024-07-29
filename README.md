@@ -2605,3 +2605,211 @@ LEFT JOIN table2
 ON table1.column = table2.column;
 ```
 - Cambia LEFT JOIN por RIGHT JOIN o FULL OUTER JOIN según sea necesario.
+
+ ## Intro Seguridad a los Activos
+
+ - Diversos activos que las empresas protegen
+ - Sistemas y controles de Seguridad
+ - Vulnerabilidades comúnes de Sistemas
+ - Amenazas para los activos
+
+ ## Comprende los riesgos, las amenazas y las vulnerabilidades
+
+Cuando ocurra incidentes tendras que trabajar con otras personas para solucionarlo de manera rapida. Hacerlo requiere comunicacion clara entre tu y el eqiupo de trabajo.
+
+#### 3 terminos de seguridad fundamentales: 
+- `Riesgo:`  Cualquier hecho que pueda afectar la confidencialidad, integridad o disponibilidad de un activo.
+- `Amenaza:` Cualquier circunstancia o evento que pueda afectar negativamente a los activos.
+- `Vulnerabilidad:` Debilidad que puede ser aprovechada por una amenaza.
+
+### Riesgo de seguridad
+
+Los planes de seguridad se basan en la forma en que una organización define el riesgo. Sin embargo, esta definición puede variar ampliamente según la organización. Como recordarás, un riesgo es todo aquello que puede afectar la confidencialidad, integridad o disponibilidad de un activo. Dado que cada empresa valora activos específicos, tienden a diferir en el modo en que interpretan y abordan el riesgo.
+
+Una manera de interpretar el riesgo es considerar los posibles efectos que los eventos negativos pueden tener en una empresa. Otra forma de presentar esta idea es con el siguiente cálculo:
+
+`Probabilidad x Impacto = Riesgo`
+
+Por ejemplo, corres el riesgo de llegar tarde cuando conduces un automóvil al trabajo. Este evento negativo es más probable que suceda si se pincha un neumático en el camino. Y el impacto podría ser grave, como perder tu empleo. Todos estos factores influyen en cómo abordas el desplazamiento al trabajo todos los días. Lo mismo ocurre con la manera en que las empresas manejan los riesgos de seguridad.
+
+En general, en este campo calculamos el riesgo para ayudar a:
+
+- Prevenir eventos costosos y perjudiciales
+- Identificar mejoras que se pueden realizar en sistemas y procesos
+- Determinar qué riesgos se pueden tolerar
+- Priorizar los activos críticos que requieren atención
+
+El impacto comercial de un evento negativo siempre dependerá del activo y la situación. Como profesional de seguridad, tu enfoque principal será centrarte en el lado de la probabilidad, abordando ciertos factores que aumentan las posibilidades de que ocurra un problema.
+
+### Factores de riesgo
+
+2 factores de riesgo:
+
+- `Amenazas`
+- `Vulnerabilidades`
+
+El riesgo de que un activo sufra daños o se vea perjudicado depende en gran medida de si una amenaza aprovecha las vulnerabilidades.
+
+Aplicándolo al riesgo de llegar tarde al trabajo, una amenaza sería un clavo que perfora tu neumático, ya que los neumáticos son vulnerables a objetos afilados en la carretera. En términos de planificación de seguridad, podrías reducir la probabilidad de este riesgo conduciendo por una carretera limpia.
+
+#### Categorías de amenazas
+
+Las amenazas son circunstancias o eventos que pueden tener un impacto negativo en los activos. Existen muchos tipos diferentes de amenazas, pero generalmente se clasifican en dos categorías: intencionales e involuntarias.
+
+Por ejemplo, una amenaza intencional podría ser un hacker malicioso que obtiene acceso a información confidencial al atacar una aplicación mal configurada. En cambio, una amenaza involuntaria podría ser un empleado que sostiene la puerta abierta para una persona desconocida y le otorga acceso a un área restringida. Ambas situaciones pueden dar lugar a un evento que requiere una respuesta adecuada.
+
+#### Categorías de vulnerabilidad
+
+Las vulnerabilidades son debilidades que pueden ser aprovechadas por las amenazas. Existen diversas vulnerabilidades, pero se pueden clasificar en dos categorías: técnicas y humanas.
+
+Por ejemplo, una vulnerabilidad técnica podría ser un software mal configurado que permita a una persona no autorizada acceder a datos importantes. Mientras tanto, una vulnerabilidad humana podría ser un empleado olvidadizo que pierde su tarjeta de acceso en el estacionamiento. Cualquiera de estas dos situaciones puede generar riesgos.
+
+## Requisitos comunes de clasificación
+
+La gestión de activos es el proceso de realizar un seguimiento de los activos y los riesgos que los afectan. La premisa detrás de este proceso es simple: solo puedes proteger lo que sabes que tienes.
+
+Aprendiste que identificar, seguir y clasificar los activos son partes fundamentales de la gestión de activos. Se profundizará en el propósito y los beneficios de la clasificación de activos, incluyendo los niveles comunes de clasificación.
+
+### Por qué es importante la gestión de los activos
+
+Mantener los activos seguros requiere de un sistema eficiente que permita a las empresas operar sin inconvenientes. Establecer estos sistemas requiere contar con un conocimiento detallado de los activos de un entorno determinado. Por ejemplo, un banco necesita tener dinero disponible diariamente para atender a sus clientes, por lo que debe implementar equipos, dispositivos y procesos que garanticen la disponibilidad del dinero y su seguridad contra accesos no autorizados.
+
+Las organizaciones protegen diversos tipos de activos. Algunos ejemplos podrían incluir:
+
+- Activos digitales como datos de clientes o registros financieros.
+- Sistemas de información que procesan datos, como redes o software.
+- Activos físicos que pueden incluir instalaciones, equipos o suministros.
+- Activos intangibles como la reputación de la marca o la propiedad intelectual.
+
+Independientemente de su tipo, es crucial que cada activo sea clasificado y contabilizado. Como recordarás, la clasificación de activos es la práctica de etiquetarlos según cuán sensibles e importantes son para una organización. Determinar estos factores puede variar, pero evaluar cuán sensible e importante es un activo generalmente requieren conocer la siguiente información:
+
+- Lo que tienes (qué tipo de activo es)
+- Dónde se encuentra ubicado
+- Quién es el propietario
+- Cuál es su nivel de importancia para la organización
+
+Una organización que clasifica sus activos lo hace en función de estas características. Esto les ayuda a determinar cuán sensible es un activo y su valor.
+
+### Las clasificaciones comunes de los activos
+
+La clasificación de activos ayuda a las organizaciones a implementar una estrategia efectiva de gestión de riesgos. También les permite priorizar los recursos de seguridad, reducir los costos de TI y cumplir con las regulaciones legales.
+
+El esquema de clasificación más común consta de cuatro niveles: restringido, confidencial, solo interno y público.
+
+- `Restringido` es el nivel más alto. Esta categoría está reservada a activos muy sensibles, como la información que solo se proporciona a quienes necesitan conocerla..
+- El nivel `confidencial` se refiere a los activos cuya divulgación puede provocar un impacto negativo significativo en una organización.
+- El nivel `solo interno` describe activos disponibles para el personal de una empresa y socios comerciales.
+- `Público` es el nivel más bajo de clasificación. Estos activos no tienen consecuencias negativas para la organización si se divulgan.
+
+La forma en que se aplica este esquema depende en gran medida de las características de un activo. Puede sorprenderte saber que identificar al propietario de un activo es a veces la característica más complicada de determinar.
+
+### Desafíos de la clasificación de la información
+
+Identificar al propietario de ciertos activos es sencillo, como en el caso de un edificio. Sin embargo, otros tipos de activos pueden ser más complicados de identificar, especialmente cuando se trata de información.
+
+Por ejemplo, una empresa podría proporcionar una laptop a uno de sus empleados para que trabaje de forma remota. En esta situación, podríamos asumir que la organización es la propietaria del activo. Pero, ¿qué sucede si el empleado utiliza la laptop para asuntos personales, como guardar sus fotos?
+
+La propiedad es solo una de las características que hacen que la clasificación de la información sea un desafío. Otra preocupación es que la información puede tener múltiples valores de clasificación al mismo tiempo. Por ejemplo, piensa en una carta que te envían por correo. La carta puede contener información pública que está bien compartir, como tu nombre. Sin embargo, también puede incluir información bastante confidencial que preferirías que solo estuviera disponible para ciertas personas, como tu dirección. A medida que avances en el programa, aprenderás más sobre cómo abordar estos desafíos.    
+
+## Valor de activos digitales
+
+Los activos digitales son fundamentales para las empresas porque contienen información crítica. La información es valiosa debido a su capacidad de influir en decisiones empresariales, proteger la privacidad y garantizar el funcionamiento continuo de los negocios.
+
+A diferencia de los activos físicos, los digitales enfrentan desafíos únicos, como la facilidad de copia, el acceso remoto y la vulnerabilidad a los ciberataques.
+
+La razón principal por la que los activos digitales son valiosos es la información que contienen. Esta información puede ser propiedad intelectual, datos personales, información financiera, etc.
+## Tres estados de los datos
+
+- `Datos en uso:` Son los datos que están siendo activamente procesados por aplicaciones, programas o los propios usuarios. Ejemplo: revisar el correo electrónico.
+- `Datos en tránsito:`  Son los datos que se mueven de un lugar a otro, como a través de redes internas o Internet. Ejemplo: enviar un correo electrónico.
+- `Datos en reposo:` Son los datos almacenados y no están siendo utilizados activamente. Ejemplo: archivos guardados en un disco duro o en la nube mientras no se accede a ellos.
+
+## Seguridad de la información (InfoSec):
+
+Proteger los datos en los tres estados contra el acceso no autorizado, la alteración y la destrucción. Esto implica implementar medidas de seguridad adecuadas para cada estado de los datos.
+
+Consecuencias de una InfoSec débil: Los problemas pueden incluir robo de identidad, pérdidas financieras y daños reputacionales. Estos problemas pueden tener un impacto significativo en la empresa y sus partes interesadas.
+
+## Gestion de los activos
+- `Adaptación con el cambio digital:` A medida que las tecnologías y los métodos de almacenamiento evolucionan, también deben hacerlo las estrategias de seguridad. Por ejemplo, con el aumento del uso de la nube, es crucial entender que los datos en reposo no siempre están en dispositivos físicos.
+- `Necesidad de seguimiento de información:` Es fundamental llevar un registro detallado de todos los activos digitales para protegerlos adecuadamente. Esto incluye saber qué información se almacena, dónde se almacena y cómo se utiliza.
+- `Análisis de riesgos y planificación:` Conocer los tres estados de los datos permite a los equipos de seguridad evaluar los riesgos asociados y desarrollar planes de gestión de activos adecuados. Esto incluye implementar políticas y tecnologías que aseguren la protección de los datos en todos sus estados.
+
+## El surgimiento de la seguridad en la nube
+
+Uno de los desarrollos tecnológicos más importantes de este siglo ha sido la aparición de la computación en la nube. Según el Centro Nacional de Ciberseguridad del Reino Unido, la computación en la nube se define como “un servicio escalable masivamente bajo demanda, alojado en una infraestructura compartida y accesible a través de Internet”.
+
+Anteriormente, aprendiste que la mayor parte de la información se encuentra en forma de datos, los cuales están en constante cambio. En los últimos años, las empresas comenzaron a migrar sus datos a la nube. La adopción de servicios basados en la nube generó nuevas complejidades en la manera en que se protege la información en línea. En esta lectura, explorarás estos desafíos y las oportunidades surgidas  para los/as profesionales de la seguridad.
+### Subirse a la nube
+Iniciar un negocio en línea solía ser un proceso complicado y costoso. En el pasado, las empresas debían crear y mantener sus propias soluciones internas para operar en el mercado digital. Sin embargo, gracias a la nube, en la actualidad es mucho más sencillo hacerlo, para cualquier persona.
+
+La disponibilidad de tecnologías en la nube ha transformado radicalmente la forma en que las empresas operan en línea. Estas nuevas herramientas permiten a las empresas escalar y adaptarse rápidamente, al tiempo que reducen sus costos. Sin embargo, a pesar de estos beneficios, el cambio hacia servicios basados en la nube también ha presentado una serie de nuevos desafíos de ciberseguridad que ponen en riesgo los activos.
+
+### Servicios basados en la nube
+Al hablar de “servicios basados en la nube” se hace referencia a una variedad de soluciones empresariales disponibles bajo demanda o basadas en la web. En función de las necesidades y el presupuesto con el que cuente una organización, estos servicios pueden abarcar desde el alojamiento de sitios web hasta entornos de desarrollo de aplicaciones, pasando por toda la infraestructura de backend.
+
+Existen tres categorías principales de servicios basados en la nube:
+
+- Software como servicio (SaaS)
+- Plataforma como servicio (PaaS)
+- Infraestructura como servicio (IaaS)
+
+#### Software como servicio (SaaS)
+El software como servicio (SaaS) hace referencia a aplicaciones de front-end a las que los/as usuarios/as acceden a través de un navegador web. Las empresas proveedoras de servicios alojan, gestionan y mantienen todos los sistemas de backend para esas aplicaciones. Algunos ejemplos comunes de servicios SaaS incluyen aplicaciones como el servicio de correo electrónico Gmail™, la plataforma de comunicación y colaboración en equipo Slack y el software de videoconferencias Zoom.
+
+#### Plataforma como servicio (PaaS)
+La plataforma como servicio (PaaS) se refiere a las herramientas de desarrollo de aplicaciones de backend a las que los/as clientes/as pueden acceder en línea. Los desarrolladores utilizan estos recursos para escribir código y crear, gestionar e implementar sus propias aplicaciones. Mientras tanto, las empresas proveedoras de servicios en la nube alojan y mantienen el hardware y software de backend que las aplicaciones utilizan para funcionar. Algunos ejemplos de servicios PaaS incluyen la plataforma Google App Engine™, Heroku® y VMware Cloud Foundry. 
+
+#### Infraestructura como servicio (IaaS)
+Los clientes de infraestructura como servicio (IaaS) obtienen acceso remoto a una variedad de sistemas de backend que son alojados por el proveedor de servicios en la nube. Esto incluye servidores de procesamiento de datos, almacenamiento, recursos de redes y más. Los recursos suelen licenciarse según las necesidades, lo que lo convierte en una alternativa rentable en comparación con la compra y el mantenimiento de infraestructura local.
+
+Los servicios basados en la nube permiten a las empresas conectar con sus clientes, empleados y socios comerciales a través de Internet. Algunas de las organizaciones más grandes del mundo ofrecen servicios basados en la nube, como:
+
+- Plataforma Google Cloud 
+- Microsoft Azure
+
+### Seguridad en la nube
+Migrar aplicaciones e infraestructura a la nube puede facilitar el funcionamiento de un negocio en línea. Sin embargo, también puede complicar la tarea de mantener los datos privados y seguros. La seguridad en la nube es un campo en crecimiento dentro de la ciberseguridad, que se enfoca específicamente en la protección de datos, aplicaciones e infraestructuras en la nube.
+
+En un modelo tradicional, las organizaciones tenían toda su infraestructura de TI en sus instalaciones. La protección de esos sistemas recaía por completo en el equipo de seguridad interno de ese entorno. No obstante, estas responsabilidades no están tan claramente definidas cuando parte o todo el entorno operativo se encuentra en la nube.
+
+Por ejemplo, un cliente de PaaS paga para acceder a los recursos que necesita para crear sus aplicaciones. En este sentido, es razonable esperar que se encargue de la seguridad de las aplicaciones que genera por su cuenta. Por otro lado, la responsabilidad de mantener la seguridad de los servidores a los que acceden debe ser de la empresa proveedora de servicios en la nube, ya que hay otros clientes que utilizan los mismos sistemas.
+
+En seguridad en la nube, este concepto se conoce como `modelo de responsabilidad compartida`. Por lo general, los clientes son responsables de asegurar todo lo que esté directamente bajo su control:
+
+- Gestión de identidades y accesos
+
+- Configuración de recursos
+
+- Manejo de datos
+
+*`Nota: El grado de responsabilidad que se delega a un proveedor de servicios varía según el servicio que se utilice: SaaS, PaaS e IaaS.`*
+
+### Desafíos de la seguridad en la nube
+Las empresas proveedoras de servicios hacen todo lo posible para ofrecer productos seguros a sus clientes. Gran parte de su éxito depende de prevenir vulnerabilidades y de la eficacia con la que puedan proteger la información confidencial. Sin embargo, como los datos se almacenan en la nube y se accede a ellos a través de Internet, surgen varios desafíos:
+
+- Una de las mayores preocupaciones es una `configuración incorrecta`. Los clientes de servicios basados en la nube son responsables de configurar su propio entorno de seguridad. En muchas ocasiones, pueden utilizar configuraciones predeterminadas que no abordan sus objetivos de seguridad específicos.
+
+- Es más probable que se produzcan `violaciones de seguridad nativas` de la nube debido a servicios mal configurados.
+
+- `Controlar el acceso puede ser difícil` según el cliente y el nivel de servicio.
+
+- `Cumplir con los estándares regulatorios` también es un problema, particularmente en las industrias que están obligadas por ley a seguir requisitos específicos como los de la Ley de Portabilidad y Responsabilidad de Seguros de Salud (HIPAA), los del Estándar de Seguridad de Datos para la Industria de Tarjetas de Pago (PCI-DSS) y los del Reglamento General de Protección de Datos (RGPD)..
+
+Además de estos, existen muchos otros desafíos. A medida que más organizaciones adoptan servicios basados en la nube, aumenta la necesidad de contar con profesionales de la seguridad en la nube para hacer frente a un número cada vez mayor de  riesgos. Burning Glass, una destacada empresa en análisis del mercado laboral, 
+[sitúa a la seguridad en la nube entre las habilidades más demandadas en ciberseguridad](https://www.burning-glass.com/wp-content/uploads/2020/10/Fastest_Growing_Cybersecurity_Skills_Report.pdf)
+
+#### Recursos para obtener información adicional
+- [El Centro Nacional de Ciberseguridad del Reino Unido](https://www.ncsc.gov.uk/collection/cloud/understanding-cloud-services/cloud-security-shared-responsibility-model)
+ dispone de una guía detallada para elegir, utilizar e implementar servicios en la nube de forma segura, basada en el modelo de responsabilidad compartida.
+- [Cloud Security Alliance®](https://cloudsecurityalliance.org/) es una organización dedicada a la creación de entornos seguros en la nube. Ofrece acceso a investigaciones específicas sobre seguridad en la nube, certificaciones y productos a través de una membresía de pago.
+- [CompTIA Cloud+](https://www.comptia.org/blog/your-next-move-cloud-security-specialist) es un programa de certificación diseñado para enseñarte las habilidades fundamentales necesarias para convertirte en un/a especialista en seguridad en la nube.
+
+## Riesgos y seguridad en los activos
+
+### Elementos de los planes de seguridad:
+
+- `Políticas`: Las políticas son las reglas que reducen el riesgo y protegen la información. Actúan como la base de los planes de seguridad, proporcionando dirección estratégica y definiendo el alcance, objetivos y limitaciones.
+- `Estándares`: Los estándares establecen referencias tácticas para la implementación de las políticas. Estos puntos de referencia aseguran que las políticas se apliquen de manera consistente y efectiva.
+- `Procedimientos`: Los procedimientos son instrucciones detalladas para realizar tareas específicas. Estos aseguran que las políticas y estándares se implementen de manera coherente y eficiente, proporcionando claridad y responsabilidad en toda la organización.
+
