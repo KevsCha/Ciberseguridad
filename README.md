@@ -2813,3 +2813,490 @@ Además de estos, existen muchos otros desafíos. A medida que más organizacion
 - `Estándares`: Los estándares establecen referencias tácticas para la implementación de las políticas. Estos puntos de referencia aseguran que las políticas se apliquen de manera consistente y efectiva.
 - `Procedimientos`: Los procedimientos son instrucciones detalladas para realizar tareas específicas. Estos aseguran que las políticas y estándares se implementen de manera coherente y eficiente, proporcionando claridad y responsabilidad en toda la organización.
 
+## Controles de seguridad
+### Politicas de seguridad
+
+Para una empresa es importante establecer políticas de seguridad para poder definir los tipos de controles que se utilizaran, establecer politicas depende de los siguientes factores.
+
+- `Análisis de Riesgos`: La empresa debe identificar y evaluar los riesgos a los que está expuesta su información. Esto incluye entender las amenazas potenciales y las vulnerabilidades existentes.
+- `Establecimiento de Objetivos de Seguridad`: Basándose en el análisis de riesgos, la empresa define sus objetivos de seguridad. Estos objetivos deben alinearse con los objetivos estratégicos de la organización y cumplir con las normativas legales y reglamentarias pertinentes.
+- `Creación de Políticas de Seguridad`: Se redactan políticas de seguridad que detallan cómo se debe proteger la información de la empresa. Estas políticas establecen las directrices y los principios que guiarán la implementación de los controles de seguridad.
+
+#### Tipos de controles:
+
+- `Controles Técnico`: Tecnologías usadas para proteger activos, como el cifrado y los sistemas de autenticación.
+- `Controles Operacional`: Mantenimiento diario del entorno de seguridad, realizado generalmente por personas. Incluye entrenamiento de concientización y respuesta a incidentes.
+- `Controles y de gestión `: Enfocados en cómo los controles técnicos y operativos reducen el riesgo. Incluyen políticas, estándares y procedimientos.
+
+### Controles técnicos
+
+Son las herramientas y tecnologías fundamentales que implementan las barreras físicas y lógicas para proteger los datos. Ejemplos incluyen el cifrado, que protege la información durante su almacenamiento y transmisión, y los sistemas de autenticación, que aseguran que solo las personas autorizadas puedan acceder a los sistemas.
+
+### Controles operativos
+
+Estos controles son cruciales para la gestión diaria de la seguridad. Involucran actividades como la concientización de los empleados sobre las políticas de seguridad y la capacitación para reconocer y responder a incidentes de seguridad. Sin un mantenimiento y una operación diaria adecuados, los controles técnicos pueden volverse ineficaces.
+### Controles de Gestión 
+
+Son esenciales para proporcionar una dirección clara y un marco para la implementación de los controles técnicos y operativos. Las políticas, estándares y procedimientos aseguran que todos los aspectos de la seguridad estén alineados con los objetivos estratégicos de la empresa y cumplan con las normativas legales y reglamentarias.
+
+### Privacidad de la informacion
+
+- Derecho a elegir cómo, cuándo y qué información se comparte.
+- Protección contra el acceso no autorizado y la distribución indebida de datos.
+
+La privacidad de la información es un componente crítico de la seguridad de la información. Asegurar que los datos personales y sensibles estén protegidos contra accesos no autorizados es fundamental para mantener la confianza de los clientes y cumplir con las leyes de protección de datos. La privacidad está estrechamente vinculada a los controles de seguridad, ya que estos regulan quién puede acceder y cómo se puede utilizar la información.
+
+## Principio de mínimo privilegio
+
+Los controles de seguridad desempeñan un rol fundamental para mantener la privacidad y seguridad de los datos confidenciales. Uno de los controles más comunes es el principio del mínimo privilegio, también conocido como PoLP o privilegio mínimo. Este principio de seguridad se basa en otorgar a los usuarios únicamente el nivel mínimo de acceso y autorización necesarios para llevar adelante una tarea o función específica.
+
+El privilegio mínimo representa un control de seguridad clave que respalda la tríada de confidencialidad, integridad y disponibilidad (CID) de la información. En esta lectura, explorarás cómo el principio de mínimo privilegio ayuda a reducir el riesgo, cómo se implementa habitualmente y por qué es esencial someterlo a auditorías periódicas.
+
+### Reducir el acceso disminuye el riesgo
+Toda empresa debe estar preparada para enfrentar el riesgo de robo, uso indebido o abuso de datos. La aplicación del principio de mínimo privilegio puede reducir significativamente el riesgo de incidentes costosos, como las filtraciones de datos, mediante las siguientes medidas:
+
+- Limitando el acceso a la información confidencial.
+- Reduciendo las posibilidades de modificación, alteración o pérdida accidental de datos.
+- Facilitando la supervisión y la administración del sistema.
+
+El principio de mínimo privilegio reduce considerablemente la probabilidad de un ataque exitoso al conectar recursos específicos a determinados usuarios y establecer límites a sus acciones. Es un control de seguridad importante que debe aplicarse a todos los activos. Para implementar efectivamente el mínimo privilegio es fundamental empezar por definir de manera clara quiénes son los usuarios o entidades involucradas.
+
+### Determinar el acceso y la autorización
+
+Para implementar el principio de mínimo privilegio, es necesario determinar el acceso y la autorización previamente. Para lograrlo, hay dos preguntas clave que deben responderse: 
+
+- ¿Quién es el usuario en cuestión? 
+- ¿Cuánto acceso requiere a un recurso específico? 
+
+Identificar un usuario suele ser un proceso sencillo. Usuario puede ser una persona (cliente, personal, proveedor) o un dispositivo o software conectado a la red empresarial. En general, cada usuario debería tener su propia cuenta, y estas cuentas, por lo general, se almacenan y gestionan dentro del servicio de directorio de la organización.
+
+Estos son los tipos más comunes de cuentas de usuario:
+
+- `Cuentas de invitado`: se proporcionan a usuarios externos que necesitan acceder a una red interna, como clientes, colaboradores externos o socios comerciales.
+- `Cuentas de usuario`: se asignan al personal en función de sus responsabilidades laborales.
+- `Cuentas de servicio`: se otorgan a aplicaciones o software que necesitan interactuar con otros programas en la red.
+- `Cuentas privilegiadas`: tienen permisos elevados o acceso administrativo.
+
+Es una buena práctica determinar un nivel de acceso inicial para cada tipo de cuenta antes de implementar el principio de mínimo privilegio. Sin embargo, el nivel de acceso apropiado puede cambiar de un momento a otro. Por ejemplo, una persona que trabaja en servicio de atención al cliente solo debería tener acceso a tu información mientras te está brindando asistencia. No obstante, cuando esta persona comience a atender a otro cliente y ya no te esté asistiendo activamente, tus datos deberían volver a quedar inaccesibles. El mínimo privilegio solo puede reducir el riesgo si las cuentas de usuario son monitoreadas de forma rutinaria y consistente.
+
+`Consejo profesional: Las contraseñas desempeñan un papel importante al implementar el principio del mínimo privilegio. Incluso si las cuentas de usuario están asignadas adecuadamente, una contraseña insegura puede comprometer los sistemas.`
+
+### Auditoría de los privilegios de cuentas
+
+Establecer las cuentas de usuario adecuadas y asignarles los derechos de acceso o privilegios apropiados es un paso inicial muy valioso. Sin embargo, realizar auditorías periódicas de estas cuentas es una parte esencial para mantener seguros los sistemas de tu empresa.
+
+Existen tres enfoques comunes para auditar las cuentas de usuario:
+
+- Auditorías de uso
+- Auditorías de privilegios
+- Auditorías de cambios de cuenta
+
+Como profesional de seguridad, es posible que participes en cualquiera de estos procesos.
+
+#### Auditorías de uso
+
+Cuando se realiza una auditoría de uso, el equipo de seguridad revisa a qué recursos está accediendo cada cuenta y de qué forma los usuarios interactúan con estos recursos. Estas auditorías son útiles para determinar si los usuarios están cumpliendo con las políticas de seguridad de la organización. Además, permiten identificar si un usuario tiene permisos que podrían ser revocados debido a que ya no están siendo utilizados.
+#### Auditorías de privilegios
+
+Con el paso del tiempo, es común que los usuarios acumulen más privilegios de acceso de los que realmente necesitan, un fenómeno conocido como arrastre de privilegios. Esto puede suceder si un empleado recibe un ascenso o cambia de equipo, lo que conlleva cambios en sus responsabilidades laborales. Las auditorías de privilegios tienen como objetivo evaluar si el rol de un usuario se encuentra en consonancia con los recursos a los que actualmente tiene acceso.
+#### Auditorías de cambios de cuenta
+
+Los servicios de directorio de cuentas mantienen inventarios y registros asociados a cada usuario. Los cambios en una cuenta generalmente se guardan y pueden utilizarse para auditar el directorio en busca de actividades sospechosas, como múltiples intentos de cambiar la contraseña de una cuenta. Realizar auditorías de cambios de cuenta ayuda a asegurar que todas las modificaciones en las cuentas sean realizadas por usuarios autorizados.
+
+## Privacidad de la información: Regulación y cumplimiento normativo
+
+### Seguridad de la información versus privacidad de la información
+
+La seguridad y la privacidad son dos términos que se usan con frecuencia indistintamente fuera de este ámbito. Aunque ambos conceptos están relacionados, representan funciones específicas:
+
+- La privacidad de la información se refiere a la protección contra el acceso y la difusión no autorizados de datos.
+
+- La seguridad de la información (InfoSec) se refiere a la práctica de mantener los datos, en todas sus formas, alejados de usuarios no autorizados.
+
+La diferencia clave: la privacidad consiste en proporcionar a las personas el control sobre su información personal y acerca de cómo se comparte. La seguridad, en cambio, se trata de proteger las decisiones de las personas y mantener su información a salvo de posibles amenazas.
+
+Por ejemplo, una empresa minorista puede desear recopilar ciertos tipos de información personal sobre sus clientes con fines de marketing, como edad, género y ubicación. Antes de reunir esta información privada, es importante que se informe a los clientes sobre cómo se utilizará. Además, los clientes deben tener la opción de negarse a compartir sus datos si así lo desean.
+
+Una vez que la empresa obtiene el consentimiento para recopilar información personal, puede implementar controles de seguridad específicos para proteger esos datos privados y evitar accesos, uso o divulgaciones no autorizadas. La compañía también debe contar con controles de seguridad para respetar la privacidad de todas las partes interesadas y de quienes optaron por no participar.
+
+*`Nota: Tanto la privacidad como la seguridad son esenciales para mantener la confianza de los clientes y la reputación de la marca`*
+
+### Por qué es importante la privacidad en la seguridad
+
+
+La importancia de la privacidad en la seguridad de los datos comenzó a ganar mucha atención a finales de la década de 1990. En ese momento, las empresas tecnológicas pasaron repentinamente de procesar los datos de las personas a almacenarlos y utilizarlos con fines comerciales. Por ejemplo, si una persona buscaba un producto en línea, las empresas almacenaban y compartían información sobre el historial de búsqueda de ese usuario con otras organizaciones. Esto permitía a las compañías ofrecer experiencias de compra personalizadas de forma gratuita.
+
+Con el paso del tiempo, esta práctica dio lugar a un debate global sobre si estas organizaciones tenían derecho a recopilar y compartir los datos privados de las personas. Además, la cuestión de la seguridad de los datos se convirtió en una preocupación creciente: a medida que las organizaciones recopilaban más datos, estos se volvían más vulnerables a ser objeto de abusos, uso indebido o robo.
+
+Muchas organizaciones se preocuparon por la privacidad de los datos y comenzaron a ser más transparentes acerca de cómo recopilaban, almacenaban y utilizaban  la información. También comenzaron a implementar más medidas de seguridad para proteger la privacidad de los datos de las personas. Sin embargo, debido a la falta de reglas claras, las protecciones se aplicaban de manera inconsistente.
+
+*`Nota: Cuantos más datos se recopilan, almacenan y utilizan, más vulnerables son a las filtraciones y amenazas.`*
+
+### Regulaciones importantes sobre privacidad
+
+Las empresas deben cumplir con ciertas leyes para operar. Como recordarás, las regulaciones son normas establecidas por un gobierno u otra autoridad para controlar la forma en que se realiza algo. En particular, las regulaciones de privacidad existen para proteger a los usuarios de que su información sea recopilada, utilizada o divulgada sin su consentimiento. Además, estas regulaciones suelen describir las medidas de seguridad que deben implementarse para mantener la información privada protegida de amenazas.
+
+Tres de las regulaciones de la industria más influyentes que todo profesional de la seguridad debe conocer son:
+
+- Reglamento General de Protección de Datos (RGPD)
+- Estándar de Seguridad de Datos para la Industria de Tarjetas de Pago (PCI-DSS)
+- Ley de Transferencia y Responsabilidad de los Seguros Médicos (HIPAA)
+
+#### Reglamento General de Protección de Datos (RGPD)
+El Reglamento General de Protección de Datos (RGPD) es un conjunto de normas y regulaciones desarrollado por la Unión Europea (UE) que otorga a los propietarios de los datos el control total sobre su información personal. Según el RGPD, se considera información personal el nombre, la dirección, el número de teléfono, la información financiera e información médica de una persona, entre otras.
+
+Esta normativa es aplicable a cualquier empresa que maneje datos de ciudadanos o habitantes de la UE, sin importar dónde opere dicha compañía. Por ejemplo, una organización con sede en los Estados Unidos que maneja los datos de las visitas provenientes de la UE en su sitio web está sujeta a las disposiciones del RGPD.
+
+#### Estándar de Seguridad de Datos para la Industria de Tarjetas de Pago (PCI-DSS)
+El Estándar de Seguridad de Datos para la Industria de Tarjetas de Pago (PCI-DSS) refiere a un conjunto de normas de seguridad establecidas por importantes organizaciones de la industria financiera. Esta regulación tiene como objetivo asegurar las transacciones con tarjetas de crédito y débito contra el robo de datos y el fraude.
+
+#### Ley de Transferencia y Responsabilidad de los Seguros Médicos (HIPAA)
+La Ley de Transferencia y Responsabilidad de los Seguros Médicos (HIPAA) es una ley de los Estados Unidos que obliga a proteger la información sensible de salud de la gente. En virtud de la HIPAA, se prohíbe la divulgación de la información médica de una persona sin su conocimiento y consentimiento.
+
+*`Nota: Estas regulaciones influyen en el manejo de datos en muchas organizaciones del mundo, a pesar de que fueron elaboradas por países o mercados específicos.`*
+
+Existen otras leyes de cumplimiento normativo en materia de seguridad y privacidad. Cuáles de ellas debe seguir tu organización dependerá de la industria y del ámbito en el que se desempeñe. Independientemente de las circunstancias, el cumplimiento normativo es importante para todas las empresas.
+
+### Evaluaciones y auditorías de seguridad
+
+Las empresas deben cumplir con regulaciones que son importantes para el sector o industria en la que se desempeñan. Al hacerlo, validan que han alcanzado un nivel mínimo de seguridad, al mismo tiempo que demuestran su compromiso con mantener la privacidad de los datos.
+
+- El cumplimiento de las normas suele ser un proceso continuo y de dos partes, que implica auditorías y evaluaciones de seguridad:
+- Una auditoría de seguridad es una revisión de los controles de seguridad, políticas y procedimientos de una organización frente a un conjunto de expectativas.
+
+Una evaluación de seguridad es una revisión para determinar la resistencia de las actuales medidas de seguridad frente a las amenazas.
+
+Por ejemplo, si una regulación establece que se debe habilitar la autenticación de múltiples factores (MFA) en todas las cuentas de administrador, se podría realizar una auditoría para verificar el cumplimiento de esas cuentas de usuario. Después de la auditoría, el equipo interno podría realizar una evaluación de seguridad que determine que muchos usuarios están utilizando contraseñas poco seguras. Basándose en su evaluación, el equipo podría decidir habilitar la MFA en todas las cuentas de usuario para mejorar su postura de seguridad general.
+
+*`Nota: El cumplimiento de regulaciones legales, como el RGPD, puede ser verificado durante las auditorías.`*
+
+Como analista de seguridad, es probable que participes de auditorías y evaluaciones de seguridad. Las empresas suelen realizar auditorías de seguridad con menos frecuencia, aproximadamente una vez al año. Estas auditorías pueden ser realizadas tanto internamente como  por diferentes grupos externos de terceros.
+
+En cambio, las evaluaciones de seguridad se realizan con mayor frecuencia, generalmente cada tres a seis meses. Estas evaluaciones suelen ser realizadas por personal interno, en general como preparación para una auditoría de seguridad. Ambas evaluaciones son de suma importancia para asegurar que tus sistemas están protegiendo eficazmente la privacidad de todas las partes.
+
+### Información de Identificación Personal (PII)
+
+La PII es cualquier información que puede usarse para identificar a un individuo. Ejemplos incluyen nombres, datos médicos, financieros, fotos, correos electrónicos y huellas dactilares. Estos datos son especialmente sensibles porque, si se exponen, pueden llevar a robo de identidad, fraude y otras formas de abuso. Dado que la PII se encuentra en línea y es vulnerable a accesos no autorizados, es crucial implementar controles de seguridad adecuados. Uno de los principales controles para proteger la PII es la criptografía.
+
+### Criptografía
+
+La criptografía es el arte de convertir información legible (texto simple) en una forma ilegible (texto cifrado) para protegerla de accesos no autorizados. Su propósito es asegurar que solo los destinatarios previstos puedan entender y acceder a la información.
+
+- Procesos de Cifrado y Descifrado: El cifrado toma datos legibles y los transforma en datos ilegibles mediante un algoritmo y una clave. El descifrado es el proceso inverso, donde se utiliza la clave para convertir el texto cifrado nuevamente en texto simple.
+- Ejemplo Histórico: Cifrado César: Uno de los métodos más antiguos de cifrado, usado por Julio César, que desplaza las letras del alfabeto un número fijo de espacios. Aunque simple, este ejemplo ilustra los principios básicos de la criptografía.
+- Algoritmos y Claves Criptográficas: Un algoritmo es un conjunto de reglas para resolver un problema; en criptografía, un cifrado es un algoritmo para encriptar información. La clave criptográfica es el valor que determina cómo se aplica el algoritmo de cifrado.
+
+- Limitaciones del Cifrado César:
+
+    - Fuerza Bruta: Con un alfabeto limitado, es fácil descifrar el cifrado César mediante un ataque de fuerza bruta (probar todas las combinaciones posibles).
+    - Seguridad de la Clave: El uso de una única clave significa que si esta se pierde o roba, la información cifrada queda comprometida. Por eso, la gestión de claves es crucial en la criptografía.
+
+### Integración en la Práctica
+
+- Protección de la PII:
+
+    - Implementación de Criptografía: Las empresas deben usar algoritmos criptográficos modernos para proteger la PII. Esto implica cifrar datos en tránsito (cuando se envían) y en reposo (cuando se almacenan).
+    - Gestión de Claves: Es esencial que las claves criptográficas se manejen de manera segura. No deben almacenarse en lugares públicos y deben compartirse de manera segura. Esto puede implicar el uso de sistemas de gestión de claves que aseguran que solo las partes autorizadas tengan acceso.
+- Evolución de Algoritmos Criptográficos:
+    - De Cifrado César a Algoritmos Modernos: Mientras que el cifrado César sirve como un buen punto de partida para entender la criptografía, su simplicidad lo hace inseguro. Los algoritmos modernos, como AES (Advanced Encryption Standard) y RSA, utilizan matemáticas complejas y estructuras más robustas para proporcionar un nivel de seguridad mucho mayor.
+    - Combinación de Técnicas Criptográficas: En la práctica, se utilizan combinaciones de cifrado simétrico (donde la misma clave cifra y descifra) y asimétrico (donde se utilizan pares de claves pública y privada) para proteger la información.
+- Implementación en Sistemas y Aplicaciones:
+
+    - Cifrado de Comunicación: Servicios como correos electrónicos, aplicaciones de mensajería y transacciones financieras utilizan criptografía para asegurar que la comunicación entre los usuarios sea privada y segura.
+    - Almacenamiento Seguro de Datos: Las bases de datos y sistemas de almacenamiento implementan criptografía para proteger la PII y otros datos sensibles, asegurando que incluso si se accede físicamente al almacenamiento, los datos no sean legibles sin la clave adecuada.
+- Desafíos y Mejores Prácticas:
+
+    - Resistencia a Ataques: Además de los ataques de fuerza bruta, los algoritmos modernos están diseñados para resistir otros tipos de ataques, como el criptoanálisis.
+    - Actualización y Mantenimiento: Dado que las técnicas de ataque evolucionan, es importante que las empresas mantengan sus sistemas de criptografía actualizados y revisen periódicamente sus políticas de seguridad para adaptarse a nuevas amenazas.
+
+### Infraestructura de Clave Pública (PKI)
+
+- Definición y Propósito: La PKI es un marco de cifrado que protege el intercambio de datos en línea. Facilita y protege el acceso a la información mediante el uso de certificados digitales y la combinación de cifrado asimétrico y simétrico.
+- Funcionamiento Básico: El PKI opera en dos pasos. Primero, se intercambia información cifrada utilizando cifrado asimétrico, simétrico o ambos. Segundo, se crean certificados digitales para establecer confianza entre las partes que intercambian información.
+
+### Certificados Digitales:
+
+- Definición y Función: Un certificado digital es un archivo que verifica la identidad del titular de una clave pública. Es esencial para establecer confianza en las comunicaciones en línea.
+- Proceso de Creación y Verificación:
+    - Una entidad (por ejemplo, una empresa) envía información básica y una clave pública a una Autoridad de Certificación (CA).
+    - La CA verifica la identidad de la entidad y, una vez confirmada, cifra los datos con su clave privada, creando así el certificado digital.
+    - El certificado incluye la firma digital de la CA, lo que garantiza su autenticidad.
+## Cifrado simétrico y asimétrico
+
+- `Cifrado o encriptación (encryption)`: Proceso de convertir datos de un formato legible a uno codificado.
+- `Infraestructura de clave pública (PKI, por sus siglas en inglés:` Marco de cifrado que garantiza la seguridad del intercambio de información en línea.
+- `Algoritmo de cifrado (cipher): `Algoritmo que cifra la información.
+
+Toda la información digital debe mantenerse privada, segura y protegida. El cifrado es una de las claves para conseguirlo. Es útil para transformar la información en una forma que los destinatarios no autorizados no puedan comprender. En esta lectura, compararás el cifrado simétrico y el asimétrico y aprenderás sobre algunos algoritmos conocidos para cada uno.
+
+### Tipos de cifrado
+
+- `El cifrado simétrico ` consiste en utilizar una única clave secreta para el intercambio de información. Debido a que emplea una sola clave tanto para el cifrado como para el descifrado, el remitente y el receptor deben conocer dicha clave para bloquear o desbloquear el cifrado.
+- `El cifrado asimétrico ` se basa en el uso de un par de claves: una pública, para cifrar los datos, y una privada, para descifrarlos. La clave privada solo se comparte con los usuarios con acceso autorizado.
+
+### La importancia de la longitud de la clave
+
+Los cifrados son vulnerables a los ataques de fuerza bruta, que consisten en un proceso de prueba y error para descubrir información privada. Esta táctica es el equivalente digital de probar todas los códigos posibles de una cerradura de combinación, intentando encontrar el correcto. En el cifrado moderno, se considera que las claves más largas son más seguras. Una mayor longitud de clave implica más posibilidades que un atacante debe intentar para desbloquear un cifrado.
+
+Una desventaja de tener claves de cifrado largas es que los tiempos de procesamiento son más lentos. Aunque las claves cortas suelen ser menos seguras, se calculan mucho más rápido. Lograr una comunicación de datos rápida en línea, manteniendo la información segura implica un delicado equilibrio. 
+
+### Algoritmos aprobados
+Muchas aplicaciones web utilizan una combinación de cifrado simétrico y asimétrico. De esta manera, equilibran la experiencia de usuario con la protección de la información. Como analista de seguridad, debes conocer cuáles son los algoritmos más utilizados.
+
+#### Algoritmos simétricos
+- Triple DES (3DES) es conocido como un cifrado por bloques debido a la forma en que convierte el texto simple, también llamado texto plano, en texto cifrado en “bloques”. Sus orígenes se remontan al Data Encryption Standard (DES), que fue desarrollado a principios de la década de 1970. DES fue uno de los primeros algoritmos de cifrado simétrico que generó claves de 64 bits. Un bit es la unidad más pequeña de medición de datos en una computadora. Como podrás imaginar, Triple DES genera claves de 192 bits, es decir, tres veces más largas. A pesar de que las claves son más largas, muchas organizaciones están dejando de utilizar Triple DES debido a las limitaciones en la cantidad de datos que se pueden cifrar. Sin embargo, es probable que Triple DES siga utilizándose por motivos de compatibilidad con versiones anteriores. 
+
+- Advanced Encryption Standard (AES) es uno de los algoritmos simétricos más seguros de la actualidad. AES genera claves de 128, 192 o 256 bits. Se considera que las claves criptográficas de este tamaño están protegidas de ataques de fuerza bruta. Se estima que forzar una clave AES de 128 bits podría llevarle miles de millones de años a una computadora moderna.
+
+#### Algoritmos asimétricos
+
+- Rivest, Shamir y Adleman (RSA) debe su nombre a sus tres creadores, quienes lo desarrollaron en el Instituto Tecnológico de Massachusetts (MIT). RSA es uno de los primeros algoritmos de cifrado asimétrico que produce un par de claves pública y privada. Los algoritmos asimétricos, como RSA, generan longitudes de clave aún más largas. Esto se debe, en parte, al hecho de que estas funciones están creando dos claves. Los tamaños de clave RSA son 1024, 2048 o 4096 bits. RSA se utiliza principalmente para proteger datos altamente sensibles.
+
+- El Algoritmo de Firma Digital (DSA) es un algoritmo asimétrico estándar que fue introducido por el Instituto Nacional de Estándares y Tecnología (NIST) a principios de la década de 1990. DSA también genera longitudes de clave de 2048 bits. Este algoritmo es ampliamente utilizado en la actualidad como complemento de RSA en infraestructuras de clave pública.
+
+#### Generación de claves
+Estos algoritmos deben ser implementados cuando una organización elige proteger sus datos. Una forma de hacerlo es mediante el uso de OpenSSL, que es una herramienta de línea de comandos de código abierto que se puede utilizar para generar claves públicas y privadas. OpenSSL es utilizado habitualmente en computadoras para verificar certificados digitales que se intercambian como parte de la infraestructura de clave pública.
+
+*`Nota: OpenSSL es una opción entre varias herramientas disponibles que pueden generar claves utilizando cualquiera de estos algoritmos comunes.  Aunque muchas empresas utilizaban OpenSSL, ya no se recomienda su uso desde el descubrimiento del 
+error Heartbleed en 2014.`*
+
+[Error heartbled](https://es.wikipedia.org/wiki/Heartbleed)
+
+### Lo oscuro no es seguro
+
+En el mundo de la criptografía, un cifrado debe demostrar  ser invulnerable antes de afirmar que es seguro. Según el 
+[principio de Kerchoff](https://en.wikipedia.org/wiki/Kerckhoffs%27s_principle), la criptografía debe diseñarse de tal manera que todos los detalles de un algoritmo, excepto la clave privada, puedan conocerse sin perder seguridad. Por ejemplo, puedes acceder a todos los detalles sobre cómo funciona el cifrado AES en línea y aun así sigue siendo invulnerable.
+
+Ocasionalmente, las organizaciones implementan sus propios algoritmos de cifrado personalizados. Ha habido casos en los que estos sistemas criptográficos secretos han sido rápidamente descifrados después de hacerse públicos.
+
+*`Consejo profesional: Un sistema criptográfico no debe considerarse seguro si su seguridad se basa en mantener en secreto su funcionamiento.`* 
+
+#### El cifrado está en todas partes
+Ambos trabajan en conjunto para la seguridad con la experiencia de usuario.
+
+Por ejemplo, los sitios web suelen emplear el cifrado asimétrico para proteger pequeños bloques de datos que son importantes, como nombres de usuario y contraseñas durante el proceso de inicio de sesión. Una vez que alguien obtiene acceso, el resto de su sesión en el sitio web suele cambiar al cifrado simétrico debido a su mayor rapidez.
+
+Este tipo de encriptación de datos es cada vez más exigido por la ley. Regulaciones como el Estándar de Procesamiento de Información Federal (FIPS 140-3) y el Reglamento General de Protección de Datos (RGPD) establecen cómo se deben recopilar, usar y manejar los datos. Cumplir cualquiera de estas regulaciones es fundamental para demostrar a socios comerciales y gobiernos, que los datos de los clientes se manejan de manera responsable.
+
+### Funciones Hash
+
+Una función hash es un algoritmo que convierte datos de entrada en un código no descifrable llamado valor hash o digest. A diferencia de los algoritmos de cifrado, las funciones hash son unidireccionales y no permiten recuperar los datos originales a partir del hash.
+Características:
+- Unidireccionalidad: Los datos originales no pueden ser recuperados a partir del valor hash.
+- Sensibilidad a Cambios: Incluso un pequeño cambio en los datos de entrada resulta en un valor hash completamente diferente.
+- Determinismo: La misma entrada siempre produce el mismo valor hash.
+
+*`Ejemplo Práctico: Si una empresa tiene una aplicación almacenada en una unidad compartida, puede generar un valor hash para esa aplicación. Si un atacante modifica la aplicación, el valor hash cambiará, indicando una alteración.`*
+
+### Integridad de los Datos:
+
+La integridad de los datos se refiere a la consistencia, precisión y confiabilidad de los datos durante su ciclo de vida.
+- Relación con Hashing: Las funciones hash se utilizan para verificar que los datos no han sido alterados. Comparando el valor hash de un archivo o aplicación con su valor hash conocido se puede confirmar su integridad.
+- No Repudio: Esto significa que una acción o transacción no puede ser negada por su autor. En el contexto de la seguridad de los datos, el hashing ayuda a asegurar que la información es auténtica y no ha sido modificada.
+
+## La evolución de las funciones hash
+
+Las funciones hash son controles importantes que forman parte de la estrategia de seguridad de todas las empresas. El hashing se utiliza ampliamente para la autenticación y el no repudio, que es el concepto de que la autenticidad de la información no puede ser negada.
+
+Anteriormente, aprendiste que las funciones hash son algoritmos que producen un código que no se puede descifrar. Las funciones hash convierten la información en un valor único que luego puede utilizarse para determinar su integridad. 
+
+<img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/tODF0vF_R_azJfIJqAf7xQ_a58fe850397e4852930e1cb1573311f1_jSALN6Ulo5Ux-ddnWZeNFUW7gkx3StLaa-oul9euRVK9Aabp7GNWGmaPNTTEYzbfyz9fqnwP2GSPLEHebavlOJdsn7yBRh-aDG5nVzLlANRwE5pgDGOSgo9KrW5wpWBQZ4q1Sl81Jdoar3qGWZjDxg?expiry=1723075200000&hmac=vhIiCJ3OcMLrasehkTY0tMdMEXF0bQWNDw7_x8nwVKc" width="600px">
+
+### Orígenes del hashing
+
+Las funciones hash existen desde los inicios de la informática. Originalmente, fueron creadas como una forma de buscar datos de manera rápida. Desde el principio, estos algoritmos han sido diseñados para representar datos de cualquier tamaño como valores pequeños de tamaño fijo o compendios. Mediante el uso de una tabla hash, que es una estructura de datos utilizada para almacenar y referenciar valores hash, estos pequeños valores se convirtieron en una forma más segura y eficiente para que las computadoras accedan a los datos.
+
+Una de las primeras funciones hash es Message Digest 5, más conocida como MD5. El profesor Ronald Rivest, del Instituto Tecnológico de Massachusetts (MIT), desarrolló MD5 a principios de la década de 1990 como una forma de verificar que un archivo enviado a través de una red coincidiera con su archivo de origen.
+
+Ya sea utilizado para convertir un solo correo electrónico o el código fuente de una aplicación, MD5 funciona convirtiendo datos en un valor de 128 bits. Recordarás que un bit es la unidad más pequeña de medición de datos en una computadora. Los bits pueden ser 0 o 1. En una computadora, los bits representan la entrada del usuario de una manera que las computadoras pueden interpretar. En una tabla hash, esto se muestra como una cadena de 32 caracteres. Cualquier alteración en el archivo de origen, genera un valor hash completamente nuevo.
+
+Generalmente, cuanto más largo es el valor hash, más seguro es. Poco después de la creación de MD5, los expertos en seguridad descubrieron que los compendios de 128 bits daban lugar a una importante vulnerabilidad.
+
+Este es un ejemplo de cómo el texto simple se convierte en valores hash:
+
+<img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/bxEk4Lc8Rsam6nowCtzveQ_4dca609b7b6b429098040392824069f1_G_RlvbBROqolPi_q85yPmb1etLSOdWymq_GYqcATeGw_HXkZVe6G3dB9iKozCAuzS0f8AHH_AOsuwtoZyWPlfRYuNpFiBWQmeFjKHSZa39DsTv3w4h6fs5IAzVIvc-FZjoxhRdMZwJ9-_H4uL8aV5A?expiry=1723075200000&hmac=iJzTn9TpbiRtK2WnlexbgojlvcPKjGDCSOBIU8ePFlU" width="600px">
+
+#### Colisiones de hash
+Una de las fallas de MD5 es, de hecho, una característica de todas las funciones hash. Los algoritmos hash asignan cualquier entrada, independientemente de su extensión, a un valor de tamaño fijo compuesto por letras y números. ¿Y cuál es el problema? Aunque existe una cantidad infinita de entradas posibles, ¡solo hay un conjunto finito de salidas disponibles!
+
+Los valores MD5 están limitados a una extensión de 32 caracteres. Debido al tamaño de salida limitado, el algoritmo se considera vulnerable a la colisión de hash, una instancia en la que diferentes entradas producen el mismo valor hash. Dado que los hash se utilizan para la autenticación, una colisión de hash es similar a copiar la identidad de alguien. Los atacantes pueden llevar a cabo ataques de colisión para suplantar fraudulentamente datos auténticos.
+
+### Hashing de próxima generación
+Para evitar el riesgo de colisiones de hash, se necesitaban funciones que generaran valores más largos. Las deficiencias de MD5 dieron paso a un nuevo grupo de funciones conocidas como algoritmos de hash seguro o SHA.
+
+El Instituto Nacional de Estándares y Tecnología (NIST) aprueba cada uno de estos algoritmos. Los números junto a cada función SHA indican el tamaño de su valor hash en bits. Excepto SHA-1, que produce un compendio de 160 bits, se considera que estos algoritmos son resistentes a las colisiones. Sin embargo, eso no los hace invulnerables a otros exploits.
+
+Cinco funciones componen la familia de algoritmos SHA:
+
+- SHA-1
+- SHA-224
+- SHA-256
+- SHA-384
+- SHA-512
+
+### Almacenamiento seguro de contraseñas
+Las contraseñas suelen almacenarse en una base de datos donde se asocian a un nombre de usuario. El servidor recibe una solicitud de autenticación que contiene las credenciales proporcionadas por el usuario. Luego, busca el nombre de usuario en la base de datos y lo compara con la contraseña brindada para verificar que coincida antes de otorgarle el acceso.
+
+Se trata de un sistema seguro a menos que un atacante acceda a la base de datos de usuarios. Si las contraseñas se almacenan en texto sin cifrar, un atacante puede robar esa información y utilizarla para acceder a los recursos de la empresa. El hashing agrega una capa adicional de seguridad. Dado que los valores hash no pueden revertirse, un atacante no podría robar las credenciales de inicio de sesión de alguien incluso si lograra acceder a la base de datos.
+
+#### Tablas Arcoíris (Tabla Rainbow)
+Una tabla Arcoíris (Rainbow) es un archivo de valores hash pregenerados y su texto sin cifrar asociado. Son como diccionarios de contraseñas poco seguras. Los atacantes capaces de obtener la base de datos de contraseñas de una organización pueden usar una tabla Arcoíris para compararlas con todos los valores posibles.
+
+### Añadir un poco de “sal”
+Las funciones con compendios más grandes son menos vulnerables a los ataques de colisión y de tablas Arcoíris. Sin embargo, como ya sabes, ningún control de seguridad es perfecto.
+
+El salting (salado) es una protección adicional que se utiliza para reforzar las funciones hash. Una “sal” es una cadena aleatoria de caracteres que se agrega a una entrada durante el proceso de hash. Por lo general, las “sales” se agregan al principio o al final de los datos mientras pasan por la función. Un uso cada vez más común del salting es el almacenamiento de contraseñas. Esta medida de seguridad adicional ayuda a proteger este tipo de información sin sobrecargar al usuario. 
+
+A continuación se muestra un ejemplo del proceso de salting:
+
+<img src='https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/JUhw27gLSQaWKsc2GngxOw_f4dde8d8babb492eab1158e229c01bf1_VsWLqgCgE1wc48Awz0w5KMJRDnCLvIU9kq-GB_3SbHzVnXX39JW3L_lEtlY-vpehRSSORIRuGvKffNJbawmgaFUkztR6FvDh1MIER-Vo-ieCO62N0rOQOt38o13c3S941n7SBf8HvPVCRLpt2lWuSA?expiry=1723075200000&hmac=so6x2uO7Bfi0foNvBRRWTz6f6BYBKGiWJ1oBlcvaqrE' width='600px'>
+
+## El auge del inicio de sesión único (SSO) y la autenticación de múltiples factores (MFA)
+
+La mayoría de las empresas mantienen sus datos de manera segura mediante sistemas de autenticación. Los nombres de usuario y las contraseñas son las llaves que desbloquean la información para un gran número de organizaciones. Sin embargo, ¿son suficientes estas credenciales? La seguridad de la información se enfoca en gestionar el acceso y la autorización de los usuarios a la información.
+
+Anteriormente, aprendiste sobre los tres factores de autenticación: conocimiento, posesión e inherencia. Dos tecnologías populares para implementar estos factores de autenticación son el inicio de sesión único (SSO) y la autenticación de múltiples factores (MFA). En esta lectura, conocerás cómo funcionan estas tecnologías y por qué las empresas las están adoptando.
+
+### Una mejor aproximación a la autenticación
+El inicio de sesión único (SSO) es una tecnología que combina varios inicios de sesión diferentes en uno solo. Cada vez más empresas recurren al SSO como solución para sus necesidades de autenticación debido a tres razones fundamentales:
+
+- Mejora la experiencia de usuario al eliminar la necesidad de recordar múltiples nombres de usuario y contraseñas.
+- Permite a las empresas reducir costos al simplificar la gestión de servicios conectados.
+- Mejora la seguridad general al reducir la cantidad de puntos de acceso que los atacantes podrían utilizar para infiltrarse en el sistema.
+
+Esta tecnología surgió a mediados de la década de 1990 como una forma de combatir la fatiga de contraseñas, que se refiere a la tendencia de las personas a reutilizar las contraseñas en distintos servicios. Recordar muchas contraseñas diferentes puede ser un desafío, pero usar la misma contraseña repetidamente representa un importante riesgo de seguridad. El SSO resuelve este dilema al aliviar a los usuarios de la responsabilidad de autenticarse repetidamente en múltiples servicios.
+
+### Cómo funciona el inicio de sesión único (SSO)
+El inicio de sesión único (SSO) funciona automatizando el establecimiento de confianza entre un usuario y una empresa proveedora de servicios. En lugar de requerir que el empleado o cliente se encargue de la autenticación, las soluciones de SSO utilizan terceros de confianza para demostrar la identidad del usuario. Esto se logra mediante el intercambio de tokens de acceso cifrados entre el proveedor de identidad y el proveedor de servicios.
+
+Estos tokens de acceso se intercambian utilizando protocolos específicos, al igual que ocurre con otros tipos de información digital. Las implementaciones de SSO suelen basarse en dos protocolos de autenticación diferentes: el Protocolo ligero de acceso a directorios (LDAP) y el Lenguaje de marcado para confirmaciones de seguridad (SAML). El LDAP se utiliza principalmente para transmitir información dentro de las instalaciones, mientras que el SAML se emplea sobre todo para transmitir información fuera del entorno local, como en servicios en la nube.
+
+*`Nota: Los protocolos LDAP y SAML suelen utilizarse juntos.`*
+
+Este es un ejemplo de cómo el SSO puede conectar a un usuario a múltiples aplicaciones con un token de acceso:
+
+<img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/Ncxo8PYNTZenPI81wctSyg_fa669c889d7649dc8dcbf4056c8ae2f1_iFitC77u4Soet0JNMHdVdu_WeuZL9xharWqQnZYsVRQKJTZ0xlQ53T3mM4WsStLYtx9PgYko3-hn54r1Q3ItJncweEh4wKO6nTBz9abNvmymLUftF4gxHsz7LaVPnEfdskYWANccaVPdDV69ZTPJpw?expiry=1723161600000&hmac=0c33zIIYUJQ5ypZSAElJF-JhO2UJMHLUgk614zhGPaA" width="600px">
+
+### Limitaciones del inicio de sesión único (SSO)
+La autenticación mediante nombres de usuario y contraseñas por sí sola no siempre es la forma más segura de proteger la información confidencial. Si bien el inicio de sesión único (SSO) ofrece ventajas útiles, aún existen riesgos asociados con el uso de una única forma de autenticación. Por ejemplo, si se pierde o roba una contraseña, podría exponerse información en múltiples servicios. Afortunadamente, existe una solución a este problema.
+
+### La autenticación de múltiples factores (MFA) al rescate
+La autenticación de múltiples factores, o multifactor, (MFA) requiere que un usuario verifique su identidad de dos o más formas para acceder a un sistema o red. En cierto sentido, la MFA es similar al uso de un cajero automático para retirar dinero de la cuenta bancaria. Primero, insertas una tarjeta de débito en la máquina como forma de identificación. Luego, ingresas tu número PIN como segunda forma de identificación. Ambos pasos o factores se combinan para verificar tu identidad antes de obtener la autorización para acceder a la cuenta.
+
+
+<img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/HWHVUn0BRy2cxMz1ln0q_w_af0ec775ff184fee941275edf19774f1_xu275H_es6vlpXK0i3BfSNpsxHy8khgqg4ZCZ_Fl4h4Gg12c2g-8IDqpnhLP7wBfVDPcnjXBWP_O_f5XEV6UkI_Q4xPp-xvXlCdjhmRf3VQRnNa5YhsbDlVbcjBBtzLM09cQvh4-q9OdfxHgiKccwA?expiry=1723161600000&hmac=T4CPSIfrRP5-BUtMCzz4ux-_8U4kNJxJ9K9wwpz99Zk" width="600px">
+
+### Refuerzo de la autenticación
+La autenticación de múltiples factores (MFA) se basa en los beneficios del inicio de sesión único (SSO) y funciona al requerir que los usuarios demuestren que son quienes dicen ser. Para autenticar su identidad, el usuario debe proporcionar dos factores (2FA) o tres factores (3FA). El proceso de MFA solicita que se brinden las siguientes pruebas:
+
+- Algo que el usuario conoce: un nombre de usuario y contraseña, generalmente.
+- Algo que el usuario tiene: típicamente proporcionado por una empresa proveedora de servicios, como un código de acceso de un solo uso (OTP) enviado a través de SMS.
+- Algo que el usuario es: se refiere a las características físicas de una persona, como sus huellas dactilares o escaneos faciales.
+
+Requerir múltiples formas de identificación es una medida de seguridad efectiva, especialmente en entornos en la nube. Puede ser difícil para las empresas en la nube asegurarse de que los usuarios que acceden a sus sistemas de forma remota no sean agentes de amenaza. La MFA puede reducir el riesgo de autenticar a usuarios incorrectos al requerir formas de identificación difíciles de imitar o forzar mediante ataques de fuerza bruta.
+
+### Profundizar
+
+- Controles de Acceso:
+    - Funciones Principales: Los controles de acceso se dividen en autenticación, autorización y responsabilidad. Estos controles son esenciales para gestionar quién tiene acceso a qué información y en qué contexto, garantizando la confidencialidad, integridad y disponibilidad de los datos.
+    - Importancia: Al implementar estos controles, las organizaciones pueden proteger sus activos de accesos no autorizados y asegurar que solo las personas adecuadas tengan acceso a la información necesaria en el momento adecuado.
+- Autenticación:
+    - Factores de Autenticación:
+        - Conocimiento: Algo que el usuario sabe, como una contraseña o la respuesta a una pregunta de seguridad.
+        - Propiedad: Algo que el usuario posee, como un código de un solo uso (OTP) enviado a través de mensaje de texto o correo electrónico.
+        - Inherencia: Algo que el usuario es, como características biométricas (huella digital, reconocimiento facial).
+    - Ejemplos de Autenticación:
+        - Contraseñas: Método más común, aunque vulnerable a ataques como phishing o fuerza bruta.
+        - OTP: Mejora la seguridad al requerir una segunda forma de verificación que cambia con cada uso.
+        - Biométricos: Ofrecen una capa adicional de seguridad, siendo más difícil de falsificar o robar.
+    - Inicio de Sesión Único (SSO):
+        - Funcionalidad: Permite a los usuarios autenticarse una sola vez y acceder a múltiples recursos sin tener que autenticarse nuevamente.
+        - Ventajas y Desventajas: Facilita el acceso y mejora la experiencia del usuario, pero si se compromete, puede otorgar acceso no autorizado a múltiples recursos.
+        - Uso Combinado con MFA: El SSO se fortalece con la autenticación de múltiples factores, combinando la comodidad del SSO con la seguridad adicional de MFA.
+    - Autenticación de Múltiples Factores (MFA):
+        - Concepto: Requiere que los usuarios verifiquen su identidad utilizando al menos dos formas diferentes de autenticación.
+        - Beneficios: Aumenta significativamente la seguridad al requerir múltiples métodos de verificación.
+- Autorización:
+
+    - Proceso: Determina qué recursos puede acceder un usuario una vez autenticado. Es un paso crítico que sigue a la autenticación y asegura que los usuarios solo tengan acceso a los datos y recursos necesarios para sus roles.
+    - Relación con Autenticación: Mientras que la autenticación verifica la identidad del usuario, la autorización determina los permisos y niveles de acceso de ese usuario, garantizando que solo acceda a lo que está autorizado.
+### Protocolos de Autenticación y Autorización:
+
+- Autenticación Básica HTTP:
+    - Vulnerabilidad: La autenticación básica HTTP envía las credenciales (nombre de usuario y contraseña) sin cifrar, lo que las hace susceptibles a ser interceptadas y robadas por atacantes.
+- HTTPS:
+    - Seguridad Mejorada con HTTPS: HTTPS (HTTP Secure) usa SSL/TLS para cifrar la transmisión de datos, protegiendo las credenciales y otros datos sensibles durante la comunicación en la web.
+- OAuth:
+    - ¿Qué es? OAuth (Open Authorization) es un protocolo de autorización estándar abierto que permite a las aplicaciones obtener acceso limitado a los recursos de un usuario en un servidor sin revelar las credenciales del usuario. Es ampliamente utilizado para delegar permisos y permitir que una aplicación actúe en nombre de un usuario.
+    - Tokens API: En lugar de compartir credenciales, OAuth utiliza tokens API, que son códigos cifrados que representan las credenciales del usuario. Estos tokens permiten a una aplicación acceder a recursos en nombre del usuario sin revelar la contraseña.
+    - Autorización Delegada: Permite a los usuarios conceder a terceros un acceso limitado a sus recursos sin compartir sus credenciales. Por ejemplo, cuando utilizas tu cuenta de Google para iniciar sesión en otra aplicación, Google actúa como intermediario, verificando tu identidad y autorizando el acceso limitado a la aplicación de terceros.
+
+## Gestión de identidades y accesos
+
+La seguridad va más allá de simplemente combinar procesos y tecnologías para proteger los activos: consiste en garantizar que estos procesos y tecnologías creen un entorno seguro que respalde una estrategia defensiva. Una clave para lograr esto es implementar dos principios fundamentales de seguridad que limiten el acceso a los recursos de las organizaciones:
+
+- El `principio de mínimo privilegio`, según el cual a un usuario solo se le otorga el nivel mínimo de acceso y autorización requerido para completar una tarea o función.
+
+- La `segregación de funciones`, que es el principio según el cual no se debe conceder a los usuarios niveles de autorización que les permitan hacer un uso indebido de un sistema.
+
+Estos dos principios suelen funcionar en conjunto. El mínimo privilegio establece límites en cuanto al acceso y autorización que una persona recibe, mientras que la segregación de funciones divide las responsabilidades entre varias personas para evitar que recaiga demasiado control en una sola.
+
+Anteriormente, aprendiste sobre el protocolo o marco de autenticación, autorización y trazabilidad (AAA, por sus siglas en inglés). Muchas empresas utilizan este modelo para implementar estos dos principios de seguridad y gestionar el acceso de los usuarios. En esta lectura, aprenderás sobre otro marco importante para gestionar el acceso de usuarios, la gestión de identidades y accesos (IAM, por sus siglas en inglés). Ampliarás tus conocimientos sobre las similitudes entre AAA e IAM y cómo se implementan habitualmente.
+
+### Gestión de identidades y accesos (IAM)
+A medida que las organizaciones dependen cada vez más de la tecnología, los organismos reguladores aumentan su presión  para que demuestren que están haciendo todo lo posible por prevenir amenazas. La gestión de identidades y accesos (IAM) es un conjunto de procesos y tecnologías que ayuda a las empresas a administrar las identidades digitales en su entorno. Tanto los sistemas AAA como los IAM están diseñados para autenticar usuarios, determinar sus derechos de acceso y realizar un seguimiento de sus actividades dentro de un sistema.
+
+Cualquiera de los dos modelos utilizados por tu organización es más que un solo sistema claramente definido. Cada uno de ellos consiste en una serie de controles de seguridad que garantizan que el usuario adecuado tenga acceso a los recursos correctos en el momento oportuno y por las razones apropiadas. Cada uno de estos cuatro factores es determinado por las políticas y procesos de la empresa para la que trabajas.
+
+*`Nota: Un usuario puede ser una persona, un dispositivo o un software.`*
+
+### Autenticación de usuarios
+
+Para garantizar que el usuario adecuado acceda a un recurso, se requiere algún tipo de prueba de que este es quien dice ser. 
+
+- `Conocimiento`  algo que el usuario sabe.
+- `Autenticación` algo que el usuario posee.
+- `Autorización` algo que el usuario es.
+
+La autenticación se verifica principalmente mediante credenciales de inicio de sesión. El `inicio de sesión único` (SSO), una tecnología que combina varios inicios de sesión diferentes en uno solo, y la `autenticación de múltiples factores`, o multifactor, (MFA), una medida de seguridad que requiere que un usuario verifique su identidad de dos o más formas para acceder a un sistema o red, son otras herramientas que las organizaciones utilizan para autenticar a personas y sistemas.
+
+`Consejo profesional`: La siguiente es otra forma de recordar este modelo de autenticación: algo que sabes, algo que posees y algo que eres.
+
+#### Aprovisionamiento de cuentas de usuarios
+Los sistemas backend deben ser capaces de verificar si la precisión de la información proporcionada por los usuario. Para lograrlo, es necesario realizar un adecuado aprovisionamiento de usuarios, que consiste en el proceso de crear y mantener la identidad digital de cada usuario. Por ejemplo, cuando una universidad contrata a un nuevo profesor, se crea una nueva cuenta de usuario. Esta cuenta se configura para brindar acceso a recursos exclusivos destinados a los profesores durante el período en el que están dando clases. Los analistas de seguridad suelen participar habitualmente en el aprovisionamiento de usuarios y en la asignación de sus accesos.
+
+`Consejo profesional`: Otra función de los analistas en IAM es la de desaprovisionar usuarios. Esta es una práctica importante que elimina los derechos de acceso de un usuario cuando ya no debería tenerlos.
+
+#### Concesión de autorización
+Si el usuario adecuado ha sido autenticado, la red debe garantizar que los recursos correctos estén a su disposición. Existen tres marcos comunes que las organizaciones utilizan para manejar esta etapa de IAM:
+
+- Control de acceso obligatorio (MAC)/Madatory access control.
+- Control de acceso discrecional (DAC)/Discretionary access control.
+- Control de acceso basado en roles (RBAC)/Rol-Based access control.
+
+<img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/zQ-iux52RxKNln6JB7uIIA_a90c3a06ab0f4a5ebb61868a1d95dff1_lxCYvxrFwbVi4LRWriCD_E0GeDiF6xWwkPOhyvERS2952ae6Wtj_Kk7u9GYWUOOiDu2O04A39ZN20Cvo-9ct8mYJMsKJjk6yQaSTbpSxNvqq5H8Vb1il5Y_I-Vfmm4TppuO8r41ZhJ-PetV9um8gow?expiry=1723161600000&hmac=SzsOABsRfBlebAqm71K8H6OzZOsZlQ3M-RaLwsTML_U" width="600px">
+
+#### Control de acceso obligatorio (MAC)
+El control de acceso obligatorio (MAC) es el más estricto de los tres marcos. En este modelo, la autorización se basa en una estricta “necesidad de conocer”. El acceso a la información debe ser otorgado manualmente por una autoridad central o un administrador del sistema. Por ejemplo, MAC se aplica habitualmente en las fuerzas de seguridad, como el ejército, y otras agencias gubernamentales donde los usuarios deben solicitar acceso a través de una cadena de mando. MAC también se conoce como control no discrecional, ya que el acceso no se otorga a discreción del propietario de los datos.
+
+<img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/qjDUDELwS0CFVEAdttfq7Q_197d920e52a14d238d0d7f1cd1b678f1_dPxrDUQvanm2RYiL200FuRCuFl71nd-bm2xg5n-DlUxXTVrD4yVZNcO8m9qKFR5VJ6d1KnMRLyBATN8lmgGAx-wDZUJBIVpTiE14yn2VCGlQGUBGkSjeGZWyQY-oCmb8ewZ6yBVbE8i7u31sWkJrwg?expiry=1723161600000&hmac=ts06Ygx0ozVYA0H3ijpdc-Qp3hTN6-Loeh73ehLsHCA" width="600px">
+
+#### Control de acceso discrecional (DAC)
+El control de acceso discrecional (DAC) suele aplicarse cuando el propietario de los datos decide los niveles de acceso adecuados. Un ejemplo de DAC es cuando el propietario de una carpeta de Google Drive comparte acceso con modo de editor, lector o comentador con otra persona.
+
+<img src='https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/7IL3CP0XSc6cKusZHIapvQ_c439d210331d4397bdbe23f3781201f1_1OumxJI8a0JsL0MpWELRS3fpR8V7DfSKPvCeo1C_DTJpbhH5ZB5E60RPObrHb_FKWsgctwKAbnEwwZBKpVlI1ghkC_RZNNxEEB3RMpmwX2nGSB_vBE1AhjxQLb6a9kcRoyyP-t5n4_ycMhlbdDSvKg?expiry=1723161600000&hmac=esOEcsW_9tJgYlWSuDKizQpbZaEj9rMXAEEor1hP5Z0' width="600px">
+
+#### Control de acceso basado en roles (RBAC)
+El control de acceso basado en roles (RBAC) se utiliza cuando la autorización se determina según la función que tiene una persona dentro de una organización. Por ejemplo, alguien que se desempeña en el departamento de marketing puede tener acceso al análisis de usuarios, pero no a la administración de la red.  
+
+### Tecnologías de control de acceso
+Los usuarios suelen percibir la autenticación y la autorización como una experiencia unificada y fluida, en gran medida gracias a la sinergia entre las tecnologías de control de acceso que se integran entre sí. Estas herramientas ofrecen la velocidad y automatización necesarias para que los administradores supervisen y modifiquen los derechos de acceso, al mismo tiempo que reducen errores y posibles riesgos.
+
+Algunas organizaciones desarrollan y mantienen por sí mismas tecnologías de control de acceso a través de su departamento de TI. Un sistema IAM o AAA típico consta de un directorio de usuarios, un conjunto de herramientas para administrar datos en ese directorio, un sistema de autorización y un sistema de auditoría. Estas soluciones personalizadas se crean para adaptarse a las necesidades específicas de seguridad de la organización. Sin embargo, es importante tener en cuenta que la creación de una solución interna puede requerir un alto costo en términos de tiempo y otros recursos.
+
+En lugar de eso, muchas organizaciones optan por adquirir licencias de soluciones de terceros que ofrecen una serie de herramientas para proteger rápidamente sus sistemas de información. Hay que tener en cuenta que la seguridad va más allá de simplemente combinar un conjunto de herramientas. Siempre es importante ajustar estas tecnologías para que contribuyan a proporcionar un entorno seguro.
+
+#### Recursos para obtener información adicional
+La industria de la gestión de identidades y accesos está creciendo a un ritmo vertiginoso. Al igual que en otros ámbitos de la seguridad, es importante mantenerse al día.
+
+[IDPro](https://idpro.org/)© es una organización profesional dedicada a compartir conocimientos esenciales del sector de IAM.
