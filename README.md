@@ -3429,3 +3429,232 @@ Las empresas tienen información pública y privada almacenada en servidores web
 Las falsificaciones de solicitudes del lado del servidor (SSRF) suceden cuando los atacantes manipulan las operaciones normales de un servidor para leer o actualizar otros recursos de aquel. Esto es posible cuando hay una aplicación vulnerable en el servidor. Esta transporta el código malicioso a un servidor host que obtendrá datos no autorizados.
 
 [Top 10 OWASP](https://owasp.org/www-project-top-ten/)
+
+## Evaluaciones de vulnerabilidad
+
+#### ¿Cómo hallar vulnerabilidades?
+
+Generalmente, las debilidades y defectos se hallan durante una evaluación de vulnerabilidad. Una evaluación de vulnerabilidad es la revisión interna de los sistemas de seguridad de una organización. Estas evaluaciones funcionan de manera similar al proceso de identificar y categorizar vulnerabilidades en una lista CVE. La principal diferencia es que el equipo de seguridad las realiza, evalúa, califica y corrige por su cuenta. Los analistas de seguridad desempeñan un papel clave en este proceso. En general, el fin de una evaluación de vulnerabilidad es identificar puntos débiles y prevenir ataques.
+
+También ayuda a los equipos de seguridad a determinar si sus controles cumplen con los estándares regulatorios. Las empresas realizan muchas de estas evaluaciones. Como tienen tantos activos que proteger, los equipos de seguridad a veces deben elegir en qué áreas concentrar las evaluaciones de vulnerabilidad. 
+
+Tras decidir en qué enfocarse, las evaluaciones de vulnerabilidad suelen seguir cuatro pasos:
+
+- `Identificación`: Aquí se usan herramientas de análisis y pruebas manuales para hallar vulnerabilidades. En el paso de identificación, el objetivo es conocer el estado actual del sistema de seguridad. Es como tomarle una foto. Después de la identificación, suelen aparecer muchos hallazgos
+- `Análisis de vulnerabilidad`: Aquí se ponen a prueba las vulnerabilidades identificadas. Como detective digital, el objetivo es hallar el origen del problema.
+- `Evaluación de riesgos`: En esta etapa, se da una puntuación a cada vulnerabilidad. Esta puntuación se otorga según dos factores, grado de impacto si la vulnerabilidad se explotara y la probabilidad de que esto suceda.
+- `Remediación`: En este paso, se abordan las vulnerabilidades que pueden afectar a la organización. La remediación depende de la puntuación de gravedad que se le asignó durante la evaluación de riesgos. Esta parte suele ser un esfuerzo conjunto entre los equipos de seguridad y TI para encontrar el mejor enfoque para corregir las vulnerabilidades halladas anteriormente. Algunos ejemplos de remediación pueden incluir el hacer cumplir nuevos procedimientos de seguridad, actualizar los SO, e implementar parches en el sistema. Las evaluaciones de vulnerabilidad son buenas para identificar defectos en un sistema. La mayoría de las empresas las usan para buscar problemas antes de que ocurran.
+
+## Métodos para el escaneo de vulnerabilidades
+
+### ¿Qué es un escáner de vulnerabilidades?
+
+Un escáner de vulnerabilidades es un software que compara automáticamente las vulnerabilidades y exposiciones conocidas con las tecnologías de la red. En general, estas herramientas analizan los sistemas para encontrar configuraciones erróneas o fallas de programación.
+
+- Capa perimetral, como los sistemas de autenticación que validan el acceso del usuario.
+
+- Capa de red, que se compone de tecnologías como firewalls de red y otros.
+
+- Capa de punto de conexión (endpoint), que describe los dispositivos en una red, como computadoras portátiles yde escritorio o servidores.
+
+- Capa de aplicación, que involucra el software con el que interactúan los usuarios.
+
+- Capa de datos, que incluye cualquier información almacenada, en tránsito o en uso.
+
+Cuando comienza un escaneo de cualquiera de las capas, la herramienta de escaneo compara los hallazgos con las bases de datos de amenazas de seguridad. Al final del escaneo, la herramienta marca cualquier vulnerabilidad que encuentra y la agrega a su base de datos de referencia. Cada escaneo agrega más información a la base de datos, lo cual ayuda a que la herramienta sea más precisa en su análisis.
+
+*`Nota: La empresa que diseñó el software de escaneo también actualiza las bases de datos de vulnerabilidades de forma rutinaria.`*
+
+### Realización de escaneos
+Los escáneres de vulnerabilidad no son intrusivos. Es decir, no rompen ni se aprovechan de un sistema como lo haría un atacante, sino que simplemente escanean una superficie y te alertan sobre cualquier puerta potencialmente desbloqueada en tus sistemas.
+
+Nota: Si bien los escáneres de vulnerabilidades no son intrusivos, existen casos en los que un análisis puede causar problemas inadvertidamente, como colapsar un sistema.
+
+Existen varias maneras de utilizar estas herramientas para escanear una superficie. Cada una contempla uno de los caminos posibles que un agente de amenaza podría tomar. A continuación, puedes explorar cada tipo de escaneo para obtener una imagen más clara de esto. 
+
+#### Externo versus interno
+
+Los escaneos externos e internos simulan la estrategia de un atacante.
+
+Los escaneos externos prueban la capa perimetral fuera de la red interna. Analizan sistemas externos, como sitios web y cortafuegos (firewalls). Este tipo de análisis puede descubrir, por ejemplo, puertos de red o servidores vulnerables.
+
+Los escaneos internos comienzan desde el extremo opuesto, ya que examinan los sistemas internos de una organización. Por ejemplo, este tipo de escaneo podría analizar software de aplicación, en busca de debilidades en la manera en que gestiona las entradas de usuarios.
+
+#### Autenticado versus no autenticado
+Los escaneos autenticados y no autenticados simulan si un usuario tiene o no acceso a un sistema.
+
+Los escaneos autenticados pueden testear un sistema iniciando sesión con una cuenta de usuario real o incluso con una cuenta de administrador. Estas cuentas de servicio se utilizan para verificar vulnerabilidades, como controles de acceso rotos.
+
+Los análisis no autenticados simulan agentes de amenaza externos que no tienen acceso a los recursos de tu empresa. Por ejemplo, un escaneo podría analizar los recursos compartidos de archivos dentro de la organización que se utilizan para alojar documentos internos solamente. Los usuarios no autenticados deberían recibir resultados de “acceso denegado” si intentan abrir estos archivos. Si es posible acceder a un archivo, se identificará una vulnerabilidad.
+
+#### Limitado versus completo
+Los escaneos limitados y completos se centran en dispositivos particulares a los que acceden usuarios internos y externos.
+
+Los escaneos limitados analizan dispositivos particulares en una red, como la búsqueda de configuraciones erróneas en un firewall.
+
+Los análisis exhaustivos analizan todos los dispositivos conectados a una red. Esto incluye sistemas operativos, bases de datos de usuarios y más.
+
+Consejo profesional: antes de los escaneos limitados o completos debe realizarse un escaneo de descubrimiento. Este se utiliza para conocer las computadoras, dispositivos y puertos abiertos que se encuentran en una red.
+
+## La importancia de las actualizaciones
+
+Es posible que en algún momento te hayas preguntado: “¿Por qué mis dispositivos necesitan actualizaciones constantemente?” Para los consumidores, las actualizaciones proporcionan mejoras en el rendimiento y la estabilidad, ¡e incluso nuevas características! Pero desde el punto de vista de la seguridad, sirven para un propósito específico. Las actualizaciones permiten a las organizaciones abordar las vulnerabilidades de seguridad que pueden poner en riesgo a usuarios, dispositivos y redes.
+
+En un video, aprendiste que las actualizaciones encajan en la estrategia de remediación de cada equipo de seguridad. Por lo general, se llevan a cabo después de una evaluación de vulnerabilidad, que es el proceso de revisión interna de los sistemas de seguridad de una organización. En esta lectura, aprenderás qué hacen las actualizaciones, cómo se entregan y por qué son importantes para la ciberseguridad.
+
+### Cómo corregir brechas en la seguridad
+Una computadora desactualizada se parece mucho a una casa con las puertas sin llave. Los agentes de amenazas utilizan estas brechas en la seguridad de la misma manera: para obtener acceso no autorizado. Las actualizaciones de software son similares a cerrar las puertas con llave para mantenerlos fuera.
+
+Un parche de actualización es una puesta al día del software y el sistema operativo que soluciona las vulnerabilidades de seguridad de un programa o producto. Por lo general, los parches contienen correcciones de errores contra vulnerabilidades y exposiciones de seguridad comunes.
+
+*`Nota: Idealmente, los parches se encargan de reparar vulnerabilidades y exposiciones comunes antes de que los agentes de amenaza las descubran. Sin embargo, a veces se desarrollan como resultado de un día cero, que es un exploit que antes era desconocido`*
+
+### Estrategias comunes de actualización
+Cuando las actualizaciones de software están disponibles, los clientes y usuarios tienen dos opciones de instalación:
+
+- Actualizaciones manuales
+- Actualizaciones automáticas
+
+Como aprenderás a continuación, cada estrategia tiene beneficios y desventajas.
+
+#### Actualizaciones manuales
+Una estrategia de implementación manual se basa en que los departamentos de TI o los usuarios obtengan actualizaciones de los desarrolladores. El home office o los entornos de pequeñas empresas pueden requerir que encuentres, descargues e instales las actualizaciones por tu cuenta. En entornos empresariales, el proceso por lo general se maneja con una herramienta de administración de configuración. Este tipo de herramienta ofrece una variedad de opciones para implementar actualizaciones, como para todos los clientes de tu red o un grupo selecto de usuarios. 
+
+#### Ventaja
+Una ventaja de las estrategias de implementación de actualizaciones manuales es el control. Esto puede ser útil si los desarrolladores no testean bien las actualizaciones de software, lo cual puede llevar a problemas de inestabilidad.
+
+#### Desventaja
+Un inconveniente de las implementaciones de actualizaciones manuales es que uno puede ignorar u olvidarse por completo de alguna actualización crítica.
+
+### Actualizaciones automáticas
+Una estrategia de implementación automática adopta el método opuesto. Con esta opción, el sistema o la aplicación pueden encontrar, descargar e instalar las actualizaciones.
+
+*`Consejo profesional: La Agencia de Seguridad de Infraestructura y Ciberseguridad (CISA) recomienda utilizar opciones automáticas siempre que estén disponibles.`*
+
+Los usuarios y los grupos de TI deben habilitar determinados permisos antes de que las actualizaciones se puedan instalar o, enviar, cuando estén disponibles. Depende de los desarrolladores testear adecuadamente sus parches antes del lanzamiento.
+
+#### Ventaja
+Una ventaja de las actualizaciones automáticas es que el proceso de implementación se simplifica. También mantiene los sistemas y el software actualizados con los últimos parches críticos.
+
+#### Desventaja
+Un inconveniente de las actualizaciones automáticas es que pueden ocurrir problemas de inestabilidad si el proveedor no testeó minuciosamente los parches. Esto puede resultar en problemas de rendimiento y una mala experiencia del usuario.
+### Software al final de su vida útil
+A veces, las actualizaciones no están disponibles para cierto tipo de software conocido como software al final de su vida útil (End-of-Life, o EOL). Todo software tiene un ciclo de vida. Comienza cuando se produce y termina cuando se lanza una versión más nueva. En ese momento, los desarrolladores deben asignar recursos a las versiones más nuevas, lo que lleva al software EOL. Si bien el software anterior sigue siendo útil, el fabricante ya no ofrece soporte. 
+
+Nota: Los parches y actualizaciones (updates) son muy diferentes de las ampliaciones (upgrades). Las ampliaciones son versiones completamente nuevas de hardware o software que se pueden comprar.
+
+[CISA recomienda descontinuar el uso del software EOL](https://www.cisa.gov/news-events/news/understanding-patches-and-software-updates) porque representa un riesgo irreparable para los sistemas. Aun así, esta recomendación no siempre se sigue. Reemplazar la tecnología EOL puede ser costoso para empresas y particulares.
+
+Los riesgos que presenta el software EOL siguen creciendo a medida que más dispositivos conectados ingresan al mercado. Por ejemplo, existen miles de millones de dispositivos de Internet de las cosas (IoT), como bombillas de luz inteligentes, conectados a redes domésticas y de trabajo. En algunos entornos empresariales, todo lo que un atacante necesita es un solo dispositivo sin parches para obtener acceso a la red y causar problemas.
+
+## Aborda la ciberseguridad con la mentalidad de un atacante
+
+La ciberseguridad es un campo en constante cambio. Es un entorno de ritmo rápido en el que las nuevas amenazas y las tecnologías innovadoras pueden alterar tus planes en cualquier momento. Como profesional de la seguridad, debes prepararte anticipándote a los cambios..
+
+Todo esto comienza con la identificación de las vulnerabilidades. En un video, aprendiste sobre la importancia de las evaluaciones de vulnerabilidad, el proceso de revisión interna de los sistemas de seguridad de una organización. En esta lectura, aprenderás cómo puedes utilizar los hallazgos de una evaluación de vulnerabilidad de manera proactiva al analizarlos desde la perspectiva de un atacante.
+### Prepárate para todo
+Es importante tener un plan en caso de que algo salga mal. Pero ¿cómo puedes saber qué planear? En este campo, los equipos suelen realizar simulaciones de aquello que puede salir mal como parte de su estrategia de gestión de vulnerabilidades. Una forma de hacerlo es aplicando una mentalidad de atacante a las debilidades que se descubren.
+
+Aplicar una mentalidad de atacante es muy parecido a realizar un experimento. Se trata de causar problemas en un entorno controlado y evaluar el resultado para obtener información. Adoptar una mentalidad de atacante es una habilidad beneficiosa en el campo de seguridad, ya que ofrece una perspectiva diferente sobre los desafíos que estás tratando de resolver. Los conocimientos que obtengas pueden ser valiosos cuando llegue el momento de establecer un plan de seguridad o modificar uno ya existente.
+### Simulación de amenazas
+Un método para aplicar una mentalidad de atacante es utilizar simulaciones de ataque. Por lo general, estas actividades se realizan de una de dos maneras: de forma proactiva y reactiva. Ambas estrategias comparten un objetivo común, que es hacer que los sistemas sean más seguros.
+
+Las simulaciones proactivas asumen el papel de un atacante al explotar las vulnerabilidades y traspasar las defensas. Esto a veces se llama un ejercicio de equipo rojo.
+
+- Las simulaciones reactivas asumen el papel de un defensor que responde a un ataque. Esto a veces se llama un ejercicio de equipo azul.
+
+- Cada tipo de simulación es un esfuerzo de equipo con el que podrías involucrarte como analista.
+
+Los equipos proactivos tienden a dedicar más tiempo a planificar sus ataques que a realizarlos. Si te encuentras involucrado en uno de estos ejercicios, es probable que tu equipo despliegue una variedad de tácticas. Por ejemplo, podrían persuadir al personal para que divulgue sus credenciales de inicio de sesión mediante el uso de correos electrónicos ficticios para evaluar cuán conscientes son en la empresa  en cuanto a temas de seguridad.
+
+Por otro lado, los equipos reactivos dedican sus esfuerzos a recopilar información sobre los activos que están protegiendo. Esto se hace comúnmente con la ayuda de herramientas de análisis de vulnerabilidades.
+
+### Cómo escanear los problemas
+Quizá recuerdes que un escáner de vulnerabilidades es un software que compara automáticamente las vulnerabilidades y exposiciones comunes existentes con las tecnologías de la red. El escáner de vulnerabilidad se utiliza con frecuencia en el campo de la seguridad. Los equipos emplean una variedad de técnicas de escaneo para descubrir debilidades en sus defensas. Las simulaciones reactivas suelen valerse de los resultados de un escaneo para evaluar los riesgos y determinar formas de remediar un problema.
+
+Por ejemplo, un equipo que realiza una simulación reactiva podría realizar un análisis de vulnerabilidad externo de su red. Todo el ejercicio podría seguir los pasos que aprendiste en un video sobre evaluaciones de vulnerabilidad:
+
+- Identificación: Un servidor vulnerable se marca porque está ejecutando un sistema operativo (SO) desactualizado.
+
+- Análisis de vulnerabilidades: Se investiga el sistema operativo desactualizado y sus vulnerabilidades.
+
+- Evaluación de riesgos: Después de haber realizado tu debida diligencia, se califica la gravedad de cada vulnerabilidad y se evalúa el impacto de no solucionarla.
+
+- Remediación: Finalmente, la información que recopilaste se puede usar para abordar el problema.
+
+Durante una actividad como esta, a menudo generarás un informe de tus hallazgos. Estos pueden presentarse ante los proveedores de servicios o supervisores. Comunicar con claridad los resultados de estos ejercicios a otros es una habilidad importante para desarrollar como profesional de la seguridad.
+
+### Encontrar soluciones innovadoras
+Muchos controles de seguridad que aprendiste se crearon como una respuesta reactiva ante riesgos. Esto se debe a que los agentes de amenaza buscan continuamente formas de eludir las defensas existentes. La aplicación efectiva de una mentalidad de atacante requerirá que te mantengas al tanto de las tendencias de seguridad y las tecnologías emergentes.
+
+Consejo profesional: Recursos como la 
+[Base de datos nacional de vulnerabilidades (NVD) de NIST](https://nvd.nist.gov/)
+ pueden ayudarte a mantenerte al día en lo que respecta a vulnerabilidades comunes.
+
+#### Conclusiones clave
+Las evaluaciones de vulnerabilidad son una parte importante de la planificación de riesgos de seguridad. Como analista, es probable que participes en simulaciones proactivas y reactivas de estas actividades. Investigar las vulnerabilidades comunes solo alcanza hasta cierto punto. Es igual de importante que te mantengas al tanto de las nuevas tecnologías, para poder pensar con una mentalidad innovadora.
+
+## Tipos de agentes de amenazas
+Para ser un profesional de seguridad efectivo, una habilidad importante que deberás desarrollar es poder anticiparte a los ataques. Para lograrlo, debes mantener una mentalidad abierta y flexible en cuanto a su procedencia. Antes, aprendiste sobre las superficies de ataque, que son todas las vulnerabilidades potenciales que un agente de amenaza podría explotar.
+
+Las redes, los servidores, los dispositivos y el personal son ejemplos de superficies de ataque que pueden explotarse. Con frecuencia, los equipos de seguridad de todos los tamaños se encuentran defendiendo estas superficies debido al panorama digital en expansión. La clave para defender cualquiera de ellos es limitar su acceso.
+
+En esta lectura, profundizarás en los agentes de amenaza y los tipos de riesgos que representan. También explorarás las características más comunes de una superficie de ataque que los agentes de amenaza pueden explotar.
+
+### Agentes de amenaza
+Un agente de amenaza es cualquier persona o grupo que plantea un riesgo para la seguridad. Esta definición a grandes rasgos abarca a personas tanto dentro como fuera de una organización. También incluye a personas que intencionalmente representan una amenaza y quienes ponen en riesgo los activos por accidente. ¡Es una amplia variedad de personas!
+
+Por lo general, los agentes de amenaza se dividen en cinco categorías según sus motivaciones:
+
+- La competencia refiere a las empresas rivales que representan una amenaza porque podrían beneficiarse de la información filtrada.
+
+- Los actores estatales son agencias de inteligencia del gobierno.
+
+- Los sindicatos criminales son grupos organizados de personas que ganan dinero mediante actividades delictivas.
+
+- Las amenazas internas pueden ser cualquier persona que tenga o haya tenido acceso autorizado a los recursos de una organización. Esto incluye a los empleados que comprometen los activos por accidente o individuos que los ponen en riesgo de manera intencional, para su propio beneficio.
+
+- Shadow IT hace referencia a individuos que utilizan tecnologías que carecen de gobernanza de TI. Un ejemplo común es cuando un empleado usa su correo electrónico personal para enviar comunicaciones relacionadas con el trabajo.
+
+En la superficie de ataque digital, estos agentes de amenaza a menudo obtienen acceso no autorizado al hackear los sistemas. Por definición, un hacker es cualquier persona o grupo que utiliza computadoras para acceder a datos sin autorización. Al igual que el término actor de amenazas, hacker es también un término general. Cuando se usa solo, el término no consigue captar las intenciones de un agente de amenaza.
+
+### Tipos de hackers
+Debido a que la definición formal de hacker es amplia, el término puede ser un poco ambiguo. En seguridad, corresponde a tres tipos de personas en función de su intención:
+
+- Hackers no autorizados
+- Hackers autorizados o éticos
+- Hackers semiautorizados
+
+Un hacker no autorizado, o hacker no ético, es un individuo que utiliza sus habilidades de programación para cometer delitos. A los hackers no autorizados también se los conoce como hackers maliciosos. El nivel de habilidad varía ampliamente dentro de esta categoría de hackers. Por ejemplo, existen hackers con habilidades limitadas que no pueden escribir su propio software malicioso, a veces llamado script kiddies (niñitos del script). Este tipo de hackers no autorizados llevan a cabo ataques mediante un código preescrito que obtienen de otros hackers más hábiles.
+
+Los hackers autorizados, o éticos, son personas que utilizan sus habilidades de programación para mejorar la seguridad general de una organización. Estos incluyen a miembros internos de un equipo de seguridad que se ocupan de probar y evaluar los sistemas para asegurar la superficie de ataque. También se trata de proveedores de seguridad externos y hackers independientes que algunas empresas incentivan para encontrar y reportar vulnerabilidades, una práctica llamada programas de recompensas por errores.
+
+Por lo general, los hackers semiautorizados son individuos que podrían violar estándares éticos, pero que no son considerados como maliciosos. Por ejemplo, un hacktivista es una persona que podría usar sus habilidades para lograr un objetivo político. Podría explotar las vulnerabilidades de seguridad de una empresa de servicios públicos para concientizar sobre su existencia. Las intenciones de este tipo de agentes de amenaza suelen consistir en exponer los riesgos de seguridad que deben abordarse antes de que un hacker malicioso los encuentre.
+
+### Amenazas persistentes avanzadas
+Muchos hackers maliciosos consiguen ingresar en un sistema, causan problemas y luego se marchan. Pero en algunas ocasiones, los agentes de amenaza se quedan. Este tipo de eventos se conocen como amenazas persistentes avanzadas, o APT.
+
+Una amenaza persistente avanzada (APT) hace referencia a los casos en que un actor de amenazas mantiene el acceso no autorizado a un sistema durante un período prolongado de tiempo. El término se asocia principalmente con los estados nacionales y los agentes patrocinados por el Estado. Por lo general, una APT se ocupa de vigilar un objetivo para recopilar información. Luego esta información se utiliza para manipular los servicios gubernamentales, de defensa, financieros y de telecomunicaciones.
+
+El hecho de que el término esté asociado con agentes estatales no significa que las empresas privadas estén a salvo de las APT. Este tipo de agentes de amenaza son sigilosos porque hackear otra agencia gubernamental o empresa de servicios públicos es costoso y consume mucho tiempo. Las APT suelen apuntar primero a organizaciones privadas como un paso hacia el acceso a entidades más grandes.
+
+### Puntos de acceso
+Cada agente de amenaza tiene una motivación específica a la hora de establecer los activos de una organización como objetivo. Mantenerlos alejados requiere más que conocer sus intenciones y capacidades. También es importante reconocer los tipos de vectores de ataque que utilizarán.
+
+En su mayor parte, los agentes de amenaza obtienen acceso a través de una de estas categorías de vectores de ataque:
+
+- Acceso directo, que hace referencia a instancias en las que tienen acceso físico a un sistema.
+
+- Medios extraíbles, que incluyen hardware portátil, como unidades USB.
+
+- Plataformas de redes sociales que se utilizan para la comunicación y el intercambio de contenido.
+
+- Correo electrónico, incluidas las cuentas personales y comerciales.
+
+- Redes inalámbricas en las instalaciones.
+
+- Servicios en la nube que por lo general son proporcionados por organizaciones de terceros.
+
+- Cadenas de suministro, como proveedores externos que pueden presentar una puerta trasera en los sistemas.
+
+Cualquiera de estos vectores de ataque puede proporcionar acceso a un sistema. Reconocer las intenciones de un actor de amenazas puede ayudarte a determinar a qué puntos de acceso podrían apuntar, y cuáles podrían ser sus objetivos Por ejemplo, es más probable que los trabajadores remotos presenten una amenaza por correo electrónico, que una amenaza de acceso directo.
