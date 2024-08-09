@@ -3300,3 +3300,132 @@ En lugar de eso, muchas organizaciones optan por adquirir licencias de solucione
 La industria de la gestión de identidades y accesos está creciendo a un ritmo vertiginoso. Al igual que en otros ámbitos de la seguridad, es importante mantenerse al día.
 
 [IDPro](https://idpro.org/)© es una organización profesional dedicada a compartir conocimientos esenciales del sector de IAM.
+
+## Definición de Vulnerabilidad y Exploit
+Una vulnerabilidad es una debilidad en un sistema que puede ser explotada por una amenaza para causar daño. Es crucial entender que una vulnerabilidad por sí sola no es necesariamente peligrosa hasta que se descubre y se explota. Un exploit es el método o herramienta utilizada para aprovechar esta debilidad y llevar a cabo un ataque. Por ejemplo, en un sistema informático, una vulnerabilidad podría ser un fallo en el software, y el exploit sería el código malicioso que un atacante utiliza para tomar el control del sistema.
+
+### Interrelación en la práctica
+En la ciberseguridad, identificar y corregir vulnerabilidades antes de que sean explotadas es vital para proteger los activos de una organización. Esto se realiza mediante pruebas de seguridad, parches de software y auditorías regulares.
+
+## Gestión de Vulnerabilidades
+La gestión de vulnerabilidades es un proceso continuo y cíclico que incluye la identificación de vulnerabilidades, la evaluación de los posibles exploits, la implementación de defensas y la evaluación de la efectividad de estas defensas. Este proceso es fundamental para la protección de activos, ya que ayuda a prevenir que las vulnerabilidades se conviertan en incidentes de seguridad.
+
+### Interrelación en la práctica: 
+Las organizaciones deben adoptar un enfoque proactivo en la gestión de vulnerabilidades, utilizando herramientas de escaneo automatizado, revisiones manuales de código y simulaciones de ataques para mantenerse un paso adelante de las amenazas.
+
+## Exploit de Día Cero
+Un exploit de día cero es un ataque que se lleva a cabo utilizando una vulnerabilidad desconocida hasta el momento. El término "día cero" se refiere a la falta de tiempo para preparar una defensa, ya que el exploit se utiliza inmediatamente después de descubrir la vulnerabilidad. Estos exploits son especialmente peligrosos porque no existe una solución inmediata y pueden causar un daño significativo antes de que se puedan aplicar parches o mitigaciones.
+
+### Interrelación en la práctica
+Para mitigar los riesgos de los exploits de día cero, las organizaciones deben contar con sistemas de detección de intrusiones, realizar pruebas de penetración y tener planes de respuesta rápida para incidentes de seguridad.
+
+## Defensa en Profundidad
+La defensa en profundidad es una estrategia que utiliza múltiples capas de seguridad para proteger los activos. Esta metodología se basa en la idea de que si una barrera de seguridad falla, otra estará presente para detener al atacante. Es comparable a la defensa de un castillo medieval, donde varias capas de protección, como fosos y murallas, se combinan para proteger el núcleo del castillo.
+
+### Interrelación en la práctica
+En la ciberseguridad, la defensa en profundidad se implementa mediante la combinación de controles de acceso, firewalls, sistemas de detección de intrusiones, encriptación de datos y otros mecanismos de seguridad. La idea es crear una serie de obstáculos que el atacante debe superar, reduciendo así la probabilidad de un ataque exitoso.
+
+## Capas de la Defensa en Profundidad
+La estrategia de defensa en profundidad se organiza en varias capas de protección:
+
+- Capa Perimetral: Controla el acceso externo mediante autenticación y filtrado de tráfico.
+- Capa de Red: Protege la infraestructura de red con firewalls y segmentación de redes.
+- Capa de Punto de Conexión (Endpoint): Asegura los dispositivos individuales con antivirus y políticas de seguridad.
+- Capa de Aplicación: Implementa medidas de seguridad dentro del software, como la autenticación multifactor (MFA).
+- Capa de Datos: Protege la información crítica con cifrado y clasificación de datos.
+### Interrelación en la práctica
+Estas capas trabajan juntas para crear una defensa robusta. Por ejemplo, si un atacante logra eludir la autenticación en la capa perimetral, se enfrenta a firewalls y sistemas de detección de intrusiones en la capa de red. Si logra pasar estas barreras, aún necesita superar las medidas de seguridad de los dispositivos y aplicaciones, y finalmente, si alcanza los datos, estos deberían estar cifrados y protegidos adecuadamente.
+
+## Cómo se Entrecruzan los Conceptos en la Práctica
+Los conceptos de vulnerabilidad, exploit, gestión de vulnerabilidades, exploit de día cero y defensa en profundidad están todos interrelacionados y son fundamentales en la práctica de la ciberseguridad. El ciclo de gestión de vulnerabilidades se encarga de identificar y mitigar las debilidades en los sistemas antes de que los atacantes puedan explotarlas. Sin embargo, dado que siempre existen nuevas amenazas, como los exploits de día cero, es crucial implementar una estrategia de defensa en profundidad. Esta estrategia garantiza que incluso si un exploit de día cero penetra una capa de seguridad, otras capas estarán presentes para proteger los activos críticos de la organización. En resumen, la gestión de vulnerabilidades y la defensa en profundidad se combinan para crear un sistema de seguridad robusto y resiliente.
+
+### Vulnerabilidades vs Exposiciones
+- Vulnerabilidades: Son debilidades inherentes en un sistema o software que pueden ser explotadas por amenazas para causar daños. Por ejemplo, un error en el código que permite que un atacante obtenga acceso no autorizado a un sistema.
+- Exposiciones: Son situaciones en las que un sistema queda abierto a ataques debido a errores en su configuración o manejo. Una exposición podría ser dejar un puerto de red abierto sin protección, lo cual un atacante podría aprovechar.
+#### Interrelación en la práctica
+En la seguridad informática, tanto vulnerabilidades como exposiciones deben ser gestionadas proactivamente para prevenir incidentes de seguridad. Si bien las vulnerabilidades suelen requerir parches de software, las exposiciones pueden mitigarse mediante configuraciones y políticas más estrictas.
+
+###  Lista CVE® y su Origen
+- Lista CVE (Common Vulnerabilities and Exposures): Es un repositorio público y gratuito que documenta vulnerabilidades y exposiciones conocidas. Creada por la MITRE Corporation en 1999, la lista CVE proporciona un sistema estándar para identificar y categorizar amenazas.
+- MITRE Corporation: Una organización sin fines de lucro respaldada por el gobierno de EE.UU., que gestiona la lista CVE y realiza investigaciones y desarrollos en el campo de la seguridad.
+#### Interrelación en la práctica
+La lista CVE es una herramienta esencial para los profesionales de seguridad, ya que les permite mantenerse al tanto de las vulnerabilidades y exposiciones conocidas y tomar medidas preventivas antes de que estas puedan ser explotadas.
+
+### Proceso de Revisión y Clasificación en la Lista CVE
+Para que una vulnerabilidad o exposición sea agregada a la lista CVE, debe pasar un proceso de revisión riguroso llevado a cabo por una Autoridad de Numeración CVE (CNA). Los criterios incluyen:
+- Independencia: La vulnerabilidad debe poder corregirse sin que afecte a otros problemas.
+- Reconocimiento de Riesgo: El reportante debe identificarla como una amenaza potencial.
+- Pruebas de Apoyo: Se deben presentar evidencias claras de la vulnerabilidad.
+- Afectación de un Solo Código Base: La vulnerabilidad debe afectar a un solo sistema o aplicación.
+#### Interrelación en la práctica 
+Este proceso asegura que solo las vulnerabilidades significativas sean catalogadas, lo que permite a las organizaciones concentrar sus esfuerzos en las amenazas más graves.
+
+### Base de Datos de Vulnerabilidades del NIST y el Sistema CVSS
+- NIST (National Institute of Standards and Technology): Mantiene una base de datos de vulnerabilidades que utiliza el Sistema de Puntuación de Vulnerabilidad Común (CVSS) para evaluar la gravedad de las amenazas.
+- CVSS: Este sistema asigna una puntuación de 0 a 10 a las vulnerabilidades, siendo 10 el nivel más crítico. Estas puntuaciones ayudan a las organizaciones a priorizar las correcciones.
+#### Interrelación en la práctica 
+Las puntuaciones CVSS son utilizadas para determinar la urgencia con la que una vulnerabilidad debe ser tratada, permitiendo a los equipos de seguridad gestionar los recursos de manera eficiente y proteger los activos más críticos.
+
+### Importancia de la Colaboración Global en la Gestión de Vulnerabilidades
+- La seguridad de la información es un esfuerzo colaborativo a nivel global, y la lista CVE es un excelente ejemplo de cómo la comunidad de seguridad comparte conocimientos y recursos para combatir amenazas comunes.
+- Cualquier persona u organización puede reportar vulnerabilidades, lo que fomenta la diversidad de perspectivas y experiencias en la protección contra ciberataques.
+#### Interrelación en la práctica
+La colaboración global permite una respuesta más rápida y efectiva ante las nuevas amenazas, y asegura que las mejores prácticas y soluciones estén disponibles para todos.
+
+### Cómo se Entrecruzan los Conceptos en la Práctica
+Todos estos conceptos están profundamente interrelacionados y son fundamentales para la gestión de la seguridad en cualquier organización. Las vulnerabilidades y exposiciones representan los puntos débiles que deben ser identificados y corregidos para proteger los sistemas. La lista CVE proporciona un marco estandarizado para catalogar y compartir estas debilidades, lo que facilita la cooperación internacional y el intercambio de información crítica.
+
+El NIST y su sistema de puntuación CVSS permiten a las organizaciones evaluar y priorizar las amenazas, asegurando que los recursos se asignen donde más se necesitan. La colaboración global amplifica estos esfuerzos, uniendo a expertos de todo el mundo para desarrollar y compartir soluciones a problemas comunes de seguridad.
+
+En conjunto, estos elementos forman un ciclo continuo de identificación, clasificación, priorización y mitigación de riesgos, que es esencial para proteger los activos digitales en un mundo cada vez más conectado y amenazado por el cibercrimen.
+
+## El Top 10 de OWASP
+
+A fin de prepararse para futuros riesgos, los profesionales de seguridad deben mantenerse informados. Ya aprendiste sobre la lista CVE®, un diccionario de acceso abierto de vulnerabilidades y exposiciones conocidas. La lista CVE® es una fuente importante de información que la comunidad de seguridad global utiliza para compartir información entre sí.
+
+#### ¿Qué es OWASP? Open Web Application Security Project® (Proyecto Abierto de Seguridad de Aplicaciones Web, u OWASP)
+El Open Web Application Security Project® es una fundación sin fines de lucro que trabaja para mejorar la seguridad del software. OWASP es una plataforma abierta que los profesionales de seguridad de todo el mundo utilizan para compartir información, herramientas y eventos que se centran en proteger la web.
+
+### El Top 10 de OWASP
+Uno de los recursos más valiosos de OWASP es su Top 10. Desde 2003, la organización publica esta lista como una manera de difundir el conocimiento de las vulnerabilidades más específicas de la web. El Top 10 refiere principalmente a software nuevo o por encargo. Muchas de las organizaciones más grandes del mundo consultan el Top 10 de OWASP para ayudar a garantizar que sus programas se desarrollen teniendo en cuenta los errores de seguridad más comunes.
+
+*`Consejo profesional: El Top 10 de OWASP se actualiza cada algunos años, a medida que evolucionan las tecnologías. El orden se basa en la frecuencia con la que se descubren las vulnerabilidades y el nivel de riesgo que estas presentan.`*
+
+Nota: Los auditores también utilizan el Top 10 de OWASP como un punto de referencia para verificar el cumplimiento normativo (compliance).
+
+### Vulnerabilidades comunes
+A menudo, las empresas toman decisiones de seguridad críticas con base en las vulnerabilidades enumeradas en el Top 10 de OWASP. Este recurso influye en la forma en que las empresas diseñan el nuevo software que estará en su red, a diferencia de la lista CVE®, que las ayuda a identificar mejoras en programas ya existentes. Las vulnerabilidades que aparecen con mayor frecuencia en el ranking son:
+
+#### Pérdida de control de acceso
+Los controles de acceso limitan lo que los usuarios pueden hacer en una aplicación web. Por ejemplo, un blog puede permitir a sus visitantes publicar comentarios sobre un artículo reciente, pero les impide eliminar el artículo por completo. Las fallas en estos mecanismos pueden conducir a la divulgación, modificación o destrucción de información no autorizada. También pueden dar a alguien acceso no autorizado a otras aplicaciones de la empresa.
+
+#### Fallas criptográficas
+La información es uno de los activos más importantes que las empresas deben proteger. Las leyes de privacidad, como el Reglamento General de Protección de Datos (RGPD), requieren que los datos confidenciales estén protegidos por métodos de cifrado efectivos. Por ejemplo, pueden ocurrir vulnerabilidades cuando las empresas no cifran la información personal identificable (PII). También, si una aplicación web utiliza un algoritmo de hashing débil, como el MD5, está más expuesta a sufrir una violación de datos.
+
+#### Inyección
+Un ataque de inyección se produce cuando se inserta un código malicioso en una aplicación vulnerable. Si bien la aplicación pareciera funcionar con normalidad, se comporta de una manera diferente a la que debería. Este tipo de ataque puede dar a los agentes de amenaza una puerta trasera al sistema de información de una organización. Un objetivo habitual es el formulario de inicio de sesión de un sitio web. Si estos formularios son vulnerables a la inyección, los atacantes podrían insertar código malicioso que les permita acceder y modificar o robar credenciales de usuario.
+
+#### Diseño inseguro
+Las aplicaciones deben diseñarse de tal manera que sean resistentes a ataques. Cuando esto no sucede, se vuelven mucho más vulnerables a amenazas, como ataques de inyección o infecciones de malware. El diseño inseguro refiere a la carencia o deficiente implementación de una variedad de controles de seguridad, que deberían haberse programado en una aplicación durante su desarrollo.
+
+#### Configuración de seguridad incorrecta
+Esta vulnerabilidad se produce cuando la configuración de seguridad y su mantenimiento no se realizan correctamente. Las empresas utilizan una variedad de sistemas interconectados y los errores suelen ocurrir cuando estos no están correctamente configurados o auditados. Un ejemplo común es cuando las empresas implementan equipos, como un servidor de red, utilizando los ajustes de fábrica. Esto puede llevarlas a utilizar configuraciones que no cumplen con los objetivos de seguridad de la organización.
+
+#### Componentes vulnerables y desactualizados
+Se trata de una categoría que se relaciona principalmente con el desarrollo de aplicaciones. En lugar de codificar todo desde cero, la mayoría de los desarrolladores utilizan bibliotecas de código abierto para completar sus proyectos de una forma más rápida y fácil. Este software disponible públicamente lo mantienen comunidades de programadores, de forma voluntaria. Las aplicaciones que utilizan componentes vulnerables a los que no se les realizaron tareas de mantenimiento corren un mayor riesgo de ser explotadas por agentes de amenaza.
+
+#### Fallas de identificación y autenticación
+La identificación es la palabra clave de esta categoría de vulnerabilidad. Cuando las aplicaciones no reconocen quiénes deben tener acceso a ellas y lo que están autorizados a hacer, pueden generarse problemas graves. Por ejemplo, un router Wi-Fi doméstico suele contar únicamente con un formulario de inicio de sesión sencillo para mantener a los huéspedes no deseados fuera de la red. Si esta defensa falla, un atacante puede invadir la privacidad de un propietario.
+
+#### Fallas en el software y la integridad de los datos
+Se trata de instancias en que las actualizaciones o parches no se revisan adecuadamente antes de su implementación, por lo cual, los atacantes podrían explotar estas debilidades para distribuir software malicioso. Cuando eso ocurre, pueden producirse efectos graves de flujo descendente. O sea, basta con que un solo sistema se vea comprometido, para que otros sistemas también sean infectados. A este tipo de ataque se lo conoce como ataque a la cadena de suministro.
+
+Un ejemplo famoso es el [ataque cibernético de SolarWinds (2020)](https://www.gao.gov/blog/solarwinds-cyberattack-demands-significant-federal-and-private-sector-response-infographic), en el que un grupo de hackers inyectaron código malicioso en las actualizaciones de software que la empresa lanzó, sin saberlo, a sus clientes.
+
+#### Fallas en el registro y monitoreo
+En seguridad, es importante registrar eventos y rastrear su origen. Tener un registro de eventos como los intentos de inicio de sesión de usuarios es fundamental para encontrar y solucionar problemas. El monitoreo efectivo es tan importante como la respuesta a incidentes.
+#### Falsificación de solicitudes del lado del servidor
+Las empresas tienen información pública y privada almacenada en servidores web. Cuando utilizas un hipervínculo o haces clic en un botón en un sitio web, se envía una solicitud a un servidor que debe validar quién eres, obtener los datos apropiados y luego devolvértelos.
+Las falsificaciones de solicitudes del lado del servidor (SSRF) suceden cuando los atacantes manipulan las operaciones normales de un servidor para leer o actualizar otros recursos de aquel. Esto es posible cuando hay una aplicación vulnerable en el servidor. Esta transporta el código malicioso a un servidor host que obtendrá datos no autorizados.
+
+[Top 10 OWASP](https://owasp.org/www-project-top-ten/)
