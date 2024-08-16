@@ -3952,3 +3952,333 @@ Existen dos tipos de pruebas de CAPTCHA. Uno desordena y distorsiona una secuenc
 Las organizaciones utilizan estos controles de gestión para estandarizar las prácticas recomendadas de contraseñas en toda su empresa. Por ejemplo, una de estas políticas podría requerir que los usuarios creen contraseñas que tengan al menos ocho caracteres e incluyan una letra, un número y un símbolo. Otros requisitos comunes pueden incluir políticas de bloqueo de contraseñas. Por ejemplo, un bloqueo de contraseña puede limitar el número de intentos de inicio de sesión antes de que se suspenda el acceso a una cuenta y requerir que los usuarios creen contraseñas nuevas y únicas después de un determinado período de tiempo.
 
 El propósito de cada uno de estos requisitos es crear la mayor cantidad de combinaciones de contraseñas posible. Esto extiende la cantidad de tiempo que tarda un atacante en encontrar una que funcione. La [Publicación especial 800-63B del Instituto Nacional de Estándares y Tecnología (NIST)](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf) proporciona orientación detallada que las organizaciones pueden consultar al crear sus propias políticas de contraseñas.
+
+### Ingenieria social
+
+La ingeniería social es una técnica de manipulación que explota el error humano para robar datos privados, acceso u objetos de valor. Estas tácticas hacen que la gente deje de lado los procedimientos normales de seguridad para beneficiar al atacante. Esto puede llevar a revelar datos, propagar software malicioso o dar acceso no autorizado a sistemas restringidos. Estos ataques pueden ocurrir en cualquier lugar. Ocurren en línea, en persona y en interacciones de otros tipos. Los agentes de amenaza usan diversas tácticas para atacar. Algunos ataques pueden tardar segundos en llevarse a cabo.
+
+*`Por ejemplo, alguien que se hace pasar por un agente de soporte técnico le pide a un empleado su contraseña para arreglar su computadora.`*
+Otros ataques pueden tardar meses, o incluso más, como cuando los agentes de amenaza monitorean las redes sociales de una empleada. Puede que ella publique un comentario contando que consiguió un nuevo puesto temporal en la empresa. Un atacante puede usar esto para atacar a la trabajadora temporal, quien probablemente no sepa demasiado acerca de los procedimientos de seguridad. Independientemente del tiempo que lleve el ataque, saber qué buscar puede ayudarte a identificar rápidamente un ataque en curso y detenerlo. 
+
+Hay varias etapas en los ataques de ingeniería social:
+
+- `Prepararse`: En esta etapa, los atacantes recopilan información sobre su víctima. Con esta información, deciden la mejor manera de explotarlo.
+- ` Atacantes crean confianza (Pretexting)`: Aquí, los atacantes utilizan la información recopilada para abrir una línea de comunicación. Se disfrazan para engañar a su objetivo y darle una falsa sensación de confianza. 
+- `Tácticas de persuasión`: En esta etapa, es muy importante la preparación anterior. Es aquí que los atacantes manipulan a la víctima para que esta dé datos de forma de voluntaria. A veces, lo hacen mediante el uso de un vocabulario específico que los hace sonar como miembros de la empresa. 
+- `Desconectarse del objetivo`: Luego de obtener la información deseada, los atacantes cortan la comunicación con su objetivo. Desaparecen para tapar sus huellas. 
+
+Los criminales que utilizan ingeniería social son sigilosos. El mundo digital ha ampliado sus capacidades. También les ha dado más formas de pasar desapercibidos. Aun así, hay formas de prevenir sus ataques:
+
+-  Implementar controles de gestión como políticas, estándares y procedimientos es una de las primeras líneas de defensa. Por ejemplo, las empresas suelen seguir el estándar de gestión de parches definida en la publicación especial 800-40 del NIST. Estos estándares se utilizan para crear procedimientos de actualización de SO, aplicaciones y firmware que se pueden explotar.
+- Mantenerse al día de las tendencias también es una prioridad para todo profesional de la seguridad
+- Una defensa aun mejor contra estos ataques es compartir tus conocimientos con otros. Los atacantes juegan con nuestra curiosidad y nuestro deseo de ayudar. Esperan que los objetivos no analicen demasiado lo que pasa. Enseñar las señales de ataques a otros es muy útil para prevenir amenazas.
+
+### Tácticas de ingeniería social
+
+Como recordarás, la ingeniería social es una técnica de manipulación que aprovecha errores humanos para obtener información privada, acceso a sistemas o bienes de valor. Es un término general que puede aplicarse a una amplia gama de ataques. Cada técnica está diseñada para aprovechar la naturaleza de las personas a ser confiadas y su disposición a ayudar. En esta lectura, aprenderás sobre tácticas específicas de ingeniería social que debes tener en cuenta. También conocerás las formas en que las organizaciones contrarrestan estas amenazas.
+
+#### Riesgos de la ingeniería social
+La ingeniería social es una forma de engaño que se aprovecha de la forma en que la gente piensa; de los sentimientos naturales de curiosidad, generosidad y entusiasmo de las personas. Los agentes de amenaza aprovechan esos sentimientos y los utilizan en su contra, al afectar su buen juicio. Los ataques de ingeniería social pueden ser muy dañinos porque suelen ser muy fáciles de lograr.
+
+Uno de los ataques de ingeniería social de más alto perfil de los últimos años fue el [hack de Twitterde 2020](https://www.dfs.ny.gov/Twitter_Report). Durante ese incidente, un grupo de hackers hizo llamadas telefónicas a empleados de Twitter en las que fingían ser del departamento de TI. Con esta estafa básica, el grupo logró obtener acceso a la red y las herramientas internas de la organización, lo cual les permitió hacerse cargo de las cuentas de usuarios de alto perfil, como políticos, celebridades y empresarios.
+
+Ataques como este son solo un ejemplo del caos que los agentes de amenaza pueden crear mediante el uso de técnicas básicas de ingeniería social. Estos ataques presentan serios riesgos porque no se necesitan habilidades informáticas sofisticadas para ser llevados a cabo. Defenderse contra ellos requiere de un enfoque de múltiples capas que combine los controles tecnológicos con la conciencia del usuario.
+
+
+#### Señales de un ataque
+
+
+A menudo, las personas no se dan cuenta de que está ocurriendo un ataque hasta que es demasiado tarde. La ingeniería social es una amenaza muy peligrosa porque, por lo general, permite a los atacantes eludir las defensas tecnológicas que se interponen en su camino. Aunque estas amenazas son difíciles de prevenir, reconocer las señales de un ataque de ingeniería social es clave para reducir la probabilidad de que este se lleve a cabo de forma exitosa.
+
+Estos son tipos comunes de ingeniería social que deben tenerse en cuenta:
+
+- `cebo (o baiting)`: El cebo (o baiting) es una táctica de ingeniería social que incita a las personas a poner en riesgo su seguridad. Un ejemplo común es el cebo USB, que se basa en que una persona encuentre una unidad USB infectada y la conecte a su dispositivo.
+- `suplantación de identidad (o phishing)`: La suplantación de identidad (o phishing) es el uso de comunicaciones digitales para engañar a las personas de manera que revelen datos confidenciales o instalen software malicioso en sus equipos. Es una de las formas más comunes de ingeniería social, y suele realizarse por correo electrónico.
+- `Quid pro quo`: Quid pro quo es un tipo de cebo que se utiliza para engañar a alguien haciéndole creer que recibirá una recompensa si comparte acceso, información o dinero. Por ejemplo, un atacante puede hacerse pasar por un gestor de préstamos en un banco, llamar a los clientes para ofrecerles una tasa de interés más baja en su tarjeta de crédito y decirles que simplemente tienen que proporcionar los detalles de su cuenta para acceder a la oferta.
+- `Tailgating `: Tailgating es una táctica de ingeniería social en la que personas no autorizadas siguen a una autorizada hasta ingresar a una zona restringida. Esta técnica también se conoce como “piggybacking”.
+- `ataque de “agujero de agua” (o watering hole)`: El ataque de “agujero de agua” (o watering hole) es un tipo de ataque en el que un agente de amenaza compromete un sitio web visitado con frecuencia por un grupo específico de usuarios. A menudo, estos sitios están infectados con software malicioso. Un ejemplo es el ataque Holy Water de 2020, que infectó varios sitios web religiosos, benéficos y de voluntariado.
+ 
+#### Fomenta la precaución
+
+Para generar conciencia, se suele empezar con una capacitación integral en seguridad. En lo que respecta a la ingeniería social, hay tres áreas principales en las que enfocarse, a la hora de enseñar a otras personas:
+
+- Mantente alerta ante comunicaciones sospechosas y personas desconocidas, en especial, cuando se trata de correo electrónico. Por ejemplo, busca errores de ortografía y verifica más de una vez el nombre y la dirección de correo electrónico del remitente.
+- Ten cuidado al compartir información, sobre todo en las redes sociales. Los agentes de amenaza suelen buscar en estas plataformas algún dato que puedan usar para su ventaja.
+- No dejes que te gane la curiosidad cuando algo parezca demasiado bueno para ser verdad. Esto incluye evitar hacer clic en archivos adjuntos o enlaces en correos electrónicos y anuncios.
+
+*`Consejo profesional: Implementar tecnologías como cortafuegos (firewalls), autenticación de múltiples factores (MFA), listas de bloqueo, filtrado de correo electrónico, entre otras, ofrece una capa de defensa adicional en caso de que alguien cometa un error.`*
+
+Lo ideal es que la capacitación en seguridad se extienda más allá de los empleados. Enseñarles a los clientes acerca de las amenazas de ingeniería social también es clave para mitigarlas. Y los analistas de seguridad desempeñan un papel importante en la promoción de prácticas seguras. Por ejemplo, una gran parte del trabajo de un analista es probar sistemas y documentar las mejores prácticas para que otros miembros de una organización las sigan.
+
+Estos son dos recursos adicionales que puedes revisar para continuar aprendiendo acerca de las tendencias de ingeniería social y las prácticas de seguridad: 
+### Recursos
+[OUCH!](https://www.sans.org/newsletters/ouch/) es un boletín informativo mensual y gratuito del Instituto SANS que informa sobre las tendencias de ingeniería social y otros asuntos relacionados con la seguridad.
+
+[Scamwatch](https://www.scamwatch.gov.au/) es un recurso de noticias y herramientas para reconocer, evitar y denunciar estafas de ingeniería social.
+
+### Phishing
+
+El phishing usa muchas tecnologías de comunicación, pero el término se usa principalmente para los ataques que llegan por correo. Los ataques de phishing no solo afectan a las personas, sino también a las empresas. Un solo empleado que caiga en uno de estos trucos podría dar a los atacantes acceso a sistemas. Una vez dentro, pueden explotar datos sensibles como nombres de clientes y secretos.
+
+Aquellos que llevan a cabo estos ataques suelen usar kits de phishing. Un kit de phishing es una serie de herramientas de software que se usan para lanzar una campaña de phishing. Aquellos con poca experiencia técnica pueden usar estos kits. Cada herramienta está diseñada para evitar la detección.
+
+Herramientas de un kit de phishing:
+
+- Adjuntos maliciosos/Malicious attachments
+- Formularios falsos de recopilación de datos/Fake data-collection form.
+- Enlaces web fraudulentos/fradulent web links
+
+#### Smishing y el vishing
+
+El smishing es el uso de mensajes de texto para obtener datos sensibles o hacerse pasar por una fuente conocida. Quizá hayas recibido este tipo de mensajes. Es molesto recibir mensajes de smishing, pero también son difíciles de prevenir. Por eso se usan. Algunos mensajes smishing son fáciles de detectar. Pueden dar señales maliciosas como prometer efectivo al hacer clic en un enlace que se debe evitar. En otras ocasiones, el smishing puede ser difícil de detectar. A veces, los atacantes usan códigos de área locales para parecer reales. Algunos, incluso, envían mensajes haciéndose pasar por un amigo o familiar del objetivo para así engañarlo y que este revele información sensible.
+
+El vishing consiste en explotar la comunicación de voz electrónica para obtener información sensible o suplantar a un conocido. Durante los ataques de vishing, los delincuentes fingen ser otra persona. Por ejemplo, el atacante podría llamar fingiendo ser alguien de la empresa. Afirma que hay un problema con tu cuenta, y que puede arreglarlo si le das datos sensibles. La mayoría de las organizaciones usan algunas medidas de seguridad básicas para evitar que estos y otros ataques de phishing se conviertan en un problema. Por ejemplo, las políticas anti-phishing divulgan información e invitan a los usuarios a seguir los procedimientos de seguridad correctamente. Los recursos de capacitación de empleados también ayudan a indicar qué debe buscarse en un correo que parece sospechoso. 
+
+#### Medidas de seguridad básicas para evitar el phishing 
+
+-  políticas anti-phishing
+- capacitación de empleados
+- proteger las bandejas de entrada
+- sistemas de prevención de intrusos 
+
+### Tipos de phishing
+
+#### Primeras tácticas de persuasión
+Uno de los primeros casos de phishing fue dirigido a un popular servicio de chat llamado AOL Instant Messenger (AIM). Los usuarios del servicio comenzaron a recibir correos electrónicos en los que se les pedía que verificaran sus cuentas o proporcionaran información de facturación personal, y no sabían que estos mensajes eran enviados por agentes de amenaza que simulaban ser proveedores de servicios.
+
+Este fue uno de los primeros ejemplos de phishing masivo y es una muestra de los ataques que consisten en el envío de correos electrónicos maliciosos a un gran número de personas. Este hecho aumenta la probabilidad de que alguien caiga en la trampa.
+
+Al llevar adelante los ataques a AIM, los agentes de amenaza elaboraron cuidadosamente correos electrónicos que parecían provenir directamente de AOL. Los mensajes usaban logos, colores y fuentes oficiales para engañar a usuarios desprevenidos y lograr que compartieran su información y detalles de cuenta.
+
+Una vez obtenida la información, los atacantes la utilizaron para crear cuentas de AOL fraudulentas que podían utilizar para llevar a cabo otros delitos de forma anónima. Debido al ataque, AOL se vio obligada a adaptar sus políticas de seguridad para hacer frente a estas amenazas. Por ejemplo, el servicio de chat comenzó a incluir mensajes en sus plataformas que advertían a los usuarios sobre los ataques de phishing.
+
+#### Cómo evolucionó el phishing
+
+El phishing continuó evolucionando a principios de siglo, a medida que las empresas y las nuevas tecnologías fueron ingresando al mundo digital. A principios de la década de 2000, el comercio electrónico y los sistemas de pago en línea comenzaron a convertirse en alternativas cada vez más masivas. La incorporación de las transacciones en línea presentó nuevas oportunidades para que los atacantes cometieran delitos.
+
+Fue durante este período que comenzaron a aparecer varias técnicas, muchas de las cuales se siguen usando en la actualidad. Entre ellas, hay cinco tipos comunes de phishing que todo analista de seguridad debe conocer.    
+
+- El phishing por correo electrónico es un tipo de ataque en el que los agentes de amenaza envían correos electrónicos en los que se hacen pasar por una persona o entidad de confianza.
+- El smishing es un tipo de phishing que utiliza el servicio de mensajes cortos (SMS) y demás servicios de mensajería de texto como los iMessages de Apple, WhatsApp y otros medios de chat en teléfonos móviles.
+- El vishing consiste en el uso de llamadas de voz o mensajes de voz para engañar a los objetivos de modo que proporcionen información personal.
+- El phishing localizado, o spear phishing, es una subcategoría del phishing por correo electrónico que hace foco en personas específicas, como los contadores de una pequeña empresa.
+- El ataque de caza de ballenas, o whaling, es una categoría de phishing localizado dirigido a ejecutivos de alta jerarquía en una organización.
+
+Desde los comienzos del phishing, los ataques por correo electrónico siempre han sido los más comunes. Si bien en un principio se usaban para engañar a las personas, a fin de que compartieran credenciales de acceso e información de tarjetas de crédito, luego el phishing por correo electrónico se convirtió en un método popular para infectar sistemas informáticos y redes con software malicioso.
+
+A finales de 2003, atacantes de todo el mundo crearon sitios web fraudulentos que se parecían a los de empresas como eBay y PayPal™. También se lanzaron campañas masivas de phishing dirigidas a sitios bancarios y de comercio electrónico, mediante las cuales se distribuían programas maliciosos.
+
+#### Tendencias recientes
+A partir de la década de 2010, los atacantes comenzaron a abandonar el phishing masivo, que consistía en atraer a personas desprevenidas a una trampa, y empezaron a implementar lo que se conoce como “intentos de phishing dirigidos”, apoyándose en las nuevas tecnologías. El phishing dirigido tiene como particularidad que los ataques se envían a objetivos específicos mediante métodos altamente personalizados, para crear una intensa sensación de familiaridad.
+
+Un tipo de phishing dirigido que evolucionó en la década de 2010 es el angler phishing, una técnica en la que los atacantes se hacen pasar por representantes de servicio al cliente en redes sociales. Esta táctica evolucionó a partir de la tendencia de las personas a dejar sus quejas a las empresas, en línea. Aprovechando esto, los agentes de amenaza interceptan quejas de lugares como tableros de mensajes o secciones de comentarios y contactan, a través de redes sociales, a la persona enojada. Al igual que en el caso de los ataques de AIM de la década de 1990, usan cuentas fraudulentas que parecen similares a las de empresas reales. Luego, engañan a los clientes enojados hasta convencerlos de que compartan información confidencial, con la promesa de resolver su problema.
+
+### Recursos
+
+Recursos para obtener información adicional
+Mantenerte al corriente sobre las amenazas de phishing es una de las mejores medidas que puedes tomar para capacitarte y ayudar a tu organización a tomar decisiones de seguridad más inteligentes.
+
+El [test de phishing de Google](https://phishingquiz.withgoogle.com/) es una herramienta que puedes usar o compartir y que ilustra lo difícil que puede ser identificar estos ataques.
+
+[Phishing.org](https://www.phishing.org/) informa sobre las últimas tendencias de phishing y comparte recursos gratuitos que pueden ayudar a reducir los ataques de phishing.
+
+El [Anti-Phishing Working Group (APWG)](https://apwg.org/) es un grupo sin fines de lucro de expertos en seguridad de distintas disciplinas, que publica un informe trimestral sobre las tendencias de phishing.
+
+## Malware
+
+Los dispositivos y sistemas conectados a Internet son especialmente vulnerables a infectarse. Cuando un dispositivo se infecta, el malware interrumpe la operación normal. Los atacantes usan malware para controlar el sistema infectado sin permiso y sin que el usuario lo sepa. El malware ha sido una amenaza para personas y empresas por mucho tiempo. Los atacantes han creado muchas cepas de malware. Su propagación varía.
+Los cinco tipos de malware más comunes son:
+
+- `Virus`
+- `Worm`
+- `Trojan`
+- `Ransomware`
+- `Spyware`
+
+#### Virus
+Un virus es un código malicioso que se escribió para interferir con la operación de una computadora y causar daños a datos y software. Los virus suelen esconderse dentro de aplicaciones confiables. Cuando el programa infectado se abre, el virus se clona y se propaga a otros archivos en el dispositivo. Un aspecto importante de los virus es que el usuario debe activarlo para que la infección comience.
+
+#### Worm
+Un gusano es un malware que puede duplicarse y propagarse por su cuenta en los sistemas. Mientras los virus requieren de una acción por parte del usuario para duplicarse, como abrir un archivo, los gusanos usan un dispositivo infectado como host. Buscan otros dispositivos en la red conectada. Luego, los gusanos infectan todo en la red sin necesidad de una acción que active la propagación. Los virus y gusanos se envían a través de correos de phishing y otros métodos antes de infectar un dispositivo. Asegurarte de hacer clic solo en enlaces de fuentes de confianza es una manera de evitar este tipo de infección.
+
+#### Trojan
+Un troyano, o caballo de Troya, es un malware que parece un archivo o programa legítimo. El nombre hace referencia a una leyenda griega antigua que tiene lugar en la ciudad de Troya. En Troya, unos soldados se escondieron dentro de un caballo de madera presentado como un regalo para sus enemigos. Lo aceptaron y lo metieron a la ciudad. Más tarde, los soldados salieron del caballo y atacaron la ciudad. Como en esta leyenda, los atacantes crean troyanos para parecer inofensivos. Este malware suele hacerse pasar por archivos o aplicaciones útiles para engañar a la víctima y que los instale. Los atacantes suelen usar troyanos para obtener acceso e instalar otro tipo de malware: el ransomware. 
+
+#### Ransomware
+El ransomware es un ataque malicioso en que los agentes de amenaza cifran los datos de la empresa y exigen un pago para restaurar el acceso. Estos ataques se han convertido en algo muy común. Un aspecto único de los ataques de ransomware es que se dan a conocer ante la víctima. Si no, los delincuentes no podrían cobrar lo que exigen. Suelen descifrar los datos ocultos cuando se paga el rescate. Desafortunadamente, nada garantiza que no volverán para exigir más. 
+
+#### Spyware
+El spyware es un malware que se utiliza para recopilar y vender información sin consentimiento. El consentimiento es clave aquí. Las empresas también recopilan datos de sus clientes, como sus hábitos de navegación y su historial de compras, pero siempre dan a sus clientes la opción de negarse a aceptar. En cambio, los ciberdelincuentes usan el spyware para robar información. Lo usan para robar datos como credenciales de inicio de sesión, PIN de cuentas y otros datos sensibles para su beneficio personal. Hay muchos otros tipos de malware, y siempre evolucionan nuevas formas. Todos suponen un grave riesgo para personas y empresas. En el próximo video, veremos cómo los equipos de seguridad detectan y eliminan este tipo de amenazas.
+
+### Introducción a malware
+Anteriormente, aprendiste que el malware es un software diseñado para dañar dispositivos o redes. Desde su primera aparición en computadoras personales hace décadas, se desarrolló una gran cantidad de cepas de malware. Ser capaz de identificar diferentes tipos de malware y comprender las formas en que se propagan te ayudará a mantenerte alerta y al corriente como profesional de seguridad.
+
+#### Otros tipos de malware
+
+#### Virus
+Un virus es un código malicioso escrito para interferir con las operaciones informáticas y causar daños a los datos y al software. Para poder propagarse y causar daños, este tipo de malware debe ser instalado por el usuario a quien el ataque apunta. Una de las muchas formas en que los virus se propagan es a través de campañas de phishing, en las que se ocultan enlaces maliciosos dentro de vínculos o archivos adjuntos.
+
+#### Gusano
+Un gusano es un software malicioso que se puede duplicar y propagar por sí mismo a través de sistemas. De manera similar a los virus, un gusano debe ser instalado por el usuario a quien está dirigido el ataque, y también se puede propagar mediante tácticas como el correo electrónico malicioso. Dada la capacidad que tiene un gusano de propagarse por sí solo, los ataques a veces están dirigidos a dispositivos, unidades o archivos que tienen acceso compartido a través de una red.
+
+Un ejemplo muy famoso es el gusano Blaster, también conocido como Lovesan, Lovsan o MSBlast. A principios de la década de 2000, este gusano se extendió en computadoras con sistemas operativos Windows XP y Windows 2000, y forzó a los dispositivos a un bucle continuo de apagado y reinicio. Si bien no dañó los dispositivos infectados, logró extenderse a cientos de miles de usuarios en todo el mundo. Desde el gusano Blaster original, se implementaron muchas variantes que pueden infectar computadoras modernas.
+
+*`Nota: Los gusanos fueron ataques muy populares a mediados de la década de 2000. Sin embargo, desde hace unos años, se utilizan con menos frecuencia.`*
+
+#### Troyano (caballo de Troya)
+Un troyano, también llamado caballo de Troya, es un software malicioso (malware) que se parece a un archivo o programa legítimo. Esta característica se relaciona con la forma en que los troyanos se propagan. De forma similar a los virus, los atacantes entregan este tipo de malware oculto en descargas de archivos y aplicaciones. Los atacantes se apoyan en el hecho de engañar a usuarios desprevenidos para que crean que están descargando un archivo inofensivo, cuando en realidad están infectando su propio dispositivo con malware que puede usarse para espiarlos, otorgar acceso a otros dispositivos y más.
+
+#### Adware
+El software respaldado por publicidad, o adware, es un tipo de software legítimo que a veces se utiliza para mostrar publicidad digital en las aplicaciones. Los desarrolladores de software suelen usar el adware como una forma de reducir sus costos de producción o hacer que sus productos sean gratuitos para el público, lo que también se conoce como “freeware” o “shareware”. En estos casos, los desarrolladores monetizan su producto a través de los ingresos publicitarios en lugar de cobrarles a sus usuarios.
+
+El adware malicioso pertenece a una subcategoría de malware conocida como aplicación potencialmente no deseada (PUA). Una PUA es un tipo de software no deseado que se incluye con programas legítimos y que puede mostrar anuncios, causar la ralentización del dispositivo o instalar otro software. Los atacantes a veces ocultan este tipo de malware en programas gratuitos con diseño inseguro, para ser ellos quienes moneticen los anuncios, en lugar del desarrollador. Esto funciona incluso cuando el usuario se ha negado a recibir anuncios.
+
+#### Spyware
+Al igual que el adware, el spyware es un tipo de software malicioso que se usa para recabar y vender información sin consentimiento. También se considera un PUA. El spyware se oculta comúnmente en el bundleware, un software adicional que a veces se incluye dentro de otras aplicaciones. Los PUA como el spyware se han convertido en un serio desafío en el ecosistema del desarrollo de software de código abierto. Esto se debe a que los desarrolladores tienden a no considerar cómo otras personas podrían hacer un abuso o un mal uso de su software.
+
+#### Scareware
+Otro tipo de PUA es el scareware. Esta clase de software malicioso emplea tácticas para asustar a los usuarios con el fin de que infecten su propio dispositivo. El scareware los engaña al mostrarles advertencias falsas que parecen provenir de empresas legítimas. El correo electrónico y las ventanas emergentes son solo algunas de las maneras en las que el scareware se propaga. Ambos pueden usarse para entregar advertencias con afirmaciones falsas de que los archivos o los datos del usuario están en riesgo.
+
+#### Software malicioso sin archivos
+El software malicioso sin archivos (o malware sin archivos) no necesita que el usuario lo instale porque utiliza programas legítimos que ya están instalados para infectar una computadora. Este tipo de infección reside en la memoria, por eso el malware nunca toca el disco duro. En este sentido, es diferente de los otros tipos de software maliciosos, que se almacenan dentro de un archivo en el disco. Estas infecciones sigilosas, en cambio, entran en el sistema operativo o se esconden dentro de aplicaciones de confianza.
+
+*`Consejo profesional: El software malicioso sin archivos se detecta mediante la realización de análisis de memoria, para lo que se requiere de experiencia con sistemas operativos. `*
+
+#### Rootkits
+Un rootkit es un software malicioso que proporciona acceso administrativo y remoto a una computadora. La mayoría de los atacantes utilizan rootkits para abrir una especie de puerta trasera a los sistemas, lo que les permite instalar otras formas de malware o realizar ataques de seguridad de red.
+
+Este tipo de software malicioso suele propagarse por una combinación de dos componentes: un dropper y un loader (cargador). Un dropper es un programa o archivo que se utiliza para instalar un rootkit en un equipo de destino. Un loader es un código malicioso que se activa después de que el usuario inicia un programa dropper.
+
+#### Secuestro de datos (Ransomware)
+El ransomware es un ataque en el que los agentes de amenaza cifran los datos de una organización y exigen un pago (rescate) para restablecer el acceso a ellos. Según la Agencia de Seguridad de Infraestructura y Ciberseguridad (CISA), los delitos de ransomware están en aumento y son cada vez más sofisticados. Este tipo de infecciones puede causar un daño considerable a una organización y a sus clientes. Un ejemplo es el ataque [WannaCry](https://en.wikipedia.org/wiki/WannaCry_ransomware_attack), que encripta la computadora de una víctima hasta que se paga un rescate en criptomonedas.
+
+#### Botnet
+Una botnet (“red de bots”) es un conjunto de computadoras infectadas con software malicioso que están bajo el control de un solo agente de amenaza, conocido como el “bot-herder” (pastor de bots). A menudo, los virus, gusanos y troyanos se utilizan para propagar la infección inicial y convertir los dispositivos en un bot para el bot-herder. Luego, el atacante utiliza protocolos de uso compartido de archivos, correo electrónico o aplicaciones de redes sociales para crear nuevos bots y hacer crecer la botnet. Cuando un objetivo, sin saberlo, abre el archivo malicioso, la computadora, o el bot, vuelve a transmitir la información al bot-herder, que puede ejecutar comandos en la computadora infectada.
+
+Para aprender mas al respector de malware puedes hacerlo en este enlace[INFOSEC](https://www.infosecinstitute.com/skills/courses/malware-analysis-introduction/)
+
+### CriptoHacking
+Como profesional de seguridad, es importante que estés al tanto de las evoluciones más recientes. Analicemos una forma en que el malware ha evolucionado. Luego usaremos este ejemplo para ver cómo detectar malware y cómo proteger proactivamente contra él. El ransomware es uno de los tipos de malware que los atacantes usan para robar dinero. Otro tipo de malware reciente es el criptojacking. El criptojacking es un malware que instala software para minar criptomonedas ilegalmente.
+
+Quizá oíste hablar sobre las criptomonedas. Si no conoces del tema, las criptomonedas son dinero digital con valor en el mundo real. Al igual que las monedas físicas, existen muchos tipos diferentes. En su mayor parte, se denominan monedas o tokens. En pocas palabras, la criptominería es un proceso que se lleva a cabo para obtener nuevas monedas. La criptominería es similar a la explotación de otros recursos, como el oro. Explotar algo como el oro involucra maquinaria, como camiones y excavadoras, que cavan la tierra. Las criptomonedas, en cambio, usan computadoras. Pero no cavan la tierra, sino que ejecutan software busca entre miles de millones de líneas de código cifrado. Tras procesar suficiente código, se halla una criptomoneda.En general, cuantas más computadoras minen monedas, más criptomonedas se hallan. Desafortunadamente, los delincuentes descubrieron esto. 
+
+A partir de 2017, el malware de criptojacking empezó a usarse para obtener control no autorizado de computadoras personales para minar criptomonedas. Ahora las técnicas de criptojacking son más sofisticadas. Hoy los delincuentes atacan servidores vulnerables para propagar su software de minería. Los dispositivos que se comunican con el servidor infectado terminan infectándose. El código se ejecuta en segundo plano, y mina monedas sin que nadie lo sepa. Es difícil detectar software de criptojacking. Por fortuna, los profesionales de la seguridad tienen herramientas sofisticadas que ayudan. Un sistema de detección de intrusos, o IDS, es una aplicación que monitorea la actividad del sistema y alerta de posibles intrusiones. Si se detecta actividad anormal como malware minando monedas, el IDS alerta al personal de seguridad. Pese a su utilidad, estos sistemas tienen un gran inconveniente. Puede que no se detecten los nuevos tipos de malware. Afortunadamente, hay señales sutiles que indican que un dispositivo está infectado con software de criptojacking u otro tipo de malware. Por lejos, la señal más evidente de una infección por criptojacking es la ralentización. Otras señales son un mayor uso de CPU, fallos repentinos del sistema y baterías que se agotan rápido. Otra señal son costos de electricidad inusualmente altos, lo cual se relaciona con la cantidad de recursos que la criptominería utiliza. Es bueno saber que hay medidas que pueden tomarse para reducir la probabilidad de sufrir un ataque como el criptojacking. Por ejemplo, usar extensiones de navegador diseñadas para bloquear malware usar bloqueadores de anuncios, desactivar JavaScript y conocer las últimas tendencias. Los analistas de seguridad también pueden concientizar sobre malware en la empresa. Si bien el criptojacking sigue siendo bastante reciente, los ataques se están haciendo más y más comunes. El código malicioso que se propaga evoluciona continuamente. Se necesitan años de experiencia para analizar nuevos tipos de malware. Igualmente, vas por buen camino para ayudar a defender de estas amenazas.
+
+### Exploits
+Otra forma de propagación es mediante el uso una amenaza fuerte como lo son los exploits basados en la web.
+
+Los ciberdelincuentes usan los exploits basados en la web para obtener información personal sensible. Los ataques ocurren porque las aplicaciones web interactúan con varios usuarios por varias redes. Los hackers maliciosos suelen explotar este nivel alto de interacción mediante ataques de inyección. Un ataque de inyección es código malicioso que se inserta en una aplicación vulnerable. La aplicación infectada parece funcionar con normalidad, porque el código inyectado se ejecuta en segundo plano sin que el usuario lo sepa. 
+
+Las aplicaciones son vulnerables a ataques de inyección porque están programadas para recibir datos. Puede ser algo que el usuario escribe o cliquea, o también puede ser algo que un programa comparte con otro. Si se codifican bien, las aplicaciones deberían poder interpretar y gestionar las entradas del usuario. Por ejemplo, imagina que una aplicación espera que el usuario ingrese un número de teléfono. Esta aplicación debería validar la entrada del usuario para garantizar que todos los datos sean números y que no haya más de 10 dígitos. Si la entrada del usuario no cumple con estos requisitos, la aplicación debe saber cómo manejarlo. En programación, esto se llama saneamiento de entrada. El saneamiento de entrada es programación que valida las entradas de los usuarios y otros programas. Los ataques de inyección afectan sobre todo a aplicaciones que no sanean entradas. Por eso, las aplicaciones web son uno de los objetivos más vulnerables de estos ataques. Las aplicaciones web interactúan con varios usuarios a través de muchas plataformas. Tienen muchos objetos interactivos, como imágenes y botones. Esto dificulta el trabajo de los desarrolladores a la hora de idear todas las formas posibles de sanear las entradas. 
+
+Un ataque de inyección común y peligroso que amenaza las apps web es la secuencia de comandos en sitios cruzados. La secuencia de comandos en sitios cruzados, o XSS, es un ataque de inyección que introduce código en un sitio o aplicación web vulnerable. Estos ataques suelen llevarse a cabo mediante el uso de los dos lenguajes más comunes en los sitios web: HTML y JavaScript. Ambos pueden dar acceso a los atacantes a todo lo que se carga en la página infectada. Esto puede incluir cookies de sesión, geolocalización y hasta webcams y micrófonos. Hay tres tipos principales de ataques XSS: 
+
+- `Reflejado`
+- `Almacenado`
+- `Basado en DOM`
+
+#### XSS reflejado
+En un ataque XSS reflejado, se envía una secuencia de comandos maliciosa al servidor y se activa durante la respuesta del servidor. Un ejemplo es la barra de búsqueda de un sitio web. En un ataque XSS reflejado, los delincuentes envían a la víctima un enlace web que parece abrir un sitio de confianza. Al hacer clic en el enlace, se envía una solicitud HTTP al servidor del sitio vulnerable. La secuencia de comandos del atacante se devuelve, o refleja, en el navegador del usuario. El navegador carga la secuencia maliciosa, pues confía en la respuesta del servidor. Luego que la secuencia de comandos se haya cargado, el atacante recibe información como cookies de sesión.
+#### Almacenado
+En el ataque XSS almacenado, la secuencia de comandos no se oculta en un enlace que debe enviarse al servidor. Un ataque XSS almacenado ocurre cuando la secuencia maliciosa se inyecta directamente en el servidor. Aquí, se atacan elementos del sitio que se entregan al usuario. Se trata, por ejemplo, de imágenes y botones que se cargan al abrir el sitio. Los elementos infectados activan el código malicioso cuando el usuario visita el sitio. Los ataques XSS almacenados pueden ser dañinos ya que no hay forma de saber de antemano que el sitio está infectado.
+
+#### Basado en DOM
+DOM significa modelo de objetos del documento, que es básicamente el código fuente de un sitio web. Un ataque XSS basado en DOM ocurre cuando hay una secuencia de comandos maliciosa en la página web que el navegador carga. A diferencia del XSS reflejado, estos ataques no necesitan enviarse al servidor para activarse. En un ataque basado en DOM, la secuencia de comandos maliciosa puede verse en la URL. En este ejemplo, la URL del sitio contiene valores de parámetros. Estos reflejan la entrada del usuario. Aquí, el sitio permite a los usuarios seleccionar temas de color. Cuando el usuario elige, aparece como parte de la URL. En un ataque basado en DOM, los delincuentes cambian el parámetro que espera una entrada. Por ejemplo, pueden esconder JavaScript malicioso en las etiquetas HTML. El navegador procesa el HTML y ejecuta el JavaScript. Los hackers usan estos métodos de XSS para robar información sensible. Los analistas de seguridad deben conocer este grupo de ataques de inyección. Sin embargo, no son los únicos, como descubriremos la próxima.
+
+## Modelado de amenaza
+
+El modelado de amenazas es el proceso de identificar activos, sus vulnerabilidades y cómo están expuestos a amenazas. Usamos el modelado de amenazas en todo lo que protegemos. Analizamos sistemas enteros, aplicaciones o procesos de negocio a partir de esta perspectiva de seguridad. Crear modelos de amenazas es una tarea larga y minuciosa. Los suelen elaborar personas con años de experiencia en el campo. Por ello, se considera una habilidad avanzada en seguridad. Pero eso no significa que no vayas a participar. Hay varios marcos de modelado de amenazas en el campo. Algunos son mejores para la seguridad de redes, otros, para proteger la información o el desarrollo de aplicaciones. 
+
+En general, un modelo de amenaza tiene seis pasos:
+
+- `Alcance del modelo (Define the scope)`: Aquí, el equipo determina qué es lo que están creando al generar un inventario de activos y clasificarlos.
+- `Identificar las amenazas`: En este caso, el equipo define todos los agentes de amenaza potenciales. Un agente de amenaza es una persona o grupo que representa un riesgo de seguridad. Los agentes de amenaza son internos o externos. Por ejemplo, uno interno puede ser un empleado que expone un activo a daños a propósito. Un agente de amenaza externo puede ser un hacker o una empresa competidora. Luego de que los agentes de amenaza han sido identificados, el equipo crea lo que se conoce como un árbol de ataque. *Un árbol de ataque* es un diagrama que traza las amenazas para los activos. Antes de continuar, el equipo crea este diagrama de forma minuciosa.
+- `Caracterizar el entorno`: Aquí, el equipo adopta una mentalidad de atacante a la empresa. Analiza cómo los clientes y empleados interactúan con el entorno. Otros factores que analiza son los socios y proveedores externos.
+- `Analizar las amenazas`: el equipo examina las protecciones existentes e identifica brechas. Luego, clasifica las amenazas según la puntuación de riesgo asignada.
+- `Cómo mitigar el riesgo`:  el grupo crea un plan para defenderse de las amenazas. Las opciones son evitar el riesgo, transferirlo, reducirlo o aceptarlo.
+- `Evaluar los hallazgos`: En esta etapa, todo lo que se hizo durante el ejercicio se documenta, se aplican correcciones y se toma nota de cualquier éxito. También se registra lo aprendido para saber cómo abordar modelos futuros.
+
+### PASTA
+Proceso de modelado de amenazas estándar llamado PASTA. Imagina que una empresa de fitness va a lanzar su primera app móvil. Antes de lanzarla, se le pide al equipo de seguridad garantizar que la app proteja los datos de clientes. El equipo realiza un modelo de amenazas bajo el marco PASTA. PASTA es un marco de modelado de amenazas popular que es usado en muchos sectores. PASTA es la sigla de proceso de simulación de ataques y análisis de amenazas. 
+
+P = Process for 
+A = Attack
+S = Simulation and
+T = Thread 
+A = Analysis
+
+El marco PASTA tiene siete etapas:
+
+- `Definir los objetivos comerciales y de seguridad`: El objetivo principal en nuestro ejemplo es proteger los datos de los clientes. En esta etapa, el equipo formula muchas preguntas. Debe conocer aspectos como la forma en que se maneja la PII. Responder a estas preguntas es clave para evaluar el impacto de las posibles amenazas.
+- `Definir el alcance técnico`: Aquí el equipo identifica los componentes de la aplicación que deben evaluarse. Esto es la superficie de ataque, que exploramos anteriormente. En una app móvil, esto incluye tecnología que se utiliza cuando los datos están en reposo y en uso. Esto incluye protocolos de red, controles de seguridad y otras interacciones de datos.
+- `Descompone la aplicación`: se identifican los controles existentes que protegerán los datos de usuario. Esto suele implicar trabajar en conjunto con los desarrolladores de la app para crear un diagrama de flujo de datos. El diagrama muestra cómo los datos van del dispositivo del usuario a la base de datos de la empresa. También se identificarían los controles para proteger los datos en tránsito.
+- `Crear un análisis de amenazas`: Aquí, el equipo adopta la mentalidad de un atacante. En esta etapa, se investiga para obtener la información más reciente sobre el tipo de ataques que se usan. Como otras tecnologías, las apps móviles tienen varios vectores de ataque. Estos cambian a menudo, por lo que el que el equipo debe acceder a material de consulta para mantenerse al día.
+- `Crear un análisis de vulnerabilidad.`: Aquí, el equipo investiga en detalle las vulnerabilidades potenciales analizando la raíz del problema.
+- `Modelado de ataques y prueba las vulnerabilidades`:  el equipo realiza el modelado de ataques y prueba las vulnerabilidades analizadas en la quinta etapa simulando ataques. Esto se hace mediante la creación de un árbol de ataque, que se parece a un diagrama de flujo. Por ejemplo, un árbol de ataque para nuestra app móvil podría verse así. La información del cliente, como nombres y contraseñas, es un objetivo posible. Estos datos suelen almacenarse en una base de datos. Ya aprendimos que las bases de datos son vulnerables a ataques como la inyección SQL, así que agregaremos este vector a nuestro árbol de ataque. Un agente de amenazas podría explotar vulnerabilidades causadas por entradas sin sanear para atacar este vector. El equipo de seguridad usa estos árboles para identificar vectores de ataque que deben testearse para validar las amenazas. Esta es solo una rama del árbol de ataque. Una aplicación como la de fitness tiene muchas ramas con varios otros vectores de ataque. 
+- `Analizar el riesgo e impacto`: Aquí, el equipo reúne toda la información que recopiló en las etapas anteriores. En este momento, el equipo ya puede dar recomendaciones de riesgo informadas a las partes interesadas según los objetivos. 
+
+## Características de un modelado de amenaza eficaz
+
+El modelado de amenazas es el proceso de identificación de activos, sus vulnerabilidades y cómo cada uno de ellos está expuesto a las amenazas. Es un enfoque estratégico que combina diversas actividades de seguridad, como la gestión de vulnerabilidades, el análisis de amenazas y la respuesta a incidentes. Los equipos de seguridad suelen realizar estos ejercicios para garantizar que sus sistemas estén adecuadamente protegidos. El modelado de amenazas se usa además para encontrar proactivamente formas de reducir los riesgos para cualquier sistema o proceso comercial.
+
+Tradicionalmente, el modelado de amenazas se asocia con el campo del desarrollo de aplicaciones. En esta lectura, `aprenderás sobre las metodologías comunes de modelado de amenazas que se utilizan para diseñar software capaz de resistir ataques`. También te informarás acerca de la creciente necesidad de seguridad de las aplicaciones y las formas en que puedes participar.
+
+### Por qué es importante la seguridad de las aplicaciones
+Las aplicaciones se han convertido en una parte esencial del éxito de muchas organizaciones. Por ejemplo, las aplicaciones basadas en la web permiten a los clientes de cualquier parte del mundo conectarse con empresas, sus socios y otros clientes.
+
+Las aplicaciones móviles también cambiaron la forma en que las personas acceden al mundo digital. Los smartphones suelen ser la principal forma en que se intercambian datos entre los usuarios y una empresa. El volumen de datos que procesan las aplicaciones hace que asegurarlas sea clave para reducir el riesgo para las personas que se conectan a ellas. 
+
+Por ejemplo, supongamos que una aplicación utiliza bibliotecas de registro basadas en Java con la vulnerabilidad Log4Shell ([CVE-2021-44228](https://nvd.nist.gov/vuln/detail/CVE-2021-44228)). Si esta no se parchea, puede permitir la ejecución remota de código que un atacante puede usar para obtener acceso completo a tu sistema, desde cualquier parte del mundo. Si se explota, una vulnerabilidad crítica como esta puede afectar a millones de dispositivos.
+
+### Defensa de la capa de aplicación
+La defensa de la capa de aplicación requiere de pruebas adecuadas para descubrir debilidades que pueden conducir a un riesgo. El modelado de amenazas es una de las principales formas de garantizar que una aplicación cumpla con los requisitos de seguridad. Estos análisis suelen ser realizados por un equipo de DevSecOps (desarrollo, seguridad y operaciones).
+
+Un proceso típico de modelado de amenazas se realiza en un ciclo:
+
+- Definir el alcance
+- Identificar amenazas
+- Caracterizar el entorno
+- Analizar amenazas
+- Mitigar riesgos
+- Evaluar los hallazgos
+
+<img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/c5jTr_DmQRiK8A4sxO6J4Q_398eb4d48dcf4c6e956594324b5798f1_Zr9RSu4KXJzyeQ5-QOR7TftC0CswoqWtbOxwD_TCm_YtXFpagM_7jDMEbMfDm4d35OGbjSDoWgO7gIuahA6G8jVviepPPgK_sYoaSw88uftTieus-S4Y96PdpMphDJFfPm0XrN5A9jiF7rYelhsCTg?expiry=1723939200000&hmac=NV7a4oz99FA3Ka8pjKA1D4prqNo223ik2uDWcWAm5LI" width='600px'>
+
+Lo ideal es que el modelado de amenazas se realice antes, durante y después del desarrollo de una aplicación. Sin embargo, realizar un análisis exhaustivo del software consume tiempo y recursos. Se debe evaluar todo: desde la arquitectura de la aplicación hasta sus fines comerciales. Como resultado, a lo largo de los años se desarrolló una serie de metodologías de modelado de amenazas para hacer que el proceso sea más sencillo. 
+
+*`Nota: El modelado de amenazas debe incorporarse en cada etapa del ciclo de vida del desarrollo de software (SDLC).`*
+
+### Marcos comunes
+Al realizar un modelado de amenazas, hay varios métodos que se pueden utilizar, como los siguientes:
+
+- STRIDE
+- PASTA
+- Trike
+- VAST
+
+Las organizaciones pueden usar cualquiera de estas metodologías para recopilar información y tomar decisiones que les permitan mejorar su postura de seguridad. Básicamente, el modelo “correcto” depende de la situación y los tipos de riesgos a los que una aplicación podría enfrentarse.
+
+#### STRIDE 
+STRIDE es una metodología de modelado de amenazas desarrollada por Microsoft. Se utiliza comúnmente para identificar vulnerabilidades en seis vectores de ataque específicos. El acrónimo en inglés representa cada uno de estos vectores: suplantación, manipulación, repudio, divulgación de información, denegación de servicio y elevación de privilegios.
+
+#### PASTA
+El proceso de simulación de ataques y análisis de amenazas (PASTA, por sus siglas en inglés) es un proceso de modelado de amenazas centrado en el riesgo desarrollado por dos líderes de OWASP y respaldado por una empresa de ciberseguridad llamada VerSprite. Su enfoque principal es descubrir evidencia de amenazas viables y representar esta información como un modelo. El diseño basado en la evidencia de la metodología PASTA puede aplicarse al modelado de amenazas de una aplicación o el entorno que da soporte a esa aplicación. Su proceso de siete etapas consta de varias actividades que incorporan artefactos de seguridad relevantes del entorno, como informes de evaluación de vulnerabilidades.
+
+#### Trike 
+Trike es una metodología y herramienta de código abierto que adopta un enfoque centrado en la seguridad para el modelado de amenazas. Se usa comúnmente para enfocarse en permisos de seguridad, casos de uso de aplicaciones, modelos de privilegios y otros elementos que propician un entorno seguro.
+
+#### VAST
+La metodología de modelado de amenazas visual, ágil y simple (VAST, por sus siglas en inglés) forma parte de una plataforma automatizada de modelado de amenazas llamada ThreatModeler®. Muchos equipos de seguridad optan por utilizar VAST como una forma de automatizar y optimizar sus evaluaciones de modelado de amenazas.
+
+### Cómo participar en el modelado de amenazas
+El modelado de amenazas suele ser llevado a cabo por profesionales de la seguridad experimentados, pero casi nunca de forma independiente. Esto sucede sobre todo cuando se trata de asegurar aplicaciones. Los programas son sistemas complejos responsables de manejar una gran cantidad de datos y procesar una gran variedad de comandos de usuarios y otros sistemas.
+
+Una de las claves para el modelado de amenazas es plantear las preguntas correctas:
+
+- ¿En qué estamos trabajando?
+- ¿Qué es lo que puede salir mal?
+- ¿Qué estamos haciendo al respecto?
+- ¿Nos hemos ocupado de todo?
+- ¿Hicimos un buen trabajo?
+
+Se necesita tiempo y práctica para aprender a trabajar con elementos como diagramas de flujo de datos y árboles de ataque. Sin embargo, todas las personas pueden aprender a realizar un modelado de amenazas efectivo. Independientemente de tu nivel de experiencia, participar en uno de estos ejercicios siempre comienza con el simple hecho de plantearse las preguntas correctas.
