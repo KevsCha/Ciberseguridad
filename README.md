@@ -4282,3 +4282,376 @@ Una de las claves para el modelado de amenazas es plantear las preguntas correct
 - ¿Hicimos un buen trabajo?
 
 Se necesita tiempo y práctica para aprender a trabajar con elementos como diagramas de flujo de datos y árboles de ataque. Sin embargo, todas las personas pueden aprender a realizar un modelado de amenazas efectivo. Independientemente de tu nivel de experiencia, participar en uno de estos ejercicios siempre comienza con el simple hecho de plantearse las preguntas correctas.
+
+# Detección y respuesta, haz sonar la alarma Nº6
+
+### Introducción
+
+Los marcos de ciclo de vida dan una estructura para respaldar las operaciones de respuesta a incidentes. Ayudan a desarrollar un enfoque estandarizado para el proceso de respuesta, de modo que los incidentes se gestionen de una manera efectiva y consistente. Hay diferentes tipos de marcos que se pueden adoptar y modificar según las necesidades. 
+
+Ampliaremos el CSF y trataremos las fases de respuesta a incidentes del NIST. Recuerda que las cinco funciones principales del CSF del NIST son:
+
+- `Identificar`
+- `Proteger`
+- `Detectar`
+- `Responder`
+- `Recuperar`
+
+Se explorará los últimos tres pasos de este marco: detectar, responder y recuperar. Son etapas esenciales en la respuesta a incidentes y, como analista, detectarás y responderás a incidentes e implementarás acciones para la recuperación. El ciclo de vida de respuesta a incidentes del NIST es otro marco con subpasos adicionales dedicados a la respuesta a incidentes. Comienza con la preparación.
+
+subpasos adicionales dedicados a la respuesta a incidentes. Comienza con la preparación. Luego, la detección y el análisis, contención, erradicación y recuperación, y la actividad posterior a un incidente. Algo a considerar es que el ciclo de vida no es un proceso lineal. Es un ciclo y los pasos pueden superponerse a medida que se hacen nuevos descubrimientos. Este ciclo de vida nos da un plano de cómo responder eficazmente a incidentes, pero antes de sumergirnos en la detección y respuesta a incidentes, hay que comprender qué es un incidente. Según el NIST, un incidente es “un suceso que inminentemente pone en peligro, sin autoridad legal, la confidencialidad, integridad o disponibilidad de información o un sistema de información; o constituye una violación o amenaza inminente de violación de la ley, políticas o procedimientos de seguridad, o políticas de uso aceptable”. 
+
+Hay que entender que los incidentes de seguridad son eventos, pero no cada evento es un incidente de seguridad. `¿Qué es un evento?` Un evento es un acontecimiento observable en una red, sistema o dispositivo. Un ejemplo: un usuario quiere iniciar sesión en su cuenta de email, pero olvidó su contraseña. El usuario solicita restablecer la contraseña y la cambia con éxito. Este es un evento observable. ¿Por qué? Porque los sistemas y las aplicaciones registran estas solicitudes y aportan pruebas de que algo sucedió. Sabemos que alguien solicitó con éxito restablecer la contraseña y que no violó las políticas de seguridad para acceder a la cuenta. Ahora, imagina que en lugar del propietario legítimo de la cuenta, un agente de amenaza intenta acceder a esta, solicita el cambio de contraseña y la cambia con éxito. Esto es tanto un evento como un incidente de seguridad. Es un evento porque es un acontecimiento observable. También es un incidente de seguridad: un agente de amenaza violó la política de seguridad para acceder ilegalmente a una cuenta que no es legalmente suya. Todo incidente de seguridad es un evento, pero no todo evento es un incidente. Al igual que un detective investiga un caso con mucha atención, maneja y documenta sus pruebas y hallazgos, los analistas hacen lo mismo al investigar un incidente de seguridad.
+
+Una investigación revela información crítica sobre las cinco W de un incidente: quién desencadenó el incidente (who), qué pasó (what), cuándo ocurrió (when), dónde sucedió (where), y por qué ocurrió el incidente (why). Hacer un seguimiento de esto es clave durante una investigación, pero también al concluirla, cuando hay que escribir el informe final. Como analista, necesitarás un método para documentar y hacer referencia a esta información para acceder fácilmente cuando la necesites. La mejor manera de hacerlo es con el diario de gestión de incidentes, una documentación usada en la respuesta a incidentes. Se usara un diccionario propio para registrar detalles de incidentes. 
+
+### Ciclo de vida del NIST (Escenario Vishing)
+
+#### Preparación: el proceso de planificación y entrenamiento
+
+La organización toma medidas para garantizar que cuenta con las herramientas y los recursos adecuados:
+
+- Set up uniform company email conventions
+- Create a collaborative, ethical environment where employees feel comfortable asking questions
+- Provide cybersecurity training on a quarterly basis
+
+#### Detección y análisis: el proceso de detección y evaluación
+
+Los profesionales de la seguridad crean procesos para detectar y evaluar incidentes:
+
+- Identify signs of an incident
+- Filter external emails to flag messages containing attachments such as voicemails
+- Have an incident response plan to reference
+
+#### Contención, erradicación y recuperación: el proceso de minimización y mitigación
+Los profesionales de la seguridad y las partes interesadas colaboran para minimizar el impacto del incidente y mitigar cualquier interrupción operativa.
+- Communicate with sender to confirm the origin of the voice message
+- Provide employees with an easy way to report and contain suspicious messages
+
+#### Actividad posterior a un incidente: el proceso de aprendizaje
+Se ponen en marcha nuevos protocolos, procedimientos, manuales de estrategias, etc. para ayudar a reducir incidentes similares en el futuro.
+- Update the playbook to highlight additional red flags employees should be aware of
+- Review processes and workflows related to permissions and adjust oversight of those permissions
+
+## Equipos de respuesta a incidentes
+
+Una respuesta exitosa ante incidentes no ocurre de forma aislada. Requiere un equipo de profesionales de seguridad y profesionales no relacionados con esta que trabajen de forma conjunta con roles definidos. Los equipos de respuesta a incidentes de seguridad, o CSIRT, son un grupo de profesionales capacitados en la gestión y respuesta.
+
+Su objetivo es gestionar los incidentes de forma efectiva y eficaz, proporcionar servicios y recursos para la respuesta y recuperación y prevenir futuros incidentes. La seguridad es una responsabilidad compartida, por lo que los CSIRT colaboran con otros departamentos y comparten información. `Por ejemplo, si se filtraron datos confidenciales, como documentos financieros o PII, debe consultarse al equipo legal`. Algunas medidas de cumplimiento normativo pueden exigir la divulgación pública de un incidente de seguridad en cierto período de tiempo. Por ende, los CSIRT deben colaborar con el equipo de relaciones públicas para coordinar acciones en la divulgación pública. Entonces, ¿cómo funciona un CSIRT? 
+
+Primero, está el `analista de seguridad`, que se encarga de investigar las alertas para determinar si ocurrió un incidente. Si se detectó un incidente, el analista determinará su calificación de criticidad. El analista de seguridad puede solucionar algunos incidentes, que no requieran ser elevados a superiores. Pero si el incidente es muy crítico, pasa al `líder técnico`, que brinda liderazgo técnico orientando los incidentes de seguridad por su ciclo de vida. Durante este tiempo, el coordinador realiza un seguimiento y gestiona las actividades del CSIRT y otros equipos involucrados en la respuesta. Su tarea es asegurar que se sigan los procesos de respuesta y que se actualicen a los equipos sobre el estado del incidente. No todos los CSIRT son iguales. Según la organización, un CSIRT puede referirse a un equipo de gestión de incidentes o un equipo de respuesta a incidentes de seguridad. Según la estructura de una organización, algunos equipos pueden tener un enfoque especializado o más amplio. Por ejemplo, algunos equipos pueden solo dedicarse a la gestión de crisis, y otros pueden incorporarse a un SOC. Las funciones también pueden llamarse de una forma diferente, como un líder técnico o líder de operaciones. Más allá del título o enfoque, todos comparten el mismo objetivo: gestión y respuesta a incidentes. 
+
+### Roles en respuesta
+
+El ciclo de vida de respuesta a incidentes del Instituto Nacional de Estándares y Tecnología (NIST), que es un marco de trabajo para la respuesta a incidentes que consta de cuatro fases:
+
+- Preparación.
+- Detección y análisis.
+- Contención, erradicación y recuperación. 
+- Actividad posterior a un incidente.
+
+Como profesional de la seguridad, trabajarás en equipo para monitorear, detectar y responder a incidentes. Antes, aprendiste sobre `equipos de respuesta a incidentes de seguridad informática (CSIRT)` y un `Centro de Operaciones de Seguridad (SOC)`. En esta lectura ampliarás tus conocimientos acerca de las diferentes funciones, roles y responsabilidades que conforman los CSIRT y los SOC.
+
+### Mando, control y comunicación
+Un equipo de respuesta a incidentes de seguridad informática (CSIRT, por sus siglas en inglés) es un grupo de personas especializadas en seguridad, capacitadas en gestión y respuesta a incidentes. Durante la respuesta a incidentes, los equipos pueden enfrentar diversos desafíos. Para que la respuesta a incidentes sea efectiva y eficiente, es necesario contar con un mando claro, control y comunicación de la situación, a fin de lograr el objetivo deseado. 
+
+- `El mando` se refiere a tener el liderazgo adecuado y la dirección necesaria para supervisar la respuesta.
+- `El control` se refiere a la capacidad de gestionar los aspectos técnicos durante la respuesta a incidentes, como coordinar recursos y asignar tareas.
+- `La comunicación` se refiere a la capacidad de mantener informadas a las partes interesadas.
+
+Establecer una estructura organizativa CSIRT con funciones claras y diferenciadas ayuda a alcanzar una respuesta efectiva y eficiente.
+
+### Roles en un CSIRT 
+Los equipos de respuesta a incidentes de seguridad informática (CSIRT) dependen de la organización, lo que significa que pueden variar en cuanto a su estructura y funcionamiento. Desde una perspectiva estructural, pueden existir como un equipo independiente y dedicado o como un grupo de trabajo que se reúne cuando es necesario. Los CSIRTs involucran tanto a profesionales especializados en la seguridad como a profesionales no especializados. Con frecuencia se consulta a profesionales no especializados en seguridad para que brinden su experiencia en relación con el incidente. Estos profesionales pueden provenir de departamentos externos, como recursos humanos, relaciones públicas, administración, TI, legales y otros. Los profesionales de seguridad que forman parte de un CSIRT suelen desempeñar tres funciones clave relacionadas con la seguridad: 
+
+- Analista de seguridad
+- Responsable técnico
+- Coordinador de incidentes
+
+### Analista de seguridad
+El trabajo del analista de seguridad consiste en monitorear de manera continua un entorno en busca de posibles amenazas a la seguridad. Esto incluye: 
+
+- Analizar y clasificar las alertas.
+- Realizar investigaciones de causa raíz.
+- Notificar a superiores o resolver las alertas. 
+
+Si se identifica una amenaza crítica, los analistas la remiten al líder correspondiente del equipo, como el responsable técnico.
+
+### Responsable técnico
+El trabajo del responsable técnico es gestionar todos los aspectos técnicos del proceso de respuesta a incidentes, como la aplicación de parches o actualizaciones de software. Para ello, primero determina la causa raíz del incidente. Luego, crea e implementa las estrategias para contener, erradicar y recuperarse del incidente. Los responsables técnicos suelen colaborar con otros equipos para asegurarse de que sus prioridades en la respuesta a incidentes se alineen con las prioridades del negocio, como la reducción de interrupciones para los clientes o el retorno a la normalidad de las operaciones. 
+
+### Coordinador de incidentes
+La respuesta a un incidente también implica una colaboración interdisciplinaria con profesionales que no se especializan en seguridad. Los equipos de respuesta a incidentes de seguridad informática (CSIRT) suelen consultar y aprovechar la experiencia de miembros de departamentos externos. La persona a cargo de la coordinación de incidentes tiene la función de coordinar la tarea con los departamentos pertinentes durante un incidente de seguridad. Al hacerlo, se mantienen abiertas y claras las líneas de comunicación, y queda informado a todo el personal sobre el estado del incidente. Los coordinadores de incidentes también pueden encontrarse en otros equipos, como el Centro de Operaciones de Seguridad (SOC). 
+
+### Otros roles
+
+Dependiendo de la organización, se pueden encontrar muchos otros roles en un equipo de respuesta a incidentes de seguridad informática (CSIRT), incluyendo responsables de comunicación, de legales o de planificación, entre otros. 
+
+*`Nota: Los equipos, roles, responsabilidades y estructuras organizativas pueden variar en cada empresa. Por ejemplo, algunas funciones diferentes para la persona a cargo de la coordinación de incidentes incluyen la dirección y gerencia de incidentes.`*
+
+### Centro de Operaciones de Seguridad
+Un Centro de Operaciones de Seguridad (SOC, por sus siglas en inglés) es una unidad organizativa dedicada a monitorear redes, sistemas y dispositivos en busca de amenazas o ataques de seguridad. Estructuralmente, un SOC suele existir como unidad independiente o dentro de un CSIRT. Es posible que te hayas familiarizado con el término equipo azul, que se refiere a los profesionales de seguridad responsables de la defensa contra todas las amenazas y ataques a la seguridad en una organización. Un SOC participa en diversas actividades del equipo azul, como el monitoreo de redes, el análisis y la respuesta a incidentes.
+
+### Organización de un SOC
+Un Centro de Operaciones de Seguridad (SOC) está compuesto por analistas, líderes y gerentes. Cada función tiene sus propias responsabilidades. Los analistas SOC se agrupan en tres niveles diferentes. 
+
+#### Analista SOC de nivel 1
+El primer nivel está compuesto por los analistas SOC menos experimentados, conocidos como analistas de nivel 1 (L1, por level 1). Son responsables de:
+
+- Monitorear, revisar y priorizar las alertas basándose en su criticidad o gravedad.
+- Crear y cerrar alertas utilizando sistemas de tickets.
+- Notificar los tickets de alerta a los niveles 2 o 3.
+
+
+#### Analista SOC de nivel 2
+El segundo nivel está formado por los analistas SOC más experimentados, o analistas de nivel 2 (L2). Son responsables de: 
+
+- Recibir tickets escalados de L1 y realizar investigaciones más profundas.
+- Configurar y perfeccionar las herramientas de seguridad.
+- Reportar al líder SOC.
+
+#### Líder SOC de nivel 3
+El tercer nivel de un SOC está compuesto por los jefes SOC o líderes de nivel 3 (L3s). Estos profesionales altamente experimentados son responsables de:
+
+- Gestionar las operaciones de su equipo.
+- Explorar métodos de detección mediante la realización de técnicas de detección avanzadas, como el análisis forense y de malware.
+- Reportar al gerente SOC
+
+#### Gerente SOC 
+El gerente SOC está en la parte superior de la pirámide y es responsable de: 
+
+Contratar, formar y evaluar a los miembros del equipo SOC.
+
+Crear métricas y gestionar el rendimiento del equipo SOC.
+
+Desarrollar informes relacionados con incidentes, cumplimiento normativo y auditoría.
+
+Comunicar los resultados a las partes interesadas, como la dirección ejecutiva. 
+
+#### Otros roles
+Los SOC también pueden contener otras funciones especializadas, como ser: 
+
+- Investigadores forenses: pertenecen comúnmente a L2 y L3, y recopilan, conservan y analizan pruebas digitales relacionadas con incidentes de seguridad para determinar lo sucedido.
+
+- Cazadores de amenazas: suelen ser L3 que trabajan para detectar, analizar y defenderse contra amenazas de ciberseguridad nuevas y avanzadas, utilizando inteligencia de amenazas.
+
+*`Nota: Al igual que los CSIRT, la estructura organizativa de un SOC puede variar dependiendo de la organización. `*
+
+#### Recursos
+
+- [Ecosistema de operaciones de seguridad](https://cloud.google.com/blog/products/identity-security)
+- [Herramienta de trayectorias profesionales en ciberseguridad.](https://niccs.cisa.gov/workforce-development/cyber-career-pathways-tool)
+- [Detección y respuesta](https://www.youtube.com/watch?v=QZ0cpBocl3c)
+
+## Herramientas de respuestas a incidentes
+
+Usarás herramientas de detección y gestión para monitorear el sistema e identificar e investigar eventos. Usarás herramientas de documentación para recopilar y compilar pruebas. También usarás herramientas de investigación para analizar eventos, como analizadores de protocolos de red. Surgen tecnologías de seguridad, las amenazas evolucionan, y los atacantes se vuelven más sigilosos para evitar ser detectados. Para detectar amenazas de forma efectiva, deberás ampliar tu caja de herramientas de seguridad. 
+
+### El valor de la documentación
+La documentación es toda forma de contenido registrado que se utiliza con un propósito específico. Esto puede ser audio, instrucciones digitales digitales o escritas a mano e incluso videos. No existe un estándar establecido para esto, así que muchas organizaciones establecen sus propias prácticas de documentación. De todos modos, debe brindar instrucción y orientación sobre un tema específico. También hay muchos tipos de documentación, y es posible que ya estés familiarizado con algunos de ellos de lecciones anteriores. Estos incluyen:
+
+- manual de estrategias, 
+- diarios de gestión de incidentes, 
+- políticas
+- planes
+- informes finales. 
+
+Recuerda, no hay un estándar para la documentación, lo que significa que las prácticas de documentación pueden variar de una organización a otra.
+
+Con frecuencia, las organizaciones adaptarán sus prácticas según sus necesidades y requisitos legales. Pueden agregar, quitar o combinar tipos de documentación. ¿Alguna vez compraste un producto y no sabías cómo usarlo, y consultaste las instrucciones del manual para saber cómo hacerlo? ¡Felicitaciones, usaste documentación para resolver un problema! Anteriormente, viste cómo los manuales de estrategias mantienen seguras las operaciones comerciales, y, en la respuesta a incidentes, funcionan igual a un manual de producto. Un manual de estrategias brinda detalles sobre acciones operativas. Aprenderás más sobre ellos más adelante. Volvamos al ejemplo del manual de instrucciones. ¿Alguna vez consultaste un manual en busca de ayuda y te confundieron las instrucciones y no obtuviste la ayuda que necesitabas? ¿Sea por imágenes e instrucciones poco claras o un diseño confuso, no pudiste usar la documentación para resolver tu problema? Este es un ejemplo de documentación inefectiva. La documentación efectiva reduce la incertidumbre y la confusión. Es es crucial en un incidente de seguridad cuando las tensiones son altas y se requiere una respuesta urgente. Como profesional de seguridad, usarás y crearás documentación. Es fundamental que esta sea clara, consistente, y precisa, para que tú y tu equipo puedan responder de manera rápida y decisiva. Los procesadores de texto son una forma común de documentar.
+
+#### Sistemas de detección de intrusiones 
+Muchas herramientas pueden ejecutar la función tanto de IDS como de IPS. Algunas herramientas populares son 
+
+- Snort
+- Zeek
+- Kismet 
+- Sagan
+- Suricata. 
+
+### Descripción general de las herramientas de detección
+
+Las herramientas de detección funcionan de forma similar a los sistemas de seguridad para el hogar. Mientras que estos últimos monitorean y protegen las viviendas contra intrusiones, las herramientas de detección de ciberseguridad ayudan a las organizaciones a resguardar sus redes y sistemas contra accesos no deseados ni autorizados. Para que las organizaciones puedan proteger sus sistemas contra amenazas o ataques de seguridad, es fundamental que sean notificadas ante cualquier indicio de intrusión. Estas herramientas de detección mantienen a los profesionales de seguridad al tanto de la actividad que se desarrolla en una red o sistema. Para ello, monitorean de forma continua las redes y los sistemas en busca de cualquier actividad sospechosa. Una vez que se detecta algo inusual o sospechoso, la herramienta activa una alerta que notifica al profesional de seguridad, permitiéndole investigar y detener la posible intrusión. 
+
+#### Herramientas de detección
+
+Como analista de seguridad, es probable que en algún momento te encuentres con herramientas de detección IDS, IPS y EDR. Por lo tanto, es importante que conozcas las diferencias que hay entre ellas. Aquí tienes una tabla comparativa que puede servirte como referencia: 
+
+
+| Capacidad | IDS     | IPS       | EDR      |
+| :-------- | :------ | :-------- | :------- |
+| Detecta actividad maliciosa | X | X | X |
+| Previene las intrusiones | N/A | X | X |
+| Registra la actividad | X | X | X |
+| Genera alertas | X | X | X |
+| Realiza análisis de comportamiento | N/A | N/A | X |
+
+### Descripción general de las herramientas IDS
+
+Un sistema de detección de intrusiones (IDS) es una aplicación que monitorea la actividad del sistema y emite alertas sobre posibles accesos no autorizados. Un IDS proporciona un seguimiento continuo de eventos de red para ayudar a protegerse contra amenazas o ataques de seguridad. El objetivo de un IDS es detectar actividades potencialmente maliciosas y generar una alerta. Un IDS no detiene ni previene la actividad. En su lugar, los profesionales de la seguridad investigarán la alerta y actuarán para detenerla, si es necesario. 
+
+Por ejemplo, un IDS puede enviar una alerta cuando identifica un inicio de sesión de usuario sospechoso, como una dirección IP desconocida que inicia sesión en una aplicación o un dispositivo a una hora inusual. Sin embargo, un IDS no detendrá ni impedirá acciones adicionales, como bloquear el inicio de sesión del usuario sospechoso. 
+
+Algunos ejemplos de herramientas de IDS incluyen Zeek, Suricata, Snort® y Sagan. 
+
+### Categorías de detección
+Como analista de seguridad, investigarás las alertas que genera un IDS. Existen cuatro tipos de categorías de detección que deberías conocer:
+
+- Un `verdadero positivo` es el resultado de un análisis o una detección en el que un sistema de seguridad identifica correctamente un incidente real.
+
+- Un `verdadero negativo` es el resultado de un análisis o una detección en el que un sistema de seguridad identifica correctamente la inexistencia de incidentes. Esto ocurre cuando no existe actividad maliciosa y no se dispara ninguna alerta. 
+
+- Un `falso positivo` es el resultado de un análisis que detecta erróneamente una amenaza y dispara una alerta. Esto ocurre cuando un IDS identifica una actividad como maliciosa, pero no lo es. Los falsos positivos son una molestia para los equipos de seguridad, porque pierden tiempo y recursos investigando una alerta ilegítima. 
+
+- Un `falso negativo` es el resultado de un análisis que no detecta una amenaza existente y, por lo tanto, no activa una alerta. Esto ocurre cuando sucede una actividad maliciosa pero un IDS no la detecta. Los falsos negativos son peligrosos porque dejan a los equipos de seguridad sin saber de ataques legítimos a los que pueden ser vulnerables. 
+
+### Descripción general de las herramientas IPS
+Un sistema de prevención de intrusiones (IPS) es una aplicación que monitorea la actividad del sistema en busca de actividades intrusivas y toma medidas para detenerlas. Un IPS funciona de manera similar a un IDS. Sin embargo, el IPS monitorea la actividad del sistema para detectar y alertar sobre intrusiones, y también toma medidas para prevenir la actividad y minimizar sus efectos. Por ejemplo, un IPS puede enviar una alerta y modificar una lista de control de acceso en un router, para bloquear tráfico específico en un servidor.
+
+*`Nota: Muchas herramientas IDS también pueden funcionar como IPS. Herramientas como Suricata, Snort y Sagan tienen capacidades tanto de IDS como de IPS.`*
+
+### Descripción general de las herramientas EDR
+La detección y respuesta de puntos de conexión (EDR) es una aplicación que monitorea la actividad maliciosa en un punto de conexión. Las herramientas de EDR se instalan en los puntos de conexión, es decir, cualquier dispositivo conectado a una red. Algunos ejemplos incluyen los dispositivos de usuario final, como computadoras, teléfonos y tabletas, entre otros.
+
+Las herramientas EDR monitorean, registran y analizan la actividad del sistema del punto de conexión para identificar, alertar y responder a actividades sospechosas. A diferencia de las herramientas de IDS o IPS, las de EDR recopilan datos de actividad del punto de conexión y realizan análisis de comportamiento para identificar patrones de amenazas. El análisis de comportamiento utiliza la potencia del aprendizaje automático y la inteligencia artificial para analizar el comportamiento del sistema e identificar actividades maliciosas o inusuales. Las herramientas de EDR también utilizan la automatización para detener los ataques sin la intervención manual de los profesionales de seguridad. Por ejemplo, si una herramienta de EDR detecta un proceso inusual que se inicia en la estación de trabajo de un usuario y que normalmente no se utiliza, puede bloquear automáticamente la ejecución del proceso.
+
+Open EDR®, Bitdefender™ Endpoint Detection and Response y FortiEDR™ son ejemplos de herramientas de EDR.
+
+*`Nota: La gestión de eventos e información de seguridad (SIEM) también tiene capacidades de detección, que verás más adelante.`*
+
+### Gestion de eventos, SIEM & SOAR
+
+una SIEM examina los flujos de datos entre todos los sistemas en la red y los analiza para buscar en tiempo real posibles amenazas a la red. Lo hace ingiriendo enormes cantidades de datos y categorizándolos, por lo que es fácilmente accesible a través de una plataforma centralizada similar al panel de un auto. Así es como se ve el proceso. Primero, las SIEM recopilan y agregan datos. Estos datos suelen estar en forma de registros, que son básicamente un registro de todos los eventos que ocurrieron en una fuente dada. Los datos pueden provenir de múltiples fuentes como IDS o IPS, bases de datos, firewalls, aplicaciones y más. Después de recopilar todos estos datos, se agregan. Esto significa que todos estos datos de diferentes fuentes se centralizan en un solo lugar. Según el número de fuentes de datos de las que recopila un SIEM, se pueden recolectar un gran volumen de información sin editar. Y no todos los datos que recopila una SIEM son relevantes para el análisis de seguridad.
+
+Las herramientas SIEM normalizan los datos. La normalización toma los datos brutos que la SIEM recolectó y los limpia al eliminar atributos no esenciales, por lo que solo se incluye lo relevante. La normalización también crea consistencia en los registros, lo que es útil cuando buscas información específica durante la investigación de incidentes. Por último, los datos normalizados se analizan según reglas configuradas. SIEM analiza los datos normalizados según un conjunto de reglas para detectar incidentes de seguridad, que luego se categorizan o reportan como alertas para que los analistas las revisen. 
+
+La orquestación de seguridad, automatización y respuesta, o SOAR, es un grupo de aplicaciones, herramientas y flujos de trabajo que usan automatización para responder a eventos de seguridad. Mientras las SIEM recopilan, analizan e informan sobre eventos de seguridad para su revisión, la SOAR automatiza el análisis y responde a eventos e incidentes de seguridad. La SOAR también se puede usar para rastrear y gestionar casos. Múltiples incidentes pueden formar un caso, y la SOAR ofrece una forma de ver todos estos incidentes en un solo lugar centralizado. Ahí lo tienes, aprendiste cómo herramientas como SIEM y SOAR ayudan a los analistas de seguridad a ver lo que sucede en una red y a responder a cualquier amenaza de manera eficiente.
+
+### Mantener la conciencia con el monitoreo de la red
+
+La comunicación en red puede ser ruidosa. Actividades como enviar un correo electrónico, reproducir un video o visitar un sitio web generan flujos de comunicación en forma de tráfico y datos en la red. Repasemos, el tráfico de red es la cantidad de información que se mueve a través de una red, e incluye el tipo de datos que se está transfiriendo, como por ejemplo HTTP. Por otro lado, los datos de red son la información que se intercambia entre dispositivos en una red.
+
+El monitoreo de la red resulta fundamental para mantener una perspectiva actualizada de cualquier actividad que tenga lugar en la red. Al recopilar y analizar el tráfico de red, las organizaciones pueden identificar actividades inusuales o sospechosas. Sin embargo, antes de proceder con el monitoreo de las redes, debes saber qué aspectos se deben vigilar de manera específica. A lo largo de esta lectura, profundizarás en la importancia de la supervisión de la red, las metodologías para llevarla a cabo y las herramientas destinadas a tal fin.
+
+### Conoce tu red
+Como ya aprendiste, las redes conectan dispositivos y luego estos se comunican e intercambian datos utilizando protocolos de red. Las comunicaciones en red ofrecen información sobre conexiones, como direcciones IP de origen y destino, cantidad de datos transferidos, la fecha y la hora, y más. Esta información puede resultar valiosa para los profesionales de la seguridad al establecer valores de referencia de comportamiento normal o esperado. 
+
+Los valores de referencia son un punto de partida que se utiliza para la comparación. Es probable que en algún momento hayas encontrado o utilizado valores de referencia. Por ejemplo, un monto destinado a compras de alimentos en un presupuesto personal es un ejemplo que puede usarse para identificar cualquier patrón o cambio en los hábitos de gasto. En el ámbito de la seguridad, los valores de referencia ayudan a establecer un estándar de comportamiento esperado o normal para sistemas, dispositivos y redes. En esencia, al conocer los valores de referencia del comportamiento normal de una red, estarás en mejor posición para identificar un comportamiento de red anormal.
+
+### Monitorea tu red
+Una vez que hayas establecido los valores de referencia, podrás monitorear una red para identificar cualquier desviación. El monitoreo implica examinar los componentes de la red para detectar actividades atípicas, como transferencias de datos grandes e inusuales. Aquí te brindamos algunos ejemplos de componentes de la red que se pueden monitorear para detectar actividad maliciosa:
+
+#### Análisis de flujos
+El flujo se refiere al movimiento de las comunicaciones en la red e incluye información relacionada con paquetes, protocolos y puertos. Los paquetes pueden dirigirse a puertos que reciben y transmiten comunicaciones. Con frecuencia, los puertos están asociados con los protocolos de red. Por ejemplo, el puerto 443 es comúnmente utilizado por HTTPS, que es un protocolo que proporciona cifrado de tráfico web.
+
+Aun así, los agentes de amenaza pueden utilizar protocolos y puertos que no están comúnmente asociados, para mantener comunicaciones entre el sistema comprometido y su propia máquina. Estas comunicaciones son lo que se conoce como comando y control (C2), que son las técnicas utilizadas por agentes de amenaza para mantener las comunicaciones con sistemas comprometidos.
+
+Por ejemplo, los agentes de amenaza pueden utilizar el protocolo HTTPS sobre el puerto 8088 en lugar de su puerto comúnmente asociado, el 443, para comunicarse con sistemas comprometidos. Las organizaciones deben saber qué puertos tienen que estar abiertos y aprobados para conexiones, y estar en alerta ante cualquier desajuste entre los puertos y sus protocolos asociados.
+
+#### Información de la carga útil del paquete
+Los paquetes de red contienen componentes relacionados con la transmisión del paquete. Esto incluye detalles como la dirección IP de origen y destino, y la información de su carga útil, que son los datos reales que se transmiten. Con frecuencia, estos datos se cifran y requieren ser descifrados para poder ser legibles. Las organizaciones pueden monitorear la información de la carga útil de los paquetes para identificar actividades inusuales, como la transmisión de datos confidenciales fuera de la red, lo que podría indicar un posible ataque de exfiltración de datos.
+
+#### Patrones temporales
+Los paquetes de red contienen información relacionada con el tiempo. Esta información es útil para comprender los patrones temporales. Por ejemplo, una empresa que opera en América del Norte experimenta flujos de tráfico masivo entre las 9 am y las 5 pm, que es el valor de referencia de la actividad normal en la red. Si de pronto se observan volúmenes grandes de tráfico fuera de los horarios normales de actividad de la red, esto se considera fuera del valor de referencia y debe investigarse.
+
+A través del monitoreo de la red, las organizaciones pueden detectar rápidamente intrusiones y trabajar para prevenirlas, asegurando los componentes de la red.
+
+### Protege tu red
+En este programa, aprendiste sobre los centros de operaciones de seguridad (SOC) y su papel en el monitoreo de sistemas contra amenazas y ataques de seguridad. Las organizaciones pueden implementar un centro de operaciones de red (NOC), que es una unidad organizativa encargada de supervisar el rendimiento de una red y responder a cualquier interrupción, como un fallo de red. Mientras que un SOC se centra en mantener la seguridad de una organización a través de la detección y la respuesta, un NOC es responsable de mantener el rendimiento, la disponibilidad y el tiempo de actividad de la red. 
+
+Los analistas de seguridad monitorean las redes para identificar cualquier signo de posibles incidentes de seguridad, conocidos como indicadores de compromiso (IoC), y protegerlas contra los ataques o amenazas. Para hacerlo, deben comprender el entorno por el que viajan las comunicaciones de red y así poder identificar las desviaciones en el tráfico de red. 
+
+#### Herramientas de monitoreo de red
+El monitoreo de la red se puede automatizar o realizar de forma manual. Algunas herramientas comúnmente utilizadas pueden incluir: 
+
+- `Sistemas de detección de intrusiones (IDS)`, que monitorean la actividad del sistema y alertan sobre posibles intrusiones. Un IDS identifica y alerta sobre las desviaciones que le hayas configurado para que detecte. Lo más habitual es que las herramientas IDS monitoreen el contenido de la carga útil del paquete para detectar los patrones asociados con amenazas como malware o intentos de phishing.
+
+- `Analizadores de protocolo de red`, también conocidos como rastreadores de paquetes, que son herramientas diseñadas para capturar y analizar el tráfico de datos dentro de una red. Se pueden utilizar para analizar las comunicaciones de red manualmente en detalle. Los ejemplos incluyen herramientas como tcpdump y Wireshark, que pueden utilizar los profesionales de seguridad para registrar comunicaciones de red a través de capturas de paquetes. Estas se pueden investigar para identificar las actividades potencialmente maliciosas.
+
+### Ataque de exfiltración de datos
+
+Veamos cómo funciona el proceso de detección y respuesta en la exfiltración de datos. Primero, delinearemos la perspectiva del atacante. Antes de que los atacantes puedan exfiltrar datos, necesitarán acceder a la red y al sistema informático. Esto puede hacerse con phishing, que consiste en engañar a la gente para que divulgue datos confidenciales. Los atacantes pueden enviar emails de phishing con adjuntos o enlaces para que la víctima ingrese sus credenciales. Ahora, un atacante puede acceder con éxito a su dispositivo. Tras lograr su posición inicial en el sistema, no se detendrá ahí. Su objetivo es mantener el acceso en el entorno y evitar ser detectado el mayor tiempo posible. Para ello, usará una táctica conocida como movimiento lateral o pivoteo. Aquí explorará la red con el objetivo de expandir y mantener su acceso a otros sistemas de la red. Al pivotear en la red, recorrerá el entorno para identificar activos valiosos, como datos confidenciales, código patentado, PII como nombres, direcciones, o registros financieros. Buscará ubicaciones como recursos compartidos de archivos de red, sitios de intranet, repositorios de código, etc. 
+
+Luego de identificar los activos de valor, necesitará recopilar y preparar los datos para la exfiltración fuera de la red de la organización y en manos del atacante. Una forma de hacerlo es reduciendo el tamaño de los datos para ocultar la información robada y evitar los controles de seguridad. Por último, el atacante exfiltrará los datos al destino elegido. Hay muchas maneras de hacerlo. Por ejemplo, pueden enviar los datos robados por email a ellos mismos usando la cuenta de correo comprometida. Ahora que conoces la perspectiva del atacante, exploremos cómo las organizaciones pueden defenderse frente a este tipo de ataques:
+
+- `los equipos de seguridad deben prevenir el acceso`: Hay muchos métodos para proteger la red de intentos de phishing. Por ejemplo, requeir a los usuarios usar la autenticación de múltiples factores. Los atacantes que acceden a una red pueden pasar un tiempo desapercibidos.
+- `los equipos de seguridad monitoreen la actividad de red`: para identificar cualquier actividad sospechosa. Por ejemplo, deben investigarse múltiples inicios de sesión de usuario provenientes de direcciones IP externas a la red.
+- `identificar, clasificar y proteger los activos`:  con inventarios de activos y controles de seguridad.  Como parte de la política de seguridad de una organización, los activos deben catalogarse en un inventario. Se deben aplicar controles adecuados para proteger estos activos de acceso no autorizado. 
+- `los equipos de seguridad deben detectarlo y detenerlo`: Para detectar el ataque, se pueden identificar indicadores de recopilación de datos inusual a través del monitoreo de red. Estos incluyen: grandes transferencias internas de archivos, grandes cargas externas y archivos escritos inesperados. Las herramientas SIEM pueden detectar alertas sobre estas actividades. Una vez enviada la alerta, los equipos de seguridad investigan y detienen el ataque. Hay muchas maneras de detener un ataque como este. Por ejemplo, identificada la actividad inusual, puedes bloquear las IP asociadas con el atacante usando reglas de firewall.
+
+Los ataques de exfiltración de datos son uno de muchos ataques que pueden detectarse con el monitoreo. 
+
+## Paqeutes y capturas de paquetes
+
+Los paquetes pueden brindar mucha información sobre las comunicaciones entre dispositivos en una red. Quizá recuerdes que un paquete tiene varios componentes. Ahí está el `HEADER o encabezado`, que incluye información como tipo de protocolo de red y puerto en uso. Imagínate esto como el nombre y dirección postal en un sobre. Los protocolos de red son reglas que determinan la transmisión de datos entre dispositivos en una red. Los puertos son ubicaciones no físicas en un equipo, que organizan la transmisión entre dispositivos de una red. El encabezado contiene el origen del paquete y la dirección IP de destino. Más adelante exploraremos el contenido del encabezado. Luego, está la `Payload o carga útil`, que contiene los datos reales que se están entregando. Es como el contenido de una carta dentro de un sobre. Y está el `Footer o pie`, que significa el fin del paquete. ¿Y cómo puedes observar un paquete de red? Como los olores: son invisibles pero se pueden oler. Los paquetes son invisibles, pero pueden capturarse con los rastreadores. Quizá los recuerdes de una sección anterior. Un analizador de protocolo de red, o rastreador de paquetes, es una herramienta para captura y analizar el tráfico de datos. Como analista, usarás el rastreador para inspeccionar paquetes en busca de indicadores de compromiso. Con él, podemos tomar una instantánea detallada de paquetes que se desplazan por una red en forma de captura de paquetes. Un pcap es un archivo con paquetes de datos interceptados de una interfaz o red. Es como interceptar un sobre en el correo. Las capturas de paquetes son muy útiles al investigar incidentes.
+
+## Obtén más información sobre las capturas de paquetes
+
+La labor de los analistas de seguridad implica monitorear y analizar los flujos de tráfico de red. Una forma de hacerlo es generando rastreos de paquetes y luego analizando el tráfico capturado, a fin de identificar actividades inusuales en una red.
+
+Anteriormente, exploraste los fundamentos de las redes. A lo largo de esta sección, recurrirás a tus conocimientos básicos en redes para comprender mejor los flujos de tráfico de red. En esta lectura, aprenderás sobre los tres aspectos principales del análisis de redes: paquetes, analizadores de protocolos de red y rastreo de paquetes.
+
+### Paquetes
+
+Anteriormente en el programa, aprendiste que un paquete de datos es una unidad básica de información que va de un dispositivo a otro dentro de una red. La detección de intrusiones en la red comienza a nivel de paquetes. Se debe a que estos constituyen la base del intercambio de información en una red. Cada vez que realizas una actividad en Internet, como visitar un sitio web, se envían y reciben paquetes entre tu computadora y el servidor del sitio web. Estos paquetes son los que ayudan a transmitir información a través de una red. Por ejemplo, al cargar una imagen en un sitio, los datos se dividen en varios paquetes, que luego se enrutan hacia el destino previsto y se vuelven a ensamblar al ser entregados. 
+
+En ciberseguridad, los paquetes proporcionan información valiosa que añade contexto a los eventos durante las investigaciones. Comprender la transferencia de información a través de paquetes no solo te ayudará a desarrollar conocimiento sobre la actividad de la red, sino también a identificar anomalías y proteger mejor las redes contra los ataques.
+
+Los paquetes tienen tres componentes: el HEADER, la PAYLOAD y el FOOTER. A continuación, encontrarás una descripción de cada uno.
+
+#### Encabezado / HEADER
+Los paquetes comienzan con el componente fundamental: el encabezado. Estos pueden tener varios encabezados según los protocolos utilizados, como un encabezado Ethernet, uno de IP o uno de TCP, entre otros. Los mismos proporcionan información que se utiliza para enrutar los paquetes a su destino. Esto incluye información sobre las direcciones IP de origen y destino, la longitud del paquete, el protocolo, los números de identificación y más.
+
+He aquí un encabezado IPv4 con la información que proporciona:
+
+<img src="./Descargas/Kevs/img_n6" width="600px">
+
+#### Carga útil / PAYLOAD
+El componente de carga útil viene directamente después del encabezado y contiene los datos reales que se entregan. Si consideras el ejemplo de cargar una fotografía en un sitio web, la carga útil de este paquete sería la imagen en sí.
+
+#### Pie/FOOTER
+El pie, también conocido como el avance, se encuentra al final de un paquete. El protocolo Ethernet utiliza pies para brindar información de verificación de errores y determinar si los datos se dañaron. Además, puede que los paquetes de red Ethernet analizados no muestren información de pie debido a las configuraciones de red.
+
+*`Nota: La mayoría de los protocolos, como el Protocolo de Internet (IP), no utilizan pies.`*
+
+### Analizadores de protocolo de red
+Los analizadores de protocolo de red, o rastreadores de paquetes, son herramientas diseñadas para capturar y analizar el tráfico de datos dentro de una red. Algunos ejemplos son tcpdump, Wireshark y TShark. 
+
+Más allá de su uso en seguridad como una herramienta de investigación que monitorea redes e identifica actividades sospechosas, los analizadores de protocolo de red pueden utilizarse para recopilar estadísticas de redes, como el ancho de banda o la velocidad de conexión, y solucionar problemas de rendimiento, como las ralentizaciones. 
+
+No obstante, también se pueden utilizar con fines maliciosos. Por ejemplo, los agentes de amenaza pueden usar analizadores de protocolo de red para capturar paquetes que contienen datos confidenciales, como la información de inicio de sesión de la cuenta.
+
+Aquí hay un diagrama de red que ilustra la transmisión de los paquetes de un emisor al receptor. Un analizador de protocolos de red se coloca en el medio de las comunicaciones para capturar los paquetes de datos que viajan a través del cable.
+
+<img src="./Descargas/Kevs/img_n6_31243" width="600px">
+
+#### Cómo funcionan los analizadores de protocolo de red
+Estos analizadores utilizan capacidades de software y hardware para capturar el tráfico de red y mostrarlo para que los analistas de seguridad lo examinen y analicen. A continuación, te contamos cómo lo hacen:
+
+1. Primero, los paquetes deben recopilarse de la red a través de la tarjeta de interfaz de red (NIC), que es el hardware que conecta las computadoras a una red, como un router. Las NIC reciben y transmiten tráfico de red, pero por defecto solo consideran el tráfico de red que está dirigido a ellas. Para capturar todo el tráfico que se envía a través de la red, una NIC debe ser cambiada a un modo que tenga acceso a todos los paquetes de datos de red visibles. En las interfaces inalámbricas, esto se conoce con frecuencia como modo de monitoreo, y en otros sistemas se puede llamar modo promiscuo. Este modo permite que la NIC acceda a todos los paquetes de datos de red visibles, pero no ayudará a los analistas a acceder a todos los paquetes a través de una red. Un analizador de protocolos de red debe posicionarse en un segmento de red apropiado para acceder a todo el tráfico entre diferentes hosts.
+
+2. El analizador de protocolos de red recopila el tráfico de red en formato binario sin procesar. El formato binario consta de ceros y unos, y las personas no pueden interpretarlo con facilidad. El analizador de protocolos de red toma el formato binario y lo convierte para que se muestre en un modo legible para las personas, de modo que los analistas puedan leer y comprender la información con facilidad. 
+
+#### Cómo capturar paquetes
+El rastreo de paquetes es la práctica de capturar e inspeccionar paquetes de datos a través de una red. Un archivo pcap (captura de paquetes ) es un archivo que contiene paquetes de datos interceptados desde una interfaz o red. Estas capturas se pueden ver y analizar adicionalmente mediante analizadores de protocolo de red. Por ejemplo, puedes filtrar las capturas de paquetes para mostrar solo la información más relevante para tu investigación, como los paquetes enviados desde una dirección IP específica.
+
+*`Nota: En muchos lugares, se considera ilegal utilizar analizadores de protocolo de red para interceptar y examinar las comunicaciones de red privada sin permiso.`*
+
+Los archivos pcap pueden venir en diversos formatos según la biblioteca de captura de paquetes que se utilice. Cada uno tiene diferentes usos y las herramientas de red pueden utilizar o admitir formatos de archivo de captura de paquetes específicos de forma predeterminada. Te recomendamos familiarizarte con las siguientes bibliotecas y formatos:
+
+- `Libpcap` es una biblioteca de captura de paquetes diseñada para que la utilicen sistemas similares a Unix, como Linux y MacOS®. Las herramientas como tcpdump utilizan Libpcap como formato predeterminado de archivo de captura de paquetes. 
+
+- `WinPcap` es una biblioteca de captura de paquetes de código abierto diseñada para dispositivos que ejecutan sistemas operativos Windows. Se considera un formato de archivo más antiguo y no se usa principalmente.
+
+- `Npcap` es una biblioteca diseñada por la herramienta de escaneo de puertos Nmap que se utiliza comúnmente en los sistemas operativos Windows.
+
+- `PCAPng` es un formato de archivo moderno que puede capturar paquetes y almacenar datos en simultáneo. Su capacidad para hacer ambas cosas explica el “ng”, que significa “próxima generación”.
+
+*`Consejo profesional: Analizar tu red doméstica puede ser una buena manera de poner en práctica el uso de estas herramientas.`*
+
+## Interpreta la comunicacion de datos
+
+Si rastrear paquetes es como interceptar un sobre en el correo, el análisis de paquetes es como leer la carta en sobre. Veamos cómo el análisis de paquetes ayuda a interpretar y comprender las comunicaciones de red. Como ya sabrás, las redes son ruidosas. Hay un enorme volumen de comunicaciones entre dispositivos en cualquier momento dado. Por esto, la captura de paquetes puede contener grandes cantidades de comunicaciones de red, por lo que el análisis es difícil y lento. Como analista, trabajarás contrarreloj para proteger redes y sistemas informáticos de posibles ataques. Es posible que analices evidencia de red en forma de capturas de paquetes para identificar indicadores de compromiso. Poder filtrar el tráfico de red con rastreadores de paquetes para reunir información relevante es una habilidad esencial. Por ejemplo, digamos que debes analizar una captura de paquetes para encontrar cualquier indicio de exfiltración de datos. ¿Cómo lo harías? Con una herramienta de análisis de red, puedes filtrar la captura de paquetes para ordenarlos. Esto te ayudará a identificar un evento asociado con exfiltración de datos, como grandes cantidades de datos saliendo de una base. 
+
+Hay otros filtros que puedes aplicar para encontrar la información necesaria para respaldar una investigación. Algunas herramientas de análisis son tcpdump y Wireshark. A tcpdump accedes con líneas de comando, mientras que Wireshark tiene una interfaz gráfica de usuario, o GUI.
+
