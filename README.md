@@ -4654,4 +4654,287 @@ Los archivos pcap pueden venir en diversos formatos según la biblioteca de capt
 Si rastrear paquetes es como interceptar un sobre en el correo, el análisis de paquetes es como leer la carta en sobre. Veamos cómo el análisis de paquetes ayuda a interpretar y comprender las comunicaciones de red. Como ya sabrás, las redes son ruidosas. Hay un enorme volumen de comunicaciones entre dispositivos en cualquier momento dado. Por esto, la captura de paquetes puede contener grandes cantidades de comunicaciones de red, por lo que el análisis es difícil y lento. Como analista, trabajarás contrarreloj para proteger redes y sistemas informáticos de posibles ataques. Es posible que analices evidencia de red en forma de capturas de paquetes para identificar indicadores de compromiso. Poder filtrar el tráfico de red con rastreadores de paquetes para reunir información relevante es una habilidad esencial. Por ejemplo, digamos que debes analizar una captura de paquetes para encontrar cualquier indicio de exfiltración de datos. ¿Cómo lo harías? Con una herramienta de análisis de red, puedes filtrar la captura de paquetes para ordenarlos. Esto te ayudará a identificar un evento asociado con exfiltración de datos, como grandes cantidades de datos saliendo de una base. 
 
 Hay otros filtros que puedes aplicar para encontrar la información necesaria para respaldar una investigación. Algunas herramientas de análisis son tcpdump y Wireshark. A tcpdump accedes con líneas de comando, mientras que Wireshark tiene una interfaz gráfica de usuario, o GUI.
+## Revisa los campos del encabezado de un paquete
+
+Es importante como analista de seguridad que aprendas a leer y analizar paquetes manualmente. Para hacerlo, examinemos un componente de paquete importante: los encabezados IP. 
+
+Anteriormente, aprendiste las cuatro capas del modelo TCP/IP:
+
+- `Application`
+- `Transport`
+- `Internet`
+- `Network access`
+
+#### Internet 
+
+Recuerda, el modelo TCP/IP es un marco que se utiliza para visualizar cómo los datos se organizan y transmiten a través de una red. La capa de Internet acepta y entrega paquetes para la red. Allí también funciona el protocolo de Internet como la base para todas las comunicaciones en Internet. Es responsable de asegurar que los paquetes lleguen seguros a sus destinos. El protocolo de Internet actúa como un mensajero que entregando un sobre. En lugar de usar la información de entrega que se encuentra en el sobre, el protocolo de Internet utiliza la información del encabezado, como las direcciones IP.  Luego determina la mejor ruta disponible para los paquetes, y así los hosts pueden enviar y recibir datos. Como ya sabrás, los paquetes IP contienen encabezados. Estos contienen campos de datos esenciales para la transferencia de datos a su destino previsto. Diferentes protocolos usan distintos encabezados. 
+
+Existen dos versiones del protocolo de Internet: IPv4, que se considera la base de las comunicaciones en Internet, e IPv6, que es la versión más reciente del protocolo de Internet. Recuerda, diferentes protocolos utilizan distintos encabezados. Por eso, los encabezados IPv4 e IPv6 son diferentes, aunque contienen campos similares con distintos nombres. IPv4 sigue siendo el más ampliamente utilizado, así que nos centraremos en examinar los campos de un encabezado IPv4. Comencemos con el campo `Versión`, que especifica qué versión de IP se está usando, ya sea iPv4 o IPv6. Volviendo a la analogía del correo, el campo `Versión` es como las diferentes clases de correo, prioritario, urgente o normal. 
+
+Luego, `IHL` representa longitud del encabezado de Internet. Este campo especifica la longitud del encabezado IP más cualquier otra opción. 
+
+El siguiente campo, `ToS`, representa el tipo de servicio. Este campo nos dice si ciertos paquetes deben tratarse de forma diferente. Piensa en `ToS` como una etiqueta de "frágil" en un paquete enviado por correo. 
+
+El siguiente campo es `Longitud total`, que identifica la longitud de todo el paquete, incluyendo datos y encabezados. Puede compararse con las dimensiones y el peso de un sobre.
+
+Los siguientes tres campos, `Identificación`, `Indicadores`, y `Desplazamiento de fragmentos`, gestionan la información relacionada con la fragmentación. La fragmentación ocurre cuando un paquete IP se divide en fragmentos, que luego se transmiten por el cable y se vuelven a ensamblar cuando llegan a su destino. Estos tres campos especifican si se usó la fragmentación y cómo volver a ensamblar los paquetes fragmentados en el orden correcto. El correo se desplaza de forma similar por varias rutas como buzones, instalaciones de procesamiento, aviones y camiones de correo antes de llegar a destino. 
+
+El campo `TTL` significa Tiempo de vida. Tal como sugiere su nombre, este campo determina cuánto puede vivir un paquete antes de ser descartado. Sin este campo, los paquetes podrían circular indefinidamente a través de routers. `TTL` es similar a cómo la información de seguimiento proporciona detalles sobre la fecha de entrega esperada de un sobre. 
+
+El campo `Protocolo` especifica el protocolo utilizado proporcionando un valor que corresponde a un `protocolo`. Por ejemplo, TCP se representa con el número 6. Esto es similar a incluir el número de una casa en una dirección postal.
+
+La suma de comprobación de cabecera o `HEADER CHECKSUM` almacena un valor llamado suma de control, usado para determinar todo error ocurrido en el encabezado.
+
+La `Dirección de origen o Source Addres` especifica la IP de origen del emisor y y la `Dirección de destino o Destination Addres` especifica la IP de destino. Es como los datos de contacto del remitente y el receptor que se encuentran en un sobre.
+
+El campo de `Opciones` no es necesario y comúnmente se utiliza para resolver problemas de red en vez de tráfico común. Si se utiliza, la longitud del encabezado aumenta. Es como comprar un seguro postal para un sobre. 
+
+## Investiga los detalles del paquete
+
+### Protocolo de Internet (IP)
+Los paquetes constituyen la base del intercambio de datos en una red, lo que significa que la detección comienza a nivel de paquetes. El Protocolo de Internet (IP) incluye un conjunto de estándares utilizados para enrutar y direccionar paquetes de datos mientras viajan de un dispositivo a otro en una red. El IP opera como la base para todas las comunicaciones a través de Internet.
+
+El IP se encarga de garantizar que los paquetes lleguen a sus destinos. Existen dos versiones de IP en uso en la actualidad: IPv4 e IPv6. Ambas versiones utilizan encabezados diferentes para estructurar la información de los paquetes.
+
+#### IPv4
+IPv4 es la versión más utilizada de IP. En el encabezado hay 13 campos:
+
+- `Versión`: Indica la versión de IP. Para un encabezado IPv4, se utiliza IPv4. 
+- `Longitud del encabezado de Internet (IHL)`: Especifica la longitud del encabezado IPv4, incluidas las opciones.
+- `Tipo de servicio (ToS)`: Proporciona información sobre la prioridad del paquete para la entrega.
+- `Longitud total`: Especifica la longitud total de todo el paquete IP, incluidos el encabezado y los datos.
+- `Identificación`: Especifica un identificador único para fragmentos de un paquete IP original para que puedan volver a ensamblarse una vez que lleguen a su destino. Esto es así porque los paquetes que son demasiado grandes para enviar se fragmentan en piezas más pequeñas. 
+- `Indicadores`: Proporciona información sobre la fragmentación de paquetes, incluso si se fragmentó el paquete original y si hay más fragmentos en tránsito.
+- `Desplazamiento de fragmentos`: Se utiliza para identificar la secuencia correcta de los fragmentos.
+- `Tiempo de vida (TTL)`: Limita el tiempo que un paquete puede circular en una red, lo que evita que los routers envíen los paquetes de forma indefinida.
+- `Protocolo`: Especifica el protocolo utilizado para el área de datos del paquete.
+- `Suma de comprobación de cabecera`: Especifica un valor de suma de comprobación que se utiliza para comprobar el error del encabezado.
+- `Dirección de origen`: Especifica la dirección de origen del emisor.
+- `Dirección de destino`: Especifica la dirección de destino del receptor.
+- `Opciones`: Es opcional y se puede utilizar para aplicar opciones de seguridad a un paquete.
+
+#### IPv6
+Gracias a su gran espacio de direcciones, la adopción de IPv6 ha ido en aumento. Su encabezado cuenta con ocho campos:
+
+- `Versión`: Indica la versión de IP. Para un encabezado IPv6, se utiliza IPv6.
+- `Clase de tráfico` : Similar al campo Tipo de servicio IPv4, proporciona información sobre la prioridad o clase del paquete para ayudar con la entrega.
+- `Etiqueta de flujo`: Identifica los paquetes de un flujo. Un flujo es la secuencia de paquetes enviados desde una fuente específica. 
+- `Longitud de carga útil`: Especifica la longitud del área de datos del paquete.
+- `Encabezado siguiente`: Indica el tipo de encabezado que sigue al encabezado IPv6, como TCP.
+- `Límite de salto`: Similar al campo Tiempo de vida de IPv4, restringe el tiempo que un paquete puede viajar en una red antes de que se descarte.
+- `Dirección de origen`: Especifica la dirección de origen del emisor.
+- `Dirección de destino`: Especifica la dirección de destino del receptor.
+
+### Wireshark
+
+Wireshark es un analizador de protocolos de red de código abierto. Utiliza una interfaz gráfica de usuario (GUI), lo que facilita la visualización de las comunicaciones de red con fines de análisis de paquetes. Wireshark tiene muchas características para explorar que no se alcanzan a cubrir en este curso. Te enfocarás en cómo usar el filtrado básico para aislar los paquetes de red de modo que puedas encontrar lo que necesitas.
+
+#### Filtros de visualización
+Los filtros de visualización de Wireshark te permiten aplicar filtros a  archivos de captura de paquetes. Esto es útil cuando estás inspeccionando capturas de paquetes con grandes volúmenes de información. Los filtros de visualización te ayudarán a encontrar información específica que sea relevante para tu investigación. Puedes filtrar paquetes en función de información como protocolos, direcciones IP, puertos y cualquier otra propiedad encontrada en un paquete. Aquí te centrarás en la sintaxis de filtrado de visualización y en el filtrado de protocolos, direcciones IP y puertos.
+
+#### Operadores de comparación
+Puedes utilizar diferentes operadores de comparación para localizar campos y valores específicos en los encabezados. Los operadores de comparación pueden expresarse utilizando abreviaturas o símbolos. Por ejemplo, este filtro que utiliza el símbolo igual `==` en este filtro `ip.src == 8.8.8.8` es idéntico al uso de la abreviatura eq en este filtro `ip.src eq 8.8.8.8`.
+
+| Tipo de operador | Símbolo     | Abreviatura      |
+| :-------- | :------- | :------------------------- |
+| Igual | == | eq |
+| No es igual | != | ne |
+| Mayor que | > | gt |
+| Menor que | < | lt |
+| Mayor o igual que | >= | ge |
+| Menor o igual que | <= | le |
+
+*`Consejo profesional: Puedes combinar operadores de comparación con operadores lógicos booleanos como and (y) y or (o) para crear filtros de visualización complejos. Los paréntesis también se pueden utilizar para agrupar expresiones y priorizar términos de búsqueda.`*
+
+#### Operador contains
+El operador contains se utiliza para filtrar paquetes que contienen una coincidencia exacta de una cadena de texto. Aquí, podrás ver un ejemplo de un filtro que muestra todos los flujos HTTP que coinciden con la palabra clave "moved" (movido).
+
+<img src="./operador_contains" width="600px">
+
+#### Operador matches
+El operador matches se utiliza para filtrar paquetes basados en la expresión regular (regex) que se especifica. La expresión regular es una secuencia de caracteres que forma un patrón. Más adelante en este programa, explorarás más sobre las expresiones regulares. 
+
+### Barra de herramientas de filtrado
+Puedes aplicar filtros a una captura de paquetes mediante la barra de herramientas de filtrado de Wireshark. En este ejemplo, dns es el filtro aplicado, lo que significa que Wireshark solo mostrará paquetes que contengan el protocolo DNS.
+ 
+<img src="./barra_de_filtrados" width="600px">
+
+*`Consejo profesional: Wireshark utiliza diferentes colores para representar los protocolos. Puedes personalizar los colores y crear tus propios filtros.`*
+
+#### Filtrar por protocolos
+El filtrado de protocolos es una de las formas más simples de utilizar los filtros de visualización. Basta solo con ingresar el nombre del protocolo para filtrar. Por ejemplo, para filtrar paquetes DNS, escribe dns en la barra de herramientas de filtrado. A continuación, podrás ver una lista de algunos protocolos que puedes filtrar:
+
+- dns
+- http
+- ftp
+- ssh
+- arp
+- telnet
+- icmp
+
+#### Filtrar una dirección IP
+Puedes utilizar filtros de visualización para localizar paquetes con una dirección IP específica. 
+
+Por ejemplo, si deseas filtrar paquetes que contienen una dirección IP específica, utiliza ip.addr, seguido de un espacio, el operador de comparación == igual y la dirección IP. A continuación se muestra un ejemplo de un filtro de visualización que filtra la dirección IP 172.21.224.2:
+    
+    ip.addr == 172.21.224.2
+
+Para filtrar paquetes que se originan desde una dirección IP de origen específica, puedes usar el filtro ip.src. Aquí, puedes ver un ejemplo que busca la dirección IP de origen 10.10.10.10:
+    
+    ip.src == 10.10.10.10
+
+Para filtrar los paquetes entregados a una dirección IP de destino específica, puedes utilizar el filtro ip.dst. Aquí, puedes ver un ejemplo que busca la dirección IP de destino 4.4.4.4:
+
+    ip.dst == 4.4.4.4
+
+#### Filtrar una dirección MAC
+También puedes filtrar paquetes según la dirección de control de acceso al medio (MAC). Como actualización, una dirección MAC es un identificador alfanumérico único que se asigna a cada dispositivo físico en una red.
+
+A continuación, se muestra un ejemplo:
+
+    eth.addr == 00:70:f4:23:18:c4
+
+#### Filtrar por puertos
+El filtrado de puertos se utiliza para filtrar paquetes en función de los números de puerto. Esto es útil cuando quieres aislar tipos específicos de tráfico. El tráfico DNS utiliza el puerto TCP o UDP 53, por lo que esto enumerará el tráfico relacionado con las consultas y respuestas de DNS únicamente.
+
+Por ejemplo, si quieres filtrar un puerto UDP:
+
+    udp.port == 53
+
+Del mismo modo, también puedes filtrar puertos TCP:
+
+    tcp.port == 25
+
+### Seguir flujos
+Wireshark ofrece una función que permite filtrar paquetes específicos para un protocolo y ver flujos. Un flujo o conversación es el intercambio de datos entre dispositivos que utilizan un protocolo. Wireshark vuelve a ensamblar los datos que se transfirieron en el flujo en un formato legible.
+
+<img src="./seguir_flujos" width="600px">
+
+Seguir un flujo de protocolo es útil cuando se trata de comprender los detalles de una conversación. Por ejemplo, puedes examinar los detalles de una conversación HTTP para ver el contenido de los mensajes intercambiados de solicitud y respuesta.
+
+#### Recurso
+
+[Info sobre wireshark](https://www.wireshark.org/docs/wsug_html/)
+
+## Capturas de paquetes con tcpdump 
+
+Tcpdump es un popular analizador de protocolos de red. Viene preinstalado en muchas distribuciones de Linux y puede instalarse en la mayoría de los SO tipo Unix, como macOS. Puedes capturar y monitorear fácilmente el tráfico de red como TCP, IP, ICMP y muchos más. 
+
+Tcpdump es una herramienta de línea de comandos. Es decir, no tiene una interfaz gráfica de usuario. Anteriormente, aprendiste que la línea de comandos es una herramienta muy poderosa, y eficiente; vamos practicar usándola juntos. Con tcpdump, puedes aplicar opciones e indicadores a tus comandos para filtrar fácilmente el tráfico de red y así encontrar lo que buscas. Puedes filtrar por IP, protocolo, o número de puerto específico. Examinemos un comando tcpdump simple utilizado para capturar paquetes. Ten en cuenta que el tráfico de tu computadora puede parecer diferente cuando usas este comando. A primera vista, parece mucha información. Examinémoslo línea por línea. 
+
+El comando que ejecutamos es:
+
+    sudo tcpdump -i any -v -c 1
+
+Usamos sudo porque si una cuenta de Linux con la que iniciamos sesión no tiene permisos para ejecutar tcpdump pueda ejecutar el comando sin tener problemas de permisos. Luego, especificamos a tcpdump que inicie `tcpdump` e `-i` para especificar cuál interfaz queremos usar para capturar tráfico. La opción `-v` significa verboso, lo que muestra información detallada del paquete. La `-c` significa contar, lo que especifica cuántos paquetes capturará tcpdump. Aquí especificamos uno.
+
+<img src="captura_pantalla" width="600px">
+
+Ahora vamos a examinar el resultado. 
+- Tcpdump nos ha indicado que está escuchando en cualquier interfaz de red disponible y también nos ha dado información adicional, como el tamaño de captura. 
+- El primer campo es la marca de tiempo del paquete, que detalla el momento específico de viaje del paquete. Comienza con horas, minutos, segundos y fracciones de segundo. Las marcas de tiempo son útiles durante una investigación de incidentes cuando quieres determinar líneas de tiempo y correlacionar el tráfico. 
+- A continuación, se enumera IP como el campo Versión. Se muestra como IP, lo que significa que es IPv4. La opción verbosa nos ha proporcionado más detalles sobre los campos del paquete IP, como el tipo de protocolo y la longitud del paquete. ¡Echemos un vistazo! 
+    - El primer campo, ToS, representa el tipo de servicio. Recuerda que esto nos dice si ciertos paquetes deben tratarse de forma diferente. Esto está representado por un valor en hexadecimal. 
+    - El campo TTL es Tiempo de vida, que nos dice cuánto puede un paquete desplazarse por la red antes de ser descartado. 
+    - Los siguientes tres campos son `Identificación`, `Desplazamiento` e `Indicadores`, que brindan tres campos con información relacionada con la fragmentación. Estos campos tienen instrucciones sobre cómo reensamblar paquetes en el orden correcto. Por ejemplo, el DF, al lado de los indicadores, es No fragmentar. 
+- El proto es el campo Protocolo. Especifica el protocolo en uso y también nos proporciona el valor que corresponde al protocolo. Aquí, el protocolo es TCP, representado por el número 6. 
+- El último campo, Longitud, es la longitud total del paquete, incluyendo el encabezado IP. 
+- A continuación, vemos las direcciones IP que están comunicándose entre sí. La dirección de la flecha indica la dirección del flujo de tráfico. La última pieza de la dirección IP indica el número o nombre de puerto. 
+- Luego, el cksum o campo de suma de control corresponde a la Suma de comprobación de cabecera del encabezado, que almacena un valor que se utiliza para determinar si se produjo un error en el encabezado. Aquí, nos dice que es correcto y no tiene errores. 
+- Los campos restantes se relacionan con TCP. Por ejemplo, Flags son los indicadores TCP. La P es el indicador push, y el punto indica que es un indicador ACK. Esto significa que el paquete está enviando datos. 
+
+## Descripción general de tcpdump
+
+Ya aprendiste los siguientes términos relacionados con el monitoreo y análisis de la red: 
+
+- Un analizador de protocolos de red (rastreador de paquetes) es una herramienta diseñada para capturar y analizar el tráfico de datos dentro de una red.
+- La captura, o rastreo, de paquetes es la práctica de capturar e inspeccionar paquetes de datos a través de una red. 
+
+### ¿Qué es tcpdump?
+
+Tcpdump es un analizador de protocolos de red con línea de comandos. Una interfaz de línea de comandos (CLI) es una interfaz de usuario basada en texto que utiliza comandos para interactuar con la computadora. 
+
+Se utiliza para capturar el tráfico de red, que puede guardarse en un pcap, es decir, un archivo que contiene paquetes de datos interceptados desde una interfaz o red. Al archivo pcap se puede acceder, o también puede ser analizado o compartido en otra ocasión. Los analistas utilizan tcpdump por una variedad de razones, desde la resolución de problemas de red hasta la identificación de actividades maliciosas. Tcpdump viene preinstalado en muchas distribuciones de Linux y también se puede instalar en otros sistemas operativos basados en Unix, como macOS®. 
+
+*`Nota: Es habitual que el tráfico de red esté cifrado, lo que significa que los datos están codificados o no se pueden leer. Inspeccionar los paquetes de red puede requerir descifrar los datos mediante las claves privadas apropiadas. `*
+
+### Cómo capturar paquetes con tcpdump
+Anteriormente, aprendiste que un usuario root (raíz) o superusuario de Linux  tiene privilegios importantes para modificar el sistema. También, viste que el comando sudo otorga temporalmente permisos importantes a usuarios específicos en Linux. Al igual que muchas otras herramientas de rastreo de paquetes, deberás tener privilegios a nivel de administrador para capturar el tráfico de red mediante tcpdump. Esto significa que tendrás que iniciar sesión como usuario root o tener la capacidad de usar el comando sudo. Aquí se muestra un desglose de la sintaxis tcpdump para capturar paquetes:
+
+`sudo tcpdump [-i interface] [option(s)] [expression(s)]`
+
+- El comando sudo tcpdump comienza a ejecutar tcpdump con permisos importantes como sudo. 
+- El parámetro -i especifica la interfaz de red para capturar el tráfico de red. Debes especificar una interfaz de red desde la que capturar para comenzar a capturar paquetes. Por ejemplo, si especificas -i any, detectarás el tráfico de todas las interfaces de red del sistema. 
+- Las option(s) son facultativas y te brindan la capacidad de alterar la ejecución del comando. Las expression(s) son una forma de filtrar aún más los paquetes de tráfico de red para que puedas aislarlo. En la siguiente sección, aprenderás más sobre las option(s) y expression(s).
+
+*`Nota: Antes de que puedas comenzar a capturar tráfico de red, debes identificar qué interfaz de red deseas usar para capturar paquetes. Puedes usar el indicador -D para enumerar las interfaces de red disponibles en un sistema.`*
+
+### Opciones
+
+Con tcpdump, puedes aplicar opciones, también conocidas como indicadores, al final de los comandos para filtrar el tráfico de red. Las opciones cortas se abrevian y se representan con un guión y un solo carácter como -i. Las opciones largas, en tanto, se explican con un guión doble como --interface. Tcpdump tiene más de 50 opciones que puedes explorar a través de [la página man](https://www.tcpdump.org/manpages/tcpdump.1.html). Aquí, examinarás un par de opciones claves de tcpdump, que incluyen cómo escribir y leer archivos de captura de paquetes.
+
+*`Nota: Las opciones distinguen entre mayúsculas y minúsculas. Por ejemplo, una -w minúscula es una opción separada con un uso diferente que la opción con una -W mayúscula.`*
+
+*`Nota: Las opciones de tcpdump que se escriben mediante opciones cortas se pueden escribir con o sin un espacio entre la opción y su valor. Por ejemplo, sudo tcpdump -i any -c 3 y sudo tcpdump -iany -c3 son comandos equivalentes.`*
+
+#### -w
+Con el indicador -w, puedes escribir o guardar los paquetes de red rastreados en un archivo de captura de paquetes en lugar de solo imprimirlos en la terminal. Esto resulta de mucha utilidad  porque puedes consultar este archivo guardado para su posterior análisis. En este comando, tcpdump captura el tráfico de todas las interfaces de red y lo guarda en un archivo de captura de paquetes llamado packetcapture.pcap:
+
+`sudo tcpdump -i any -w packetcapture.pcap`
+#### -r
+Con el indicador -r, puedes leer un archivo de captura de paquetes especificando el nombre del archivo como parámetro. Aquí te mostramos un ejemplo de un comando tcpdump que lee un archivo llamado packetcapture.pcap:
+
+`sudo tcpdump -r packetcapture.pcap`
+#### -v
+Como ya viste, los paquetes contienen mucha información. De forma predeterminada, tcpdump no imprimirá toda la información de un paquete. Esta opción te permite controlar la cantidad de información de paquetes que deseas que tcpdump imprima.
+
+Existen tres niveles de verbosidad que puedes usar según la cantidad de información del paquete que deseas que tcpdump imprima. Los niveles son -v, -vv, y -vvv. El nivel de verbosidad aumenta con cada v agregada. La opción más verbosa (abundancia de detalles) puede resultar útil si buscas información de paquetes, como los detalles de los campos de encabezado IP. A continuación, se muestra un ejemplo de un comando tcpdump que lee el archivo packetcapture.pcap:
+
+`sudo tcpdump -r packetcapture.pcap -v`
+#### -c
+La opción -c significa conteo. Esta opción te permite controlar cuántos paquetes capturará tcpdump. Por ejemplo, especificar -c 1 imprimirá un solo paquete, mientras que -c 10 imprimirá 10. Este ejemplo le indica a tcpdump que solo capture los primeros tres paquetes que rastrea desde any (cualquier) interfaz de red:
+
+`sudo tcpdump -i any -c 3`
+#### -n  
+De forma predeterminada, tcpdump realizará la resolución de nombres. Esto significa que tcpdump convierte automáticamente las direcciones IP en nombres. También resolverá puertos a servicios comúnmente asociados que usan estos puertos. Esto puede ser problemático porque tcpdump no siempre es preciso en la resolución de nombres. Por ejemplo, tcpdump puede capturar tráfico desde el puerto 80 y traducir automáticamente el puerto 80 a HTTP en la salida. Aun así, esto es engañoso porque el puerto 80 no siempre va a utilizar HTTP, sino que podría estar utilizando un protocolo diferente.
+
+Además, la resolución de nombres utiliza lo que se conoce como una búsqueda inversa de DNS, que es una consulta que busca el nombre de dominio asociado con una dirección IP. Si realizas una búsqueda inversa de DNS en el sistema de un atacante, puede que se les avise que los estás investigando a través de sus registros de DNS.
+
+El uso del indicador -n deshabilita este mapeo automático de números a nombres y se considera la mejor práctica al rastrear o analizar el tráfico. El uso de -n no resolverá los nombres de host, mientras que -nn no resolverá ni los nombres de host ni los puertos. Aquí podrás ver un ejemplo de un comando tcpdump que lee el archivo packetcapture.pcap con verbosidad (abundancia de detalles) y deshabilita la resolución de nombres:
+
+`sudo tcpdump -r packetcapture.pcap -v -n`
+*`Consejo profesional: Puedes combinar las opciones. Por ejemplo, -v y -n se pueden combinar como -vn. Pero, si una opción acepta un parámetro justo después de él como -c 1 o -r capture.pcap, entonces no podrás combinarlas.`*
+
+### Expresiones
+El uso de expresiones de filtro en comandos tcpdump también es opcional, pero puede resultar útil saber cómo y cuándo usar expresiones de filtro durante el análisis de paquetes. Existen muchas maneras de utilizar las expresiones de filtro. 
+
+Si deseas buscar tráfico de red por protocolo en específico, puedes utilizar expresiones de filtro para aislar los paquetes de red. Por ejemplo, puedes filtrar para encontrar solo tráfico IPv6 mediante la expresión de filtro ipv6.
+
+También puedes usar operadores booleanos como `and` (y), `or` (o) o `not` (no) para filtrar aún más el tráfico de red para direcciones IP específicas, puertos y más. El siguiente ejemplo lee el archivo packetcapture.pcap y combina dos expresiones ipv4 and port 80 con el operador booleano and (y):
+
+    sudo tcpdump -r packetcapture.pcap -n 'ipv4 and port 80'
+
+*`Consejo profesional: Puedes usar comillas simples o dobles para asegurarte de que tcpdump ejecute todas las expresiones. También puedes usar paréntesis para agrupar y priorizar diferentes expresiones. Agrupar expresiones es útil para comandos complejos o largos. Por ejemplo, el comando ipv4 and (port 80 or port 443) le indica a tcpdump que priorice la ejecución de los filtros encerrados entre paréntesis antes de filtrar para IPv4.`*
+
+### Interpretación de la salida
+Una vez que ejecutes un comando para capturar paquetes, tcpdump imprimirá la salida del comando como los paquetes rastreados. En la salida, tcpdump imprime una línea de texto para cada paquete con cada línea, comenzando con una marca de tiempo. Aquí se muestra un ejemplo de un comando y la salida para un solo paquete TCP: 
+
+    sudo tcpdump -i any -v -c 1
+
+Este comando le indica a tcpdump que capture paquetes en interfaz de red -i any. La opción -v imprime el paquete con información detallada y la opción -c 1 imprime solo un paquete. Esta es la salida de este comando:  
+
+<img src="interpretacion_salida" width="600px">
+
+- Marca de tiempo: La salida comienza con la marca de tiempo, que empieza con horas, minutos, segundos y fracciones de segundo. 
+- IP de origen: El origen del paquete lo proporciona su dirección IP de origen.
+- Puerto de origen: Este número de puerto es donde se originó el paquete.
+- IP de destino: La dirección IP de destino es donde se transmite el paquete.
+- Puerto de destino: Este número de puerto es donde se transmite el paquete.
+
+La salida restante contiene detalles de la conexión TCP e incluye indicadores y número de secuencia. La información de options es información de paquetes adicionales que proporcionó la opción -v.
+
+#### Recursos
+
+[Tutoriales y guias TCPDUMP](https://www.tcpdump.org/)
+[Tutoriales por Daniel Miessler](https://danielmiessler.com/p/tcpdump/)
 
