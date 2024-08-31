@@ -4938,3 +4938,820 @@ La salida restante contiene detalles de la conexión TCP e incluye indicadores y
 [Tutoriales y guias TCPDUMP](https://www.tcpdump.org/)
 [Tutoriales por Daniel Miessler](https://danielmiessler.com/p/tcpdump/)
 
+## Fase de detección y analisis del ciclo de vida
+
+### Métodos de detección de incidentes de ciberseguridad
+
+Los analistas de seguridad usan herramientas de detección que los ayudan a descubrir amenazas, pero además, existen otros métodos de detección que pueden ser útiles.
+
+En esta lección, conocerás diferentes métodos de detección que las organizaciones pueden utilizar para descubrir amenazas. 
+
+#### Métodos de detección
+
+Durante la fase de detección y análisis del ciclo de vida de respuesta a incidentes, los equipos de seguridad reciben una notificación de un posible incidente y trabajan para investigarlo y verificarlo mediante la recopilación y el análisis de datos. Como recordatorio, la detección es el descubrimiento rápido de eventos de seguridad, y el análisis implica la investigación y validación de alertas.
+
+Como has aprendido, un sistema de detección de intrusiones (IDS) puede detectar posibles intrusiones y enviar alertas a los analistas de seguridad para que investiguen la actividad sospechosa. Estos, además, pueden utilizar las herramientas de gestión de eventos e información de seguridad (SIEM) para detectar, recopilar y analizar datos de seguridad.
+
+También has aprendido que la detección presenta desafíos. Incluso los mejores equipos de seguridad pueden no detectar amenazas reales por distintas razones. Por ejemplo, las herramientas de detección pueden encontrar únicamente aquello que los equipos de seguridad han configurado para que monitoreen. Si no están configuradas correctamente, es posible que no identifiquen actividades sospechosas, y que los sistemas queden vulnerables a ataques. Por esto, es importante que los equipos de seguridad utilicen métodos adicionales de detección para aumentar su cobertura y precisión.
+
+#### Caza de amenazas
+Las amenazas evolucionan y los atacantes avanzan en sus tácticas y técnicas. La detección automatizada y basada en la tecnología puede resultar insuficiente a la hora de mantenerse al día con el panorama de amenazas en constante evolución. La detección impulsada por el ser humano, como la caza de amenazas, combina el poder de la tecnología con un elemento humano para así descubrir amenazas ocultas que las herramientas de detección no logran captar.
+
+La caza de amenazas es la búsqueda proactiva de amenazas en una red. Los profesionales de la seguridad la utilizan para descubrir actividades maliciosas que no fueron identificadas por las herramientas de detección y como una forma de llevar a cabo un análisis más detallado de las detecciones. También se utiliza para detectar amenazas antes de que ocasionen daños. Por ejemplo, para las herramientas de detección es difícil identificar el malware sin archivos. Esta es una forma de software malicioso que utiliza técnicas sofisticadas de evasión, como esconderse en la memoria en lugar de usar archivos o aplicaciones, lo que le permite eludir los métodos tradicionales de detección, como el análisis de firmas. La caza de amenazas utiliza la combinación de análisis humano activo y tecnología para identificar amenazas como el malware sin archivos. 
+
+*`Nota: Los especialistas en caza de amenazas son conocidos como cazadores de amenazas. Los cazadores de amenazas investigan amenazas y ataques emergentes y luego determinan la probabilidad de que una organización sea vulnerable a un ataque en particular. Para lograrlo, utilizan una combinación de inteligencia sobre amenazas, indicadores de compromiso, indicadores de ataque y aprendizaje automático para buscar amenazas en una organización.`*
+
+#### Inteligencia sobre amenazas
+Las organizaciones pueden mejorar sus capacidades de detección si están al tanto del panorama de amenazas en evolución y comprenden la relación entre su entorno y los agentes de amenaza. Para conocer mejor las amenazas se utiliza la inteligencia sobre amenazas, que consiste en información basada en evidencia que proporciona contexto acerca de amenazas existentes o emergentes. 
+
+La inteligencia sobre amenazas puede provenir de fuentes privadas o públicas como las siguientes:
+
+- Informes de la industria: Estos, a menudo, incluyen detalles sobre las tácticas, técnicas y procedimientos (TTP) del atacante.
+
+- Avisos gubernamentales: Al igual que los informes de la industria, los avisos gubernamentales ofrecen información sobre los TTP de los atacantes. 
+
+- Fuentes de datos de amenazas: Proporcionan información relacionada con amenazas, la cual puede utilizarse como protección contra atacantes sofisticados, como las amenazas persistentes avanzadas (APT). Las APT son instancias en las que un agente de amenaza mantiene acceso no autorizado a un sistema durante un período prolongado de tiempo. Los datos suelen ser una lista de indicadores, como direcciones IP, dominios y hashes de archivos.
+
+Nota: Las fuentes de datos de inteligencia de amenazas son importantes para agregar contexto a las detecciones, aunque no deben ser lo único que consideres a la hora de detectar y es necesario evaluarlas antes de ser utilizadas en una organización. 
+
+#### Ciberengaño
+Se denomina ciberengaño a las técnicas que engañan deliberadamente a los agentes de amenaza con el objetivo de aumentar la detección y mejorar las estrategias defensivas.
+
+Los honeypots (sistemas trampa o señuelos) son un ejemplo de un mecanismo activo de defensa cibernética que utiliza tecnología del engaño. Los honeypots son sistemas o recursos que se crean como señuelos vulnerables a ataques con el propósito de atraer posibles intrusos. Por ejemplo, se puede tener un archivo falso con la etiqueta Información de tarjetas de crédito de clientes - 2022 para engañar a los agentes de amenaza y que estos accedan al archivo porque parece legítimo. Una vez que un agente de amenaza intenta acceder a este archivo, los equipos de seguridad son alertados.
+
+
+#### recursos
+
+[repositorio informativo sobre la caza de amenazas del PROYECTO THREATHUNTING](https://www.threathunting.net/)
+[HACKER PATROCINADOS POR EL ESTADO](https://blog.google/threat-analysis-group/)
+
+### indicadores de compromiso
+
+se te presentará el concepto de la pirámide del dolor y explorarás ejemplos de los diferentes tipos de indicadores de compromiso. Entender y aplicar este concepto ayuda a las organizaciones a mejorar su defensa y reduce el daño que un incidente puede ocasionar.
+
+Los `indicadores de compromiso (IoC)` son evidencias observables que sugieren indicios de un posible incidente de seguridad. Los IoC trazan piezas específicas de evidencia que están vinculadas con un ataque, como un nombre de archivo asociado con un tipo de malware. Se puede pensar en un IoC como evidencia que apunta a algo que ya ha sucedido, como notar que un objeto de valor ha sido robado del interior de un automóvil. 
+
+Los `indicadores de ataque (IoA)` son la serie de eventos observados que indican un incidente en tiempo real. Los IoA identifican el comportamiento de un atacante, incluidos sus métodos e intenciones.
+
+Esencialmente, los IoC ayudan a identificar el quién y el qué de un ataque después de que haya tenido lugar, mientras que los IoA se centran en encontrar el por qué y el cómo de un ataque en curso o desconocido. Por ejemplo, observar un proceso que establece una conexión de red es un ejemplo de un IoA. El nombre de archivo del proceso y la dirección IP con la que se contactó el proceso son ejemplos de los IoC relacionados.
+
+*`Nota: Los indicadores de compromiso no siempre son una confirmación de que ha ocurrido un incidente de seguridad. Los IoC pueden ser el resultado de errores humanos, mal funcionamiento del sistema y otras razones no relacionadas con la seguridad. `*
+
+### Pirámide del dolor
+No todos los indicadores de compromiso son igual de importantes para los profesionales de seguridad y es clave que los conozcan en detalle, para poder detectarlos y responder a ellos de manera rápida y efectiva. Es por esto que el investigador de temas de seguridad David J. Bianco creó el concepto de la [pirámide del dolor](https://detect-respond.blogspot.com/2013/03/the-pyramid-of-pain.html), que tiene el objetivo de mejorar la forma en que se utilizan los indicadores de compromiso en la detección de incidentes.
+
+<img src="piramide_dolor" width="600px">
+
+La pirámide del dolor establece la relación entre los indicadores de compromiso y el nivel de dificultad que los agentes de amenaza deben enfrentar, cuando los indicadores de compromiso son bloqueados por los equipos de seguridad. De esta manera, enumera los diferentes tipos de indicadores de compromiso que los profesionales de seguridad utilizan para identificar actividades maliciosas. 
+
+Cada tipo de indicador de compromiso se clasifica en niveles de dificultad. Estos representan los niveles de “dolor” que enfrenta un atacante cuando los equipos de seguridad bloquean la actividad asociada con el indicador de compromiso. Por ejemplo, el bloqueo de una dirección IP asociada con un agente de amenaza se etiqueta como fácil porque estos pueden usar sin dificultad distintas direcciones IP para sortear esto y así continuar con su ataque. Si los equipos de seguridad logran bloquear los IoC ubicados en la parte superior de la pirámide, más difícil se vuelve para los atacantes continuar con su misión. A continuación, se presenta un desglose de los diferentes tipos de indicadores de compromiso que se encuentran en la pirámide del dolor. 
+
+- `Valores hash`: Hashes que corresponden a archivos maliciosos conocidos. A menudo se utilizan para proporcionar referencias únicas respecto a muestras específicas de malware o archivos involucrados en una intrusión.
+- `Direcciones IP`: Una dirección de protocolo de Internet como 192.168.1.1
+- `Nombres de dominio`: Una dirección web como www.google.com 
+- `Artefactos de red`: Evidencia observable creada por agentes de amenaza en una red. Por ejemplo, la información que se encuentra en los protocolos de red, como las cadenas del agente de usuario (User-Agent strings). 
+- `Artefactos de host`: Evidencia observable creada por agentes de amenaza en un host. Un host es cualquier dispositivo que esté conectado en una red. Por ejemplo, el nombre de un archivo creado por malware.
+- `Herramientas`: Software que es utilizado por un agente de amenaza para lograr su objetivo. Por ejemplo, los atacantes pueden usar herramientas de descifrado de contraseñas (password cracking) como John the Ripper para realizar ataques de contraseña y obtener acceso a una cuenta.
+- `Tácticas, técnicas y procedimientos (TTP)`: Comportamiento de un agente de amenaza. Las tácticas tienen que ver con la visión general de alto nivel del comportamiento. Las técnicas proporcionan descripciones detalladas del comportamiento en relación a la táctica. Los procedimientos son descripciones muy detalladas de la técnica. Los TTP son los más difíciles de detectar. 
+
+### Analiza los indicadores de compromiso con herramientas de investigación
+
+Esta lectura explora cómo se pueden utilizar las herramientas de investigación durante las investigaciones para analizar indicadores de compromiso (IoC) sospechosos y crear contexto en torno a las alertas. Recuerda que un IoC es evidencia observable que sugiere indicios de un posible incidente de seguridad. 
+
+#### Agregar contexto a las investigaciones
+Anteriormente, has aprendido sobre la pirámide del dolor, que describe la relación entre los indicadores de compromiso y el nivel de dificultad que experimentan los agentes de amenaza cuando los indicadores de compromiso son bloqueados por los equipos de seguridad. También aprendiste sobre diferentes tipos de IoC pero, como sabes, no todos los IoC son iguales. Los agentes de amenaza pueden lograr evadir la detección y continuar comprometiendo los sistemas aunque su actividad relacionada con los IoC esté bloqueada o limitada.
+
+Por ejemplo, identificar y bloquear una sola dirección IP asociada con una actividad maliciosa no proporciona una visión amplia de un ataque, ni impide que un agente de amenaza continúe su actividad. Centrarse en una sola parte de la evidencia es como fijarse en una sola parte de un cuadro: se pierde el panorama general.
+
+Los analistas de seguridad necesitan expandir el uso de los IoC para poder agregar contexto a las alertas. La inteligencia sobre amenazas es la información basada en evidencia que proporciona contexto sobre amenazas existentes o emergentes. Al acceder a información adicional relacionada con los IoC, los analistas de seguridad pueden ampliar su punto de vista para observar el panorama general y construir una narrativa que ayude a informar sus acciones de respuesta. 
+
+Al agregar contexto a un IoC, por ejemplo, mediante la identificación de otros artefactos relacionados con la dirección IP sospechosa, como comunicaciones de red dudosas o procesos inusuales, los equipos de seguridad pueden  tener una imagen más concreta de un incidente. Este contexto puede ayudar a los equipos de seguridad a detectar incidentes de seguridad más rápido y adoptar un enfoque más informado en su respuesta.
+
+### El poder del "crowdsourcing" (externalización abierta de tareas)
+
+El crowdsourcing, también denominado colaboración colectiva, es la práctica de recopilar información utilizando los aportes y la colaboración del público. Las plataformas de inteligencia sobre amenazas lo utilizan para reunir información de la comunidad global de ciberseguridad. Tradicionalmente, la respuesta a incidentes de una organización se realizaba de forma aislada; un equipo de seguridad recibía y analizaba una alerta, y luego procedía a remediarla, sin haber contemplado perspectivas adicionales acerca de cómo abordarla. De esta manera, sin el crowdsourcing, los atacantes podían llevar a cabo los mismos ataques contra distintas organizaciones.
+
+Gracias al crowdsourcing, en cambio, las organizaciones aprovechan los conocimientos de millones de otros profesionales de la ciberseguridad, incluidos, entre otros, los vendedores de productos de ciberseguridad, organismos públicos y proveedores de servicios en la nube. Esta práctica permite a personas y organizaciones de la comunidad de la ciberseguridad mundial compartir y acceder abiertamente a una colección de datos de inteligencia sobre amenazas, lo cual ayuda a mejorar continuamente las tecnologías y metodologías de detección. 
+
+Entre los ejemplos de organizaciones de intercambio de información, se encuentran los Centros de Intercambio y Análisis de Información (ISAC), que se centran en recopilar inteligencia sobre amenazas dirigidas a sectores específicos y compartirla con empresas que operan en esos sectores concretos, como pueden ser los de energía o los de salud. Por su parte, la inteligencia de fuentes abiertas (OSINT) es la recopilación y análisis de información procedente de fuentes de acceso público para generar inteligencia utilizable. La OSINT también se puede utilizar como método para recopilar información relacionada con agentes de amenaza, amenazas, vulnerabilidades y más.
+
+Estos datos de inteligencia sobre amenazas se utilizan para mejorar los métodos y técnicas de detección de productos de seguridad, como las herramientas de detección o el software antivirus. Por ejemplo, los atacantes suelen realizar los mismos ataques contra múltiples objetivos, con la esperanza de que uno de ellos sea exitoso. Si una organización detecta un ataque y publica inmediatamente los detalles del incidente, como archivos maliciosos, direcciones IP o URL, en herramientas como VirusTotal, esta inteligencia sobre amenazas puede ayudar a otras organizaciones a defenderse contra el mismo ataque.
+
+### VirusTotal 
+[VirusTotal](https://www.virustotal.com/gui/home) es un servicio que permite a cualquier persona analizar archivos, dominios, URL y direcciones IP sospechosos en busca de contenido malicioso. VirusTotal también ofrece servicios y herramientas adicionales para uso empresarial. Esta lectura se centra en el sitio web de VirusTotal, que está disponible para uso gratuito y no comercial.
+
+Esta herramienta se puede utilizar para analizar archivos, direcciones IP, dominios y URL sospechosos, a fin de detectar amenazas de ciberseguridad, como el software malicioso. Los usuarios pueden enviar y verificar artefactos como hashes de archivos o direcciones IP para obtener informes de VirusTotal. Estos proporcionan información adicional sobre si un IoC se considera malicioso o no, cómo ese IoC está conectado a, o relacionado con, otros IoC en el conjunto de datos y más.
+
+<img src="virus_tot_1" width="600px">
+Aquí se presenta un desglose del resumen de los informes:
+<img src="virus_tot_2" width="600px">
+
+- Detection (Detección): La pestaña Detection proporciona una lista de proveedores de seguridad externos y sus veredictos de detección sobre un IoC. Por ejemplo, los proveedores pueden catalogar su veredicto de detección como malicioso, sospechoso, inseguro, entre otros.
+
+- Details (Detalles): Esta pestaña proporciona información adicional extraída de un análisis estático del IoC. En esta pestaña se puede encontrar información sobre los distintos hashes, tipos de archivos, tamaños de archivo y encabezados, hora de creación y detalles sobre el primer y último envío.
+
+- Relations (Relaciones): La pestaña Relations proporciona los IoC relacionados que están conectados de alguna manera a un artefacto, como las URL, dominios, y direcciones IP contactados y los archivos soltados si el artefacto es un ejecutable.
+
+- Behavior (Comportamiento): La pestaña Behavior contiene información relacionada con la actividad y los comportamientos de un artefacto que se han observado después de ejecutarlo en un entorno controlado, como uno de pruebas (sandbox). Esta información incluye tácticas y técnicas detectadas, comunicaciones de red, acciones de sistemas de registro y archivos, procesos, entre otros.
+
+- Community (Comunidad): La pestaña Community es donde los miembros de la comunidad VirusTotal, como los profesionales de seguridad o los investigadores, pueden dejar comentarios e ideas sobre el IoC.
+
+- Vendors’ ratio and community Score (Ratio de proveedores y puntuación de la comunidad): La puntuación que se muestra en la parte superior del informe es el ratio de proveedores, que indica cuántos proveedores de seguridad han marcado el IoC como malicioso. Debajo de esta puntuación también figura la de la comunidad, que se basa en los aportes de los usuarios de VirusTotal. Cuantas más detecciones tenga un archivo y mayor sea la puntuación de la comunidad, más probable es que sea malicioso.
+
+Nota: Los datos subidos a VirusTotal se compartirán públicamente con toda la comunidad de VirusTotal. Es necesario tener cuidado al enviar información y asegurarse de no subir información personal.
+
+### Otras herramientas
+Existen otras herramientas de investigación que se pueden utilizar para analizar los IoC, que también pueden compartir los datos con la comunidad.
+
+- Jotti's malware scan
+[Jotti's malware scan](https://virusscan.jotti.org/) es un servicio gratuito que te permite analizar archivos sospechosos con varios programas antivirus. Hay algunas limitaciones en cuanto a la cantidad de archivos que se pueden enviar. 
+
+- Urlscan.io
+[Urlscan.io](https://urlscan.io/) es un servicio gratuito que escanea y analiza las URL y proporciona un informe detallado que resume la información de la URL.
+
+- CAPE Sandbox
+[CAPE Sandbox](https://capesandbox.com/analysis/) es un servicio de código abierto utilizado para automatizar el análisis de archivos sospechosos. En un entorno aislado, se analizan archivos maliciosos como el malware, cuyo comportamiento se describe en un informe exhaustivo.
+
+- MalwareBazaar
+[MalwareBazaar](https://bazaar.abuse.ch/verify-ua/) es un repositorio gratuito para muestras de software malicioso. Estas muestras son una gran fuente de inteligencia sobre amenazas que se puede utilizar con fines de investigación. 
+
+## evidencia documentada con formularios de cadena de custodia
+
+En la respuesta a incidentes, debe haber evidencia de todo el ciclo de vida del incidente. Rastrear evidencia es importante si esta se solicita en un procedimiento     legal. ¿Cómo garantizan esto los equipos de seguridad? Utilizan un formulario llamado `cadena de custodia`. 
+
+La cadena de custodia es el proceso de documentar evidencia, posesión y control durante el ciclo de vida de un incidente. Ni bien se recopila la evidencia, se introducen los formularios de cadena de custodia. Estos deben completarse con detalles de cómo se manejó la evidencia. Veamos un ejemplo simple del uso de la cadena de custodia en el análisis forense digital. Ya sabes que el análisis forense digital es la práctica de recopilar y analizar datos para determinar qué sucedió luego de un ataque. 
+
+*Durante la respuesta a un incidente, Aisha verificó un disco duro comprometido que debe el equipo forense examinar.*
+
+*Primero, ella se asegura que la unidad esté protegida contra escritura, para que no se editen ni borren los datos.* 
+
+*Luego, calcula y registra una función hash criptográfica de una imagen del disco duro. Recuerda que una función hash es un algoritmo que produce un código que no se puede descifrar. Aisha recibe instrucción de pasárselo a Colin, del departamento forense. Colin lo examina y se lo envía a Nav, otra analista. Nav recibe el disco comprometido y se lo pasa a su gerente, Arman. Cada vez que el disco duro es entregado a otra persona deben registrarlo en el formulario de cadena de custodia, para que el paso de la evidencia sea transparente.* 
+
+*La manipulación de los datos del disco puede detectarse con el hash original que Aisha documentó al comenzar el proceso. Esto asegura que haya un rastro de documentos que describe quién manejó la evidencia y por qué, dónde y cuándo se la manejó. Como en otros documentos, no hay una plantilla estándar de cómo debe ser el formulario de cadena de custodia, pero contiene elementos comunes.* 
+
+*Esto es lo que podrías ver en un formulario de registro de cadena de custodia. Primero, la evidencia debe estar descrita, incluyendo información identificatoria como la ubicación, el nombre del host, la dirección MAC o la dirección IP. Luego está el registro de custodia, con nombres de las personas que transfirieron y recibieron la evidencia. También incluye fecha y hora de recopilación o transferencia y para qué se transfirió. Quizás te preguntes qué pasa si la evidencia se registra incorrectamente. O si falta una entrada. Esto se conoce como cadena de custodia rota, la cual ocurre cuando hay inconsistencias en la recolección y registro de evidencia en la cadena de custodia.* 
+
+*En los tribunales, los documentos de cadena de custodia ayudan a establecer pruebas de la integridad, confiabilidad y exactitud de la evidencia. En incidentes de seguridad, los formularios de cadena de custodia se utilizan para cumplir estándares legales y que esta evidencia pueda usarse en procesos legales. Si un agente de amenaza comprometió un sistema, debe haber evidencia disponible para determinar sus acciones y que se pueda proceder legalmente. En algunos casos, roturas grandes de la cadena de custodia pueden impactar la integridad, confiabilidad y exactitud de la evidencia. Esto afecta el hecho de que la evidencia pueda o no ser una fuente confiable de información que se pueda usar en tribunales. Los formularios de cadena de custodia nos dan un método para mantener evidencia para responsabilizar a los agentes maliciosos por sus actos.*
+
+### Prácticas adecuadas para una documentación eficaz
+
+La `documentación` es cualquier forma de contenido registrado que se utiliza para un propósito específico, y es esencial en el campo de la seguridad. Los equipos de seguridad utilizan la documentación para respaldar investigaciones, completar tareas y comunicar hallazgos. Esta lectura explora los beneficios de la documentación y te proporciona una lista de prácticas comunes para ayudarte a crear documentación efectiva en tu carrera en el campo de la seguridad.
+
+#### Beneficios de la documentación
+Anteriormente, has aprendido sobre distintos tipos de documentación de seguridad, entre ellos los manuales de estrategias y los informes finales. Además, sabes que la documentación efectiva tiene tres beneficios:
+
+- Transparencia
+- Estandarización
+- Claridad
+
+#### Transparencia
+En seguridad, la transparencia es fundamental para demostrar el cumplimiento de las normativas, regulaciones y procesos internos y dar cuenta de los requisitos vinculados con los seguros. Además, es esencial para los procedimientos legales. El proceso de documentar la posesión y el control de evidencia durante el ciclo de vida del incidente se denomina cadena de custodia y es un ejemplo de cómo la documentación genera transparencia y mejora la auditoría.
+
+#### Estandarización
+La estandarización a través de procesos y procedimientos repetibles ayuda a la mejora continua, a transferir conocimiento y a facilitar la incorporación de nuevos miembros al equipo. Los estándares son referencias que informan sobre cómo establecer políticas.
+
+Previamente, has aprendido cómo NIST proporciona varios marcos de seguridad que se utilizan para mejorar las medidas de seguridad. Del mismo modo, las organizaciones establecen sus propios estándares para satisfacer las necesidades de sus negocios. El plan de respuesta a incidentes de una organización es un ejemplo de documentación que crea estandarización. Al describir y documentar paso a paso el proceso de respuesta a un incidente, antes de que este ocurra, el procedimiento queda estandarizado. De esta manera, ante un incidente, las personas pueden seguir el paso a paso, manteniendo, así, la consistencia con los procesos y procedimientos repetibles.
+
+#### Claridad
+Idealmente, la documentación debe proporcionar claridad. La documentación clara ayuda a las personas a acceder rápidamente a la información que necesitan y tomar las medidas necesarias. Los analistas de seguridad deben documentar el razonamiento que respalda cualquier medida que toman, y dejar en claro a su equipo por qué se elevó a superiores (escaló) o se cerró una alerta.
+
+### Prácticas adecuadas
+En tu carrera como profesional de la seguridad, deberás aplicar las mejores prácticas de documentación. Aquí se detallan algunas pautas generales para que tengas en cuenta:
+
+#### Conoce a tu público
+Antes de que comiences a crear la documentación, considera a tu público y sus necesidades. Por ejemplo, un resumen de incidentes escrito para un gerente de un centro de operaciones de seguridad (SOC) estará redactado de manera diferente a uno que haya sido elaborado para un director ejecutivo (CEO). El gerente del SOC puede entender el lenguaje técnico del campo de la seguridad, pero un CEO podría no hacerlo. Por lo tanto, es necesario que adaptes tu documento para satisfacer las necesidades de tu público.
+
+#### Sé conciso
+Es posible que se te asigne la tarea de crear documentación larga, como un informe. Pero cuando resulta demasiado extensa, puede haber resistencia a utilizarla. Para asegurarte de que tu documentación sea útil, establece el propósito desde un comienzo. Esto ayuda a las personas a identificar rápidamente el objetivo del documento. Por ejemplo, los resúmenes ejecutivos describen los principales hechos de un incidente al comienzo de un informe final. Este resumen debe ser breve, de manera que pueda leerse por encima, fácilmente, para identificar los principales hallazgos. 
+
+#### Actualízalo con frecuencia
+En seguridad, se descubren y explotan nuevas vulnerabilidades constantemente. La documentación debe revisarse y actualizarse regularmente para mantenerse al día con el panorama de amenazas en evolución. Por ejemplo, después de que se ha resuelto, una revisión integral de un incidente puede identificar brechas en los procesos y procedimientos que requieren cambios y actualizaciones. Al actualizar regularmente la documentación, los equipos de seguridad se mantienen bien informados y los planes de respuesta a incidentes permanecen actualizados.
+
+Conclusiones clave
+La documentación efectiva es beneficiosa para todas las personas de una organización. Saber cómo crear documentación es una habilidad esencial que debe tener un analista de seguridad. A medida que avanzas en tu proceso para convertirte en profesional de la ciberseguridad, asegúrate de considerar estas prácticas para crear documentación efectiva.
+
+## El rol de los triaje de respuesta a incidentes
+
+Los analistas de seguridad pueden verse inundados con una gran cantidad de alertas un día cualquiera. ¿Cómo manejan todas estas alertas? Las guardias médicas reciben una gran cantidad de pacientes por día, y cada paciente necesita atención por diferentes razones, pero no todos los pacientes serán atendidos de inmediato.
+
+*`Esto es porque los hospitales tienen recursos limitados y deben manejar con eficiencia su tiempo y energía. Lo hacen mediante un proceso conocido como triaje. En medicina, el triaje se usa para clasificar a los pacientes según la urgencia de su condición. Los pacientes con una condición potencialmente mortal, como un infarto, recibirán atención de inmediato. Pero un paciente cuya condición no es grave, como un dedo fracturado, tendrá que esperar para ver al médico. El triaje ayuda a administrar recursos limitados para que el personal pueda atender de inmediato a los pacientes con condiciones más urgentes.`*
+
+ El triaje también se usa en la seguridad. Antes de elevar una alerta, pasa por un proceso de triaje que prioriza los incidentes según su importancia o urgencia. De forma análoga a los hospitales, los equipos de seguridad tienen recursos limitados para dedicar a la respuesta a incidentes. No todos los incidentes son iguales, y algunos implicarán urgencia. Los incidentes se clasifican según su amenaza a la confidencialidad, integridad y disponibilidad de los sistemas. Por ejemplo, un incidente que involucre ransomware requiere respuesta inmediata. Esto es porque el ransomware puede causar daño financiero, reputacional y operativo. El ransomware tiene más prioridad que un incidente como un correo de phishing a un empleado. ¿Cuándo tiene lugar el triaje? Comienza cuando se detecta un incidente y se envía una alerta. Como analista de seguridad, identificarás los diferentes tipos de alertas y les darás prioridad según su urgencia. 
+ 
+El proceso de triaje suele verse así: 
+
+- Primero recibirás y evaluarás la alerta para determinar si es un falso positivo y si se relaciona con un incidente que ya existe.
+- Si es un verdadero positivo, le asignarás prioridad a la alerta según la política de la organización. 
+
+El nivel de prioridad define cómo el equipo de seguridad responderá al incidente. Al final, la investigarás y recopilarás y analizarás la evidencia asociada a las alertas, como los registros del sistema. Como analista, realizarás un análisis exhaustivo para tener información suficiente y poder tomar una decisión informada sobre tus hallazgos. Digamos que recibiste una alerta por un intento fallido de inicio de sesión. Deberás dar contexto a tu investigación para determinar si es malicioso. Lo puedes hacer mediante preguntas. ¿Hay algo fuera de lo normal asociado con esta alerta? ¿Hay varios intentos fallidos de inicio de sesión? ¿El intento ocurrió fuera de horas normales de trabajo? ¿Se hizo fuera de la red? Estas preguntas dan un panorama del incidente. Al agregar contexto evitas las conjeturas, que pueden llevar a conclusiones incompletas o incorrectas.
+
+## El proceso de triaje
+
+Los incidentes pueden tener el potencial de causar un daño significativo a una organización. Los equipos de seguridad deben responder de manera rápida y eficiente para prevenir o limitar el impacto de un incidente antes de que sea demasiado tarde. El triaje es la priorización de incidentes en función de su nivel de importancia o urgencia. El proceso de triaje ayuda a los equipos de seguridad a evaluar y priorizar las alertas y asignar recursos de manera efectiva para que los problemas más críticos se atiendan primero.
+
+El proceso de triaje consta de tres pasos:
+
+- Recibir y evaluar 
+- Asignar prioridad 
+- Recopilar y analizar
+
+### Recibir y evaluar 
+Durante esta primera etapa del proceso de triaje, un analista de seguridad recibe una alerta de, por ejemplo, un sistema de detección de intrusiones (IDS). Es posible que recuerdes que un IDS es una aplicación que monitorea la actividad del sistema y alerta sobre posibles intrusiones. Luego, el analista revisa la alerta para verificar su validez y asegurarse de que la entiende en su totalidad. 
+
+Esto implica recopilar la mayor cantidad de información posible sobre la alerta, incluidos, entre otros, los detalles sobre la actividad que desencadenó la alerta y los sistemas y activos involucrados. Aquí te presentamos algunas preguntas para tener en cuenta al verificar la validez de una alerta: 
+
+- ¿Es la alerta un falso positivo? Los analistas de seguridad deben determinar si la alerta es un problema de seguridad genuino o un falso positivo, o sea, una alerta que detecta incorrectamente la presencia de una amenaza.
+
+- ¿Se activó esta alerta en el pasado? En caso afirmativo, ¿cómo se resolvió? El historial de una alerta puede ayudar a determinar si es un problema nuevo o recurrente. 
+
+- ¿La alerta se desencadena por una vulnerabilidad conocida? Si una alerta es activada por una vulnerabilidad conocida, los analistas de seguridad pueden aprovechar los conocimientos existentes para determinar una respuesta adecuada y minimizar el impacto de la vulnerabilidad. 
+
+- ¿Cuál es la gravedad de la alerta? La gravedad de una alerta puede ayudar a determinar la prioridad de la respuesta para que los problemas críticos se eleven rápidamente.
+
+### Asignar prioridad 
+Una vez que la alerta se ha evaluado y verificado adecuadamente como un problema de seguridad genuino, debe priorizarse en consecuencia. Los incidentes difieren en su impacto, tamaño y alcance, lo que afecta los intentos de respuesta. Para administrar el tiempo y los recursos, los equipos de seguridad deben priorizar la forma en que responden a varios incidentes, ya que no todos son iguales. A continuación, se detallan algunos factores a considerar al determinar la prioridad de un incide:
+
+- Impacto funcional: Los incidentes de seguridad que tienen como objetivo sistemas de tecnología de la información impactan el servicio que estos sistemas brindan a sus usuarios. Por ejemplo, un incidente de ransomware puede afectar gravemente la confidencialidad, disponibilidad e integridad de los sistemas. Los datos pueden ser encriptados o eliminados, haciéndolos completamente inaccesibles para los usuarios. Considera cómo un incidente impacta en la funcionalidad existente para el negocio del sistema afectado.
+
+- Impacto de la información: Los incidentes pueden afectar la confidencialidad, integridad y disponibilidad de los datos y la información de una organización. En un ataque de exfiltración de datos, los agentes de amenaza pueden robar datos confidenciales, que pueden pertenecer a organizaciones o usuarios externos. Considera los efectos que el compromiso de la información puede causar más allá de la organización. 
+
+- Recuperabilidad: La forma en que una organización se recupera de un incidente depende del tamaño y el alcance del incidente y de la cantidad de recursos disponibles. En algunos casos, la recuperación podría no ser posible, como cuando un agente de amenaza roba con éxito datos privados y los comparte públicamente. Dedicar tiempo, esfuerzo y recursos en un incidente sin recuperabilidad puede ser un desperdicio. Es importante considerar si la recuperación es posible y si merece el tiempo y el costo.
+
+*`Nota: Las alertas de seguridad suelen llegar con un nivel de prioridad o gravedad asignado que clasifica la urgencia de la alerta en función de un nivel de priorización. `*
+
+### Recopilar y analizar
+El paso final del proceso de triaje implica que el analista de seguridad realice un análisis exhaustivo del incidente. El análisis implica la recopilación de pruebas de diferentes fuentes, la realización de investigaciones externas y la documentación del proceso de investigación. El objetivo de este paso es recopilar suficiente información para tomar una decisión informada, a la hora de atender el incidente. Dependiendo de su gravedad, puede ser necesario elevarlo a un analista de nivel 2 o a un gerente. Los analistas y gerentes de nivel 2 podrían tener más conocimiento sobre el uso de técnicas avanzadas para atender el incidente. 
+
+### Beneficios del triaje
+Al priorizar los incidentes en función de su impacto potencial, puede reducirse el alcance del impacto en la organización, ya que garantiza una respuesta oportuna. Algunos de los beneficios que el triaje tiene para los equipos de seguridad son: 
+
+Gestión de recursos: El triaje de las alertas permite a los equipos de seguridad enfocar sus recursos en las amenazas que requieren atención urgente. Esto ayuda a los miembros del equipo a evitar dedicar tiempo y recursos a tareas de menor prioridad y también podría reducir el tiempo de respuesta.
+
+Enfoque estandarizado: El triaje proporciona un enfoque estandarizado para el manejo de incidentes. La documentación del proceso, como los manuales de estrategias, ayuda a que las alertas pasen por un proceso iterativo, lo cual garantiza que se evalúen y validen correctamente. Esto hace que sean solo las alertas válidas las que pasen al siguiente nivel y sean investigadas.
+
+## 3ra fase, contención, erradicación y recuperación del ciclo de vida
+
+La tercera fase del ciclo de vida de la respuesta a incidentes, que incluye los pasos que los equipos llevan a cabo para contener, erradicar y recuperarse de un incidente. Es importante saber que estos pasos se interrelacionan. La contención ayuda a cumplir los objetivos de erradicación, lo cual, a su vez, ayuda a cumplir los objetivos de recuperación. 
+
+Comencemos con el primer paso: 
+- Contención: Después de detectarse un incidente, se debe contener. La contención es el acto de limitar y prevenir daños adicionales causados por un incidente. Las organizaciones describen sus estrategias de contención en planes de respuesta a incidentes. Las estrategias de contención detallan las acciones a adoptar después de detectar un incidente. Hay diferentes estrategias de contención según el tipo de incidente. 
+
+    Por ejemplo, una estrategia de contención común para un incidente de malware en un solo sistema es aislarlo al desconectarlo de la red. Esto evita la propagación del malware a otros sistemas en la red. Así, el incidente se contiene únicamente en el sistema comprometido, lo que limita cualquier daño adicional. La contención es el primer paso para eliminar una amenaza de un entorno.
+
+- Erradicaón: Una vez que el incidente ha sido contenido, los equipos trabajan para eliminar todos los rastros del incidente mediante la erradicación. La erradicación implica la eliminación completa de los elementos del incidente de todos los sistemas afectados. Por ejemplo, las acciones de erradicación incluyen la realización de pruebas de vulnerabilidad y la aplicación de parches para vulnerabilidades relacionadas con la amenaza.
+
+- Recuperaciòn: El último paso de esta fase del ciclo de vida de la respuesta a incidentes es la recuperación. Se trata del proceso de devolver los sistemas afectados a su operación normal. Un incidente puede interrumpir operaciones y servicios clave del negocio. Durante la recuperación, los servicios impactados regresan a la operación normal. Las acciones incluyen la reimagen de sistemas afectados, el restablecimiento de contraseñas y el ajuste de configuraciones de red como reglas de firewall.
+
+*`Recuerda: el ciclo de vida de la respuesta a incidentes es cíclico. Pueden ocurrir varios incidentes en el tiempo, y pueden estar relacionados. Tal vez los equipos de seguridad deban volver a otras fases del ciclo para investigar más.`*
+
+## Consideraciones para la continuidad del negocio
+
+### Planificación de la continuidad del negocio
+Los equipos de seguridad deben estar preparados para minimizar el impacto que los incidentes de seguridad pueden tener en el desarrollo normal de un negocio. Cuando ocurre un incidente, las organizaciones pueden experimentar interrupciones significativas en la funcionalidad de sus sistemas y servicios, que pueden tener efectos graves, como perjuicios legales, financieros y de reputación. Las organizaciones deben utilizar la planificación de la continuidad del negocio para seguir operando durante cualquier interrupción importante.
+
+Al igual que un plan de respuesta a incidentes, un plan de continuidad del negocio (BCP) es un documento que describe los procedimientos para mantener las operaciones comerciales durante y después de una interrupción significativa. Un BCP ayuda a las organizaciones a garantizar que las funciones comerciales críticas puedan reanudarse o restaurarse rápidamente cuando ocurre un incidente.
+
+Los analistas de seguridad de nivel inicial no suelen ser responsables del desarrollo y las pruebas de un BCP. Sin embargo, es importante que comprendas cómo los BCP proporcionan a las organizaciones una forma estructurada de responder y recuperarse de los incidentes de seguridad.
+
+*`Nota: Los planes de continuidad del negocio no son lo mismo que los planes de recuperación ante desastres. Estos se utilizan para recuperar sistemas de información en respuesta a un hecho grave, que puede ir desde fallas de hardware hasta la destrucción de las instalaciones por un desastre natural, como una inundación. `*
+
+#### Los impactos del ransomware en la continuidad del negocio
+Los impactos de un incidente de seguridad como el ransomware pueden ser devastadores para el funcionamiento de una organización. Los ataques de ransomware dirigidos a infraestructura crítica, como la de salud, pueden tener el potencial de causar interrupciones significativas. Dependiendo de la gravedad del ataque, pueden verse afectadas la accesibilidad, la disponibilidad y la prestación de servicios de salud esenciales. Por ejemplo, el ransomware puede cifrar datos, lo que resulta en la inhabilitación del acceso a los registros médicos y la imposibilidad de que los proveedores de atención médica accedan a los registros de los pacientes. A mayor escala, los incidentes de seguridad que tienen como objetivo los activos, sistemas y redes de infraestructura crítica también pueden comprometer la seguridad nacional y económica, y la salud y seguridad del público. La importancia de los BCP radica en que ayudan a minimizar las interrupciones en las operaciones para que se pueda acceder rápidamente a los servicios esenciales.
+
+#### Estrategias de recuperación
+Cuando se produce una interrupción debido a un incidente de seguridad, las organizaciones deben tener algún tipo de plan de recuperación operativo para resolver el problema y poner los sistemas en pleno funcionamiento. Los BCP pueden incluir estrategias para la recuperación que se centran en retomar las operaciones normales. La resiliencia del sitio es un ejemplo de estrategia de recuperación. 
+
+
+### Resiliencia del sitio 
+La resiliencia es la capacidad de prepararse, responder y recuperarse de las alteraciones. Las organizaciones pueden diseñar sus sistemas para que sean resilientes y puedan continuar prestando servicios a pesar de enfrentar interrupciones. Un ejemplo es la resiliencia del sitio, que se utiliza para garantizar la disponibilidad de redes, centros de datos u otras infraestructuras cuando se produce una interrupción. Hay tres tipos de sitios de recuperación utilizados para la resiliencia del sitio:
+
+- Sitios calientes (Hot sites): Instalaciones completamente operativas que replican el entorno primario de una organización. Los sitios calientes pueden activarse inmediatamente cuando el sitio principal de una organización experimenta fallas o interrupciones.
+
+- Sitios tibios (Warm sites): Instalaciones que contienen una versión completamente actualizada y configurada del sitio caliente. A diferencia de estos, los sitios tibios no están completamente operativos y disponibles para su uso inmediato, pero pueden ponerse en funcionamiento rápidamente cuando se produce una falla o interrupción.
+
+- Sitios fríos (Cold sites): Instalaciones de respaldo equipadas con parte de la infraestructura necesaria para operar el sitio de una organización. Cuando se produce una interrupción o falla, los sitios fríos pueden no estar listos para su uso inmediato y tal vez requieran trabajo adicional para poder operar.
+
+## 4ta fase, Acciones posteriores al incidente del ciclo de vida
+
+El momento ideal para aprender y mejorar es en la fase final de la respuesta a incidentes: la actividad posterior a un incidente. Esta fase conlleva el proceso de revisar un incidente para identificar áreas de mejora en el manejo de incidentes. Durante esta fase del ciclo de vida, se actualizan o crean diferentes tipos de documentación. Uno de los más importantes que se crean es el informe final. Se trata de un documento que proporciona una revisión integral de un incidente. Incluye una línea de tiempo, detalles de todos los eventos relacionados al incidente y recomendaciones para la prevención futura. Durante un incidente, el objetivo del equipo es centrar esfuerzos en la respuesta y la recuperación. Después del incidente, se trabaja en minimizar el riesgo de que se repita.
+
+Una forma de mejorar los procesos es la reunión sobre lecciones aprendidas. En ella participan todas las partes involucradas en el incidente, y suele llevarse a cabo dos semanas después de ocurrido. En esta reunión, se revisa el incidente para determinar qué sucedió, qué medidas se tomaron y cómo funcionaron. El informe final es también el principal documento de referencia en la reunión. El objetivo del debate en la reunión de lecciones aprendidas es compartir ideas e información sobre el incidente y ver cómo mejorar esfuerzos futuros. Aquí hay algunas preguntas para hacer durante una reunión sobre lecciones aprendidas: 
+
+- ¿Qué pasó? 
+- ¿A qué hora sucedió? 
+- ¿Quién lo descubrió? 
+- ¿Cómo se contuvo? 
+- ¿Qué medidas se tomaron para la recuperación? 
+- ¿Qué pudo haberse hecho de otra manera? 
+
+Las revisiones de incidentes pueden revelar errores humanos antes de la detección y durante la respuesta, ya sea un analista que omitió un paso en un proceso de recuperación o un empleado que hizo clic en un enlace en un correo de phishing que propagó malware. Debe evitarse culpar a alguien por algo que hizo o no hizo. Al contrario: puede verse como una oportunidad para aprender de lo que pasó y mejorar.
+
+### Revisión posterior a un incidente
+
+La fase de actividad posterior a un incidente del ciclo de vida de respuesta a incidentes del NIST es el proceso de revisión que permite identificar áreas a mejorar durante el manejo de incidentes.
+
+<img src='ciclo_vida' width='600px'>
+
+### Lecciones aprendidas
+Después de que una organización ha contenido un incidente, lo ha erradicado y se ha recuperado con éxito, el incidente llega a su fin. Sin embargo, esto no significa que haya terminado el trabajo de los profesionales de la seguridad. Los incidentes brindan a las organizaciones y sus equipos de seguridad la oportunidad de aprender de lo que sucedió y priorizar formas de mejorar el proceso de manejo de incidentes.
+
+Esto se hace generalmente a través de una reunión sobre lecciones aprendidas, también conocida como análisis retrospectivo o revisión post incidente (post-mortem). Una reunión sobre lecciones aprendidas convoca a todas las partes involucradas luego de un incidente importante. Dependiendo del alcance que haya tenido, se pueden programar varias reuniones para recopilar datos suficientes. El propósito de esta reunión es analizar el incidente en su totalidad, evaluar las medidas de respuesta e identificar cualquier área a mejorar. Su objetivo no es echar culpas sino ofrecer a la organización y a su personal la oportunidad de aprender y mejorar. Esta reunión debe programarse a más tardar dos semanas después de que un incidente haya sido remediado con éxito. 
+
+No todos los incidentes requieren su propia reunión sobre lecciones aprendidas. El tamaño y la gravedad de un incidente dictarán si es necesario llevarla a cabo. Los incidentes importantes, como los ataques de ransomware, sí deben revisarse en una reunión sobre lecciones aprendidas específica, a la que asisten todas las partes que intervinieron en cualquier aspecto del proceso de respuesta al incidente. Algunos ejemplos de las preguntas que se tratan en esta reunión son:
+
+- ¿Qué sucedió?
+
+- ¿A qué hora ocurrió?
+
+- ¿Quién lo descubrió?
+
+- ¿Cómo se contuvo?
+
+- ¿Cuáles fueron las medidas que se tomaron para la recuperación?
+
+- ¿Qué pudo haberse hecho de otra manera?
+
+Además de tener la oportunidad de aprender del incidente, existen beneficios adicionales de llevar a cabo una reunión sobre lecciones aprendidas. Para las grandes organizaciones, ofrecen una plataforma para que los miembros del equipo en todos los departamentos compartan información y recomendaciones para la prevención futura. 
+
+*`Consejo profesional: Antes de que un equipo organice una reunión sobre lecciones aprendidas, los organizadores deben asegurarse de que todos los asistentes lleguen preparados. Los organizadores de la reunión generalmente desarrollan y distribuyen una agenda de la reunión de antemano, la cual contiene los temas de discusión y garantiza que los asistentes estén informados y preparados. Además, se deben asignar con anticipación las funciones de quienes participarán en la reunión, incluido un moderador que dirija y facilite la discusión y un secretario que tome notas de la reunión.`*
+
+#### Recomendaciones
+Las reuniones sobre lecciones aprendidas brindan oportunidades para el crecimiento y la mejora. Por ejemplo, los equipos de seguridad pueden identificar errores en las acciones de respuesta, brechas en los procesos y procedimientos o controles de seguridad ineficaces. Una reunión sobre lecciones aprendidas debe dar como resultado una lista de acciones prioritarias o recomendaciones prácticas destinadas a mejorar los procesos de manejo de incidentes y la postura de seguridad general de una organización. Esto garantiza que las organizaciones estén implementando las lecciones que han aprendido después de un incidente, de modo que no estén expuestas a experimentar el mismo incidente en el futuro. Algunos cambios que pueden llevarse a cabo incluyen actualizar y mejorar las instrucciones del manual de estrategias o poner en práctica nuevas herramientas y tecnologías de seguridad.
+
+### Informe final
+A lo largo de este curso, exploraste la importancia que tiene la documentación en el registro de detalles durante el ciclo de vida de respuesta a incidentes. Como punto de partida, la documentación de respuesta a incidentes debe describir el incidente teniendo en cuenta las cinco preguntas fundamentales a la hora de investigar un incidente: quién (who), qué (what), dónde (where), por qué (why) y cuándo (where). Los detalles plasmados durante la respuesta a incidentes son importantes para desarrollar documentos adicionales al final del ciclo de vida.
+
+Uno de los documentos fundamentales que se crea al término de un incidente es el informe final. Este proporciona una revisión integral del incidente. Los informes finales no están estandarizados, y sus formatos pueden variar según las organizaciones. Además, se pueden crear varios informes finales dependiendo de los públicos para los que estén escritos. Algunos ejemplos de elementos comunes que pueden encontrarse en un informe final son:
+
+- `Resumen ejecutivo`: Un resumen de alto nivel del informe que incluye las principales conclusiones y los hechos esenciales relacionados con el incidente
+
+- `Línea de tiempo`: Un cronograma detallado del incidente que incluye marcas de tiempo que muestran la secuencia de eventos que llevaron al incidente
+
+- `Investigación`: Una compilación de las medidas que se tomaron durante la detección y el análisis del incidente. Por ejemplo, el análisis de un artefacto de red, como una captura de paquetes, revela información sobre qué actividades ocurren en una red.
+
+- `Recomendaciones`: Una lista de medidas sugeridas para la prevención futura
+
+*`Consejo profesional: Al escribir el informe final posterior a un incidente, considera el público para quien lo estás escribiendo. A menudo, estos informes serán leídos por ejecutivos de negocios y otros profesionales no relacionados con la seguridad, que no tienen la pericia para comprender los detalles técnicos. Tener en cuenta al público al escribir un informe final te ayudará a comunicar de manera efectiva los detalles más importantes.`*
+
+## Prácticas adecuadas para recopilar y gestionar registros
+
+### Registros
+Las fuentes de datos, como los dispositivos, generan información en forma de eventos. Un registro (o log) recopila los eventos que se producen dentro de los sistemas de una organización. Estos registros contienen entradas, y cada una detalla la información correspondiente a un único evento que ocurrió en un dispositivo o sistema. Originalmente, los registros servían solo para solucionar problemas tecnológicos habituales. Por ejemplo, los registros de errores proporcionan información sobre por qué ocurrió un error inesperado y ayudan a identificar el origen del error para que pueda corregirse. Hoy, prácticamente todos los dispositivos informáticos generan algún tipo de registro que brinda información valiosa y que no solo tiene que ver con la resolución de problemas. 
+
+En seguridad, los profesionales usan los análisis de registros, que es el proceso mediante el cual se examinan los registros para identificar eventos de interés. Los registros ayudan a descubrir los detalles que responden a las 5 W de la investigación del incidente: quién (who) desencadenó el incidente, qué (what) sucedió, cuándo (when) ocurrió, dónde (where) ocurrió y por qué (why) se produjo. 
+
+#### Tipos de registros
+Según la fuente de datos, se pueden producir diferentes tipos de registro. A continuación, mencionamos una lista de algunos tipos de registros comunes que las organizaciones deberían recopilar:
+
+- `Red`: Los registros de red son generados por dispositivos de red, como firewalls, routers o switches.
+
+- `Sistema`: Los registros de sistema son generados por sistemas operativos, como Chrome OS™, Windows, Linux o macOS®. 
+
+- `Aplicación`: Los registros de aplicación son generados por aplicaciones de software y contienen información relacionada con los eventos que ocurren dentro de la aplicación, como una aplicación en un teléfono inteligente.
+
+- `Seguridad`: Los registros de seguridad son generados por varios dispositivos o sistemas, como el software antivirus y los sistemas de detección de intrusiones. Estos contienen información relacionada con la seguridad, como la eliminación de archivos.
+
+- `Autenticación`: Los registros de autenticación se generan cada vez que se produce una autenticación, como un intento de inicio de sesión exitoso en una computadora.
+
+#### Detalles de registro
+
+Los registros suelen contener una fecha, una hora, una ubicación, una acción y el autor de la acción. Este es un ejemplo de un registro de autenticación:
+
+    Login Event [05:45:15] User1 Authenticated successfully
+
+Los registros contienen información y se pueden ajustar para que incluyan aún más. El registro verboso (con abundancia de detalle) recopila información adicional y detallada que excede el registro predeterminado. Este es un ejemplo del mismo registro anterior pero registrado con abundancia de detalle (verbosidad).
+
+    Login Event [2022/11/16 05:45:15.892673] auth_performer.cc:470 User1 Authenticated successfully from device1 (192.168.1.2)
+
+### Gestión de registros
+Puesto que todos los dispositivos producen registros, puede resultar complicado para las organizaciones realizar un seguimiento de cada uno de ellos. Para aprovecharlos al máximo, tienes que elegir exactamente qué registrar, saber cómo acceder a ellos fácilmente y mantenerlos seguros, mediante la gestión de registros. La gestión de registros es el proceso de recopilar, almacenar, analizar y eliminar los datos de registro. 
+
+#### Qué registrar
+Lo más importante de la gestión de registros es elegir qué registrar. Cada organización es diferente, y sus requisitos de registro también pueden serlo. Es importante tener en cuenta qué fuentes de registro tienen más probabilidades de contener información útil de acuerdo al evento de interés. Esto podría implicar configurar las fuentes de registro para reducir la cantidad de datos que registran o excluir la verbosidad excesiva. Cierta información, que incluye números de teléfono, direcciones de correo electrónico y nombres, entre otros datos, constituye la información de identificación personal (PII), la cual requiere de una gestión especial. Es posible que en algunas jurisdicciones no puedan registrarse.
+
+#### El problema de la saturación de registros
+Desde el punto de vista de la seguridad, registrarlo todo puede resultar tentador. Este es el error más común que cometen las organizaciones. El hecho de que se pueda registrar no significa que deba registrarse. Almacenar una cantidad excesiva de registros puede suponer muchas desventajas para algunas herramientas SIEM. Por ejemplo, la saturación de registros puede aumentar los costos de almacenamiento y mantenimiento. Además, puede aumentar la carga en los sistemas, lo que puede generar problemas de rendimiento y afectar la capacidad de uso. Esto, a su vez, dificulta la búsqueda e identificación de eventos importantes. 
+
+#### Retención de registros
+Algunas organizaciones operan en industrias con regulaciones determinadas. Por ejemplo, ciertas normativas exigen que las empresas retengan los registros durante un período determinado. En estos casos, las organizaciones pueden implementar prácticas de retención de registros en su política de gestión.
+
+Es posible que algunas organizaciones deban modificar su política de gestión de registros para cumplir con las regulaciones. Esto es así para las que operan en industrias como:
+
+- Sector público, como en el caso de la Ley Federal de Modernización de la Seguridad de la Información (FISMA)
+
+- Atención médica, como la Ley de Transferencia y Responsabilidad de los Seguros Médicos, de 1996 (HIPAA)
+
+- Servicios financieros, como el Estándar de Seguridad de Datos para la Industria de Tarjetas de Pago (PCI DSS), la Ley Gramm-Leach-Bliley (GLBA) y la Ley Sarbanes-Oxley de 2002 (SOX)
+
+#### Protección de registros
+Junto con la gestión y la retención, la protección de los registros es vital para mantener su integridad. Suele ser habitual que los agentes de amenaza modifiquen registros con el fin de engañar a los equipos de seguridad e incluso ocultar su actividad.
+
+Almacenar registros en un servidor de registros centralizado es una forma de mantener su integridad. Cuando estos se generan, se envían a un servidor exclusivo en vez de almacenarse en una máquina local, lo cual dificulta a los atacantes acceder a ellos. 
+
+## Variaciones de registro
+ Como analista de seguridad, serás responsable de interpretar registros. Los registros tienen varios formatos, por lo que no son todos iguales, pero suelen contener información como marcas de tiempo, características del sistema, como direcciones IP, y una descripción del evento que incluye la acción realizada y quién la realizó. Los registros pueden generarse desde muchas fuentes de datos diferentes como dispositivos de red, sistemas operativos y más. Estas fuentes generan registros en diferentes formatos. Algunos están diseñados para ser leídos por humanos y otros por máquinas. Algunos pueden ser verbosos, con mucha información, y otros son cortos y sencillos. Veamos algunos formatos de registro de uso común. Uno de los más comunes es Syslog. 
+
+`Syslog` es un protocolo y un formato a la vez. Como protocolo, transporta y escribe registros. Como formato, tiene encabezado, datos estructurados y un mensaje. Una entrada de Syslog tiene tres secciones: encabezado, datos estructurados, y un mensaje. El encabezado tiene datos como marca de tiempo, nombre de host, nombre de la aplicación, y la ID del mensaje. Los datos estructurados presentan información adicional en parejas clave-valor. eventSource es aquí la clave que indica el origen de los datos, que es el valor "Application". Por último, el campo de mensaje contiene el mensaje detallado del evento. Aquí, el mensaje es "This is a log entry!". Veamos otro formato de registro con el que tal vez te encuentres como analista de seguridad. 
+
+La `notación de objetos JavaScript`, conocida como `JSON`, es un formato basado en texto diseñado para su fácil lectura y escritura. También usa parejas clave-valor para estructurar los datos. Las llaves representan el comienzo y fin de un objeto. El objeto son los datos dentro de los corchetes. Está organizado con parejas clave-valor, donde cada clave tiene su valor correspondiente separado por dos puntos. Por ejemplo, la clave en la primera línea es "Alert", y el valor, "Malware". JSON se conoce por su simplicidad y fácil lectura. Como analista usarás JSON para leer y escribir datos como registros.
+
+El `lenguaje de marcado extensible`, o `XML`, es un lenguaje y un formato usados para almacenar y transmitir datos. En lugar de la pareja clave-valor, usa etiquetas y otras claves para estructurar datos. Este ejemplo es una entrada de registro XML con cuatro campos: firstName, lastName, employeeID, y dateJoined, separados con flechas. Finalmente, el formato CSV o "separado por comas" usa separadores como las comas para separar valores de datos. Aquí hay muchos campos de datos que están separados por comas. Ahora que conoces la variedad de formatos de registro, podrás centrarte en evaluar registros para crear contexto a una detección. Ahora vas a ver cómo las firmas IDS se usan para detectar, registrar y alertar sobre actividades sospechosas.
+
+## Descripción general de los formatos de archivo de registro
+
+Previamente, aprendiste de qué manera los registros capturan eventos que ocurren en una red o sistema. En seguridad, los registros proporcionan detalles fundamentales sobre las actividades que ocurrieron en una organización, por ejemplo, quién inició sesión en una aplicación en un momento específico. Como analista de seguridad, usarás el análisis de registros, que es el proceso de examinar registros para identificar eventos de interés. Saber cómo leer e interpretar los diferentes formatos de registro es importante, porque permite descubrir los detalles clave de un evento e identificar actividades inusuales o maliciosas. En esta lectura, revisaremos los siguientes formatos de registro:
+
+- JSON
+- Syslog
+- XML
+- CSV
+- CEF
+
+### Notación de objetos JavaScript (JSON)
+La notación de objetos JavaScript (JSON) es un formato de archivo que se utiliza para almacenar y transmitir datos. Es conocido por ser ligero, así como fácil de leer y escribir. Se usa para transmitir datos en tecnologías web, y también en entornos en la nube. La sintaxis de JSON deriva de la sintaxis de JavaScript. Si ya conoces JavaScript, es posible que sepas que JSON contiene componentes de JavaScript que incluyen:
+
+- Parejas clave-valor
+- Comas
+- Comillas dobles
+- Llaves
+- Corchetes
+
+#### Parejas clave-valor
+Una pareja clave-valor es un conjunto de datos que representa dos elementos vinculados: una clave y su valor correspondiente. Consiste de una clave seguida de dos puntos y, luego, de un valor. Un ejemplo de una pareja clave-valor es  "Alert": "Malware".
+
+*`Nota: Para que sea más fácil leerlos, se recomienda incluir un espacio después de los dos puntos para separar la clave del valor.`*
+
+#### Comas
+Las comas se utilizan para separar datos. Por ejemplo: "Alert": "Malware", "Alert code": 1090, "severity": 10.
+
+#### Comillas dobles
+Las comillas dobles se utilizan para encerrar datos de texto, lo cual también se conoce como cadena, por ejemplo:  "Alert": "Malware". Los datos que contienen números no están entre comillas, por ejemplo: "Alert code": 1090.
+
+#### Llaves
+Las llaves encierran un objeto, que es un tipo de dato que almacena datos en una lista separada por comas de parejas clave-valor. Estos objetos se suelen utilizar para describir varias propiedades para una clave determinada. Las entradas de registro JSON comienzan y terminan con una llave. En este ejemplo, User es el objeto que contiene varias propiedades:
+
+``` Registro JSON
+"User"
+{ 
+    "id": "1234", 
+    "name": "user"
+    "role": "engineer"
+}
+```
+
+#### Corchetes
+Los corchetes se usan para encerrar un array, que es un tipo de datos que almacena información en una lista ordenada y separada por comas. Los arrays son útiles cuando es necesario almacenar datos, como un conjunto ordenado, por ejemplo: ["Administrators", "Users", "Engineering"].
+
+### Syslog
+Syslog es un estándar para registrar y transmitir datos. Se puede usar para referirse a cualquiera de sus tres funciones: 
+
+- `Protocolo`: El protocolo syslog se utiliza para transportar registros a un servidor centralizado para su gestión. Utiliza el puerto 514 para registros de texto plano y el puerto 6514 para registros cifrados.
+
+- `Servicio`: El servicio syslog actúa como un servicio de reenvío de registros que consolida registros de varias fuentes en una sola ubicación. Recibe y luego reenvía las entradas de registro de syslog a un servidor remoto. 
+
+- `Formato de registro`: El formato de registro syslog es uno de los más utilizados que analizaremos. Es el formato de registro nativo utilizado en los sistemas Unix®. Consta de tres componentes: un encabezado, datos estructurados y un mensaje.
+
+### Ejemplo de registro syslog
+Este es un ejemplo de entrada syslog que contiene los tres componentes: un encabezado seguido de datos estructurados y un mensaje:
+
+``` Registro Syslog
+<236>1 2022-03-21T01:11:11.003Z virtual.machine.com evntslog - ID01 [user@32473 iut="1" eventSource="Application" eventID="9999"] 
+This is a log entry!
+```
+
+#### Encabezado 
+El encabezado contiene detalles, como la marca de tiempo, el nombre del host (que es el nombre del equipo que envía el registro), el nombre de la aplicación y la ID del mensaje. 
+
+- Marca de tiempo: en este ejemplo, es  2022-03-21T01:11:11.003Z, donde 2022-03-21 es la fecha en formato YYYY-MM-DD. Se usa T para separar la fecha y la hora. 01:11:11.003 es el formato de 24 horas de la hora, e incluye la cantidad de milisegundos 003. Z indica la zona horaria, que es Tiempo Universal Coordinado (UTC). 
+- Nombre del host: virtual.machine.com 
+- Aplicación: evntslog 
+- ID del mensaje: ID01
+
+#### Datos estructurados 
+La parte de datos estructurados de la entrada de registro contiene información de registro adicional. Está encerrada entre corchetes y estructurada en parejas clave-valor. Aquí hay tres claves con valores correspondientes:[user@32473 iut="1" eventSource="Application" eventID="9999"].
+
+#### Mensaje 
+Contiene un mensaje de registro detallado sobre el evento. En este caso, el mensaje es `This is a log entry!`.
+
+#### Prioridad (PRI)
+El campo de prioridad (PRI) indica la urgencia del evento registrado y está contenido entre los símbolos mayor y menor. En este ejemplo, el valor de prioridad es <236>. En general, cuanto menor sea el nivel de prioridad, más urgente es el evento. 
+
+*`Nota: Los encabezados syslog se pueden combinar con formatos JSON y XML. También existen formatos de registro personalizados.`*
+
+### XML (lenguaje de marcado extensible)
+El XML (lenguaje de marcado extensible) es un lenguaje y un formato utilizado para almacenar y transmitir datos. Además, es un formato de archivo nativo utilizado en sistemas Windows. La sintaxis XML utiliza lo siguiente:
+
+- Etiquetas
+- Elementos
+- Atributos
+
+#### Etiquetas
+XML utiliza etiquetas para almacenar e identificar datos. Las etiquetas son pares que deben contener una de inicio y una de finalización. La etiqueta de inicio encierra los datos entre símbolos de mayor y menor, por ejemplo <tag>, mientras que una etiqueta de finalización los encierra con símbolos de mayor y menor y una barra invertida, así: </tag>. 
+
+#### Elementos 
+Los elementos XML incluyen los datos contenidos dentro de una etiqueta y la etiqueta en sí. Todas las entradas XML deben contener al menos un elemento raíz. Los elementos raíz contienen otros elementos que se encuentran debajo de ellos, conocidos como elementos secundarios. 
+
+He aquí un ejemplo:
+
+``` Registro XML
+<Event>	
+    <EventID>4688</EventID>
+    <Version>5</Version>
+</Event>
+```
+
+En este ejemplo, <Event> es el elemento raíz, y contiene dos elementos secundarios <EventID> y <Version>. Hay datos contenidos en cada elemento secundario.
+
+#### Atributos
+Los elementos XML también pueden contener atributos. Se utilizan para proporcionar información adicional sobre los elementos. Además, se incluyen como la segunda parte de la etiqueta en sí misma y siempre se deben citar con comillas simples o dobles.
+
+Por ejemplo:
+
+``` Registro XML, Atributos
+<EventData>
+    <Data Name='SubjectUserSid'>S-2-3-11-160321</Data>
+    <Data Name='SubjectUserName'>JSMITH</Data>
+    <Data Name='SubjectDomainName'>ADCOMP</Data>
+    <Data Name='SubjectLogonId'>0x1cf1c12</Data>
+    <Data Name='NewProcessId'>0x1404</Data>
+</EventData>
+```
+
+En la primera línea de este ejemplo, la etiqueta es <Data> y usa el atributo Name='SubjectUserSid' para describir los datos incluidos en la etiqueta S-2-3-11-160321.
+
+### CSV (valor separado por comas)
+El CSV (valor separado por comas) utiliza comas para separar los valores de datos. En los registros CSV, la posición de los datos corresponde al nombre del campo, pero los propios nombres del campo podrían no estar incluidos en el registro. Es fundamental comprender qué campos incluye el dispositivo de origen (como un IPS, firewall, escáner, etc.) en el registro. 
+
+Ejemplo:
+
+``` Resgistro CSV
+2009-11-24T21:27:09.534255,ALERT,192.168.2.7, 1041,x.x.250.50,80,TCP,ALLOWED,1:2001999:9,"ET MALWARE BTGrab.com Spyware Downloading Ads",1
+```
+### CEF (formato de evento común)
+El formato de evento común (CEF) es un formato de registro que utiliza parejas clave-valor para estructurar datos e identificar campos y sus valores correspondientes. La sintaxis CEF contiene los siguientes campos: 
+
+    CEF:Version|Device Vendor|Device Product|Device Version|Signature ID|Name|Severity|Extension 
+
+Todos los campos están separados por una barra vertical |, también denominada pleca. Sin embargo, todo lo que vaya en la parte Extension de la entrada de registro CEF se debe escribir en un formato de clave-valor. Syslog es un método común utilizado para transportar registros como el CEF. Si se usa syslog, antes del mensaje CEF se indicarán la marca de tiempo y el nombre del host. Este es un ejemplo de una entrada de registro CEF que detalla la actividad maliciosa relacionada con una infección por un gusano:
+
+    Sep 29 08:26:10 host CEF:1|Security|threatmanager|1.0|100|worm successfully stopped|10|src=10.0.0.2 dst=2.1.2.2 spt=1232
+
+Este es el desglose de cada campo:
+
+
+- Syslog Timestamp (marca de tiempo de syslog): 29 sept 08:26:10
+- Syslog Hostname (nombre del host de syslog): host
+- Version (versión): CEF:1
+- Device Vendor (proveedor del dispositivo): Seguridad
+- Device Product (producto del dispositivo): threatmanager
+- Device Version (versión del dispositivo): 1.0
+- Signature ID (ID de firma): 100
+- Name (nombre): gusano detenido exitosamente
+- Severity (gravedad): 10
+- Extension (extensión): Este campo contiene datos escritos como parejas clave-valor. Hay dos direcciones IP, src=10.0.0.2 y dst=2.1.2.2, y un número de puerto de origen spt=1232. No se requieren extensiones, y agregarlas es opcional.
+
+Esta entrada de registro contiene detalles sobre una aplicación de  Security que se llama threatmanager (gestor de amenazas) que detuvo con éxito la propagación de un gusano (successfully stopped a worm) desde la red interna en 10.0.0.2 a la red externa 2.1.2.2 a través del puerto 1232. Se indica un alto nivel de gravedad de 10.
+
+*`Nota: Es opcional agregar extensiones y el prefijo syslog a un registro CEF.`*
+
+#### Recursos 
+
+[Protocolo syslog](https://www.rfc-editor.org/rfc/rfc5424)
+
+[Herramienta generadora de datos de prueba](https://generatedata.com/)
+
+[Fecha y hora de internet, marcas de tiempo](https://www.rfc-editor.org/rfc/rfc3339)
+
+## Herramientas y técnicas de detección
+
+Examinaremos los diferentes tipos de tecnologías de sistemas de detección de intrusiones (IDS) y las alertas que estos generan. También aprenderás las dos técnicas que más suelen usar los sistemas de detección. Entender las capacidades y limitaciones de las tecnologías IDS y sus técnicas de detección te ayudará a interpretar la información de seguridad para identificar y analizar los eventos de seguridad y responder a ellos.
+
+Como ya sabemos, un sistema de detección de intrusiones (IDS) es una aplicación que monitorea la actividad del sistema y alerta sobre posibles intrusiones. Las tecnologías IDS ayudan a las organizaciones a monitorear la actividad que se desarrolla en sus sistemas y redes para poder identificar indicios de actividad maliciosa. Según dónde decidas configurar un IDS, este puede estar basado en host o en red.
+
+### Sistema de detección de intrusiones basado en host
+El sistema de detección de intrusiones basado en host (HIDS) es una aplicación que monitorea la actividad del host en el que está instalado. Se instala como un agente en un host. Al host también se lo conoce como punto de conexión, que es cualquier dispositivo conectado a una red, como una computadora o un servidor. 
+
+Por lo general, los agentes de HIDS se instalan en todos los puntos de conexión y se utilizan para controlar y detectar amenazas de seguridad. Un HIDS monitorea la actividad interna que ocurre en el host para identificar comportamientos no autorizados o anormales. Si detecta algo inusual, como la instalación de una aplicación no autorizada, el HIDS lo registra y envía una alerta. 
+
+Además de controlar los flujos de tráfico entrante y saliente, el HIDS puede tener otras capacidades, como supervisar los sistemas de archivos, el uso de los recursos del sistema, la actividad del usuario y más. 
+
+Este diagrama muestra una herramienta HIDS instalada en una computadora. El círculo punteado alrededor del host indica que solo está controlando la actividad local en esa computadora en la que está instalado. 
+
+<img src="HIDS" width="600px">
+
+### Sistema de detección de intrusiones basado en la red
+Un sistema de detección de intrusiones basado en la red (NIDS) es una aplicación que recopila y monitorea el tráfico de la red y sus datos. El software NIDS se instala en dispositivos ubicados en aquellas partes específicas de la red que se quiere monitorear. La aplicación NIDS inspecciona el tráfico de red desde diferentes dispositivos. Si detecta algún tráfico malicioso, lo registra y genera una alerta.
+
+Este diagrama muestra un NIDS que está instalado en una red. El círculo resaltado alrededor del servidor y las computadoras indica que el NIDS está instalado en el servidor y está monitoreando la actividad de las computadoras.
+
+<img src="HIDS" width="600px">
+
+Combinar un HIDS y un NIDS para monitorear un entorno puede ofrecer un enfoque multicapa para detectar intrusiones y darles respuesta. Ambas herramientas proporcionan una perspectiva diferente sobre la actividad que ocurre en una red y cada uno de los hosts que están conectados a ella. Esto aporta una visión integral de la actividad que se está desarrollando en un entorno.
+
+### Técnicas de detección
+Los sistemas de detección pueden utilizar diferentes técnicas para detectar amenazas y ataques. Los dos tipos de técnicas de detección más utilizados por las tecnologías IDS son el análisis basado en firmas y el análisis basado en anomalías.
+
+## 1. Análisis basado en firmas
+El análisis de firmas, o análisis basado en firmas, es un método de detección que se utiliza para encontrar eventos de interés. Una firma es un patrón asociado con actividad maliciosa. Las firmas pueden contener patrones específicos, como una secuencia de números binarios, bytes o incluso datos específicos (como una dirección IP). 
+
+Anteriormente, exploraste la pirámide del dolor, un concepto que prioriza los diferentes tipos de indicadores de compromiso (IoC) asociados con un ataque o amenaza, como direcciones IP, herramientas, tácticas, técnicas y demás. Los IoC y otros indicadores de ataque pueden ser útiles para crear firmas dirigidas para detectar y bloquear ataques.
+
+Se pueden usar diferentes tipos de firmas según el tipo de amenaza o ataque que quieras detectar. Por ejemplo, una firma antimalware contiene patrones asociados con el malware. Esto puede incluir los scripts maliciosos que suele utilizar el malware. Las herramientas de IDS revisarán un entorno en busca de eventos que coincidan con los patrones definidos en esta firma de malware. Si un evento coincide con la firma, este se registra y se genera una alerta. 
+
+#### Ventajas
+        
+- Baja tasa de falsos positivos: El análisis basado en firmas es muy eficiente para detectar amenazas conocidas porque simplemente compara la actividad con las firmas y esto arroja menos falsos positivos. Recuerda que un falso positivo es una alerta que detecta incorrectamente la presencia de una amenaza, ya que esta no existe.
+
+#### Desventajas
+- Las firmas se pueden eludir: Al ser únicas, los atacantes pueden modificar sus comportamientos de ataque para evitarlas. Por ejemplo, pueden hacer pequeñas modificaciones en el código de malware para alterar su firma y evitar su detección.
+
+- Las firmas requieren actualizaciones: El análisis basado en firmas depende de una base de datos de firmas para detectar amenazas. Cada vez que se descubre un nuevo exploit o ataque, es necesario crear nuevas firmas y agregarlas a la base de datos de firmas.
+
+- Es incapaz de detectar amenazas desconocidas: El análisis basado en firmas se basa en la detección de amenazas conocidas a través de firmas. No es posible detectar amenazas desconocidas, como familias de malware nuevas o ataques de día cero, que son vulnerabilidades recién descubiertas.
+
+### Análisis basado en anomalías
+El análisis basado en anomalías es un método de detección que identifica comportamiento anormal. En este tipo de análisis hay dos fases: aprendizaje y detección. Durante la fase de aprendizaje, es necesario crear un valor de referencia de lo que sería un comportamiento normal o esperado. Estos valores de referencia se desarrollan recopilando datos que corresponden al comportamiento normal del sistema. Durante la fase de detección, la actividad actual del sistema se compara con este valor de referencia. La actividad que está por fuera de ese valor se registra, y se genera una alerta. 
+
+#### Ventajas
+- Capacidad para detectar amenazas nuevas y en evolución: A diferencia del análisis basado en firmas, que utiliza patrones conocidos para detectar amenazas, el análisis basado en anomalías puede detectar amenazas desconocidas.
+
+#### Desventajas
+- Alta tasa de falsos positivos: Cualquier comportamiento que se desvíe del valor de referencia se puede marcar como anormal, incluidos los comportamientos no maliciosos. Esto arroja una alta tasa de falsos positivos.
+
+## Descripción general de Suricata
+
+Hasta ahora, aprendiste sobre las firmas de detección y conociste Suricata, un sistema de detección de incidentes (IDS).
+
+En esta lectura, aprenderás más sobre Suricata. También descubrirás las ventajas de escribir firmas y configuraciones personalizadas. Esta es una habilidad importante que deberías desarrollar en tu carrera en ciberseguridad, ya que es posible que una de tus tareas sea implementar herramientas IDS y darles mantenimiento.
+
+### Introducción a Suricata
+[Suricata](https://suricata.io/) es un sistema de detección de intrusiones de código abierto, un sistema de prevención de intrusiones y una herramienta de análisis de redes.
+
+#### Características de Suricata
+Suricata tiene tres funcionalidades principales:
+
+- `Sistema de detección de intrusiones (IDS)`: Como IDS basado en la red, Suricata puede monitorear el tráfico de la red y alertar sobre intrusiones y actividades sospechosas. Además, se puede configurar como IDS basado en host para que controle el sistema y las actividades de red de un solo host, como una computadora.
+
+- `Sistema de prevención de intrusiones (IPS)`: Suricata también puede funcionar como un sistema de prevención de intrusiones (IPS) para detectar y bloquear la actividad y el tráfico malicioso. Ejecutar Suricata en modo IPS requiere una configuración adicional, como habilitar el modo IPS.
+
+- `Monitoreo de seguridad de red (NSM)`: En este modo, Suricata ayuda a mantener la seguridad de las redes al generar y guardar registros de red relevantes. Además, puede analizar el tráfico de red en vivo y los archivos de captura de paquetes existentes, así como crear y guardar capturas de paquetes completas o condicionales. Esto puede ser útil para análisis forenses, respuesta a incidentes y para probar firmas. Por ejemplo, puedes activar una alerta y capturar el tráfico de red en vivo para generar registros de tráfico que luego puedes analizar para refinar las firmas de detección.
+
+### Reglas 
+Las reglas o firmas se utilizan para identificar patrones, condiciones y  comportamientos específicos del tráfico de red que podrían indicar actividad maliciosa. En Suricata, los términos regla y firma suelen ser intercambiables. Los analistas de seguridad utilizan firmas o patrones asociados con actividades maliciosas para detectar y alertar sobre amenazas específicas. Las reglas también se pueden usar para proporcionar mayor contexto y visibilidad en sistemas y redes, lo que contribuye a identificar posibles amenazas o vulnerabilidades de seguridad. 
+
+Suricata utiliza el análisis de firmas, que es un método de detección utilizado para encontrar eventos de interés. Las firmas tienen tres componentes:
+
+- `Acción`: El primer componente de una firma. Describe qué hay que hacer si la actividad de la red o del sistema coincide con la firma, por ejemplo, alertar, pasar, soltar o rechazar.
+
+- `Encabezado`: Incluye información de tráfico de red, como direcciones IP de origen y destino, puertos de origen y destino, protocolo y dirección de tráfico.
+
+- `Opciones de regla`: Proveen diferentes opciones para personalizar las firmas.
+
+Este es un ejemplo de una firma de Suricata:
+
+```
+Action                 HEADER                          RuleOption
+|    ||                                          ||                              |
+Alert tcp 10.120.170.17 any  -> 133.113.202.181 80 (msg: "Hello";sid:1234; rev:1;)
+```
+
+Las opciones de regla tienen un orden específico, y cambiarlo modificaría el significado de la regla.
+
+*`Nota: Los términos regla y firma son sinónimos.`*
+
+*`Nota: El orden de  reglas hace referencia al orden en que Suricata las evalúa. Las reglas se procesan en el orden en que están definidas en el archivo de configuración. Sin embargo, Suricata procesa las reglas en un orden predeterminado diferente: pass, drop, reject y alert (pasar, soltar, rechazar y alertar). El orden de las reglas afecta el veredicto final de un paquete. Por ejemplo, si las reglas con acciones en conflicto, como una regla de soltar y una regla de alertar, coinciden en el mismo paquete.`*
+
+### Reglas personalizadas
+Aunque Suricata ya tiene reglas previamente escritas, es muy recomendable modificarlas o personalizarlas para que cumplan con los requisitos de seguridad específicos.
+
+No hay un único enfoque para la creación y modificación de las reglas y esto se debe a que la infraestructura de TI de cada organización es diferente. Los equipos de seguridad deben probar y modificar exhaustivamente las firmas de detección de acuerdo a sus necesidades.
+
+La creación de reglas personalizadas ayuda a personalizar la detección y el monitoreo. Además, contribuye a minimizar la cantidad de falsos positivos que los equipos de seguridad reciben. Saber cómo escribir firmas efectivas y personalizadas es muy importante para aprovechar al máximo las tecnologías de detección.
+
+## Archivo de configuración
+Antes de implementar las herramientas de detección y que comiencen a monitorear sistemas y redes, es necesario configurar correctamente los ajustes, para que hagan la tarea que se necesita. Esto se hace por medio del archivo de configuración, que permite configurar los ajustes de una aplicación y personalizarla. De esta manera, se indica exactamente cómo se desea que los IDS interactúen con el resto del entorno. 
+
+En Suricata, el archivo de configuración es suricata.yaml, que utiliza el formato de archivo YAML para la sintaxis y la estructura.
+
+### Archivos de registro
+Cuando se activan las alertas, Suricata genera dos archivos de registro:
+
+- `eve.json`: es el archivo de registro estándar de Suricata y contiene información detallada y metadatos sobre los eventos y alertas generados por Suricata, almacenados en formato JSON. Por ejemplo, los eventos en este archivo contienen un identificador único llamado flow_id, que se utiliza para correlacionar registros o alertas con un solo flujo de red, lo que facilita el análisis del tráfico de red. El archivo eve.json se utiliza para hacer un análisis más detallado, y se considera un mejor formato de archivo para el análisis sintáctico de registros y la ingestión de registros SIEM.
+
+- `fast.log`: Se utiliza para registrar información de alerta mínima, incluida la dirección IP básica y los detalles de puerto sobre el tráfico de la red. Además, es útil para generar registros y alertas básicos, y se considera un formato de archivo heredado que no es adecuado para la respuesta a incidentes o tareas de caza de amenazas.
+
+La principal diferencia entre ambos es el nivel de detalle que se registra en cada uno. El archivo fast.log registra información básica, mientras que el archivo eve.json contiene información detallada adicional.
+
+## Reexamina las herramientas SIEM
+
+Tanto al hacer el triaje de una alerta, monitorear sistemas o analizar datos de registro para investigar, la herramienta para ello es una SIEM. Recuerda que una SIEM es una aplicación que recopila y analiza datos de registro para controlar actividades críticas en una organización. Lo hace al recopilar, analizar e informar datos de seguridad de varias fuentes. Ya aprendiste sobre el proceso SIEM de recolección de datos. Repasemos este proceso. Primero, la SIEM recolecta y procesa enormes cantidades de datos generados por los dispositivos y sistemas de todo un entorno. No todos los datos son iguales. Los dispositivos generan datos en diferentes formatos. 
+
+Esto puede resultar en un desafío, ya que no hay un formato unificado que represente los datos. Las SIEM facilitan a los analistas de seguridad leer y analizar los datos al normalizarlos. Los datos sin procesar se convierten a un formato consistente y solo se incluyen datos útiles para el evento. Por último, las SIEM indexan los datos para que se pueda acceder a ellos mediante una búsqueda. Puedes acceder de inmediato a todos los eventos en todas las fuentes. Muy útil, ¿no? Con las herramientas SIEM, es muy fácil acceder y analizar rápidamente el flujo de datos de las redes en un entorno. Como analista de seguridad, podrás encontrarte con distintas herramientas SIEM. Es importante que te adaptes y te ajustes a la herramienta que tu organización termine utilizando. Con eso en mente, veamos algunas SIEM que se usan hoy en la industria de la seguridad. 
+
+Splunk es una plataforma de análisis de datos. Splunk Enterprise Security brinda soluciones SIEM para buscar, analizar y visualizar datos de seguridad. Primero, recopila datos de distintas fuentes. Los datos se procesan y almacenan en un índice. Luego, se puede acceder a ellos de distintas formas, como con una búsqueda. 
+
+Chronicle es la SIEM de Google Cloud, y almacena datos de seguridad para su búsqueda, análisis y visualización. Primero, los datos se envían a Chronicle. Luego, se normalizan o se limpian para procesarlos e indexarlos. Por último, puedes acceder a los datos desde una barra de búsqueda.
+
+## Consulta de eventos con SPLUNK 
+
+Puedes acceder a datos importados en SIEM al consultar el motor de búsqueda de SIEM. Puedes almacenar muchísimos datos en una base de datos SIEM. Algunos de ellos pueden datar de años atrás. Por eso, buscar eventos de seguridad es todo un desafío. Por ejemplo, digamos que estás buscando un evento de inicio de sesión fallido. Lo buscas con las palabras clave: inicio de sesión fallido. Esta consulta es muy amplia, y puede devolver miles de resultados. Estas consultas amplias aumentan el tiempo de respuesta del motor ya que revisa todos los datos indexados. Pero si especificas parámetros adicionales, como la ID de un evento y un rango de fecha/hora, puedes limitar la búsqueda y obtener resultados pronto. Es importante que las búsquedas sean específicas así puedes encontrar justo lo que buscas y ahorrar tiempo en el proceso de búsqueda. Las diferentes SIEM usan distintos métodos de búsqueda. Por ejemplo, Splunk usa su propio lenguaje de consulta, llamado lenguaje de procesamiento de búsqueda, o SPL para abreviar. SPL ofrece varias opciones de búsqueda para optimizar los resultados y que así encuentres lo que buscas. Ahora mostraré cómo buscar registros de errores y fallas de referencia en Splunk Cloud en una tienda ficticia llamada Buttercup Games.
+
+
+Primero, escribiremos la consulta en la barra de búsqueda: 
+
+`buttercupgames error OR fail* `
+
+Esta búsqueda especifica el índice, que es buttercupgames. También especificamos los términos de la búsqueda: `error OR fail`. El operador booleano `OR` asegura que se busquen ambas palabras clave. El asterisco después del término `"fail"` se conoce como comodín. Es decir, buscará todos los finales con el término fail. Estos nos ayuda a ampliar los resultados, ya que los eventos pueden etiquetar las fallas de forma diferente. Por ejemplo, algunos pueden usar el término "failed". A continuación, seleccionaremos un intervalo con el selector de tiempo. Recuerda, cuanto más específica la búsqueda, mejor será. 
+
+Busquemos datos de los últimos 30 días. Debajo de la barra, están los resultados. Hay una línea de tiempo que nos da una representación visual de la cantidad de eventos durante un período. Con esto podemos identificar patrones en eventos, como picos de actividad. Debajo de la línea de tiempo está el visor de eventos, que muestra eventos asociados a nuestra búsqueda. Mira cómo los términos `buttercupgames y error se resaltan en cada evento`. Al parecer, no se encontraron eventos con el término "fail". Cada uno tiene una marca de tiempo y datos de registro sin procesar. En los eventos con errores, parece haber uno que tiene que ver con cookies http del sitio web Buttercup Games. Debajo de los datos de registro sin procesar, podemos ver la fuente de datos, incluyendo nombre del host, fuente y tipo de fuente. Esta información indica el origen de los datos del evento, como un dispositivo o un archivo. Si hacemos clic, se pueden excluir de los resultados. En la barra de búsqueda, podemos ver que los términos de búsqueda han cambiado y se agregó host!=www1, lo que significa que no hay que incluir los hosts www1. Observa que los nuevos resultados de búsqueda no contienen www1 como host, pero sí contienen www2 y www3. Esta es solo una de las muchas formas de orientar búsquedas para obtener la información que necesitas. Esta búsqueda se conoce como una búsqueda de registros sin procesar, que es más lenta pues extrae campos de datos de registro durante el proceso de búsqueda. Como analista de seguridad, usarás distintos comandos para optimizar el rendimiento de la búsqueda y obtener resultados más rápido.
+
+## Consulta para eventos con Chronicle
+
+Chronicle usa el lenguaje YARA-L para definir reglas de detección. Es un lenguaje informático que se usa para crear reglas para buscar datos de registro ingeridos. Por ejemplo, puedes usar YARA-L para escribir una regla que detecte actividades específicas sobre la exfiltración de datos valiosos. El campo de búsqueda de Chronicle te permite buscar campos como nombre de host, dominio, IP, URL, correo electrónico, nombre de usuario o hash de archivo. Aquí puedes ingresar distintos tipos de búsquedas. El método predeterminado es la búsqueda UDM, que significa modelo de datos unificados. Busca entre datos normalizados. Si no encuentras los datos en los datos normalizados, puedes buscar en registros sin procesar. Esta búsqueda examina registros que no se han normalizado. De lo que hablamos del proceso SIEM, puede que recuerdes que estos registros se procesan durante la normalización. En este paso, todos los datos útiles de los registros sin procesar se extraen y formatean, lo cual hace que los datos sean fáciles de buscar. Podríamos necesitar buscar registros sin procesar para encontrar datos ausentes en registros normalizados, como campos específicos que no han sido normalizados, o para solucionar problemas de ingestión de datos. Veamos una búsqueda UDM de inicio de sesión fallido con Chronicle.
+
+Primero, hagamos clic en el icono de consultas estructuradas para poder realizar una búsqueda UDM. Escribiré la búsqueda metadata.event_type = "USER_LOGIN" AND security_result.action = "BLOCK". Desglosemos esta búsqueda UDM. Estamos buscando datos normalizados, así que hay que especificar una búsqueda con formato UDM. Los eventos UDM tienen varios campos comunes. El campo metadata.event_type detalla el tipo de evento. Aquí le estamos pidiendo a Chronicle que encuentre un evento de autenticación: un inicio de sesión de usuario. Luego, está AND, que es un operador lógico que ordena al motor de búsqueda que incluya ambos términos. Por último, el campo security_result.action especifica una acción de seguridad como permitir o bloquear. Aquí, la acción es BLOCK. Esto indica el bloqueo o falla del inicio de sesión. Ahora,presionaremos el botón de consulta. Vamos a centrarnos en la búsqueda de datos normalizados. Vemos una pantalla con los resultados de búsqueda. Hay mucha información aquí. En "búsqueda UDM", vemos los términos de búsqueda. También hay una línea de tiempo que muestra los eventos de inicio de sesión fallidos en un período de tiempo. Esto nos da un panorama de las fallas de inicio de sesión en el tiempo, lo cual nos permite detectar posibles patrones. Debajo de la línea, hay una lista de eventos con marcas de tiempo asociadas con esta búsqueda. Bajo cada evento, hay un activo, que es el nombre de un dispositivo. Por ejemplo, este evento muestra un inicio de sesión fallido de una usuaria llamada Alice. Si hacemos clic en el evento, podemos abrir el registro sin procesar asociado al evento.
+
+A la izquierda, hay filtros rápidos. Estos son campos o valores adicionales que podemos usar para filtrar los resultados. Por ejemplo, al hacer clic en target.ip, se nos da una lista de direcciones IP. Al hacer clic en una de ellas, podemos filtrar los resultados para que incluyan solo esta IP de destino. Así, podemos encontrar datos específicos que estamos buscando y ahorrar tiempo en el proceso.
+
+## Métodos de búsqueda con herramientas SIEM
+
+SIEM es una aplicación que recopila y analiza datos de registro para monitorear actividades críticas en una organización. En esta lectura, verás cómo herramientas SIEM, como Splunk y Chronicle, utilizan diferentes métodos de búsqueda para encontrar, filtrar y transformar los resultados de búsqueda. 
+
+No todas las organizaciones utilizan la misma herramienta SIEM para recopilar y centralizar sus datos de seguridad, por lo cual tendrás que aprender a usar varias de ellas. Entender los diferentes tipos de búsquedas que puedes llevar a cabo con estas herramientas es muy importante para encontrar datos de eventos relevantes que respalden tus investigaciones de seguridad.
+
+### Búsquedas de Splunk
+Como has aprendido, Splunk tiene su propio lenguaje de consulta, denominado Search Processing Language (SPL) (lenguaje de procesamiento de búsqueda) que se utiliza para buscar y recuperar eventos de índices mediante la aplicación de búsqueda e informes de la herramienta. Una búsqueda SPL puede contener muchos comandos y argumentos diferentes. Por ejemplo, puedes usar comandos para transformar los resultados de búsqueda en un formato de gráfico o filtrar los resultados para obtener información específica.
+
+<img width="splunk_siem" width="600px">
+
+Este es un ejemplo de una búsqueda SPL básica que está consultando un índice para un evento fallido:
+
+    index=main fail 
+
+- `index=main`: Es el comienzo del comando de búsqueda que le dice a Splunk que recupere eventos de un index (índice) llamado main. 
+- `fail`: Es el término de búsqueda. Le dice a Splunk que devuelva los eventos que contengan el término fail.
+
+Saber cómo usar el SPL de manera efectiva tiene muchos beneficios. Ayuda a acortar el tiempo que se tarda en devolver los resultados de búsqueda y también a obtener los resultados exactos que necesitas de varias fuentes de datos. El SPL admite muchos tipos diferentes de búsquedas que no se incluyen en esta lectura. Si quieres conocer más sobre SPL, puedes consultar la 
+[Referencia de búsqueda de Splunk](https://docs.splunk.com/Documentation/Splunk/9.0.2/SearchReference/UnderstandingSPLsyntax).
+
+#### Pipe
+Es posible que ya conozcas cómo se utiliza el comando pipe en Bash de Linux. A modo de repaso, el comando pipe envía la salida de un comando como entrada a otro comando.
+
+SPL también utiliza la barra vertical o pleca | para separar los comandos individuales en la búsqueda y para encadenar comandos juntos, de forma tal que la salida de un comando se combine en el siguiente comando. Esto es útil porque te permite refinar los datos de varias maneras para obtener los resultados que necesitas, con un solo comando.
+
+Aquí podrás observar un ejemplo de dos comandos separados por una pleca: 
+
+    index=main fail| chart count by host
+
+- `index=main fail`: Es el comienzo del comando de búsqueda que le dice a Splunk que recupere eventos de un index (índice) llamado main para eventos que contienen el término de búsqueda fail. 
+
+- `|`: La pleca separa y encadena los dos comandos index=main y chart count by host. Esto significa que la salida del primer comando index=main se usa como la entrada del segundo comando chart count by host. 
+
+- `chart count by host`: Este comando le dice a Splunk que transforme los resultados de búsqueda creando un chart (gráfico) de acuerdo con el count (recuento) o la cantidad de eventos. El argumento by host le dice a Splunk que enumere los eventos por host, que son los nombres de los dispositivos de los que provienen los eventos. Este comando puede ser útil para identificar hosts con recuentos excesivos de errores en un entorno.
+
+#### Comodín
+El comodín es un carácter especial que se puede sustituir por cualquier otro. Se suele simbolizar con un carácter de asterisco *. Los comodines coinciden con los caracteres en los valores de una cadena. En Splunk, el comodín que uses depende del comando con el que lo estés usando. Los comodines son útiles porque pueden ayudar a encontrar eventos que contienen datos similares, pero no completamente idénticos. A continuación, verás un ejemplo de uso de un comodín para expandir los resultados de búsqueda de un término de búsqueda:
+
+    index=main fail*
+
+- `index=main`: Este comando recupera eventos de un index (índice) llamado main. 
+- `fail*`: El comodín después de fail representa cualquier carácter. Le dice a Splunk que busque todas las terminaciones posibles que contengan el término fail. Esto expande los resultados de búsqueda y devolverá eventos que contengan el término fail, como "failed" o "failure".
+
+*`Consejo profesional: Las comillas dobles se utilizan para especificar la búsqueda de una frase o cadena exacta. Por ejemplo, si solo quieres buscar eventos que contengan la frase exacta login failure (error de inicio de sesión), puedes colocar la frase entre comillas dobles "login failure". Esta búsqueda coincidirá solo con eventos que contengan la frase exacta login failure y no con otros eventos que contengan las palabras failure o login por separado.`*
+
+### Búsquedas en Chronicle
+En Chronicle, puedes buscar eventos en el campo Search (Buscar) y, además, utilizar el menú Procedural Filtering (proceso de filtrado) para aplicar filtros y refinar aún más los resultados de búsqueda. Por ejemplo, puedes usarlo para incluir o excluir resultados de búsqueda que contengan información específica relacionada a un tipo de evento o una fuente de registro. Hay dos tipos de búsqueda que puedes realizar para encontrar eventos en Chronicle: una búsqueda de modelos de datos unificados (UDM) o una búsqueda de registro sin procesar.
+
+<img width="chronicle_siem" width="600px">
+
+#### Búsqueda de modelos de datos unificados (UDM)
+Es el tipo de búsqueda predeterminado que se utiliza en Chronicle. Para hacer una búsqueda UDM, debes escribir lo que quieres buscar, hacer clic en "Search" (Buscar) y seleccionar "UDM Search" (Búsqueda UDM). Con este tipo de búsqueda, Chronicle busca datos de seguridad que se hayan ingerido, analizado y normalizado. Una búsqueda UDM recupera los resultados de búsqueda más rápido que una búsqueda de registro sin procesar, porque busca en datos indexados y estructurados que están normalizados en UDM.
+
+<img width="chronicle_UDM" width="600px">
+
+Una búsqueda UDM recupera eventos formateados en UDM, que contienen campos UDM. Hay muchos tipos diferentes de campos UDM que se pueden usar para consultar información específica de un evento. En esta lectura no los analizaremos todos, pero si deseas obtener más información, puedes consultar la [lista de campos UDM de Chronicle](https://cloud.google.com/chronicle/docs/reference/udm-field-list). Todos los eventos UDM contienen un conjunto de campos comunes que incluyen:
+
+- Entidades: Se las conoce también como sustantivos. Todos los eventos UDM deben contener al menos una entidad. Este campo brinda contexto adicional sobre un dispositivo, usuario o proceso que está involucrado en un evento. Por ejemplo, un evento UDM que contiene información de entidad incluye los detalles del origen de un evento, como el nombre de host, el nombre de usuario y la dirección IP del evento.
+- Metadatos del evento: Brinda una descripción básica de un evento, incluidos el tipo de evento, las marcas de tiempo y demás. 
+- Metadatos de red: Proporciona información sobre eventos relacionados con la red y detalles del protocolo. 
+- Resultados de seguridad: Indica el resultado relacionado con la seguridad de los eventos. Un ejemplo de un resultado de seguridad puede ser un software antivirus que detecta y pone en cuarentena un archivo malicioso e informa: "virus detectado y en cuarentena". 
+
+A continuación, podrás ver un ejemplo de una búsqueda UDM simple que utiliza el campo de metadatos de eventos para localizar eventos relacionados con los inicios de sesión de los usuarios:
+
+    metadata.event_type = “USER_LOGIN” 
+
+- metadata.event_type = “USER_LOGIN”: El campo UDM metadata.event_type contiene información sobre el tipo del evento. Esto incluye información como marca de tiempo, conexión de red, autenticación de usuario y demás. Aquí, el tipo de evento especifica USER_LOGIN, que busca eventos relacionados con la autenticación. 
+
+Si usas solo campos de metadatos, puedes comenzar rápidamente a buscar eventos. Mientras sigues practicando la búsqueda en Chronicle con UDM Search, irás encontrando más campos. Prueba usar estos campos para realizar búsquedas específicas con el fin de localizar diferentes eventos.
+
+#### Búsqueda de registros sin procesar 
+Si no puedes encontrar la información que necesitas en los datos normalizados, puedes usar una búsqueda de registros sin procesar, que te permitirá buscar en los registros sin analizar. Para realizar una búsqueda de registros sin procesar, deberás escribir lo que quieres buscar, hacer clic en "Search" (Buscar) y seleccionar "Raw Log Search" (Búsqueda de registro sin procesar). Buscar en registros sin procesar, lleva más tiempo que una búsqueda estructurada. En el campo Search (Buscar), puedes hacer una búsqueda de registro sin procesar si especificas información, como nombres de usuario, nombres de archivo, hashes y demás. Chronicle recuperará los eventos asociados con la búsqueda.
+
+*`Consejo profesional: La búsqueda de registro sin procesar admite el uso de expresiones regulares, lo que puede ayudarte a acotar una búsqueda para que coincida con patrones específicos.`*
+
+#### Recursos
+
+[Manual de busqueda de splunk](https://docs.splunk.com/Documentation/Splunk/9.0.1/Search/GetstartedwithSearch)
+
+[Guía de chronicle](https://cloud.google.com/chronicle/docs/review-security-alert?hl=es-419)
+
